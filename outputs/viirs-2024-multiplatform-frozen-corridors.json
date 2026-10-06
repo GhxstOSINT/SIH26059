@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "scope": "research_only",
+  "quality_gate": "insufficient_evidence",
+  "operational_decision_ready": false,
+  "model_fingerprint": "0b807b4fe1de6c725e95719f9766d7edfd67c63f35863900b8aaf96bf7c09830",
+  "model_artifact_sha256": "1c0ca29781acdcc7b780aabad6c2d1042a4008ee1a0722c32418365b1f4fddad",
+  "routes_sha256": "22474b05a2b6113fe5071d27e944645b0d5c2f4f415a936d42c006461c0b5c6e",
+  "period": {
+    "start_date": "2024-06-01",
+    "end_date": "2024-08-31"
+  },
+  "thresholds": {
+    "min_scored_days_per_route_platform": 30,
+    "min_calendar_coverage_fraction": 0.5,
+    "min_adequate_platforms_per_route": 2
+  },
+  "platforms": [
+    {
+      "platform": "S-NPP",
+      "dataset_id": "noaacwVIIRSnppiceconcSP06Daily",
+      "source_manifest_sha256": "8eb39454a47bdd5db34dd797b93ba99a1ed25663ecc630e56c029183315b32c0",
+      "routes": [
+        {
+          "id": "peninsula-east-west",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 68,
+            "missing_three_day_windows": 22,
+            "scored_days": 20,
+            "common_valid_points": 70,
+            "calendar_coverage_fraction": 0.0707070707070707
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 20,
+            "common_valid_points": 70,
+            "coverage_fraction": 0.09358288770053476,
+            "model_mae": 0.02468691749977187,
+            "persistence_mae": 0.0255857595375606,
+            "model_rmse": 0.0358195604625664,
+            "persistence_rmse": 0.0370305129169402,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-north-south",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 68,
+            "missing_three_day_windows": 22,
+            "scored_days": 21,
+            "common_valid_points": 111,
+            "calendar_coverage_fraction": 0.05138888888888889
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 21,
+            "common_valid_points": 111,
+            "coverage_fraction": 0.06801470588235294,
+            "model_mae": 0.03074742488441823,
+            "persistence_mae": 0.03133626993712004,
+            "model_rmse": 0.04271272260609797,
+            "persistence_rmse": 0.043743954433030835,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-diagonal",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 68,
+            "missing_three_day_windows": 22,
+            "scored_days": 21,
+            "common_valid_points": 134,
+            "calendar_coverage_fraction": 0.07444444444444444
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 21,
+            "common_valid_points": 134,
+            "coverage_fraction": 0.09852941176470588,
+            "model_mae": 0.0319517492235283,
+            "persistence_mae": 0.03226270560008376,
+            "model_rmse": 0.04882687104886556,
+            "persistence_rmse": 0.049880470952592466,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "platform": "NOAA-21",
+      "dataset_id": "noaacwVIIRSn21iceconcSP06Daily",
+      "source_manifest_sha256": "edbbb19f8e9cbceb76ffe3bcc700a4a071827f91aafa4c103ce9698755b692db",
+      "routes": [
+        {
+          "id": "peninsula-east-west",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 83,
+            "missing_three_day_windows": 7,
+            "scored_days": 31,
+            "common_valid_points": 169,
+            "calendar_coverage_fraction": 0.1707070707070707
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 31,
+            "common_valid_points": 169,
+            "coverage_fraction": 0.1851040525739321,
+            "model_mae": 0.03074737909942923,
+            "persistence_mae": 0.031620229842394765,
+            "model_rmse": 0.05098337232486073,
+            "persistence_rmse": 0.05271373892247369,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-north-south",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 83,
+            "missing_three_day_windows": 7,
+            "scored_days": 33,
+            "common_valid_points": 335,
+            "calendar_coverage_fraction": 0.1550925925925926
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 33,
+            "common_valid_points": 335,
+            "coverage_fraction": 0.16817269076305222,
+            "model_mae": 0.02804647203287142,
+            "persistence_mae": 0.02847547620090086,
+            "model_rmse": 0.04260373268750247,
+            "persistence_rmse": 0.04389349913352538,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-diagonal",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 83,
+            "missing_three_day_windows": 7,
+            "scored_days": 31,
+            "common_valid_points": 293,
+            "calendar_coverage_fraction": 0.16277777777777777
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 31,
+            "common_valid_points": 293,
+            "coverage_fraction": 0.17650602409638555,
+            "model_mae": 0.030304755363956347,
+            "persistence_mae": 0.03086435286258268,
+            "model_rmse": 0.053484171977955415,
+            "persistence_rmse": 0.055177784109018364,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "platform": "NOAA-20",
+      "dataset_id": "noaacwVIIRSn20iceconcSP06Daily",
+      "source_manifest_sha256": "6cc98995a26986d612fe8e58484d1df4c07b68dbc0a6d4a57ce327b725bbf355",
+      "routes": [
+        {
+          "id": "peninsula-east-west",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 74,
+            "missing_three_day_windows": 16,
+            "scored_days": 19,
+            "common_valid_points": 70,
+            "calendar_coverage_fraction": 0.0707070707070707
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 19,
+            "common_valid_points": 70,
+            "coverage_fraction": 0.085995085995086,
+            "model_mae": 0.030396410204385674,
+            "persistence_mae": 0.031636316435677665,
+            "model_rmse": 0.03761781638003534,
+            "persistence_rmse": 0.03916138440812281,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-north-south",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 74,
+            "missing_three_day_windows": 16,
+            "scored_days": 26,
+            "common_valid_points": 141,
+            "calendar_coverage_fraction": 0.06527777777777778
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 26,
+            "common_valid_points": 141,
+            "coverage_fraction": 0.07939189189189189,
+            "model_mae": 0.03123986676927109,
+            "persistence_mae": 0.031728551320150386,
+            "model_rmse": 0.050252384526021356,
+            "persistence_rmse": 0.05195012432417111,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        },
+        {
+          "id": "peninsula-diagonal",
+          "coverage": {
+            "scheduled_target_days": 90,
+            "eligible_three_day_windows": 74,
+            "missing_three_day_windows": 16,
+            "scored_days": 20,
+            "common_valid_points": 100,
+            "calendar_coverage_fraction": 0.05555555555555555
+          },
+          "coverage_gate": "insufficient_evidence",
+          "metrics_on_common_valid_points": {
+            "scored_days": 20,
+            "common_valid_points": 100,
+            "coverage_fraction": 0.06756756756756757,
+            "model_mae": 0.03666382275616581,
+            "persistence_mae": 0.03691558539867401,
+            "model_rmse": 0.05959208095965431,
+            "persistence_rmse": 0.060990729213235347,
+            "model_ice_edge_error_fraction": 0.0,
+            "persistence_ice_edge_error_fraction": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "VIIRS is a cross-product sensor check, not a vessel-outcome or navigation-safety label.",
+    "The same frozen corridors have been examined before; this is not a pristine prospective release test.",
+    "Nearby pixels and days are correlated; platform scores must not be pooled as independent trials.",
+    "The report excludes weather, bathymetry, vessel class, live iceberg hazards and calibrated uncertainty."
+  ]
+}

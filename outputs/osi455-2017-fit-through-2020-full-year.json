@@ -1,0 +1,437 @@
+{
+  "experiment": "OSI-455 one-day SIC advection with a frozen chronological-fit coefficient and date-label timing convention",
+  "fit": {
+    "year": 2017,
+    "selected_lambda": 0.2,
+    "fit_output_provenance": {
+      "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+      "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+      "motion_manifest_period": {
+        "end": "2020-12-31",
+        "start": "2016-12-31"
+      }
+    },
+    "split": "fit shrinkage lambda on issue dates through 2017-07-02; evaluate chronologically from 2017-07-03 onward"
+  },
+  "evaluations": [
+    {
+      "year": 2018,
+      "issue_period": {
+        "start": "2018-01-01",
+        "end": "2018-12-30"
+      },
+      "n_correlated_cell_days": 302289,
+      "persistence_mae": 0.016440022736787796,
+      "advection_mae": 0.016367051750421524,
+      "persistence_rmse": 0.027186764404177666,
+      "advection_rmse": 0.026963958516716957,
+      "mae_reduction_percent": 0.44386183361525555,
+      "rmse_reduction_percent": 0.8195380816500175,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 364,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4809,
+        "status_30_cell_days": 297603,
+        "strict_motion_cell_days": 302412,
+        "common_valid_forecast_cell_days": 302289,
+        "possible_grid_cell_days": 7547904,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 28,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 580608
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 14552,
+            "common_valid_forecast_cell_days": 14550,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 31235,
+            "common_valid_forecast_cell_days": 31230,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 47445,
+            "common_valid_forecast_cell_days": 47441,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 63059,
+            "common_valid_forecast_cell_days": 63054,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 71325,
+            "common_valid_forecast_cell_days": 71320,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 72331,
+            "common_valid_forecast_cell_days": 72229,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2465,
+            "common_valid_forecast_cell_days": 2465,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    },
+    {
+      "year": 2019,
+      "issue_period": {
+        "start": "2019-01-01",
+        "end": "2019-12-30"
+      },
+      "n_correlated_cell_days": 292272,
+      "persistence_mae": 0.01565862074494362,
+      "advection_mae": 0.01560461986809969,
+      "persistence_rmse": 0.026322919875383377,
+      "advection_rmse": 0.026120321825146675,
+      "mae_reduction_percent": 0.3448635593359506,
+      "rmse_reduction_percent": 0.7696640463741522,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 364,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4550,
+        "status_30_cell_days": 288537,
+        "strict_motion_cell_days": 293087,
+        "common_valid_forecast_cell_days": 292272,
+        "possible_grid_cell_days": 7547904,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 28,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 580608
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 13323,
+            "common_valid_forecast_cell_days": 13322,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 28279,
+            "common_valid_forecast_cell_days": 28187,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 43623,
+            "common_valid_forecast_cell_days": 43620,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 60082,
+            "common_valid_forecast_cell_days": 60035,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 71301,
+            "common_valid_forecast_cell_days": 71294,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 74023,
+            "common_valid_forecast_cell_days": 73358,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2456,
+            "common_valid_forecast_cell_days": 2456,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "issue_period": {
+        "start": "2020-01-01",
+        "end": "2020-12-30"
+      },
+      "n_correlated_cell_days": 309546,
+      "persistence_mae": 0.015450208447873592,
+      "advection_mae": 0.015413726679980755,
+      "persistence_rmse": 0.025708019733428955,
+      "advection_rmse": 0.025563327595591545,
+      "mae_reduction_percent": 0.23612476178506148,
+      "rmse_reduction_percent": 0.5628287955966593,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 365,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4583,
+        "status_30_cell_days": 310170,
+        "strict_motion_cell_days": 314753,
+        "common_valid_forecast_cell_days": 309546,
+        "possible_grid_cell_days": 7568640,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 29,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 601344
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 17833,
+            "common_valid_forecast_cell_days": 17826,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 33553,
+            "common_valid_forecast_cell_days": 33544,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 48941,
+            "common_valid_forecast_cell_days": 48079,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 62262,
+            "common_valid_forecast_cell_days": 62239,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 73236,
+            "common_valid_forecast_cell_days": 69066,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 76373,
+            "common_valid_forecast_cell_days": 76237,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2555,
+            "common_valid_forecast_cell_days": 2555,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    }
+  ],
+  "combined": {
+    "n_correlated_cell_days": 904107,
+    "persistence_mae": 0.015848527507974705,
+    "advection_mae": 0.01579418210848243,
+    "persistence_rmse": 0.026408278841443204,
+    "advection_rmse": 0.02621809562992319,
+    "equal_year_mean_mae_reduction_percent": 0.34161671824542256,
+    "equal_year_mean_rmse_reduction_percent": 0.717343641206943,
+    "mae_reduction_percent": 0.342905039379382,
+    "rmse_reduction_percent": 0.720165114363891
+  },
+  "interpretation": [
+    "Grid-cell-day observations are spatially and temporally correlated, not independent trials.",
+    "Full-year date ranges do not guarantee full-season motion coverage; consult strict-quality coverage by month.",
+    "The motion product is 75 km and precedes the experiment's assumed 00Z date label by 12 hours; the daily SIC field's real-time availability is unverified.",
+    "This evaluates SIC concentration only, not route clearance, ship safety, iceberg drift, or encounter risk."
+  ]
+}

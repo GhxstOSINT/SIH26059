@@ -1,0 +1,5 @@
+# Optional original Copernicus Marine forecast acquisition.
+# Boto pins keep the existing Earthdata aiobotocore installation compatible.
+copernicusmarine==2.5.0
+boto3==1.43.75
+botocore==1.43.75

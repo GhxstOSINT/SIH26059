@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scope": "research_only",
+  "dataset_priority": [
+    "noaacwVIIRSn21iceconcSP06Daily",
+    "noaacwVIIRSn20iceconcSP06Daily",
+    "noaacwVIIRSnppiceconcSP06Daily"
+  ],
+  "max_source_age_hours": 72,
+  "max_local_age_hours": 72,
+  "min_valid_fraction": 0.01,
+  "window_days": 7,
+  "center_lon_lat": [-60.0, -66.0],
+  "half_width_km": 100.0
+}

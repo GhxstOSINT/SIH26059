@@ -1,0 +1,102 @@
+{
+  "model_id": "sic-lag-regression-v1",
+  "target": "daily sea-ice concentration fraction, Antarctic grid",
+  "features": [
+    "intercept",
+    "previous_day_sic",
+    "two_days_prior_sic",
+    "day_of_year_sin",
+    "day_of_year_cos"
+  ],
+  "coefficients": [
+    0.001034938598637432,
+    0.9947580740264975,
+    0.0010426044431360265,
+    0.0018243003523311274,
+    -0.0032194740391333675
+  ],
+  "training": {
+    "files": 1,
+    "daily_fields": 365,
+    "samples": 14339277,
+    "selected_period_start": "2010-01-01",
+    "selected_period_end": "2010-12-31",
+    "first_train_target_date": "2010-01-03",
+    "last_train_target_date": "2010-09-12",
+    "validation_start": "2010-09-13",
+    "validation_end": "2010-12-31"
+  },
+  "validation": {
+    "grid_cell_samples": 6846030,
+    "mae": 0.01619583591689567,
+    "rmse": 0.042396107652547005,
+    "persistence_rmse": 0.04268055978081413,
+    "monthly_climatology_rmse": 0.12537934059369804,
+    "monthly_climatology_samples": 1159560
+  },
+  "validation_scope": "Chronological holdout within the NOAA/NSIDC G02202 v6 input archive (2010-2010). This is one product and is not an independent cross-product evaluation.",
+  "data_source": "NetCDF input files; upstream provenance is not independently verified by the trainer.",
+  "input_file_names": [
+    "sic_pss25_20100101-20101231_v06r00.nc"
+  ],
+  "source_manifest": {
+    "dataset": "NOAA/NSIDC Climate Data Record of Passive Microwave Sea Ice Concentration, Version 6",
+    "dataset_id": "G02202",
+    "doi": "10.7265/b18j-z797",
+    "hemisphere": "Southern",
+    "source": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate",
+    "accessed_at_utc": "2026-09-28T17:24:56.849476+00:00",
+    "requested_years": [
+      2010,
+      2014
+    ],
+    "complete": true,
+    "files": [
+      {
+        "year": 2010,
+        "file": "sic_pss25_20100101-20101231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20100101-20101231_v06r00.nc",
+        "bytes": 72836403,
+        "sha256": "e88cf0783776082c2c9b0d52b3f044908d1bbada311451a7c5b4f31d740c556b",
+        "downloaded_at_utc": "2026-09-28T17:16:45.649882+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2011,
+        "file": "sic_pss25_20110101-20111231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20110101-20111231_v06r00.nc",
+        "bytes": 70843200,
+        "sha256": "1e8c408dda444cf643c9c6ac33f857c5db451665e961d4a08cb8b3df7998e9aa",
+        "downloaded_at_utc": "2026-09-28T17:24:35.294487+00:00"
+      },
+      {
+        "year": 2012,
+        "file": "sic_pss25_20120101-20121231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20120101-20121231_v06r00.nc",
+        "bytes": 72441435,
+        "sha256": "0ff9438b707a36aabeb736f98608499ab7e6ff6081448df304b4d0c89c689d78",
+        "downloaded_at_utc": "2026-09-28T17:24:56.841535+00:00"
+      },
+      {
+        "year": 2013,
+        "file": "sic_pss25_20130101-20131231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20130101-20131231_v06r00.nc",
+        "bytes": 73574003,
+        "sha256": "42722dc641ba04192f0db1f07e140fd92f23592625dd2bdf4e906acb46a1ee3d",
+        "downloaded_at_utc": "2026-09-28T17:24:22.411630+00:00"
+      },
+      {
+        "year": 2014,
+        "file": "sic_pss25_20140101-20141231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20140101-20141231_v06r00.nc",
+        "bytes": 74259164,
+        "sha256": "fbc99c594f738466cc824714b5da23096359da04bce742bd7cd401045a7fae8b",
+        "downloaded_at_utc": "2026-09-28T17:24:48.794813+00:00"
+      }
+    ],
+    "terms": "Retain provider citation; review current NSIDC terms before redistribution."
+  },
+  "validation_masking": "Finite SIC cells; static ocean mask applied when provided. Recognized QA masks exclude no-input (bit 8), invalid ice/ocean mask (bit 16), and temporal-interpolation (bit 64) cells from inputs and targets.",
+  "warning": "Research baseline only. Not calibrated or approved for navigation or operational decisions.",
+  "model_fingerprint": "b37bc8b5132a28aa7cdefc864df9d025eb44e39b8924adcb9f704092babb3959"
+}

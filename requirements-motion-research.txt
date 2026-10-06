@@ -1,0 +1,8 @@
+# Isolated optional environment for OSI-455 research and NSIDC-0116 vector alignment.
+numpy==2.2.6
+requests==2.34.2
+rasterio==1.4.3
+pyproj==3.8.0
+scipy==1.16.1
+xarray==2026.7.0
+netCDF4==1.7.4

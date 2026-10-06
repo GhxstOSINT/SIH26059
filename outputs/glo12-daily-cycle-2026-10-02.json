@@ -1,0 +1,54 @@
+{
+  "cycle_date_utc": "2026-10-02",
+  "forecast_archive_attempted": true,
+  "completed_verifications": [],
+  "observation_capture_pending_dates": [],
+  "pending_observations": [],
+  "remaining_backlog": 0,
+  "calibration": {
+    "schema_version": 1,
+    "scope": "prospective_forecast_calibration_prerequisites",
+    "leads": [
+      {
+        "lead_days": 1,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 3,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 5,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 7,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      }
+    ],
+    "rejected_reports": 0,
+    "research_calibration_sample_gate_passed": false,
+    "uncertainty_calibrated": false,
+    "operator_decision_ready": false,
+    "navigation_clearance": false,
+    "remaining_requirements": [
+      "Later observations must be matched to each original, as-issued forecast bulletin.",
+      "Fit only on earlier bulletin dates and evaluate on later held-out dates.",
+      "Compare skill and interval coverage with an as-issued persistence baseline.",
+      "Check region, ice regime, season, and lead-specific reliability before any operational review."
+    ]
+  },
+  "navigation_clearance": false
+}

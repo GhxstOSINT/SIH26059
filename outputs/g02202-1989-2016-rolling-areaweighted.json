@@ -1,0 +1,2374 @@
+{
+  "evaluation": "expanding-window calendar-year rolling origin",
+  "dataset_id": "G02202",
+  "source_manifest_sha256": "492b211baab8507c899a1fafd231246e1c67b8d7ac0f0993d465b449e2d808fa",
+  "source_manifest": {
+    "dataset": "NOAA/NSIDC Climate Data Record of Passive Microwave Sea Ice Concentration, Version 6",
+    "dataset_id": "G02202",
+    "doi": "10.7265/b18j-z797",
+    "hemisphere": "Southern",
+    "source": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate",
+    "accessed_at_utc": "2026-09-29T12:45:46.609152+00:00",
+    "requested_years": [
+      1989,
+      2016
+    ],
+    "complete": true,
+    "files": [
+      {
+        "year": 1989,
+        "file": "sic_pss25_19890101-19891231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19890101-19891231_v06r00.nc",
+        "bytes": 75784392,
+        "sha256": "e8f57bba1248608c9054b1807065a452ebba3cbb5bbac37fe51c90d0f8a3b2d2",
+        "downloaded_at_utc": "2026-09-29T12:25:10.323189+00:00"
+      },
+      {
+        "year": 1990,
+        "file": "sic_pss25_19900101-19901231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19900101-19901231_v06r00.nc",
+        "bytes": 75244777,
+        "sha256": "14d4d1cc66c002b0c6ae6a3c3bb180b15d59f6a61222cb495a3442e416e9ec35",
+        "downloaded_at_utc": "2026-09-29T12:24:53.034650+00:00"
+      },
+      {
+        "year": 1991,
+        "file": "sic_pss25_19910101-19911231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19910101-19911231_v06r00.nc",
+        "bytes": 77083187,
+        "sha256": "1e27adfac5581ac5c144007b62dc760459402760b6113f440f5f7fae9537ab25",
+        "downloaded_at_utc": "2026-09-29T12:25:43.845391+00:00"
+      },
+      {
+        "year": 1992,
+        "file": "sic_pss25_19920101-19921231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19920101-19921231_v06r00.nc",
+        "bytes": 76844132,
+        "sha256": "cef555c17ee78e404b7f81f3d9f37f7e4c1f6c955d966c7fefaadaf45fdccbcc",
+        "downloaded_at_utc": "2026-09-29T12:25:10.424754+00:00"
+      },
+      {
+        "year": 1993,
+        "file": "sic_pss25_19930101-19931231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19930101-19931231_v06r00.nc",
+        "bytes": 76474515,
+        "sha256": "6d6d67ecb385c70ddde4d951cc5d437954e047f16e1819a3f0ab2f790bc7f68d",
+        "downloaded_at_utc": "2026-09-29T12:28:27.407683+00:00"
+      },
+      {
+        "year": 1994,
+        "file": "sic_pss25_19940101-19941231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19940101-19941231_v06r00.nc",
+        "bytes": 76985019,
+        "sha256": "6e4bb7028a03c02ac77549ca82552644eec693f14f78e6b9f3eaf98fee3ddc9e",
+        "downloaded_at_utc": "2026-09-29T12:28:47.960004+00:00"
+      },
+      {
+        "year": 1995,
+        "file": "sic_pss25_19950101-19951231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19950101-19951231_v06r00.nc",
+        "bytes": 76802883,
+        "sha256": "cebede91d650001db0b677905698a8f33220b33520420fd16f4a375577f718a9",
+        "downloaded_at_utc": "2026-09-29T12:28:47.176914+00:00"
+      },
+      {
+        "year": 1996,
+        "file": "sic_pss25_19960101-19961231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19960101-19961231_v06r00.nc",
+        "bytes": 77664262,
+        "sha256": "96509b3d493f5fbc4c3c53b88c83b3616bbbdf9e4249e90b416449f37f3826ef",
+        "downloaded_at_utc": "2026-09-29T12:29:36.172597+00:00"
+      },
+      {
+        "year": 1997,
+        "file": "sic_pss25_19970101-19971231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19970101-19971231_v06r00.nc",
+        "bytes": 75624614,
+        "sha256": "d2d2a4271aa6e8dbf9a6903dece2ff1191c0403990daa21f71d6f004de57234a",
+        "downloaded_at_utc": "2026-09-29T12:32:36.604220+00:00"
+      },
+      {
+        "year": 1998,
+        "file": "sic_pss25_19980101-19981231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19980101-19981231_v06r00.nc",
+        "bytes": 77013830,
+        "sha256": "cfbf1d5fbfaa8d3d7be394b0eca4f82579069082451452b2961d56c8889d3eb7",
+        "downloaded_at_utc": "2026-09-29T12:32:34.879670+00:00"
+      },
+      {
+        "year": 1999,
+        "file": "sic_pss25_19990101-19991231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_19990101-19991231_v06r00.nc",
+        "bytes": 76829704,
+        "sha256": "efa5e0bc9be980043286ec6fcb603507beddea9cd924195532440d8ed0e3c749",
+        "downloaded_at_utc": "2026-09-29T12:32:25.230076+00:00"
+      },
+      {
+        "year": 2000,
+        "file": "sic_pss25_20000101-20001231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20000101-20001231_v06r00.nc",
+        "bytes": 76367484,
+        "sha256": "8638c751302cac1c3548dd26d7dcb8c72dcfffcb773044587c2a59d74f958ad4",
+        "downloaded_at_utc": "2026-09-29T12:33:58.955703+00:00"
+      },
+      {
+        "year": 2001,
+        "file": "sic_pss25_20010101-20011231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20010101-20011231_v06r00.nc",
+        "bytes": 76629271,
+        "sha256": "6d24b56361335350d49d16a819b7dd91f3c1db835cbb12b0f78151609c7d7f69",
+        "downloaded_at_utc": "2026-09-29T12:36:22.945030+00:00"
+      },
+      {
+        "year": 2002,
+        "file": "sic_pss25_20020101-20021231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20020101-20021231_v06r00.nc",
+        "bytes": 75251743,
+        "sha256": "b289a9d8bc9f3ac3aee73e41db9316bc9ba04650f9d2a1efbe2a3e29f93ab6b1",
+        "downloaded_at_utc": "2026-09-29T12:36:11.849531+00:00"
+      },
+      {
+        "year": 2003,
+        "file": "sic_pss25_20030101-20031231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20030101-20031231_v06r00.nc",
+        "bytes": 77299652,
+        "sha256": "f50b3d64a771f767c49eeefa0f797128d2079c13ab8743621454e5b5db97dd2f",
+        "downloaded_at_utc": "2026-09-29T12:36:53.098891+00:00"
+      },
+      {
+        "year": 2004,
+        "file": "sic_pss25_20040101-20041231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20040101-20041231_v06r00.nc",
+        "bytes": 77472488,
+        "sha256": "62e0f8239bf7b632a4217509dbd6099e5764becfb8de516e477b7ef45f90db1e",
+        "downloaded_at_utc": "2026-09-29T12:38:12.394671+00:00"
+      },
+      {
+        "year": 2005,
+        "file": "sic_pss25_20050101-20051231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20050101-20051231_v06r00.nc",
+        "bytes": 76578785,
+        "sha256": "2d764f58817d8bd2a7e5d46ad8112c4a9f1b4acf60b3694b387b91de828697c1",
+        "downloaded_at_utc": "2026-09-29T12:41:13.120102+00:00"
+      },
+      {
+        "year": 2006,
+        "file": "sic_pss25_20060101-20061231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20060101-20061231_v06r00.nc",
+        "bytes": 75817299,
+        "sha256": "131c25e5fdbe9d47eabdcc0747c4dc17dc1131b9d8e56a6536f6e04775eafa77",
+        "downloaded_at_utc": "2026-09-29T12:41:33.544998+00:00"
+      },
+      {
+        "year": 2007,
+        "file": "sic_pss25_20070101-20071231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20070101-20071231_v06r00.nc",
+        "bytes": 76377733,
+        "sha256": "bb2c4e668a89f35a76d06117770754185393da8fff4fb5e8bd9f92ede9440bc0",
+        "downloaded_at_utc": "2026-09-29T12:42:04.216102+00:00"
+      },
+      {
+        "year": 2008,
+        "file": "sic_pss25_20080101-20081231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20080101-20081231_v06r00.nc",
+        "bytes": 73212268,
+        "sha256": "bc43b3adc92ec749cdab05f90124cfe0d96de2cfeb6ff24a4ad7e840eda9c6f3",
+        "downloaded_at_utc": "2026-09-29T12:42:37.465798+00:00"
+      },
+      {
+        "year": 2009,
+        "file": "sic_pss25_20090101-20091231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20090101-20091231_v06r00.nc",
+        "bytes": 71990053,
+        "sha256": "4f9d886c2a097a2e86cc979cd17dcc21cb5b47cbdd35de51bef4451e3ccaa0e6",
+        "downloaded_at_utc": "2026-09-29T12:44:52.475482+00:00"
+      },
+      {
+        "year": 2010,
+        "file": "sic_pss25_20100101-20101231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20100101-20101231_v06r00.nc",
+        "bytes": 72836403,
+        "sha256": "e88cf0783776082c2c9b0d52b3f044908d1bbada311451a7c5b4f31d740c556b",
+        "downloaded_at_utc": "2026-09-29T12:41:35.712626+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2011,
+        "file": "sic_pss25_20110101-20111231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20110101-20111231_v06r00.nc",
+        "bytes": 70843200,
+        "sha256": "1e8c408dda444cf643c9c6ac33f857c5db451665e961d4a08cb8b3df7998e9aa",
+        "downloaded_at_utc": "2026-09-29T12:41:37.643462+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2012,
+        "file": "sic_pss25_20120101-20121231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20120101-20121231_v06r00.nc",
+        "bytes": 72441435,
+        "sha256": "0ff9438b707a36aabeb736f98608499ab7e6ff6081448df304b4d0c89c689d78",
+        "downloaded_at_utc": "2026-09-29T12:41:38.848381+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2013,
+        "file": "sic_pss25_20130101-20131231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20130101-20131231_v06r00.nc",
+        "bytes": 73574003,
+        "sha256": "42722dc641ba04192f0db1f07e140fd92f23592625dd2bdf4e906acb46a1ee3d",
+        "downloaded_at_utc": "2026-09-29T12:41:41.660799+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2014,
+        "file": "sic_pss25_20140101-20141231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20140101-20141231_v06r00.nc",
+        "bytes": 74259164,
+        "sha256": "fbc99c594f738466cc824714b5da23096359da04bce742bd7cd401045a7fae8b",
+        "downloaded_at_utc": "2026-09-29T12:41:43.511753+00:00",
+        "verified_existing_file": true
+      },
+      {
+        "year": 2015,
+        "file": "sic_pss25_20150101-20151231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20150101-20151231_v06r00.nc",
+        "bytes": 73599556,
+        "sha256": "c9bdb2e5a14af7301c2479603c3ed56b2057da1e0e3f5281f89fb2b62a93890c",
+        "downloaded_at_utc": "2026-09-29T12:45:46.607542+00:00"
+      },
+      {
+        "year": 2016,
+        "file": "sic_pss25_20160101-20161231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20160101-20161231_v06r00.nc",
+        "bytes": 70721840,
+        "sha256": "93363b64b645bfd726c99a53410b193d180fbd53bda9f9bbe76fcc284ba0febe",
+        "downloaded_at_utc": "2026-09-29T12:45:35.202668+00:00"
+      }
+    ],
+    "terms": "Retain provider citation; review current NSIDC terms before redistribution."
+  },
+  "fold_count": 10,
+  "window_configuration": {
+    "initial_training_years": 8,
+    "validation_years": 2,
+    "step_years": 2
+  },
+  "aggregation": "Pooled cell-equal and estimated ground-area-weighted metrics across disjoint validation periods.",
+  "overall": {
+    "grid_cell_samples": 430632591,
+    "mae": 0.015489618493967806,
+    "rmse": 0.04390997197786538,
+    "persistence_rmse": 0.04407205745260042
+  },
+  "by_target_month_pooled": {
+    "01": {
+      "grid_cell_samples": 33522650,
+      "mae": 0.008563693551772883,
+      "rmse": 0.035113355147821074,
+      "persistence_rmse": 0.03567081538423137
+    },
+    "02": {
+      "grid_cell_samples": 28858263,
+      "mae": 0.006629926491641636,
+      "rmse": 0.033910070935992936,
+      "persistence_rmse": 0.03444022886598785
+    },
+    "03": {
+      "grid_cell_samples": 31398060,
+      "mae": 0.010257541179048361,
+      "rmse": 0.03908398794453106,
+      "persistence_rmse": 0.039252677495236275
+    },
+    "04": {
+      "grid_cell_samples": 33094379,
+      "mae": 0.013884479940706738,
+      "rmse": 0.04206440753826731,
+      "persistence_rmse": 0.042065529348249045
+    },
+    "05": {
+      "grid_cell_samples": 36322143,
+      "mae": 0.01694805327954131,
+      "rmse": 0.0454882687881346,
+      "persistence_rmse": 0.04543083287573833
+    },
+    "06": {
+      "grid_cell_samples": 36657459,
+      "mae": 0.01870744849621341,
+      "rmse": 0.04728802635301406,
+      "persistence_rmse": 0.04723493395556557
+    },
+    "07": {
+      "grid_cell_samples": 39467614,
+      "mae": 0.019355574633309128,
+      "rmse": 0.048630583088402096,
+      "persistence_rmse": 0.04863099881095295
+    },
+    "08": {
+      "grid_cell_samples": 39736652,
+      "mae": 0.019576278544620136,
+      "rmse": 0.0495007024160728,
+      "persistence_rmse": 0.04950587270306174
+    },
+    "09": {
+      "grid_cell_samples": 38486010,
+      "mae": 0.018890366481851443,
+      "rmse": 0.04832033269161084,
+      "persistence_rmse": 0.04833438293888654
+    },
+    "10": {
+      "grid_cell_samples": 39070144,
+      "mae": 0.017772599830418966,
+      "rmse": 0.045367627685123035,
+      "persistence_rmse": 0.045496833555401475
+    },
+    "11": {
+      "grid_cell_samples": 37976723,
+      "mae": 0.01638235010585401,
+      "rmse": 0.04241677895177134,
+      "persistence_rmse": 0.04284956324469342
+    },
+    "12": {
+      "grid_cell_samples": 36042494,
+      "mae": 0.014528724052091583,
+      "rmse": 0.041750155523754814,
+      "persistence_rmse": 0.04234201913992413
+    }
+  },
+  "folds": [
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "1996-12-31"
+      },
+      "validation_period": {
+        "start": "1997-01-01",
+        "end": "1998-12-31"
+      },
+      "training_grid_cell_samples": 157084562,
+      "metrics": {
+        "grid_cell_samples": 42838908,
+        "mae": 0.015956667089384886,
+        "rmse": 0.04498255140563291,
+        "persistence_rmse": 0.04521232482885436
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3358099,
+          "mae": 0.008064740195006626,
+          "rmse": 0.035369796276181274,
+          "persistence_rmse": 0.03613753333195798
+        },
+        "02": {
+          "grid_cell_samples": 2859751,
+          "mae": 0.0064766339226542844,
+          "rmse": 0.034816622798174844,
+          "persistence_rmse": 0.03547287211456418
+        },
+        "03": {
+          "grid_cell_samples": 3039330,
+          "mae": 0.010423445906439566,
+          "rmse": 0.04085613960592371,
+          "persistence_rmse": 0.040987746115109185
+        },
+        "04": {
+          "grid_cell_samples": 3342303,
+          "mae": 0.013907574939403082,
+          "rmse": 0.042590280712413144,
+          "persistence_rmse": 0.042621778122235734
+        },
+        "05": {
+          "grid_cell_samples": 3644563,
+          "mae": 0.01762178829929694,
+          "rmse": 0.0464893580766933,
+          "persistence_rmse": 0.04646653497023569
+        },
+        "06": {
+          "grid_cell_samples": 3682925,
+          "mae": 0.01978964845543033,
+          "rmse": 0.04881905258860929,
+          "persistence_rmse": 0.048832157941051654
+        },
+        "07": {
+          "grid_cell_samples": 3965839,
+          "mae": 0.019498883118451476,
+          "rmse": 0.04837017158171999,
+          "persistence_rmse": 0.04848543309369359
+        },
+        "08": {
+          "grid_cell_samples": 3824703,
+          "mae": 0.01998218085878529,
+          "rmse": 0.04986298975010803,
+          "persistence_rmse": 0.04992862998829916
+        },
+        "09": {
+          "grid_cell_samples": 3785332,
+          "mae": 0.01943077657254715,
+          "rmse": 0.04910498092908779,
+          "persistence_rmse": 0.049135217635725925
+        },
+        "10": {
+          "grid_cell_samples": 3907198,
+          "mae": 0.018640831373155902,
+          "rmse": 0.04694882483243003,
+          "persistence_rmse": 0.04716451099908263
+        },
+        "11": {
+          "grid_cell_samples": 3803987,
+          "mae": 0.017488884086763072,
+          "rmse": 0.044889349301460484,
+          "persistence_rmse": 0.04539570578616839
+        },
+        "12": {
+          "grid_cell_samples": 3624878,
+          "mae": 0.015455174444855635,
+          "rmse": 0.044039203163452875,
+          "persistence_rmse": 0.04465834440782778
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 24967000233.482742,
+          "mae": 0.016432514210589166,
+          "rmse": 0.04566242523874462,
+          "persistence_rmse": 0.04590053849895973
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1968721073.7976394,
+            "mae": 0.008508018519738828,
+            "rmse": 0.036256852426086464,
+            "persistence_rmse": 0.03704084207275587
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1681219463.6528597,
+            "mae": 0.006849273606588986,
+            "rmse": 0.03580090088378773,
+            "persistence_rmse": 0.036472010058367074
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1786056298.8397102,
+            "mae": 0.010959421965379933,
+            "rmse": 0.04206154348215486,
+            "persistence_rmse": 0.042191852817552875
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1956768362.3870947,
+            "mae": 0.014461303228050552,
+            "rmse": 0.043643841682387316,
+            "persistence_rmse": 0.04368061815440274
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2127573663.6035397,
+            "mae": 0.018173632763137788,
+            "rmse": 0.04739078450285614,
+            "persistence_rmse": 0.04737738518970744
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2143163390.6115108,
+            "mae": 0.02030026914308405,
+            "rmse": 0.049590386369801356,
+            "persistence_rmse": 0.04961653064377114
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2301554739.9930687,
+            "mae": 0.019917144014959566,
+            "rmse": 0.0489242786417317,
+            "persistence_rmse": 0.04905477495115165
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2216327103.410513,
+            "mae": 0.020393236201539582,
+            "rmse": 0.050312667767670696,
+            "persistence_rmse": 0.050386162642248614
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2197149821.278277,
+            "mae": 0.01983707253686881,
+            "rmse": 0.04941786738924402,
+            "persistence_rmse": 0.049448460799216096
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2267576899.6940813,
+            "mae": 0.019111772482575957,
+            "rmse": 0.047305728503490005,
+            "persistence_rmse": 0.047517588991534375
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2206864394.5147443,
+            "mae": 0.01809354798024156,
+            "rmse": 0.04546999465280743,
+            "persistence_rmse": 0.04597868220024948
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2114025021.6996782,
+            "mae": 0.016116420883298704,
+            "rmse": 0.04487288232501365,
+            "persistence_rmse": 0.045502138263431836
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12226873681.055794,
+            "mae": 0.022602696483057898,
+            "rmse": 0.05442045750923317,
+            "persistence_rmse": 0.05472618435451731
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2429467104.49797,
+            "mae": 0.02658596268209068,
+            "rmse": 0.055049415599859014,
+            "persistence_rmse": 0.05554757001408352
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10310659447.928934,
+            "mae": 0.006723192629475241,
+            "rmse": 0.028685707525839273,
+            "persistence_rmse": 0.028689916900457
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "1998-12-31"
+      },
+      "validation_period": {
+        "start": "1999-01-01",
+        "end": "2000-12-31"
+      },
+      "training_grid_cell_samples": 199923470,
+      "metrics": {
+        "grid_cell_samples": 43082756,
+        "mae": 0.016040583243344654,
+        "rmse": 0.045199608280153666,
+        "persistence_rmse": 0.0453711619032979
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3326200,
+          "mae": 0.0088149245652166,
+          "rmse": 0.03613743663301007,
+          "persistence_rmse": 0.036839096918321615
+        },
+        "02": {
+          "grid_cell_samples": 2909100,
+          "mae": 0.006919425986502548,
+          "rmse": 0.03487390826004025,
+          "persistence_rmse": 0.035537126781781295
+        },
+        "03": {
+          "grid_cell_samples": 3214215,
+          "mae": 0.010702532825193194,
+          "rmse": 0.03983496819330097,
+          "persistence_rmse": 0.03997884948730736
+        },
+        "04": {
+          "grid_cell_samples": 3336649,
+          "mae": 0.014209291019564248,
+          "rmse": 0.04211131498599354,
+          "persistence_rmse": 0.04224268905992689
+        },
+        "05": {
+          "grid_cell_samples": 3643128,
+          "mae": 0.01740279560680969,
+          "rmse": 0.04659270286581462,
+          "persistence_rmse": 0.04659289515712128
+        },
+        "06": {
+          "grid_cell_samples": 3685346,
+          "mae": 0.019264070393540215,
+          "rmse": 0.04837279202128327,
+          "persistence_rmse": 0.04815891706178128
+        },
+        "07": {
+          "grid_cell_samples": 3974312,
+          "mae": 0.020457686395719755,
+          "rmse": 0.05081704900501024,
+          "persistence_rmse": 0.05076520453348623
+        },
+        "08": {
+          "grid_cell_samples": 4026085,
+          "mae": 0.020159225823369,
+          "rmse": 0.05069927665100232,
+          "persistence_rmse": 0.050679600034656026
+        },
+        "09": {
+          "grid_cell_samples": 3845809,
+          "mae": 0.02013143054893943,
+          "rmse": 0.05122666041830393,
+          "persistence_rmse": 0.05125283894340885
+        },
+        "10": {
+          "grid_cell_samples": 3924814,
+          "mae": 0.018244235345670795,
+          "rmse": 0.047014606623771826,
+          "persistence_rmse": 0.04713132803178115
+        },
+        "11": {
+          "grid_cell_samples": 3781072,
+          "mae": 0.016860853968916494,
+          "rmse": 0.04294848484100765,
+          "persistence_rmse": 0.043421609480373984
+        },
+        "12": {
+          "grid_cell_samples": 3416026,
+          "mae": 0.014686375233365065,
+          "rmse": 0.0427161073183467,
+          "persistence_rmse": 0.04335005284600498
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25108071206.527283,
+          "mae": 0.01651737368716527,
+          "rmse": 0.045838871952331134,
+          "persistence_rmse": 0.046017651080164285
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1950384412.3093672,
+            "mae": 0.009304098086861626,
+            "rmse": 0.03702734319275602,
+            "persistence_rmse": 0.03774246856562372
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1710276350.9032502,
+            "mae": 0.007316248372256854,
+            "rmse": 0.03574449964659158,
+            "persistence_rmse": 0.03641708194839198
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1888675196.6426926,
+            "mae": 0.011264100318802622,
+            "rmse": 0.04099246807867119,
+            "persistence_rmse": 0.041136306911625765
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1953725470.4729948,
+            "mae": 0.014784339551576882,
+            "rmse": 0.0431462447229742,
+            "persistence_rmse": 0.04328626466168229
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2126838798.163266,
+            "mae": 0.01792888633191152,
+            "rmse": 0.04746460034816727,
+            "persistence_rmse": 0.04747850911495533
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2144453616.3284469,
+            "mae": 0.01974097594165092,
+            "rmse": 0.049071259690530424,
+            "persistence_rmse": 0.0488653115722616
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2306146069.846669,
+            "mae": 0.020895922078712995,
+            "rmse": 0.051395214444735944,
+            "persistence_rmse": 0.051349845566324104
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2332710974.5816193,
+            "mae": 0.020550166136451525,
+            "rmse": 0.0510820445122375,
+            "persistence_rmse": 0.05106650757001785
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2231669748.1681166,
+            "mae": 0.02052182055665633,
+            "rmse": 0.051502946578057235,
+            "persistence_rmse": 0.05152784006730607
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2277341131.2682924,
+            "mae": 0.018709633057418393,
+            "rmse": 0.04733495413439182,
+            "persistence_rmse": 0.047448516344737464
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2193814278.8268003,
+            "mae": 0.017477890645852052,
+            "rmse": 0.04353900156695962,
+            "persistence_rmse": 0.04401416806899481
+          },
+          "12": {
+            "evaluated_area_km2_samples": 1992035159.0157695,
+            "mae": 0.01534097348463048,
+            "rmse": 0.04351709937765756,
+            "persistence_rmse": 0.044161030240158876
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12290911166.89005,
+            "mae": 0.023223608560084225,
+            "rmse": 0.05559419899574014,
+            "persistence_rmse": 0.05584048669976059
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2441634061.4918785,
+            "mae": 0.025547230424750038,
+            "rmse": 0.05107694698332178,
+            "persistence_rmse": 0.05147250203938058
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10375525978.145336,
+            "mae": 0.006448164368207865,
+            "rmse": 0.028452686768283802,
+            "persistence_rmse": 0.02841193963771167
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2000-12-31"
+      },
+      "validation_period": {
+        "start": "2001-01-01",
+        "end": "2002-12-31"
+      },
+      "training_grid_cell_samples": 243006226,
+      "metrics": {
+        "grid_cell_samples": 43322537,
+        "mae": 0.015608439010669248,
+        "rmse": 0.044348879761917946,
+        "persistence_rmse": 0.044561373086172605
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3363723,
+          "mae": 0.008496260225883227,
+          "rmse": 0.03554550643910229,
+          "persistence_rmse": 0.03620084113056197
+        },
+        "02": {
+          "grid_cell_samples": 2859787,
+          "mae": 0.007387265502054591,
+          "rmse": 0.036721284990103034,
+          "persistence_rmse": 0.03732860081100924
+        },
+        "03": {
+          "grid_cell_samples": 3215688,
+          "mae": 0.010381707690199119,
+          "rmse": 0.039433161241010206,
+          "persistence_rmse": 0.03967854995718932
+        },
+        "04": {
+          "grid_cell_samples": 3340989,
+          "mae": 0.013709856491320525,
+          "rmse": 0.04181968108477877,
+          "persistence_rmse": 0.041813981068976755
+        },
+        "05": {
+          "grid_cell_samples": 3644374,
+          "mae": 0.016826597174033408,
+          "rmse": 0.04466146003334399,
+          "persistence_rmse": 0.04456426982192916
+        },
+        "06": {
+          "grid_cell_samples": 3686174,
+          "mae": 0.0187426814241827,
+          "rmse": 0.04734649468049746,
+          "persistence_rmse": 0.04738689453022839
+        },
+        "07": {
+          "grid_cell_samples": 3971004,
+          "mae": 0.019441023307732664,
+          "rmse": 0.048991704174579924,
+          "persistence_rmse": 0.04906739178527409
+        },
+        "08": {
+          "grid_cell_samples": 4028394,
+          "mae": 0.019733435472585326,
+          "rmse": 0.050854161587854024,
+          "persistence_rmse": 0.05088814731572955
+        },
+        "09": {
+          "grid_cell_samples": 3858868,
+          "mae": 0.01861694561834522,
+          "rmse": 0.04783868752738532,
+          "persistence_rmse": 0.0478241742060551
+        },
+        "10": {
+          "grid_cell_samples": 3924825,
+          "mae": 0.01827063873130003,
+          "rmse": 0.04662307874842331,
+          "persistence_rmse": 0.04683029277473353
+        },
+        "11": {
+          "grid_cell_samples": 3795026,
+          "mae": 0.016747799125716858,
+          "rmse": 0.043363590572479155,
+          "persistence_rmse": 0.04386598888831524
+        },
+        "12": {
+          "grid_cell_samples": 3633685,
+          "mae": 0.01461049351558875,
+          "rmse": 0.04156491676245341,
+          "persistence_rmse": 0.04224796531451826
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25246110661.72363,
+          "mae": 0.016080928084015764,
+          "rmse": 0.04501129498359257,
+          "persistence_rmse": 0.045231214889829535
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1971735127.3068738,
+            "mae": 0.008969910787897243,
+            "rmse": 0.03641960903790108,
+            "persistence_rmse": 0.03708696285288972
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1681240689.446945,
+            "mae": 0.007826754450199314,
+            "rmse": 0.03772211459461579,
+            "persistence_rmse": 0.03834096375485835
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1889514594.6284442,
+            "mae": 0.010923545246184444,
+            "rmse": 0.04053184264508918,
+            "persistence_rmse": 0.04077960857390071
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1956066943.0878017,
+            "mae": 0.01425424410402794,
+            "rmse": 0.04283249245172312,
+            "persistence_rmse": 0.04283144814620009
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2127475600.7154922,
+            "mae": 0.01735167917704544,
+            "rmse": 0.045545809090406876,
+            "persistence_rmse": 0.04545880118964753
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2144868231.5645325,
+            "mae": 0.019222949376232024,
+            "rmse": 0.04809276118703389,
+            "persistence_rmse": 0.04814554973089614
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2304380109.8704567,
+            "mae": 0.019849125732834837,
+            "rmse": 0.04954228923673209,
+            "persistence_rmse": 0.04962811520958735
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2333901653.8135653,
+            "mae": 0.02014029478853703,
+            "rmse": 0.05130298113652815,
+            "persistence_rmse": 0.05133946815514474
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2239145904.0864806,
+            "mae": 0.018995285793572413,
+            "rmse": 0.04816182000234178,
+            "persistence_rmse": 0.048148077891356215
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2277330834.834172,
+            "mae": 0.018765088546364255,
+            "rmse": 0.04703172307105981,
+            "persistence_rmse": 0.04723659236598313
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2201575669.299052,
+            "mae": 0.017339286555089716,
+            "rmse": 0.04393741988817403,
+            "persistence_rmse": 0.04444335086598602
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2118875303.0698328,
+            "mae": 0.015234894612980911,
+            "rmse": 0.042316743307591415,
+            "persistence_rmse": 0.043010438544710795
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12352507022.694775,
+            "mae": 0.022359540289551977,
+            "rmse": 0.0548129459331328,
+            "persistence_rmse": 0.05511151477256665
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2450572035.690581,
+            "mae": 0.025733097317895047,
+            "rmse": 0.05067733239922775,
+            "persistence_rmse": 0.051051454015464785
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10443031603.338282,
+            "mae": 0.006389303925987979,
+            "rmse": 0.027229429107650523,
+            "persistence_rmse": 0.0272335816057467
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2002-12-31"
+      },
+      "validation_period": {
+        "start": "2003-01-01",
+        "end": "2004-12-31"
+      },
+      "training_grid_cell_samples": 286328763,
+      "metrics": {
+        "grid_cell_samples": 43384227,
+        "mae": 0.01589964510546074,
+        "rmse": 0.04500379779645073,
+        "persistence_rmse": 0.045275634640573374
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3364312,
+          "mae": 0.00941847914412663,
+          "rmse": 0.03741602253045647,
+          "persistence_rmse": 0.03801565786724564
+        },
+        "02": {
+          "grid_cell_samples": 2911745,
+          "mae": 0.007797397647476368,
+          "rmse": 0.037472901405382106,
+          "persistence_rmse": 0.03811469994754481
+        },
+        "03": {
+          "grid_cell_samples": 3215730,
+          "mae": 0.010354770267759862,
+          "rmse": 0.03967546003380932,
+          "persistence_rmse": 0.039987852315820006
+        },
+        "04": {
+          "grid_cell_samples": 3335199,
+          "mae": 0.013844315132198503,
+          "rmse": 0.04208598540483307,
+          "persistence_rmse": 0.04219113174319681
+        },
+        "05": {
+          "grid_cell_samples": 3646965,
+          "mae": 0.017468412303756772,
+          "rmse": 0.04673694205906531,
+          "persistence_rmse": 0.04687213955057992
+        },
+        "06": {
+          "grid_cell_samples": 3687896,
+          "mae": 0.01915329201353332,
+          "rmse": 0.047990581654474763,
+          "persistence_rmse": 0.04796260082127283
+        },
+        "07": {
+          "grid_cell_samples": 3972280,
+          "mae": 0.019091324990400515,
+          "rmse": 0.04823842063594661,
+          "persistence_rmse": 0.04837052635548125
+        },
+        "08": {
+          "grid_cell_samples": 4027589,
+          "mae": 0.01987609668479002,
+          "rmse": 0.049908960883505576,
+          "persistence_rmse": 0.05002743967848308
+        },
+        "09": {
+          "grid_cell_samples": 3859220,
+          "mae": 0.019154846352645964,
+          "rmse": 0.04902913057493847,
+          "persistence_rmse": 0.04921428970295843
+        },
+        "10": {
+          "grid_cell_samples": 3920948,
+          "mae": 0.018423387613968247,
+          "rmse": 0.04698158431868363,
+          "persistence_rmse": 0.04722129470776515
+        },
+        "11": {
+          "grid_cell_samples": 3808923,
+          "mae": 0.017397455417770474,
+          "rmse": 0.04480968679120913,
+          "persistence_rmse": 0.04531777536946342
+        },
+        "12": {
+          "grid_cell_samples": 3633420,
+          "mae": 0.014662503082978298,
+          "rmse": 0.043212849423565,
+          "persistence_rmse": 0.043825953959724766
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25282283347.47613,
+          "mae": 0.0163538710145646,
+          "rmse": 0.04561834499626281,
+          "persistence_rmse": 0.04589601086018729
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1972049704.5400586,
+            "mae": 0.009876849771339704,
+            "rmse": 0.038145971713178094,
+            "persistence_rmse": 0.03875049623805516
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1711735264.7713468,
+            "mae": 0.008223038944868451,
+            "rmse": 0.03838239173286091,
+            "persistence_rmse": 0.03903182113093163
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1889530455.9351072,
+            "mae": 0.010844376539375805,
+            "rmse": 0.04066417839068733,
+            "persistence_rmse": 0.04097846295543567
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1952713075.9889824,
+            "mae": 0.014349394347762218,
+            "rmse": 0.04300583968470602,
+            "persistence_rmse": 0.043116690711880845
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2128882482.336649,
+            "mae": 0.017991417857988082,
+            "rmse": 0.04756355338263937,
+            "persistence_rmse": 0.04770922416041374
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2145807520.0385349,
+            "mae": 0.019595533444301615,
+            "rmse": 0.048621993568164594,
+            "persistence_rmse": 0.04860509885273107
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2305064962.3428874,
+            "mae": 0.019462014283217356,
+            "rmse": 0.04870852779887894,
+            "persistence_rmse": 0.04885177176621414
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2333486014.788112,
+            "mae": 0.020281125886610074,
+            "rmse": 0.05035267601624862,
+            "persistence_rmse": 0.05047525350467459
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2239354467.6187925,
+            "mae": 0.019562320475803422,
+            "rmse": 0.04940650679930712,
+            "persistence_rmse": 0.04959068002389731
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2275288388.226853,
+            "mae": 0.018898892225710454,
+            "rmse": 0.047376103644527566,
+            "persistence_rmse": 0.047613081963407244
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2209635634.1790366,
+            "mae": 0.01798756174851936,
+            "rmse": 0.04537498390821125,
+            "persistence_rmse": 0.045883038732365884
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2118735376.7097588,
+            "mae": 0.015249059254517737,
+            "rmse": 0.04393218785803574,
+            "persistence_rmse": 0.04455099358911494
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12371593593.912558,
+            "mae": 0.022488527544824263,
+            "rmse": 0.054636929236806485,
+            "persistence_rmse": 0.05496045564371988
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2454738183.5438986,
+            "mae": 0.025328854763285055,
+            "rmse": 0.05162136482550817,
+            "persistence_rmse": 0.05206614328828162
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10455951570.019638,
+            "mae": 0.0069882277175863615,
+            "rmse": 0.02956650888765508,
+            "persistence_rmse": 0.029712612841077075
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2004-12-31"
+      },
+      "validation_period": {
+        "start": "2005-01-01",
+        "end": "2006-12-31"
+      },
+      "training_grid_cell_samples": 329712990,
+      "metrics": {
+        "grid_cell_samples": 43126651,
+        "mae": 0.016262394691874345,
+        "rmse": 0.04697463109236856,
+        "persistence_rmse": 0.04732112494695797
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3364303,
+          "mae": 0.008204780057902228,
+          "rmse": 0.03723811452111075,
+          "persistence_rmse": 0.03790922587203443
+        },
+        "02": {
+          "grid_cell_samples": 2860446,
+          "mae": 0.006529960243044828,
+          "rmse": 0.0372767884668265,
+          "persistence_rmse": 0.038097679916062194
+        },
+        "03": {
+          "grid_cell_samples": 3215828,
+          "mae": 0.010140272096068161,
+          "rmse": 0.04097574119709545,
+          "persistence_rmse": 0.04135470097592277
+        },
+        "04": {
+          "grid_cell_samples": 3230664,
+          "mae": 0.014398202235746638,
+          "rmse": 0.045493612213941416,
+          "persistence_rmse": 0.04577964148393887
+        },
+        "05": {
+          "grid_cell_samples": 3643598,
+          "mae": 0.017521407901881367,
+          "rmse": 0.049170318912247046,
+          "persistence_rmse": 0.049372609206666966
+        },
+        "06": {
+          "grid_cell_samples": 3685933,
+          "mae": 0.019596607353447124,
+          "rmse": 0.050650710985544335,
+          "persistence_rmse": 0.05070225097772167
+        },
+        "07": {
+          "grid_cell_samples": 3885843,
+          "mae": 0.021023629534158993,
+          "rmse": 0.05286508515402752,
+          "persistence_rmse": 0.052995904203149036
+        },
+        "08": {
+          "grid_cell_samples": 4023147,
+          "mae": 0.020649503180109482,
+          "rmse": 0.052368146142490454,
+          "persistence_rmse": 0.052633818088082616
+        },
+        "09": {
+          "grid_cell_samples": 3857882,
+          "mae": 0.020195434185599877,
+          "rmse": 0.051248229704832074,
+          "persistence_rmse": 0.051455137164171806
+        },
+        "10": {
+          "grid_cell_samples": 3925295,
+          "mae": 0.019173083568970378,
+          "rmse": 0.048221501496596875,
+          "persistence_rmse": 0.04849477955425951
+        },
+        "11": {
+          "grid_cell_samples": 3808597,
+          "mae": 0.0178994888574126,
+          "rmse": 0.04544703585127314,
+          "persistence_rmse": 0.046058930868987394
+        },
+        "12": {
+          "grid_cell_samples": 3625115,
+          "mae": 0.014826763098193434,
+          "rmse": 0.044422108970953694,
+          "persistence_rmse": 0.045102555782632385
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25132355590.000305,
+          "mae": 0.01673380905231307,
+          "rmse": 0.04762358920139466,
+          "persistence_rmse": 0.047977206912483285
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1972048162.8031216,
+            "mae": 0.008635859073863841,
+            "rmse": 0.038079355381309264,
+            "persistence_rmse": 0.03876029707513502
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1681590782.6025517,
+            "mae": 0.006881019970575212,
+            "rmse": 0.03807334332656328,
+            "persistence_rmse": 0.03890324372797449
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1889587338.8176246,
+            "mae": 0.01065404028607881,
+            "rmse": 0.04207530698189381,
+            "persistence_rmse": 0.04245788102835921
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1891295443.4372528,
+            "mae": 0.014986988719168605,
+            "rmse": 0.04654176358197096,
+            "persistence_rmse": 0.046832698155208824
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2127090889.271845,
+            "mae": 0.018079044121565607,
+            "rmse": 0.050065647640743186,
+            "persistence_rmse": 0.05027829987502593
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2144757152.0184016,
+            "mae": 0.0200926694406597,
+            "rmse": 0.05137952909300589,
+            "persistence_rmse": 0.05144038513987066
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2255018920.9873133,
+            "mae": 0.02146698417849436,
+            "rmse": 0.05342764021036256,
+            "persistence_rmse": 0.05356879369070276
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2331037088.2877097,
+            "mae": 0.0210493135644737,
+            "rmse": 0.052754935538587955,
+            "persistence_rmse": 0.05302834240657689
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2238623375.3999043,
+            "mae": 0.020589133511644212,
+            "rmse": 0.05157340037932407,
+            "persistence_rmse": 0.051780784592605926
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2277596332.2046733,
+            "mae": 0.019663705901555004,
+            "rmse": 0.04861228311427652,
+            "persistence_rmse": 0.04888162431316943
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2209453427.923567,
+            "mae": 0.018505594157860145,
+            "rmse": 0.04602622355220615,
+            "persistence_rmse": 0.04663952521532345
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2114256676.2463586,
+            "mae": 0.015462969037759677,
+            "rmse": 0.04523407110809206,
+            "persistence_rmse": 0.0459235728388532
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12300423938.763123,
+            "mae": 0.023114644659247067,
+            "rmse": 0.056879886369734886,
+            "persistence_rmse": 0.05729082384785468
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2437856590.375875,
+            "mae": 0.025628667122227763,
+            "rmse": 0.05398626284545805,
+            "persistence_rmse": 0.05456587493391344
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10394075060.861326,
+            "mae": 0.007096455961393367,
+            "rmse": 0.031171204202758776,
+            "persistence_rmse": 0.031354530334308586
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2006-12-31"
+      },
+      "validation_period": {
+        "start": "2007-01-01",
+        "end": "2008-12-31"
+      },
+      "training_grid_cell_samples": 372839641,
+      "metrics": {
+        "grid_cell_samples": 42458949,
+        "mae": 0.015452397050318575,
+        "rmse": 0.04353864024241138,
+        "persistence_rmse": 0.0436674180102557
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3309498,
+          "mae": 0.009440706237553458,
+          "rmse": 0.036469705360998306,
+          "persistence_rmse": 0.037017101100230904
+        },
+        "02": {
+          "grid_cell_samples": 2910938,
+          "mae": 0.006962352878787071,
+          "rmse": 0.03336275238591782,
+          "persistence_rmse": 0.03380436622664174
+        },
+        "03": {
+          "grid_cell_samples": 2726751,
+          "mae": 0.010307911574531798,
+          "rmse": 0.03918378812559487,
+          "persistence_rmse": 0.03932166258409605
+        },
+        "04": {
+          "grid_cell_samples": 3338070,
+          "mae": 0.013769841078068204,
+          "rmse": 0.041595900493268924,
+          "persistence_rmse": 0.0414126612338999
+        },
+        "05": {
+          "grid_cell_samples": 3638606,
+          "mae": 0.016522948157870757,
+          "rmse": 0.04443306176829858,
+          "persistence_rmse": 0.04420611088050314
+        },
+        "06": {
+          "grid_cell_samples": 3684265,
+          "mae": 0.018153550250594792,
+          "rmse": 0.04609431999529182,
+          "persistence_rmse": 0.046011546505870665
+        },
+        "07": {
+          "grid_cell_samples": 3841402,
+          "mae": 0.01954706955350623,
+          "rmse": 0.04882618107486597,
+          "persistence_rmse": 0.048701741077236765
+        },
+        "08": {
+          "grid_cell_samples": 4026577,
+          "mae": 0.019715602282809278,
+          "rmse": 0.049970578726943396,
+          "persistence_rmse": 0.049922983225191425
+        },
+        "09": {
+          "grid_cell_samples": 3853377,
+          "mae": 0.017522425349599444,
+          "rmse": 0.04537376047640504,
+          "persistence_rmse": 0.045459291716749436
+        },
+        "10": {
+          "grid_cell_samples": 3790313,
+          "mae": 0.017510266699886805,
+          "rmse": 0.04503448369841321,
+          "persistence_rmse": 0.045218146576813625
+        },
+        "11": {
+          "grid_cell_samples": 3734657,
+          "mae": 0.015913561617000967,
+          "rmse": 0.04192343904791141,
+          "persistence_rmse": 0.04232831595622891
+        },
+        "12": {
+          "grid_cell_samples": 3604495,
+          "mae": 0.015455877508684698,
+          "rmse": 0.042378055517581864,
+          "persistence_rmse": 0.04310985941112507
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 24744326249.44686,
+          "mae": 0.01590079760742604,
+          "rmse": 0.04415556275925635,
+          "persistence_rmse": 0.044290584215715655
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1940714678.7778494,
+            "mae": 0.009953622086565639,
+            "rmse": 0.0373769862911127,
+            "persistence_rmse": 0.03793450555765527
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1711295325.1067019,
+            "mae": 0.0073730929145324345,
+            "rmse": 0.03428519184986892,
+            "persistence_rmse": 0.03473291360550442
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1602661046.1133332,
+            "mae": 0.010826754097320477,
+            "rmse": 0.04026177632725795,
+            "persistence_rmse": 0.04039854730358859
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1954420432.156949,
+            "mae": 0.01428640088993962,
+            "rmse": 0.04253197655824283,
+            "persistence_rmse": 0.042350890577345195
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2124360643.4370952,
+            "mae": 0.0170176155547724,
+            "rmse": 0.04526976618566688,
+            "persistence_rmse": 0.04505015880987536
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2143860107.5122094,
+            "mae": 0.018578637515628993,
+            "rmse": 0.04675293696908526,
+            "persistence_rmse": 0.046684592987798014
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2229517269.9900723,
+            "mae": 0.01995109570186223,
+            "rmse": 0.049370555909628064,
+            "persistence_rmse": 0.04925717860600368
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2332972778.6814327,
+            "mae": 0.020108513282715883,
+            "rmse": 0.0503682589968684,
+            "persistence_rmse": 0.05032910646426069
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2236214553.2317557,
+            "mae": 0.017868790750621977,
+            "rmse": 0.045684349953890736,
+            "persistence_rmse": 0.045770253094837385
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2199369672.4925313,
+            "mae": 0.01794274064463459,
+            "rmse": 0.045351058968855544,
+            "persistence_rmse": 0.045529238619111435
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2166759939.4363704,
+            "mae": 0.016456636584623454,
+            "rmse": 0.042433704879648426,
+            "persistence_rmse": 0.04284000780145683
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2102179802.510587,
+            "mae": 0.01607491580720919,
+            "rmse": 0.04309042737578304,
+            "persistence_rmse": 0.043830321705943184
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12111952660.771912,
+            "mae": 0.02195106215938956,
+            "rmse": 0.05308646042446839,
+            "persistence_rmse": 0.05327922286936876
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2406522302.593694,
+            "mae": 0.025833996505137617,
+            "rmse": 0.052075569542887105,
+            "persistence_rmse": 0.052369761424765376
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10225851286.081263,
+            "mae": 0.006396945086682657,
+            "rmse": 0.027234359715083367,
+            "persistence_rmse": 0.027186236638961997
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2008-12-31"
+      },
+      "validation_period": {
+        "start": "2009-01-01",
+        "end": "2010-12-31"
+      },
+      "training_grid_cell_samples": 415298590,
+      "metrics": {
+        "grid_cell_samples": 42688804,
+        "mae": 0.014820985833757294,
+        "rmse": 0.04194519728610948,
+        "persistence_rmse": 0.04198146256119138
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3340246,
+          "mae": 0.008371519913169525,
+          "rmse": 0.03342305969574786,
+          "persistence_rmse": 0.033883413283266786
+        },
+        "02": {
+          "grid_cell_samples": 2861068,
+          "mae": 0.005692011621885545,
+          "rmse": 0.03038118524697144,
+          "persistence_rmse": 0.03068571491199444
+        },
+        "03": {
+          "grid_cell_samples": 3123683,
+          "mae": 0.009603096649759663,
+          "rmse": 0.03713840227333742,
+          "persistence_rmse": 0.03714076060185538
+        },
+        "04": {
+          "grid_cell_samples": 3175725,
+          "mae": 0.013611116508297454,
+          "rmse": 0.04121528032161955,
+          "persistence_rmse": 0.04102757747650892
+        },
+        "05": {
+          "grid_cell_samples": 3647532,
+          "mae": 0.016250549752828452,
+          "rmse": 0.04347394348840849,
+          "persistence_rmse": 0.04322084491910863
+        },
+        "06": {
+          "grid_cell_samples": 3503321,
+          "mae": 0.01787274643394306,
+          "rmse": 0.04454677898291438,
+          "persistence_rmse": 0.04440828415364657
+        },
+        "07": {
+          "grid_cell_samples": 3935330,
+          "mae": 0.018287737349579,
+          "rmse": 0.04626947658232967,
+          "persistence_rmse": 0.046223017487420026
+        },
+        "08": {
+          "grid_cell_samples": 3893862,
+          "mae": 0.01864882565524606,
+          "rmse": 0.047110571899880715,
+          "persistence_rmse": 0.04699935908006924
+        },
+        "09": {
+          "grid_cell_samples": 3861680,
+          "mae": 0.018388574713873847,
+          "rmse": 0.04775726881017066,
+          "persistence_rmse": 0.047566403479091975
+        },
+        "10": {
+          "grid_cell_samples": 3899919,
+          "mae": 0.016562880558386197,
+          "rmse": 0.04253537231403856,
+          "persistence_rmse": 0.042558805096281765
+        },
+        "11": {
+          "grid_cell_samples": 3812432,
+          "mae": 0.015626889633237218,
+          "rmse": 0.04029982205723532,
+          "persistence_rmse": 0.040661618906752295
+        },
+        "12": {
+          "grid_cell_samples": 3634006,
+          "mae": 0.014740222604394308,
+          "rmse": 0.0408474944718297,
+          "persistence_rmse": 0.04136088631466104
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 24876225982.847626,
+          "mae": 0.015248368046517616,
+          "rmse": 0.04253960028409645,
+          "persistence_rmse": 0.04258216742080507
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1957754502.150746,
+            "mae": 0.008824026293382171,
+            "rmse": 0.03425409829027568,
+            "persistence_rmse": 0.03472290114697556
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1681924580.7152681,
+            "mae": 0.006025903880058026,
+            "rmse": 0.031225191571457766,
+            "persistence_rmse": 0.031534375692577894
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1835478333.6945927,
+            "mae": 0.010090934265331395,
+            "rmse": 0.03820208387020334,
+            "persistence_rmse": 0.03820210758813727
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1859200093.658985,
+            "mae": 0.014132473827120302,
+            "rmse": 0.04218787002223944,
+            "persistence_rmse": 0.04200268247385243
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2129186411.5522268,
+            "mae": 0.016717872239040737,
+            "rmse": 0.0442395517086652,
+            "persistence_rmse": 0.043993627867395885
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2038415823.6440005,
+            "mae": 0.018286497506186414,
+            "rmse": 0.04516493234215254,
+            "persistence_rmse": 0.04504206154346971
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2283244369.390165,
+            "mae": 0.018650406672992798,
+            "rmse": 0.046752474890932746,
+            "persistence_rmse": 0.04671598424970829
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2256395782.4245744,
+            "mae": 0.018986969070273394,
+            "rmse": 0.04747419980533452,
+            "persistence_rmse": 0.04736960932680146
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2240650076.4009833,
+            "mae": 0.018743605504771724,
+            "rmse": 0.04805842632130526,
+            "persistence_rmse": 0.04786850543628976
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2263454731.147322,
+            "mae": 0.016995799071007685,
+            "rmse": 0.04287176766206905,
+            "persistence_rmse": 0.042892932083698834
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2211473364.429011,
+            "mae": 0.016199251419223633,
+            "rmse": 0.04087253577546226,
+            "persistence_rmse": 0.041238986613051566
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2119047913.6397772,
+            "mae": 0.01534975545390009,
+            "rmse": 0.04156335916783777,
+            "persistence_rmse": 0.04208414210080533
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12169846927.98276,
+            "mae": 0.021248217127668584,
+            "rmse": 0.05134302809230206,
+            "persistence_rmse": 0.05143492883998261
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2414147016.6186166,
+            "mae": 0.023442479713097843,
+            "rmse": 0.04868355620378442,
+            "persistence_rmse": 0.04892007745699583
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10292232038.24625,
+            "mae": 0.006231953065056286,
+            "rmse": 0.02647428722916793,
+            "persistence_rmse": 0.02632607437054349
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2010-12-31"
+      },
+      "validation_period": {
+        "start": "2011-01-01",
+        "end": "2012-12-31"
+      },
+      "training_grid_cell_samples": 457987394,
+      "metrics": {
+        "grid_cell_samples": 43408164,
+        "mae": 0.014680102284787883,
+        "rmse": 0.041872114227807684,
+        "persistence_rmse": 0.041908006477677236
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3365426,
+          "mae": 0.007585136209957301,
+          "rmse": 0.03191490734915592,
+          "persistence_rmse": 0.032271654985713286
+        },
+        "02": {
+          "grid_cell_samples": 2912180,
+          "mae": 0.00566660795924229,
+          "rmse": 0.029749352045877957,
+          "persistence_rmse": 0.030095051551192506
+        },
+        "03": {
+          "grid_cell_samples": 3216444,
+          "mae": 0.009656433735903372,
+          "rmse": 0.03659031039266702,
+          "persistence_rmse": 0.03669557553675253
+        },
+        "04": {
+          "grid_cell_samples": 3343812,
+          "mae": 0.013320400781883752,
+          "rmse": 0.040636182763216684,
+          "persistence_rmse": 0.04048111228873304
+        },
+        "05": {
+          "grid_cell_samples": 3647532,
+          "mae": 0.016408492838259653,
+          "rmse": 0.04407802893414648,
+          "persistence_rmse": 0.04391233206810006
+        },
+        "06": {
+          "grid_cell_samples": 3688388,
+          "mae": 0.01790241468383482,
+          "rmse": 0.04611245242947214,
+          "persistence_rmse": 0.045962912142932466
+        },
+        "07": {
+          "grid_cell_samples": 3975072,
+          "mae": 0.018826284874761262,
+          "rmse": 0.047261217812269406,
+          "persistence_rmse": 0.04721362709741671
+        },
+        "08": {
+          "grid_cell_samples": 4029880,
+          "mae": 0.018503892225947883,
+          "rmse": 0.04669146671876742,
+          "persistence_rmse": 0.04658617000564526
+        },
+        "09": {
+          "grid_cell_samples": 3861680,
+          "mae": 0.01816610687841767,
+          "rmse": 0.04662723663646544,
+          "persistence_rmse": 0.046548017994279954
+        },
+        "10": {
+          "grid_cell_samples": 3926474,
+          "mae": 0.01663202175306099,
+          "rmse": 0.04301977107400515,
+          "persistence_rmse": 0.04297318817799635
+        },
+        "11": {
+          "grid_cell_samples": 3807270,
+          "mae": 0.01564086549522936,
+          "rmse": 0.04090606317434429,
+          "persistence_rmse": 0.04117216732398779
+        },
+        "12": {
+          "grid_cell_samples": 3634006,
+          "mae": 0.013570381659953556,
+          "rmse": 0.0394171854930285,
+          "persistence_rmse": 0.03987860676993132
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25295124233.259464,
+          "mae": 0.015109526893291212,
+          "rmse": 0.04248539769333926,
+          "persistence_rmse": 0.042526995880709476
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1972646567.7405915,
+            "mae": 0.007983199801412192,
+            "rmse": 0.0327019897117357,
+            "persistence_rmse": 0.03306558290870402
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1711970543.7780046,
+            "mae": 0.005988068770920141,
+            "rmse": 0.030542996814618563,
+            "persistence_rmse": 0.030895854881377947
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1889918895.9505708,
+            "mae": 0.010143080755816459,
+            "rmse": 0.03764736372002454,
+            "persistence_rmse": 0.037754343611312774
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1957578261.9699075,
+            "mae": 0.013857896870765923,
+            "rmse": 0.041677341375610105,
+            "persistence_rmse": 0.041525187853866684
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2129186411.5522268,
+            "mae": 0.01691721537895952,
+            "rmse": 0.04494705758432838,
+            "persistence_rmse": 0.04479167887730734
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2146069361.8288908,
+            "mae": 0.018344201908700623,
+            "rmse": 0.046809294344436335,
+            "persistence_rmse": 0.04667213678099729
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2306544756.399758,
+            "mae": 0.019225806095070734,
+            "rmse": 0.04779302581015956,
+            "persistence_rmse": 0.047755878131038536
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2334685423.4812937,
+            "mae": 0.018875942306685673,
+            "rmse": 0.04708445467596378,
+            "persistence_rmse": 0.04698537552757831
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2240650076.4009833,
+            "mae": 0.018528353148936763,
+            "rmse": 0.046922348233309784,
+            "persistence_rmse": 0.046842722767724825
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2278212922.6617084,
+            "mae": 0.01705436131110062,
+            "rmse": 0.043339447904074055,
+            "persistence_rmse": 0.043287883864128386
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2208613097.8557663,
+            "mae": 0.016197331562788134,
+            "rmse": 0.041463628312629223,
+            "persistence_rmse": 0.04173061606715617
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2119047913.6397772,
+            "mae": 0.014136229642364773,
+            "rmse": 0.040142211340366815,
+            "persistence_rmse": 0.04060800696662872
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12372770957.962193,
+            "mae": 0.02123281160897326,
+            "rmse": 0.05161586315860633,
+            "persistence_rmse": 0.051700537880348674
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2454738183.5438986,
+            "mae": 0.0231263062961547,
+            "rmse": 0.0484825948425757,
+            "persistence_rmse": 0.04870337761612864
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10467615091.753368,
+            "mae": 0.005991777246385273,
+            "rmse": 0.025719795148192916,
+            "persistence_rmse": 0.02558673825092535
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2012-12-31"
+      },
+      "validation_period": {
+        "start": "2013-01-01",
+        "end": "2014-12-31"
+      },
+      "training_grid_cell_samples": 501395558,
+      "metrics": {
+        "grid_cell_samples": 43331768,
+        "mae": 0.015215934184903059,
+        "rmse": 0.04262467244022327,
+        "persistence_rmse": 0.04268884554790735
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3365417,
+          "mae": 0.008567568462529374,
+          "rmse": 0.03327782302227774,
+          "persistence_rmse": 0.03362481025687428
+        },
+        "02": {
+          "grid_cell_samples": 2861068,
+          "mae": 0.007038551799371454,
+          "rmse": 0.03404250869946509,
+          "persistence_rmse": 0.03443863040945305
+        },
+        "03": {
+          "grid_cell_samples": 3214191,
+          "mae": 0.01076282382674451,
+          "rmse": 0.03867775416052452,
+          "persistence_rmse": 0.03880095539724384
+        },
+        "04": {
+          "grid_cell_samples": 3315828,
+          "mae": 0.013902148931668506,
+          "rmse": 0.04105542797299541,
+          "persistence_rmse": 0.04099004228365203
+        },
+        "05": {
+          "grid_cell_samples": 3647529,
+          "mae": 0.01696503247987257,
+          "rmse": 0.04557532378320073,
+          "persistence_rmse": 0.04545732226014952
+        },
+        "06": {
+          "grid_cell_samples": 3688388,
+          "mae": 0.0184310053869853,
+          "rmse": 0.04674760482294135,
+          "persistence_rmse": 0.046684151392649975
+        },
+        "07": {
+          "grid_cell_samples": 3975072,
+          "mae": 0.018488976738497802,
+          "rmse": 0.04660284975778376,
+          "persistence_rmse": 0.04659012676425436
+        },
+        "08": {
+          "grid_cell_samples": 4029751,
+          "mae": 0.018889778719057677,
+          "rmse": 0.04805398032622274,
+          "persistence_rmse": 0.047944762007252735
+        },
+        "09": {
+          "grid_cell_samples": 3861680,
+          "mae": 0.018824774728248967,
+          "rmse": 0.04769576951691577,
+          "persistence_rmse": 0.04755169100631751
+        },
+        "10": {
+          "grid_cell_samples": 3926490,
+          "mae": 0.01715676606145469,
+          "rmse": 0.04363648700994298,
+          "persistence_rmse": 0.04363447904948907
+        },
+        "11": {
+          "grid_cell_samples": 3812348,
+          "mae": 0.015068901461907402,
+          "rmse": 0.03900458529169136,
+          "persistence_rmse": 0.039297898214539786
+        },
+        "12": {
+          "grid_cell_samples": 3634006,
+          "mae": 0.014497752532920988,
+          "rmse": 0.039434786710273194,
+          "persistence_rmse": 0.03992970595549946
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25250238794.2456,
+          "mae": 0.01563942222056326,
+          "rmse": 0.043197058932683656,
+          "persistence_rmse": 0.04326780354046474
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1972641787.997205,
+            "mae": 0.009009675846207918,
+            "rmse": 0.034086526215203465,
+            "persistence_rmse": 0.03444054018631816
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1681924580.7152681,
+            "mae": 0.0074073283436986185,
+            "rmse": 0.03489279481269958,
+            "persistence_rmse": 0.03529626631519672
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1888609815.6703234,
+            "mae": 0.011285470671715814,
+            "rmse": 0.03972939223936515,
+            "persistence_rmse": 0.03985316708373264
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1941289887.0943658,
+            "mae": 0.014415592481556824,
+            "rmse": 0.041992417415613874,
+            "persistence_rmse": 0.04193215500669403
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2129184621.9306495,
+            "mae": 0.01745723076053644,
+            "rmse": 0.04638705190259133,
+            "persistence_rmse": 0.046278631027849036
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2146069361.8288908,
+            "mae": 0.01883309955499487,
+            "rmse": 0.04733492056842701,
+            "persistence_rmse": 0.04728427017071072
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2306544756.399758,
+            "mae": 0.01883507193331901,
+            "rmse": 0.047036273671509095,
+            "persistence_rmse": 0.04703424739113553
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2334622527.1023664,
+            "mae": 0.019215059429396365,
+            "rmse": 0.04836180325292181,
+            "persistence_rmse": 0.04825830885624083
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2240650076.4009833,
+            "mae": 0.019153331657255104,
+            "rmse": 0.047939071742447735,
+            "persistence_rmse": 0.047797396442369175
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2278221394.0533767,
+            "mae": 0.017572580903127577,
+            "rmse": 0.043950506510740076,
+            "persistence_rmse": 0.04394376485223527
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2211432071.412644,
+            "mae": 0.015600870813407223,
+            "rmse": 0.03951296448342383,
+            "persistence_rmse": 0.03980520806548577
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2119047913.6397772,
+            "mae": 0.015114315302631976,
+            "rmse": 0.04015337511151852,
+            "persistence_rmse": 0.040656316118647125
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12347247783.925898,
+            "mae": 0.02185804169090208,
+            "rmse": 0.05200297049443574,
+            "persistence_rmse": 0.05213335408085151
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2450700468.851191,
+            "mae": 0.023250779418046073,
+            "rmse": 0.04846876777777485,
+            "persistence_rmse": 0.04872698452918609
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10452290541.468512,
+            "mae": 0.0065087927429333834,
+            "rmse": 0.027611163126052378,
+            "persistence_rmse": 0.02748144100333941
+          }
+        }
+      }
+    },
+    {
+      "training_period": {
+        "start": "1989-01-01",
+        "end": "2014-12-31"
+      },
+      "validation_period": {
+        "start": "2015-01-01",
+        "end": "2016-12-31"
+      },
+      "training_grid_cell_samples": 544727326,
+      "metrics": {
+        "grid_cell_samples": 42989827,
+        "mae": 0.01495725706880259,
+        "rmse": 0.04230251644051426,
+        "persistence_rmse": 0.0423896062620227
+      },
+      "by_target_month": {
+        "01": {
+          "grid_cell_samples": 3365426,
+          "mae": 0.00868792823924594,
+          "rmse": 0.03392734085987224,
+          "persistence_rmse": 0.034346443726577476
+        },
+        "02": {
+          "grid_cell_samples": 2912180,
+          "mae": 0.005829479707945547,
+          "rmse": 0.029215172748838843,
+          "persistence_rmse": 0.02952905704364337
+        },
+        "03": {
+          "grid_cell_samples": 3216200,
+          "mae": 0.010241036956276239,
+          "rmse": 0.03829788915470047,
+          "persistence_rmse": 0.03836651513764213
+        },
+        "04": {
+          "grid_cell_samples": 3335140,
+          "mae": 0.014176858804292399,
+          "rmse": 0.041917999250035975,
+          "persistence_rmse": 0.04193415945429479
+        },
+        "05": {
+          "grid_cell_samples": 3518316,
+          "mae": 0.01647645285167699,
+          "rmse": 0.04326689771615838,
+          "persistence_rmse": 0.043189318270583955
+        },
+        "06": {
+          "grid_cell_samples": 3664823,
+          "mae": 0.018124980779328052,
+          "rmse": 0.04576176898293326,
+          "persistence_rmse": 0.045785166881525036
+        },
+        "07": {
+          "grid_cell_samples": 3971460,
+          "mae": 0.018926392356710994,
+          "rmse": 0.04778177516121919,
+          "persistence_rmse": 0.047598002272933475
+        },
+        "08": {
+          "grid_cell_samples": 3826664,
+          "mae": 0.01959733121722361,
+          "rmse": 0.0491341977167508,
+          "persistence_rmse": 0.04905755556692081
+        },
+        "09": {
+          "grid_cell_samples": 3840482,
+          "mae": 0.01848421698338661,
+          "rmse": 0.04698385897485479,
+          "persistence_rmse": 0.04699964863622719
+        },
+        "10": {
+          "grid_cell_samples": 3923868,
+          "mae": 0.017100171635942036,
+          "rmse": 0.043213609045765114,
+          "persistence_rmse": 0.04325419819963806
+        },
+        "11": {
+          "grid_cell_samples": 3812411,
+          "mae": 0.015178714474632964,
+          "rmse": 0.04003504703231344,
+          "persistence_rmse": 0.04039129949010961
+        },
+        "12": {
+          "grid_cell_samples": 3602857,
+          "mae": 0.012786836934737944,
+          "rmse": 0.03911081513051972,
+          "persistence_rmse": 0.03957328631129981
+        }
+      },
+      "area_weighted": {
+        "overall": {
+          "evaluated_area_km2_samples": 25053078947.98549,
+          "mae": 0.015400933257525845,
+          "rmse": 0.04293475822343553,
+          "persistence_rmse": 0.0430274433653454
+        },
+        "by_target_month": {
+          "01": {
+            "evaluated_area_km2_samples": 1972646567.7405915,
+            "mae": 0.009140134511626855,
+            "rmse": 0.0347540742225751,
+            "persistence_rmse": 0.035181402975336784
+          },
+          "02": {
+            "evaluated_area_km2_samples": 1711970543.7780046,
+            "mae": 0.006149383375831459,
+            "rmse": 0.029970536253360203,
+            "persistence_rmse": 0.030289533887965056
+          },
+          "03": {
+            "evaluated_area_km2_samples": 1889772164.7260134,
+            "mae": 0.010748726681864945,
+            "rmse": 0.03934926578297687,
+            "persistence_rmse": 0.03941704590979362
+          },
+          "04": {
+            "evaluated_area_km2_samples": 1952390323.434204,
+            "mae": 0.014704121161947718,
+            "rmse": 0.04285005768352621,
+            "persistence_rmse": 0.04287210461427599
+          },
+          "05": {
+            "evaluated_area_km2_samples": 2054399250.542225,
+            "mae": 0.01695247268833869,
+            "rmse": 0.04405843437545091,
+            "persistence_rmse": 0.04399294365015309
+          },
+          "06": {
+            "evaluated_area_km2_samples": 2132769100.613399,
+            "mae": 0.018552170357010636,
+            "rmse": 0.04641907163987765,
+            "persistence_rmse": 0.04645508517406325
+          },
+          "07": {
+            "evaluated_area_km2_samples": 2304443600.362814,
+            "mae": 0.01931438549459098,
+            "rmse": 0.04831622446595557,
+            "persistence_rmse": 0.0481391544444346
+          },
+          "08": {
+            "evaluated_area_km2_samples": 2217218931.6053143,
+            "mae": 0.020004421680756976,
+            "rmse": 0.04959424150510035,
+            "persistence_rmse": 0.04952115791623937
+          },
+          "09": {
+            "evaluated_area_km2_samples": 2228893791.5454135,
+            "mae": 0.018896968582382045,
+            "rmse": 0.047397331544694395,
+            "persistence_rmse": 0.04741314418536216
+          },
+          "10": {
+            "evaluated_area_km2_samples": 2276686933.352569,
+            "mae": 0.017573188310546207,
+            "rmse": 0.043629891196417504,
+            "persistence_rmse": 0.0436670620648952
+          },
+          "11": {
+            "evaluated_area_km2_samples": 2211462981.7119417,
+            "mae": 0.0157335170982075,
+            "rmse": 0.04062111296233019,
+            "persistence_rmse": 0.04097702984991368
+          },
+          "12": {
+            "evaluated_area_km2_samples": 2100424758.5730307,
+            "mae": 0.013369837669834121,
+            "rmse": 0.039905099913060196,
+            "persistence_rmse": 0.04037446462626839
+          }
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "evaluated_area_km2_samples": 12267256128.81583,
+            "mae": 0.021589105515611273,
+            "rmse": 0.052308747277782695,
+            "persistence_rmse": 0.05244293059509379
+          },
+          "80S_to_70S": {
+            "evaluated_area_km2_samples": 2432404089.9255776,
+            "mae": 0.024107007168512645,
+            "rmse": 0.04944479590587441,
+            "persistence_rmse": 0.04971251787162708
+          },
+          "north_of_60S": {
+            "evaluated_area_km2_samples": 10353418729.244087,
+            "mae": 0.006023491237025858,
+            "rmse": 0.02538217913058127,
+            "persistence_rmse": 0.02531093680036821
+          }
+        }
+      }
+    }
+  ],
+  "warning": "Retrospective SIC research diagnostic only. Cell-pooled scores give each valid cell equal weight; area-weighted scores estimate ground area from the native polar projection. Neither metric is route-scale or navigational validation.",
+  "area_weighted": {
+    "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at each pixel centre",
+    "area_unit": "km2",
+    "overall": {
+      "evaluated_area_km2_samples": 250954815246.99512,
+      "mae": 0.015941944698144996,
+      "rmse": 0.044537689290751775,
+      "persistence_rmse": 0.04470641915864322
+    },
+    "by_target_month": {
+      "01": {
+        "evaluated_area_km2_samples": 19651342585.164043,
+        "mae": 0.009018941417132026,
+        "rmse": 0.035951116229567204,
+        "persistence_rmse": 0.036518322819947435
+      },
+      "02": {
+        "evaluated_area_km2_samples": 16965148125.470196,
+        "mae": 0.0070039769062661475,
+        "rmse": 0.03478325820349561,
+        "persistence_rmse": 0.03532166083388562
+      },
+      "03": {
+        "evaluated_area_km2_samples": 18449804141.018414,
+        "mae": 0.010774124807026485,
+        "rmse": 0.04016903523337345,
+        "persistence_rmse": 0.04033815566120866
+      },
+      "04": {
+        "evaluated_area_km2_samples": 19375448293.688538,
+        "mae": 0.014422735525620978,
+        "rmse": 0.043053341602608514,
+        "persistence_rmse": 0.0430592366354477
+      },
+      "05": {
+        "evaluated_area_km2_samples": 21204178773.105217,
+        "mae": 0.017460425823966622,
+        "rmse": 0.04633425364767739,
+        "persistence_rmse": 0.046286865496220776
+      },
+      "06": {
+        "evaluated_area_km2_samples": 21330233665.98882,
+        "mae": 0.019159250163365865,
+        "rmse": 0.047968544593540906,
+        "persistence_rmse": 0.04792754982770121
+      },
+      "07": {
+        "evaluated_area_km2_samples": 22902459555.582962,
+        "mae": 0.0197534163125663,
+        "rmse": 0.04915559032323836,
+        "persistence_rmse": 0.049166185452395886
+      },
+      "08": {
+        "evaluated_area_km2_samples": 23023358278.1765,
+        "mae": 0.019961111131046958,
+        "rmse": 0.04990402908053681,
+        "persistence_rmse": 0.04991488649451444
+      },
+      "09": {
+        "evaluated_area_km2_samples": 22333001890.531693,
+        "mae": 0.019268415738295283,
+        "rmse": 0.0486378062833017,
+        "persistence_rmse": 0.04865215955159607
+      },
+      "10": {
+        "evaluated_area_km2_samples": 22671079239.935577,
+        "mae": 0.01823003842440565,
+        "rmse": 0.0457254550714827,
+        "persistence_rmse": 0.04585100448255447
+      },
+      "11": {
+        "evaluated_area_km2_samples": 22031084859.588932,
+        "mae": 0.01695921929283876,
+        "rmse": 0.04297929895763386,
+        "persistence_rmse": 0.04341356217241999
+      },
+      "12": {
+        "evaluated_area_km2_samples": 21017675838.74435,
+        "mae": 0.015144271977378219,
+        "rmse": 0.04250861801651118,
+        "persistence_rmse": 0.04310850704487756
+      }
+    },
+    "by_latitude_band": {
+      "70S_to_60S": {
+        "evaluated_area_km2_samples": 122811383862.7749,
+        "mae": 0.022167546716341736,
+        "rmse": 0.05370176681597338,
+        "persistence_rmse": 0.053927072308365465
+      },
+      "80S_to_70S": {
+        "evaluated_area_km2_samples": 24372780037.133183,
+        "mae": 0.024856976786150144,
+        "rmse": 0.05100020167492129,
+        "persistence_rmse": 0.05136141877430358
+      },
+      "north_of_60S": {
+        "evaluated_area_km2_samples": 103770651347.087,
+        "mae": 0.00648012767577241,
+        "rmse": 0.027805189142564198,
+        "persistence_rmse": 0.027787792127153484
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061c29">
+  <meta name="description" content="Southern Passage brings Antarctic sea-ice observations, voyage scenarios, and research evidence into one planning workspace. Scenario routes are illustrative, not navigation guidance.">
+  <title>Southern Passage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refinement.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="orbital.css">
+  <link rel="stylesheet" href="marine.css">
+</head>
+<body>
+  <div class="experience-loader" id="experience-loader" aria-hidden="true"><span class="experience-loader__mark">SOUTHERN<span>PASSAGE</span></span><span class="experience-loader__line"></span><span class="experience-loader__status">OPENING THE SOUTHERN OCEAN</span></div>
+  <div class="launch-screen" id="launch-screen" role="dialog" aria-modal="true" aria-labelledby="launch-title">
+    <div class="launch-screen__image" aria-hidden="true"></div>
+    <img class="launch-screen__iceberg" src="hero-iceberg.png" alt="" fetchpriority="high">
+    <div class="launch-screen__shade" aria-hidden="true"></div>
+    <span class="launch-screen__brand">SOUTHERN PASSAGE</span>
+    <div class="launch-screen__content"><h1 id="launch-title">Read the ice.<br>Find the passage.</h1><p>Voyage intelligence for the Southern Ocean.</p><button id="launch-enter" type="button">EXPLORE THE PASSAGE <span aria-hidden="true">↗</span></button><a id="launch-skip" href="#workspace">GO TO WORKSPACE</a></div>
+    <span class="launch-screen__edition">SOUTHERN OCEAN / ANTARCTICA</span>
+  </div>
+  <section class="experience" id="experience" aria-label="Southern Passage introduction">
+    <div class="experience-stage">
+      <div class="experience-image" role="img" aria-label="Illustrative Southern Ocean at twilight"></div>
+      <div class="experience-sea-motion" aria-hidden="true"></div>
+      <div class="experience-vignette" aria-hidden="true"></div>
+      <img class="experience-iceberg" src="hero-iceberg.png" alt="" decoding="async">
+      <div class="experience-coordinates" aria-hidden="true"><span>66° S / SOUTHERN OCEAN</span></div>
+      <header class="experience-header"><a href="#experience" class="experience-brand" aria-label="Southern Passage introduction">SOUTHERN<span>PASSAGE</span></a><span class="experience-header__status">SEA ICE / VOYAGE CONTEXT</span><a class="experience-header__action" href="#workspace">OPEN WORKSPACE <span aria-hidden="true">↗</span></a></header>
+      <div class="experience-title"><p class="experience-index">01 / 03 &nbsp;—&nbsp; THE SOUTHERN OCEAN</p><h1>THE ICE<br>IS MOVING.</h1><p class="experience-title__body">Know what surrounds your passage.</p></div>
+      <div class="experience-second"><p>02 / 03 &nbsp;—&nbsp; THE VOYAGE</p><strong>SEE WHAT<br>LIES AHEAD.</strong><span>Follow a route through changing ice.</span></div>
+      <div class="experience-third"><p>03 / 03 &nbsp;—&nbsp; THE DECISION</p><strong>CHOOSE WITH<br>EVIDENCE.</strong><span>Compare paths, inspect observations, review together.</span><a href="#workspace">ENTER THE WORKSPACE <span aria-hidden="true">↗</span></a></div>
+      <div class="experience-footer"><span>ILLUSTRATIVE VISUAL / DATED DATA IN WORKSPACE</span><span class="experience-footer__prompt">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>ANTARCTICA / 66° SOUTH</span></div>
+      <div class="experience-progress" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+  <div class="app-shell" id="workspace">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Southern Passage home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 3 31 29H5L18 3Z"/><path d="M11 24h14M14 18h8"/></svg></span>
+        <span class="brand-name">SOUTHERN<span>PASSAGE</span></span>
+      </a>
+      <div class="top-actions"><span class="demo-label" aria-hidden="true">SCENARIO WORKSPACE</span><button class="icon-button" id="about-button" aria-label="About Southern Passage" title="About Southern Passage"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></button></div>
+    </header>
+
+    <main>
+      <nav class="workspace-nav" aria-label="Work areas">
+        <button class="workspace-nav__item is-active" id="nav-scenario" type="button" data-workspace-target="scenario" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="2"/><path d="M8 19h9.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="2"/></svg><span>Scenario</span></button>
+        <button class="workspace-nav__item" id="nav-observations" type="button" data-workspace-target="observations" disabled aria-disabled="true" title="Checking the satellite archive"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13.5 6.5-3.15-3.15a1.2 1.2 0 0 0-1.7 0l-2.3 2.3a1.2 1.2 0 0 0 0 1.7L9.5 10.5m7-3L19 5m-1.5 5.5 3.15 3.15a1.2 1.2 0 0 1 0 1.7l-2.3 2.3a1.2 1.2 0 0 1-1.7 0L13.5 14.5M9 21a6 6 0 0 0-6-6"/><path d="M9.35 10.65a1.2 1.2 0 0 0 0 1.7l2.3 2.3a1.2 1.2 0 0 0 1.7 0l4.3-4.3a1.2 1.2 0 0 0 0-1.7l-2.3-2.3a1.2 1.2 0 0 0-1.7 0z"/></svg><span>Observations</span></button>
+        <button class="workspace-nav__item" id="nav-reviews" type="button" data-workspace-target="reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Reviews</span></button>
+      </nav>
+      <section class="workspace-head">
+        <div><h1 id="page-title">Scenario routes<em id="page-title-accent"></em></h1><p class="intro" id="page-intro">Explore illustrative routes and a simulated vessel replay. No live tracking or route clearance.</p></div>
+        <div class="voyage-summary"><div class="voyage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17 18 5M8 5h10v10"/></svg></div><div><strong id="route-endpoints-label">Rothera → Halley VI</strong><span class="subtle">Scenario route</span></div></div>
+      </section>
+
+      <section class="dashboard" aria-label="Voyage planning workspace">
+        <div class="map-panel panel">
+          <div class="map-topline">
+            <div class="map-title"><span class="status-pip"></span><div><strong id="map-title-text">Ice scenario</strong><span id="map-subtitle-text">Antarctic Peninsula</span></div></div>
+            <div class="map-controls"><button class="control-button" id="observations-button" type="button" aria-pressed="false" disabled>OBSERVED DATA</button><span class="control-button projection-label"><span class="projection-dot" aria-hidden="true"></span> POLAR VIEW</span><button class="control-button" id="fullscreen-button" title="Expand map" aria-label="Expand map"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M6 3H3v3M12 3h3v3M3 12v3h3m9-3v3h-3"/></svg></button></div>
+          </div>
+          <div class="observation-controls" id="observation-controls" hidden><label for="observation-date">Satellite observation</label><select id="observation-date"></select><button class="observation-forecast-toggle" id="observation-forecast-toggle" type="button" disabled>Preview next day</button><span id="observation-time-note" role="status" aria-live="polite">Dated satellite archive</span><details class="observation-provenance"><summary>Source &amp; freshness details</summary><p id="observation-provenance-text"></p></details></div>
+          <p class="observation-error" id="observation-load-error" role="status" aria-live="polite" hidden></p>
+          <div class="map-canvas" id="map-canvas">
+            <div class="map-stamp"><span id="map-stamp-label">SIMULATED ROUTE</span><b id="vessel-map-status">Day 0 / 7 · 0% along path</b></div>
+            <svg id="polar-map" viewBox="145 20 670 670" role="img" tabindex="0" aria-label="Schematic polar view showing illustrative sea ice, iceberg ranges, and candidate routes. Select a route endpoint control, then choose open water on this map."></svg>
+            <canvas id="observation-map" class="observation-canvas" hidden role="img" aria-label="Observed NOAA VIIRS sea-ice concentration grid"></canvas>
+            <svg id="observation-route-overlay" class="observation-route-overlay" hidden aria-hidden="true"><path id="observation-context-band"></path><path id="observation-route-path"></path></svg>
+            <svg id="route-candidate-overlay" class="route-candidate-overlay" hidden aria-hidden="true"><path id="candidate-path-shortest"></path><path id="candidate-path-tradeoff"></path><path id="candidate-path-low-ice"></path></svg>
+            <div class="observation-colorbar" aria-hidden="true"><span id="observation-colorbar-label">Observed sea ice</span><i></i><div><b>0%</b><b>50%</b><b>100%</b></div></div>
+            <div class="map-scale"><span>0</span><i></i><span>250 km</span></div>
+            <div class="map-orientation"><span>N</span><b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m12 5 2.2 6.1L12 12l-2.2-.9L12 5Zm0 14v-7m-7 0h14"/></svg></b></div>
+          <div class="map-legend collapsed"><div class="legend-head">MAP KEY <button id="legend-toggle" aria-label="Expand map key" aria-expanded="false">+</button></div><div class="legend-item"><i class="legend-ice"></i><span>Ice concentration</span><b>0-100%</b></div><div class="legend-item"><i class="legend-route"></i><span>Reviewed centerline</span></div><div class="legend-item" id="context-band-legend"><i class="legend-context-band"></i><span>Observation context band</span></div><div class="legend-item"><i class="legend-alt"></i><span>Other route options</span></div><div class="legend-item"><i class="legend-berg"></i><span>Illustrative iceberg drift range</span></div></div>
+          </div>
+          <div class="map-toolbar"><details class="layer-disclosure"><summary>Map layers</summary><div class="layer-tabs" role="group" aria-label="Map layers"><button class="layer-tab active" data-layer="ice" aria-pressed="true">ICE OUTLOOK <span class="toggle on"></span></button><button class="layer-tab active" data-layer="routes" aria-pressed="true">ROUTES <span class="toggle on"></span></button><button class="layer-tab active" data-layer="bergs" aria-pressed="true" aria-label="Toggle illustrative iceberg layer">BERGS <span class="toggle on"></span></button></div></details><div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out">−</button><span>1.0×</span><button id="zoom-in" aria-label="Zoom in">+</button></div></div>
+        </div>
+
+        <section class="route-screen" id="route-screen" hidden aria-labelledby="route-screen-title">
+          <div class="route-screen-heading"><h2 id="route-screen-title">Compare observed paths</h2><p>Dated ice grid only · not a route recommendation</p></div>
+          <details class="route-tools"><summary>Set endpoints to compare paths</summary>
+          <form id="route-candidate-form" novalidate>
+            <fieldset class="route-endpoints"><legend>Choose endpoints inside the visible scene</legend>
+              <label for="route-origin-lon">Origin longitude<input id="route-origin-lon" type="number" min="-180" max="180" step="any" inputmode="decimal" placeholder="e.g. -60.5" required></label>
+              <label for="route-origin-lat">Origin latitude<input id="route-origin-lat" type="number" min="-90" max="90" step="any" inputmode="decimal" placeholder="e.g. -66.0" required></label>
+              <label for="route-destination-lon">Destination longitude<input id="route-destination-lon" type="number" min="-180" max="180" step="any" inputmode="decimal" placeholder="e.g. -59.5" required></label>
+              <label for="route-destination-lat">Destination latitude<input id="route-destination-lat" type="number" min="-90" max="90" step="any" inputmode="decimal" placeholder="e.g. -66.0" required></label>
+            </fieldset>
+            <details class="route-time-assumptions"><summary>Research time assumptions</summary><div class="route-time-fields"><label for="research-open-speed">Open-water speed, kn<input id="research-open-speed" type="number" min="0.1" max="25" step="0.1" inputmode="decimal" value="10" required></label><label for="research-ice-speed">Ice-affected speed, kn<input id="research-ice-speed" type="number" min="0.1" max="12" step="0.1" inputmode="decimal" value="3" required></label></div><p>Editable assumptions, not a vessel profile. A linear ice-to-speed relation and ±20% speed sweep show sensitivity, not an ETA or confidence interval. At 70% observed ice the calculation is withheld. Fuel needs a documented ship-specific burn curve.</p></details>
+            <div class="route-candidate-action"><p>Coordinates are WGS84 decimal degrees. Both endpoints must fall on valid observed pixels.</p><button class="primary-button" id="route-candidate-submit" type="submit">Compare observed paths</button></div>
+            <p id="route-candidate-error" role="alert" hidden></p>
+          </form>
+          <section class="route-candidate-results" id="route-candidate-results" hidden aria-labelledby="route-candidate-results-title" aria-live="polite">
+            <h3 id="route-candidate-results-title">Three observed-grid objectives</h3>
+            <p class="route-screen-caveat">Observed ice paths with a hypothetical time range from the speeds you entered. Neither the range nor the path is a vessel ETA or navigation recommendation.</p>
+            <div class="route-candidate-table-wrap"><table class="route-candidate-table"><thead><tr><th scope="col">Objective</th><th scope="col">Grid distance</th><th scope="col">Distance-weighted SIC</th><th scope="col">Research time</th><th scope="col">How it is scored</th></tr></thead><tbody id="route-candidate-body"></tbody></table></div>
+            <p id="route-time-method" class="route-screen-provenance"></p>
+            <details class="route-candidate-sensitivity" id="route-candidate-sensitivity" hidden><summary>How sensitive is this comparison?</summary><p id="route-candidate-sensitivity-result"></p><p>Only these three fixed paths are re-scored if observed ice concentration were 5 percentage points lower or higher everywhere. This is a hypothetical check, not a forecast, re-routing, or navigation recommendation.</p></details>
+            <p id="route-candidate-provenance" class="route-screen-provenance"></p>
+          </section>
+          <details class="route-secondary-review">
+            <summary>Review an existing route line</summary>
+          <form id="route-exposure-form" novalidate>
+            <label class="route-screen-name" for="route-screen-name">Route label<input id="route-screen-name" name="route_id" maxlength="120" value="Route review" autocomplete="off"></label>
+            <label class="route-screen-coordinates" for="route-screen-coordinates">Route waypoints<textarea id="route-screen-coordinates" name="coordinates" rows="4" maxlength="12000" required spellcheck="false" placeholder="-60.20, -66.00&#10;-59.80, -66.00" aria-describedby="route-screen-help"></textarea><span id="route-screen-help">Enter 2–500 WGS84 longitude, latitude pairs, one per line. Example coordinates show the format only; they are not a recommended route.</span></label>
+            <details class="route-research-profile"><summary>Research vessel limits <span>Optional · unverified</span></summary><p>Compare observed ice with limits you enter. This does not verify a Polar Water Operational Manual or assess navigability.</p><div class="route-research-profile__fields"><label for="research-profile-label">Profile label<input id="research-profile-label" maxlength="120" placeholder="Vessel research profile" autocomplete="off"></label><label for="research-max-sic">Maximum observed ice, %<input id="research-max-sic" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Enter limit"></label><label for="research-min-coverage">Minimum data coverage, %<input id="research-min-coverage" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="Enter minimum"></label></div></details>
+            <div class="route-screen-options"><label for="route-analysis-half-width">Context band, km each side<select id="route-analysis-half-width" name="analysis_half_width_km" aria-describedby="route-band-help"><option value="0">Line only</option><option value="2.5">2.5 km</option><option value="5" selected>5 km</option><option value="10">10 km</option><option value="20">20 km</option></select><span id="route-band-help">A map-data swath, not a vessel-specific clearance width.</span></label><button class="primary-button" id="route-screen-submit" type="submit">Review observed ice</button><p id="route-screen-error" role="alert" hidden></p></div>
+          </form>
+          <section class="route-screen-result" id="route-screen-result" hidden aria-labelledby="route-screen-result-title">
+            <h3 id="route-screen-result-title">Observed route context</h3>
+            <p class="route-screen-caveat">The band summarizes pixels beside the line only. It is not vessel-specific, does not assess navigation suitability, and may contain observation gaps.</p>
+            <div class="route-evidence-brief" id="route-evidence-brief" role="status" aria-live="polite"><strong>Evidence status</strong><span id="route-evidence-status">Awaiting route review</span><small id="route-evidence-reason"></small></div>
+            <dl class="route-screen-metrics"><div><dt>Line length</dt><dd id="route-result-length">-</dd></div><div><dt>Band data coverage</dt><dd id="route-result-coverage">-</dd></div><div><dt>Band mean SIC</dt><dd id="route-result-mean">-</dd></div><div><dt>Band 95th percentile</dt><dd id="route-result-p95">-</dd></div><div><dt>Centerline mean</dt><dd id="route-result-line-mean">-</dd></div></dl>
+            <details class="route-provenance"><summary>Source details</summary><p id="route-result-provenance" class="route-screen-provenance"></p></details>
+            <details class="route-sensitivity"><summary>What could change this picture?</summary><p id="route-fragility-summary"></p><p id="route-vessel-screen"></p><p class="route-screen-caveat">The ±5-point ice change is a sensitivity check, not a forecast range. No route is cleared for navigation.</p></details>
+            <div class="route-review-export"><button id="route-export-button" type="button">Download review packet</button><button id="route-geojson-button" type="button">Download map data</button><button id="file-case-button" type="button" disabled>File for review</button><span id="route-export-status" role="status" aria-live="polite">Includes source hashes and a human-review status.</span></div>
+            <div class="route-profile-wrap"><table class="route-profile"><caption>Context-band observations by 5 km of route</caption><thead><tr><th scope="col">Distance</th><th scope="col">Mean SIC</th><th scope="col">Local maximum</th><th scope="col">Band coverage</th></tr></thead><tbody id="route-profile-body"></tbody></table></div>
+          </section>
+          </details>
+          </details>
+        </section>
+        <aside class="insights-column">
+          <section class="panel outlook-panel">
+            <div class="section-top"><h2>Ice conditions</h2><div class="outlook-valid"><small>VALID</small><span class="forecast-date" id="forecast-date">18 JUN</span></div></div>
+            <div class="horizon-row" aria-label="Forecast horizon"><button class="horizon active" data-day="3" aria-pressed="true">+3 <small>DAYS</small></button><button class="horizon" data-day="5" aria-pressed="false">+5 <small>DAYS</small></button><button class="horizon" data-day="7" aria-pressed="false">+7 <small>DAYS</small></button></div>
+            <div class="ice-stat"><div class="ice-stat-head"><span>Route corridor ice</span><strong id="ice-value">—</strong></div><div class="meter"><i id="ice-meter"></i></div><div class="stat-foot"><span id="ice-label">Loading scenario</span><span>0–100%</span></div></div>
+            <details class="scenario-method"><summary>About this scenario</summary><div class="edge-note"><span class="edge-icon" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 13.5 6 9l3 2 6-6M11.5 5H15v3.5"/></svg></span><span><b>Ice edge</b><small id="edge-note">Illustrative change</small></span><span class="edge-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 12 12 3M6 3h6v6"/></svg></span></div><div class="uncertainty-note"><span class="uncertainty-symbol" aria-hidden="true"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6.5" stroke-dasharray="2 2"/><circle cx="9" cy="9" r="2"/></svg></span><span><b>Uncertainty grows with lead time</b><small>Shaded range widens</small></span></div></details>
+          </section>
+
+          <section class="panel route-panel">
+            <div class="section-top"><h2>Choose a route</h2><span class="route-count">3 OPTIONS</span></div>
+            <div class="route-options" id="route-options">
+              <button class="route-option selected" data-route="balanced" aria-pressed="true"><span class="route-radio"></span><span class="route-copy"><b>Balanced</b><small>Distance + ice</small></span><span class="route-number"><b id="balanced-distance">—</b><small>NM</small></span></button>
+              <button class="route-option" data-route="fast" aria-pressed="false"><span class="route-radio"></span><span class="route-copy"><b>Shortest</b><small>Distance first</small></span><span class="route-number"><b id="fast-distance">—</b><small>NM</small></span></button>
+              <button class="route-option" data-route="safer" aria-pressed="false"><span class="route-radio"></span><span class="route-copy"><b>Lower ice</b><small>Ice first</small></span><span class="route-number"><b id="safer-distance">—</b><small>NM</small></span></button>
+            </div>
+            <div class="route-detail"><div><span class="detail-label">SCENARIO TIME</span><b id="transit-value">—</b></div><div><span class="detail-label">ICE EXPOSURE</span><b id="exposure-value">—</b></div><div><span class="detail-label">BERG BUFFER</span><b id="buffer-value">—</b></div></div>
+            <details class="route-customizer"><summary>Set route endpoints</summary><p>Choose a point, then click open water on the schematic map. All three route options update.</p><div class="route-customizer__actions"><button type="button" data-endpoint="origin" aria-pressed="false">Set departure</button><button type="button" data-endpoint="destination" aria-pressed="false">Set arrival</button><button type="button" id="reset-endpoints">Reset</button></div><span id="endpoint-status" role="status" aria-live="polite">Rothera to Halley VI</span></details>
+            <details class="route-method"><summary>How routes differ</summary><div class="route-explanation" id="route-explanation"><span class="spark" aria-hidden="true"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="4.5"/><path d="M6 5.4v3M6 3.3v.1"/></svg></span><span>Balancing transit distance with ice exposure along the corridor.</span></div></details>
+          </section>
+
+          <section class="panel berg-panel" aria-labelledby="iceberg-tracks-title">
+            <details class="berg-disclosure"><summary class="section-top"><h2 id="iceberg-tracks-title">Historical iceberg tracks</h2><span class="route-count" id="iceberg-track-count">LOADING</span></summary>
+            <p class="berg-status" id="iceberg-track-status" role="status" aria-live="polite">Checking the verified BYU/NIC archive…</p>
+            <div id="iceberg-track-list" aria-label="Source-measured iceberg tracks"></div>
+            <p class="berg-footnote">Large-iceberg observations only, through <time datetime="2025-04-22">22 Apr 2025</time>. Not live positions, a complete census, or drift forecasts. <a class="berg-source" href="https://www.scp.byu.edu/iceberg/default.html" target="_blank" rel="noopener noreferrer">BYU/NIC source</a></p>
+            </details>
+          </section>
+        </aside>
+      </section>
+
+      <section class="timeline panel" id="scenario-timeline">
+        <div class="timeline-label"><strong>Vessel replay</strong><span>Simulated</span></div>
+        <button class="play-button" id="play-button" aria-label="Play simulated vessel replay"><svg class="play-icon" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2.2 9.5 6 3 9.8Z"/></svg></button>
+        <div class="timeline-track-wrap"><div class="timeline-dates"><span>15 JUN</span><b id="timeline-date">18 JUN 2025</b><span>22 JUN</span></div><input id="timeline" type="range" min="0" max="7" step="0.01" value="3" aria-label="Move the simulated vessel through the seven-day voyage"><div class="timeline-caption"><span id="timeline-vessel-status">Day 3 of 7 · 43% along selected path</span><span><i id="timeline-window">+3 days</i></span></div></div>
+        <div class="compare-control"><span>COMPARE<br>SCENARIO</span><button id="compare-toggle" class="switch on" role="switch" aria-checked="true" aria-label="Compare illustrative fields"><i></i></button></div>
+      </section>
+      <section class="replay-evidence" aria-labelledby="replay-evidence-title">
+        <div class="replay-evidence__intro"><h2 id="replay-evidence-title">Observed ice</h2><button type="button" id="replay-observation-button" disabled>Open observations <span aria-hidden="true">↗</span></button></div>
+        <div class="replay-evidence__result" id="motion-evidence" data-state="loading"><span class="replay-evidence__label">2024 RETROSPECTIVE TEST</span><strong id="motion-evidence-value">Checking result…</strong><div class="evidence-figures"><div><b id="motion-mae">—</b><span>MAE vs persistence</span></div><div><b id="motion-rmse">—</b><span>RMSE vs persistence</span></div></div><details class="evidence-method"><summary>How this was measured</summary><p id="motion-evidence-detail" role="status" aria-live="polite">Loading the checksum-pinned research report from the local API.</p><a id="motion-evidence-link" href="#" hidden>Full result and provenance</a></details></div>
+      </section>
+      <div class="review-view-heading"><h1>Review cases</h1><p>Inspect evidence and record independent sign-offs through the ministry identity gateway.</p></div>
+      <details class="review-workflow panel" id="review-workflow-panel">
+        <summary><span><h2>Review governance</h2><small>SSO identity · independent gates · traceable evidence</small></span><span class="review-state" id="review-workflow-state">Checking access</span></summary>
+        <div class="review-content">
+          <p id="review-workflow-message" role="status" aria-live="polite">Checking the portal review service.</p>
+          <div id="review-workflow-body" hidden>
+            <div class="review-toolbar"><span id="review-actor"></span><button id="review-refresh" type="button">Refresh cases</button></div>
+            <div class="review-layout"><div class="review-case-list" id="review-case-list" aria-label="Review cases"></div><div class="review-detail" id="review-case-detail"><p>Select a case to inspect its evidence and review gates.</p></div></div>
+            <form id="review-decision-form" hidden>
+              <h3>Record a gate review</h3><p>The sign-off attests that a named reviewer assessed the cited evidence. It does not clear a vessel or route.</p>
+              <div class="review-form-grid"><label>Review gate<select id="review-gate" required></select></label><label>Decision<select id="review-decision" required><option value="reviewed">Reviewed</option><option value="blocked">Blocked</option><option value="changes_required">Changes required</option></select></label></div>
+              <label>Evidence record ID<input id="review-record-id" maxlength="120" placeholder="DMS/record-identifier" autocomplete="off"></label>
+              <label>Evidence file SHA-256<input id="review-record-sha" maxlength="64" pattern="[0-9a-f]{64}" placeholder="64 lowercase hexadecimal characters" autocomplete="off" spellcheck="false"></label>
+              <label>Rationale<textarea id="review-rationale" minlength="30" maxlength="2000" rows="3" required placeholder="State what you checked, the remaining limits, and why you chose this decision."></textarea></label>
+              <div class="review-form-actions"><button id="review-submit" type="submit">Record review</button><span id="review-submit-status" role="status" aria-live="polite"></span></div>
+            </form>
+          </div>
+          <p class="review-boundary">A packaged case is a process record for further ministry assessment, never navigation clearance.</p>
+        </div>
+      </details>
+      <div class="prototype-note"><span aria-hidden="true"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M8 7.2v4M8 4.8v.1"/></svg></span><span class="prototype-copy">Illustrative scenarios · archived observations · not navigation guidance</span></div>
+      <details class="research-status">
+        <summary><span class="research-status__indicator" id="research-status-indicator" aria-hidden="true"></span><span id="research-status-title">Forecast &amp; model evidence</span></summary>
+        <p id="transect-evidence-message" role="status" aria-live="polite">Checking prospective forecast evidence.</p>
+        <p id="research-status-message" role="status" aria-live="polite">Checking local research API. The map remains illustrative and does not use this model.</p>
+      </details>
+    </main>
+  </div>
+
+  <dialog id="info-dialog" class="modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button><h2>About Southern Passage</h2><p>Southern Passage brings voyage scenarios, dated sea-ice observations, and research evidence into one planning workspace.</p><p>The voyage map and route metrics are illustrative. The observed-data view summarizes a user-supplied line against a dated satellite snapshot. Neither view provides vessel-specific passability or navigation advice.</p><div class="modal-sources"><b>Data sources and research candidates</b><span>NOAA/NSIDC SIC · NOAA VIIRS · NSIDC ice motion · ERA5 · Copernicus Marine · BYU/NIC iceberg tracks</span></div><button class="primary-button" value="close">Understood</button></form></dialog>
+  <div class="aesthetic-cursor" aria-hidden="true"><span></span></div>
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Enable water sounds" aria-pressed="false" title="Water sounds off"><span class="sound-toggle__icon" aria-hidden="true">◌</span><span class="sound-toggle__label">SOUND OFF</span></button>
+  <script src="app.js"></script>
+  <script src="review-workflow.js"></script>
+  <script src="experience.js"></script>
+  <script src="marine-interactions.js"></script>
+</body>
+</html>

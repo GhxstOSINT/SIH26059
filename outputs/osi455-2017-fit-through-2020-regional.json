@@ -1,0 +1,683 @@
+{
+  "experiment": "OSI-455 one-day SIC advection with a frozen chronological-fit coefficient and date-label timing convention",
+  "fit": {
+    "year": 2017,
+    "selected_lambda": 0.2,
+    "fit_output_provenance": {
+      "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+      "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+      "motion_manifest_period": {
+        "end": "2020-12-31",
+        "start": "2016-12-31"
+      }
+    },
+    "split": "fit shrinkage lambda on issue dates through 2017-07-02; evaluate chronologically from 2017-07-03 onward"
+  },
+  "evaluations": [
+    {
+      "year": 2018,
+      "issue_period": {
+        "start": "2018-01-01",
+        "end": "2018-12-30"
+      },
+      "n_correlated_cell_days": 302289,
+      "persistence_mae": 0.016440022736787796,
+      "advection_mae": 0.016367051750421524,
+      "persistence_rmse": 0.027186764404177666,
+      "advection_rmse": 0.026963958516716957,
+      "mae_reduction_percent": 0.44386183361525555,
+      "rmse_reduction_percent": 0.8195380816500175,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 364,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4809,
+        "status_30_cell_days": 297603,
+        "strict_motion_cell_days": 302412,
+        "common_valid_forecast_cell_days": 302289,
+        "possible_grid_cell_days": 7547904,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 28,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 580608
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 14552,
+            "common_valid_forecast_cell_days": 14550,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 31235,
+            "common_valid_forecast_cell_days": 31230,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 47445,
+            "common_valid_forecast_cell_days": 47441,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 63059,
+            "common_valid_forecast_cell_days": 63054,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 71325,
+            "common_valid_forecast_cell_days": 71320,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 72331,
+            "common_valid_forecast_cell_days": 72229,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2465,
+            "common_valid_forecast_cell_days": 2465,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "geographic_strata": {
+        "longitude_000_090E": {
+          "n_cells": 64628,
+          "persistence_mae": 0.01988329365849495,
+          "advection_mae": 0.019756654277443886,
+          "persistence_rmse": 0.029880598187446594,
+          "advection_rmse": 0.029642801731824875,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.6369134974625212,
+          "rmse_reduction_percent": 0.7958222728004949
+        },
+        "longitude_090_180E": {
+          "n_cells": 41104,
+          "persistence_mae": 0.020598281174898148,
+          "advection_mae": 0.020528316497802734,
+          "persistence_rmse": 0.03241147845983505,
+          "advection_rmse": 0.03221102058887482,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.3396626956460591,
+          "rmse_reduction_percent": 0.61847802224958
+        },
+        "longitude_180_270E": {
+          "n_cells": 93205,
+          "persistence_mae": 0.016972607001662254,
+          "advection_mae": 0.016881193965673447,
+          "persistence_rmse": 0.027452843263745308,
+          "advection_rmse": 0.02719084918498993,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.5385916022202952,
+          "rmse_reduction_percent": 0.9543422378452626
+        },
+        "longitude_270_360E": {
+          "n_cells": 103352,
+          "persistence_mae": 0.012152813374996185,
+          "advection_mae": 0.012128827162086964,
+          "persistence_rmse": 0.02249530889093876,
+          "advection_rmse": 0.02230837568640709,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.19737168809463856,
+          "rmse_reduction_percent": 0.8309874980510612
+        },
+        "latitude_50S_60S": {
+          "n_cells": 6851,
+          "persistence_mae": 0.025555353611707687,
+          "advection_mae": 0.02531491592526436,
+          "persistence_rmse": 0.03647419810295105,
+          "advection_rmse": 0.036009982228279114,
+          "evaluated_days": 105,
+          "mae_reduction_percent": 0.9408505556079527,
+          "rmse_reduction_percent": 1.272724004408965
+        },
+        "latitude_60S_70S": {
+          "n_cells": 212660,
+          "persistence_mae": 0.016995983198285103,
+          "advection_mae": 0.016891520470380783,
+          "persistence_rmse": 0.027898596599698067,
+          "advection_rmse": 0.027631990611553192,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.6146318614557167,
+          "rmse_reduction_percent": 0.9556250874202088
+        },
+        "latitude_70S_80S": {
+          "n_cells": 82778,
+          "persistence_mae": 0.014257329516112804,
+          "advection_mae": 0.014279104769229889,
+          "persistence_rmse": 0.024278605356812477,
+          "advection_rmse": 0.024211768060922623,
+          "evaluated_days": 183,
+          "mae_reduction_percent": -0.1527302367001937,
+          "rmse_reduction_percent": 0.27529297876700554
+        },
+        "latitude_80S_90S": {
+          "n_cells": 0,
+          "evaluated_days": 0,
+          "persistence_mae": null,
+          "advection_mae": null,
+          "mae_reduction_percent": null,
+          "persistence_rmse": null,
+          "advection_rmse": null,
+          "rmse_reduction_percent": null
+        }
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    },
+    {
+      "year": 2019,
+      "issue_period": {
+        "start": "2019-01-01",
+        "end": "2019-12-30"
+      },
+      "n_correlated_cell_days": 292272,
+      "persistence_mae": 0.01565862074494362,
+      "advection_mae": 0.01560461986809969,
+      "persistence_rmse": 0.026322919875383377,
+      "advection_rmse": 0.026120321825146675,
+      "mae_reduction_percent": 0.3448635593359506,
+      "rmse_reduction_percent": 0.7696640463741522,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 364,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4550,
+        "status_30_cell_days": 288537,
+        "strict_motion_cell_days": 293087,
+        "common_valid_forecast_cell_days": 292272,
+        "possible_grid_cell_days": 7547904,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 28,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 580608
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 13323,
+            "common_valid_forecast_cell_days": 13322,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 28279,
+            "common_valid_forecast_cell_days": 28187,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 43623,
+            "common_valid_forecast_cell_days": 43620,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 60082,
+            "common_valid_forecast_cell_days": 60035,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 71301,
+            "common_valid_forecast_cell_days": 71294,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 74023,
+            "common_valid_forecast_cell_days": 73358,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2456,
+            "common_valid_forecast_cell_days": 2456,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "geographic_strata": {
+        "longitude_000_090E": {
+          "n_cells": 66748,
+          "persistence_mae": 0.018415125086903572,
+          "advection_mae": 0.01835852488875389,
+          "persistence_rmse": 0.028331167995929718,
+          "advection_rmse": 0.02818611077964306,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.30735712020730777,
+          "rmse_reduction_percent": 0.5120057750795826
+        },
+        "longitude_090_180E": {
+          "n_cells": 42512,
+          "persistence_mae": 0.021131081506609917,
+          "advection_mae": 0.02107362449169159,
+          "persistence_rmse": 0.032103605568408966,
+          "advection_rmse": 0.03195258602499962,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.2719075921426617,
+          "rmse_reduction_percent": 0.47041302911456917
+        },
+        "longitude_180_270E": {
+          "n_cells": 78269,
+          "persistence_mae": 0.015468749217689037,
+          "advection_mae": 0.015378196723759174,
+          "persistence_rmse": 0.026983750984072685,
+          "advection_rmse": 0.02661627158522606,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.5853898893539045,
+          "rmse_reduction_percent": 1.3618543954972528
+        },
+        "longitude_270_360E": {
+          "n_cells": 104743,
+          "persistence_mae": 0.011822797358036041,
+          "advection_mae": 0.011799171566963196,
+          "persistence_rmse": 0.021437061950564384,
+          "advection_rmse": 0.0213018748909235,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.19983249612907095,
+          "rmse_reduction_percent": 0.6306230767660126
+        },
+        "latitude_50S_60S": {
+          "n_cells": 11180,
+          "persistence_mae": 0.019375577569007874,
+          "advection_mae": 0.019214468076825142,
+          "persistence_rmse": 0.030693190172314644,
+          "advection_rmse": 0.030369197949767113,
+          "evaluated_days": 92,
+          "mae_reduction_percent": 0.8315080756118087,
+          "rmse_reduction_percent": 1.0555834070313574
+        },
+        "latitude_60S_70S": {
+          "n_cells": 200449,
+          "persistence_mae": 0.016351943835616112,
+          "advection_mae": 0.016277706250548363,
+          "persistence_rmse": 0.027181951329112053,
+          "advection_rmse": 0.02694888412952423,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.4539985326151408,
+          "rmse_reduction_percent": 0.8574336579662889
+        },
+        "latitude_70S_80S": {
+          "n_cells": 80643,
+          "persistence_mae": 0.013419963419437408,
+          "advection_mae": 0.013431113213300705,
+          "persistence_rmse": 0.023326072841882706,
+          "advection_rmse": 0.023231452330946922,
+          "evaluated_days": 183,
+          "mae_reduction_percent": -0.08308363826943221,
+          "rmse_reduction_percent": 0.40564269681044873
+        },
+        "latitude_80S_90S": {
+          "n_cells": 0,
+          "evaluated_days": 0,
+          "persistence_mae": null,
+          "advection_mae": null,
+          "mae_reduction_percent": null,
+          "persistence_rmse": null,
+          "advection_rmse": null,
+          "rmse_reduction_percent": null
+        }
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "issue_period": {
+        "start": "2020-01-01",
+        "end": "2020-12-30"
+      },
+      "n_correlated_cell_days": 309546,
+      "persistence_mae": 0.015450208447873592,
+      "advection_mae": 0.015413726679980755,
+      "persistence_rmse": 0.025708019733428955,
+      "advection_rmse": 0.025563327595591545,
+      "mae_reduction_percent": 0.23612476178506148,
+      "rmse_reduction_percent": 0.5628287955966593,
+      "motion_coverage": {
+        "strict_status_flags": [
+          21,
+          30
+        ],
+        "issue_days": 365,
+        "days_with_strict_motion": 183,
+        "days_with_common_valid_forecast_cells": 183,
+        "status_21_cell_days": 4583,
+        "status_30_cell_days": 310170,
+        "strict_motion_cell_days": 314753,
+        "common_valid_forecast_cell_days": 309546,
+        "possible_grid_cell_days": 7568640,
+        "by_month": [
+          {
+            "month": 1,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 2,
+            "issue_days": 29,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 601344
+          },
+          {
+            "month": 3,
+            "issue_days": 31,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 4,
+            "issue_days": 30,
+            "days_with_strict_motion": 29,
+            "strict_motion_cell_days": 17833,
+            "common_valid_forecast_cell_days": 17826,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 5,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 33553,
+            "common_valid_forecast_cell_days": 33544,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 6,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 48941,
+            "common_valid_forecast_cell_days": 48079,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 7,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 62262,
+            "common_valid_forecast_cell_days": 62239,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 8,
+            "issue_days": 31,
+            "days_with_strict_motion": 31,
+            "strict_motion_cell_days": 73236,
+            "common_valid_forecast_cell_days": 69066,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 9,
+            "issue_days": 30,
+            "days_with_strict_motion": 30,
+            "strict_motion_cell_days": 76373,
+            "common_valid_forecast_cell_days": 76237,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 10,
+            "issue_days": 31,
+            "days_with_strict_motion": 1,
+            "strict_motion_cell_days": 2555,
+            "common_valid_forecast_cell_days": 2555,
+            "possible_grid_cell_days": 642816
+          },
+          {
+            "month": 11,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          },
+          {
+            "month": 12,
+            "issue_days": 30,
+            "days_with_strict_motion": 0,
+            "strict_motion_cell_days": 0,
+            "common_valid_forecast_cell_days": 0,
+            "possible_grid_cell_days": 622080
+          }
+        ]
+      },
+      "geographic_strata": {
+        "longitude_000_090E": {
+          "n_cells": 68484,
+          "persistence_mae": 0.018546167761087418,
+          "advection_mae": 0.018489627167582512,
+          "persistence_rmse": 0.029155617579817772,
+          "advection_rmse": 0.02899302914738655,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.304864024920215,
+          "rmse_reduction_percent": 0.557657309045545
+        },
+        "longitude_090_180E": {
+          "n_cells": 45462,
+          "persistence_mae": 0.019746914505958557,
+          "advection_mae": 0.019713174551725388,
+          "persistence_rmse": 0.030587131157517433,
+          "advection_rmse": 0.030444767326116562,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.17086190464332685,
+          "rmse_reduction_percent": 0.4654370188159396
+        },
+        "longitude_180_270E": {
+          "n_cells": 82431,
+          "persistence_mae": 0.015308291651308537,
+          "advection_mae": 0.015244180336594582,
+          "persistence_rmse": 0.02601676620543003,
+          "advection_rmse": 0.02578876167535782,
+          "evaluated_days": 181,
+          "mae_reduction_percent": 0.41880123644283396,
+          "rmse_reduction_percent": 0.8763753660692264
+        },
+        "longitude_270_360E": {
+          "n_cells": 113169,
+          "persistence_mae": 0.011954006738960743,
+          "advection_mae": 0.011948676779866219,
+          "persistence_rmse": 0.020602619275450706,
+          "advection_rmse": 0.020542414858937263,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.04458721841901214,
+          "rmse_reduction_percent": 0.2922172938718548
+        },
+        "latitude_50S_60S": {
+          "n_cells": 14837,
+          "persistence_mae": 0.02058584988117218,
+          "advection_mae": 0.020609352737665176,
+          "persistence_rmse": 0.03222806379199028,
+          "advection_rmse": 0.032208461314439774,
+          "evaluated_days": 102,
+          "mae_reduction_percent": -0.1141699596016732,
+          "rmse_reduction_percent": 0.060824248322910446
+        },
+        "latitude_60S_70S": {
+          "n_cells": 212438,
+          "persistence_mae": 0.015980640426278114,
+          "advection_mae": 0.015919599682092667,
+          "persistence_rmse": 0.02619028650224209,
+          "advection_rmse": 0.026013629510998726,
+          "evaluated_days": 183,
+          "mae_reduction_percent": 0.38196682083575517,
+          "rmse_reduction_percent": 0.6745133972789419
+        },
+        "latitude_70S_80S": {
+          "n_cells": 82271,
+          "persistence_mae": 0.013154377229511738,
+          "advection_mae": 0.013170480728149414,
+          "persistence_rmse": 0.022981518879532814,
+          "advection_rmse": 0.022897107526659966,
+          "evaluated_days": 183,
+          "mae_reduction_percent": -0.1224193160703102,
+          "rmse_reduction_percent": 0.3673010183327108
+        },
+        "latitude_80S_90S": {
+          "n_cells": 0,
+          "evaluated_days": 0,
+          "persistence_mae": null,
+          "advection_mae": null,
+          "mae_reduction_percent": null,
+          "persistence_rmse": null,
+          "advection_rmse": null,
+          "rmse_reduction_percent": null
+        }
+      },
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+        "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+        "motion_manifest_period": {
+          "end": "2020-12-31",
+          "start": "2016-12-31"
+        }
+      }
+    }
+  ],
+  "combined": {
+    "n_correlated_cell_days": 904107,
+    "persistence_mae": 0.015848527507974705,
+    "advection_mae": 0.01579418210848243,
+    "persistence_rmse": 0.026408278841443204,
+    "advection_rmse": 0.02621809562992319,
+    "equal_year_mean_mae_reduction_percent": 0.34161671824542256,
+    "equal_year_mean_rmse_reduction_percent": 0.717343641206943,
+    "mae_reduction_percent": 0.342905039379382,
+    "rmse_reduction_percent": 0.720165114363891
+  },
+  "interpretation": [
+    "Grid-cell-day observations are spatially and temporally correlated, not independent trials.",
+    "Full-year date ranges do not guarantee full-season motion coverage; consult strict-quality coverage by month.",
+    "The motion product is 75 km and precedes the experiment's assumed 00Z date label by 12 hours; the daily SIC field's real-time availability is unverified.",
+    "This evaluates SIC concentration only, not route clearance, ship safety, iceberg drift, or encounter risk."
+  ]
+}

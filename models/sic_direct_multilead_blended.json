@@ -1,0 +1,125 @@
+{
+  "artifact_sha256": "0bac7b036a035e5609efd4a133aa55274f27a6909789e89f7e8953c82b3bc58a",
+  "calibration": {
+    "alpha_by_lead": {
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "7": 0.0
+    },
+    "method": "per-lead area-weighted absolute-error minimization over convex blends of direct prediction and persistence; 10,001-bin weighted-median approximation",
+    "period_end": "2016-12-31",
+    "period_start": "2015-01-01",
+    "warning": "Calibration-period metrics are used for parameter selection and are not an independent validation score."
+  },
+  "features": [
+    "intercept",
+    "origin_day_sic",
+    "previous_observed_day_sic",
+    "target_day_sin",
+    "target_day_cos"
+  ],
+  "lead_models": {
+    "1": {
+      "base_direct_coefficients": [
+        0.0016546332108199973,
+        0.9438853417871546,
+        0.05012767322431503,
+        0.0009556889706436721,
+        -0.0036559578551968197
+      ],
+      "coefficients": [
+        0.0016546332108199973,
+        0.9438853417871546,
+        0.05012767322431503,
+        0.0009556889706436721,
+        -0.0036559578551968197
+      ],
+      "first_target_date": "1989-01-03",
+      "last_target_date": "2014-12-31",
+      "lead_days": 1,
+      "persistence_blend_alpha": 0.0,
+      "training_cutoff": "2014-12-31",
+      "training_samples": 544727326
+    },
+    "3": {
+      "base_direct_coefficients": [
+        0.004578791349402558,
+        0.8805970542928468,
+        0.10287525863430766,
+        0.002790677674318274,
+        -0.010717771489365363
+      ],
+      "coefficients": [
+        0.004578791349402558,
+        0.8805970542928468,
+        0.10287525863430766,
+        0.002790677674318274,
+        -0.010717771489365363
+      ],
+      "first_target_date": "1989-01-05",
+      "last_target_date": "2014-12-31",
+      "lead_days": 3,
+      "persistence_blend_alpha": 0.0,
+      "training_cutoff": "2014-12-31",
+      "training_samples": 542246114
+    },
+    "5": {
+      "base_direct_coefficients": [
+        0.007196310917021569,
+        0.8412048456647349,
+        0.13287508443701895,
+        0.004493018360536303,
+        -0.017629585589516085
+      ],
+      "coefficients": [
+        0.007196310917021569,
+        0.8412048456647349,
+        0.13287508443701895,
+        0.004493018360536303,
+        -0.017629585589516085
+      ],
+      "first_target_date": "1989-01-07",
+      "last_target_date": "2014-12-31",
+      "lead_days": 5,
+      "persistence_blend_alpha": 0.0,
+      "training_cutoff": "2014-12-31",
+      "training_samples": 540721769
+    },
+    "7": {
+      "base_direct_coefficients": [
+        0.009650714282624135,
+        0.8246549036947595,
+        0.1406510286504824,
+        0.006009502733852995,
+        -0.024455376756525926
+      ],
+      "coefficients": [
+        0.009650714282624135,
+        0.8246549036947595,
+        0.1406510286504824,
+        0.006009502733852995,
+        -0.024455376756525926
+      ],
+      "first_target_date": "1989-01-09",
+      "last_target_date": "2014-12-31",
+      "lead_days": 7,
+      "persistence_blend_alpha": 0.0,
+      "training_cutoff": "2014-12-31",
+      "training_samples": 539232166
+    }
+  },
+  "limitations": [
+    "same-product hindcast",
+    "correlated daily and spatial samples",
+    "not route-scale validation",
+    "not calibrated uncertainty",
+    "not for navigation"
+  ],
+  "model_fingerprint": "1a81fad0864eacbf2f54bcbc9eccac5626d1041b13b4fdf989a44934b91a8253",
+  "model_id": "sic-direct-horizon-regression-research-v1",
+  "target": "daily sea-ice concentration fraction, Antarctic G02202 grid",
+  "training_cutoff": "2014-12-31",
+  "training_dataset_id": "G02202",
+  "training_source_manifest_sha256": "492b211baab8507c899a1fafd231246e1c67b8d7ac0f0993d465b449e2d808fa"
+}

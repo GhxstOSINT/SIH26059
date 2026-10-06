@@ -1,0 +1,51 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      SOUTHERN_PASSAGE_API_TOKEN: ${SOUTHERN_PASSAGE_API_TOKEN:-}
+      SOUTHERN_PASSAGE_REVIEW_ENABLED: ${SOUTHERN_PASSAGE_REVIEW_ENABLED:-false}
+      SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET: ${SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET:-}
+      SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET_FILE: ${SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET_FILE:-}
+      SOUTHERN_PASSAGE_REVIEW_ASSERTION_ISSUER: ${SOUTHERN_PASSAGE_REVIEW_ASSERTION_ISSUER:-}
+      SOUTHERN_PASSAGE_REVIEW_ASSERTION_AUDIENCE: ${SOUTHERN_PASSAGE_REVIEW_ASSERTION_AUDIENCE:-southern-passage-review}
+      SOUTHERN_PASSAGE_REVIEW_DB: /app/state/reviews.sqlite3
+      SOUTHERN_PASSAGE_MODEL: /app/models/sic_g02202_1989_2016.json
+      SOUTHERN_PASSAGE_MODEL_SELECTION: /app/config/initial-model.json
+      SOUTHERN_PASSAGE_EVALUATION: /app/outputs/polarwatch-viirs-g02202-1989-2016.json
+      SOUTHERN_PASSAGE_HOLDOUT_EVALUATION: /app/outputs/g02202-2017-2024-holdout.json
+      SOUTHERN_PASSAGE_SENSOR_ERA_EVALUATION: /app/outputs/g02202-2025-era-transfer.json
+      SOUTHERN_PASSAGE_ROLLING_EVALUATION: /app/outputs/g02202-1989-2016-rolling-climatology.json
+      SOUTHERN_PASSAGE_SNPP_2026_EVALUATION: /app/outputs/polarwatch-viirs-2026-sep01-21-snpp-transfer.json
+      SOUTHERN_PASSAGE_NOAA21_2026_EVALUATION: /app/outputs/polarwatch-viirs-2026-sep01-21-noaa21-transfer.json
+      SOUTHERN_PASSAGE_NOAA20_2026_EVALUATION: /app/outputs/polarwatch-viirs-2026-sep01-21-noaa20-transfer.json
+      SOUTHERN_PASSAGE_VIIRS_DATA: /app/data/viirs
+      SOUTHERN_PASSAGE_VIIRS_SUPPLEMENT_DATA: /app/data/viirs-2026:/app/data/viirs-2026-noaa21:/app/data/viirs-2026-noaa20
+      SOUTHERN_PASSAGE_VIIRS_SOURCE_STATUS: /app/data/monitoring/polarwatch-source-status.json
+      SOUTHERN_PASSAGE_ACTIVE_VIIRS_ROOT: /app/data/active-viirs
+      SOUTHERN_PASSAGE_ACTIVE_VIIRS_POLICY: /app/config/viirs-research-policy.example.json
+      SOUTHERN_PASSAGE_CORRIDOR_EVALUATION: /app/outputs/viirs-2024-frozen-corridor-evaluation.json
+      SOUTHERN_PASSAGE_ICEBERG_TRACKS: /app/data/icebergs/consolidated_database_v8.0.zip
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:4173,http://127.0.0.1:4173}
+    volumes:
+      - ./models:/app/models:ro
+      - ./work/datasets/polarwatch-viirs:/app/data/viirs:ro
+      - ./work/datasets/polarwatch-viirs-2026-sep01-21:/app/data/viirs-2026:ro
+      - ./work/datasets/polarwatch-viirs-noaa21-2026-sep01-21:/app/data/viirs-2026-noaa21:ro
+      - ./work/datasets/polarwatch-viirs-noaa20-2026-sep01-21:/app/data/viirs-2026-noaa20:ro
+      - ./work/monitoring:/app/data/monitoring:ro
+      - ./work/active-viirs:/app/data/active-viirs:ro
+      - ./work/datasets/byu-iceberg-v8:/app/data/icebergs:ro
+      - review_state:/app/state
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+volumes:
+  review_state:

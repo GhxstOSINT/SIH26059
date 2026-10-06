@@ -1,0 +1,556 @@
+/* Southern Passage — Southern Ocean edition. Loaded after orbital.css. */
+:root {
+  --bg: #061c29;
+  --panel: #0a2635;
+  --panel2: #103344;
+  --line: rgba(182, 222, 229, .22);
+  --ink: #eff7f8;
+  --muted: #bed1d8;
+  --muted2: #d0e0e4;
+  --mint: #8cded1;
+  --mint2: #9bcfe0;
+  --cyan: #9bcfe0;
+  --ice: #93bec6;
+  --ice-light: #e2eef0;
+  --orange: #e2bd8c;
+  --display: 'Manrope', sans-serif;
+  --marine-ease: cubic-bezier(.16, 1, .3, 1);
+  --sic-scale: linear-gradient(90deg, #0b2b3b 0 10%, #15506b 10% 25%, #377389 25% 40%, #5e9bac 40% 55%, #93bec6 55% 70%, #c6dfe0 70% 84%, #e2eef0 84% 100%);
+}
+
+html { background: #061c29; }
+body { min-width: 320px; background: #061c29; color: var(--ink); }
+::selection { background: #8cded1; color: #082330; }
+:focus-visible { outline-color: #b4f0e6; outline-offset: 3px; }
+::-webkit-scrollbar-track { background: #061c29; }
+::-webkit-scrollbar-thumb { background: #416a79; border-color: #061c29; }
+
+/* The first scene is an unbroken sea horizon with a single monumental ice form. */
+.experience-loader { background: #061c29; }
+.experience-loader__line { background-image: linear-gradient(90deg, #dceff1 0 50%, #2d596a 50%); }
+.experience-loader__status { color: #c3d8de; }
+.launch-screen { background: #102c3d; }
+.launch-screen__image {
+  z-index: -4;
+  inset: -5%;
+  background: url('antarctic-sea.png') center 48% / cover no-repeat;
+  animation: marine-horizon 26s ease-in-out alternate infinite;
+}
+.launch-screen__iceberg {
+  position: absolute;
+  z-index: -3;
+  left: 50%;
+  bottom: -16svh;
+  width: min(92vw, 1580px);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 30px 36px rgba(1, 17, 28, .32));
+  pointer-events: none;
+  user-select: none;
+}
+.launch-screen__shade {
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(3, 19, 30, .65) 0%, rgba(5, 24, 36, .51) 35%, rgba(5, 25, 38, .08) 58%, rgba(2, 14, 25, .47) 100%),
+    linear-gradient(90deg, rgba(1, 17, 28, .19), transparent 45%, rgba(1, 17, 28, .19));
+}
+.launch-screen__brand,
+.experience-brand,
+#workspace .brand-name { font-family: var(--display); font-weight: 600; letter-spacing: .15em; }
+.launch-screen__brand { top: clamp(25px, 4.5vh, 48px); font-size: clamp(17px, 1.7vw, 23px); }
+.launch-screen__content { width: min(calc(100% - 36px), 980px); margin-top: -12svh; }
+.launch-screen__content h1 {
+  max-width: 13ch;
+  color: #f2fafb;
+  font: 500 clamp(49px, 6.1vw, 91px) / .98 var(--display);
+  letter-spacing: -.045em;
+  text-shadow: 0 3px 34px rgba(1, 18, 30, .74);
+}
+.launch-screen__content p { margin: 25px 0 28px; color: #e6f2f3; font: 500 clamp(13px, 1.1vw, 16px) / 1.5 var(--sans); letter-spacing: .02em; text-shadow: 0 1px 15px #0a253c; }
+#launch-enter {
+  min-height: 54px;
+  min-width: 224px;
+  padding: 15px 23px;
+  border: 1px solid #e2f0f2;
+  border-radius: 3px;
+  background: #e2f0f2;
+  color: #082331;
+  font: 700 11px / 1 var(--sans);
+  letter-spacing: .11em;
+}
+#launch-enter::before, #launch-enter::after { display: none; }
+#launch-enter:hover { background: #bfe5e5; border-color: #bfe5e5; color: #082331; }
+#launch-skip { margin-top: 17px; color: #edf7f7; border-bottom-color: rgba(237, 247, 247, .58); font: 600 10px / 1 var(--sans); letter-spacing: .11em; }
+.launch-screen__edition { bottom: 27px; color: #d1e4e9; letter-spacing: .13em; text-shadow: 0 1px 8px #092335; }
+@keyframes marine-horizon { to { transform: scale(1.055) translate3d(-1.1%, .5%, 0); } }
+
+/* One continuous scroll composition: sea pans, ice rises, three lines of thought crossfade. */
+.experience { height: 420svh; background: #061c29; }
+.experience-stage { min-height: 560px; background: #102c3d; }
+.experience-image {
+  z-index: -5;
+  inset: -9%;
+  background: url('antarctic-sea.png') center 48% / cover no-repeat;
+  transform: translate3d(calc(var(--sea-shift, 0) * -1%), calc(var(--orbit-shift, 0) * -2%), 0) scale(calc(1.06 + var(--orbit-shift, 0) * .09));
+  will-change: transform;
+}
+.experience-sea-motion {
+  position: absolute;
+  z-index: -4;
+  inset: 39% -9% -9%;
+  background: url('antarctic-sea.png') center bottom / cover no-repeat;
+  opacity: .13;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(transparent, #000 38%, #000 85%);
+  mask-image: linear-gradient(transparent, #000 38%, #000 85%);
+  animation: marine-swell 15s ease-in-out alternate infinite;
+  pointer-events: none;
+}
+@keyframes marine-swell { to { transform: translate3d(2.2%, .8%, 0) scale(1.025); } }
+.experience-iceberg {
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  bottom: -21svh;
+  width: min(100vw, 1640px);
+  max-width: none;
+  height: auto;
+  opacity: var(--iceberg-opacity, 1);
+  transform: translate3d(calc(-50% + var(--iceberg-x, 0) * 1vw), calc(var(--iceberg-y, 0) * 1vh), 0) scale(var(--iceberg-scale, .9));
+  transform-origin: center bottom;
+  filter: drop-shadow(0 30px 36px rgba(2, 20, 33, .3));
+  will-change: transform, opacity;
+  pointer-events: none;
+  user-select: none;
+}
+.experience-vignette {
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(4, 21, 33, .53), rgba(4, 22, 33, .34) 37%, rgba(4, 21, 33, .07) 58%, rgba(2, 14, 24, .53)),
+    linear-gradient(90deg, rgba(3, 20, 32, .26), transparent 44%, rgba(3, 20, 32, .26));
+}
+.experience-vignette::after { background: #061c29; }
+.experience-stage::after { background: #061c29; }
+.experience-header { padding-top: 31px; }
+.experience-brand { font-size: clamp(17px, 1.8vw, 24px); }
+.experience-header__status { color: #d6e8eb; }
+.experience-header__action { color: #e8f6f6; border-bottom: 1px solid rgba(232, 246, 246, .68); padding-bottom: 10px; }
+.experience-coordinates { top: 17%; right: clamp(24px, 4.5vw, 75px); color: #e4f0f1; font-size: 10px; text-shadow: 0 1px 9px #0c2a3e; }
+.experience-title, .experience-second, .experience-third {
+  top: clamp(155px, 21svh, 215px);
+  bottom: auto;
+  left: 50%;
+  width: min(calc(100% - 42px), 1060px);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.experience-title { transform: translate3d(-50%, calc((1 - var(--scene-one, 1)) * -24px), 0); }
+.experience-second { transform: translate3d(-50%, calc((1 - var(--scene-two, 0)) * 28px), 0); }
+.experience-third { transform: translate3d(-50%, calc((1 - var(--scene-three, 0)) * 28px), 0); }
+.experience-index, .experience-second p, .experience-third p { margin-bottom: 18px; color: #e2eff1; font: 600 10px / 1.3 var(--mono); letter-spacing: .12em; text-shadow: 0 1px 9px #0b2939; }
+.experience-title h1, .experience-second strong, .experience-third strong {
+  max-width: 17ch;
+  color: #f8fcfc;
+  font: 600 clamp(54px, 6vw, 92px) / .98 var(--display);
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 32px rgba(2, 19, 31, .82), 0 1px 2px rgba(2, 19, 31, .6);
+}
+.experience-title__body, .experience-second > span, .experience-third > span {
+  max-width: 46ch;
+  margin-top: 20px;
+  color: #f0f8f8;
+  font: 500 clamp(14px, 1.15vw, 17px) / 1.5 var(--sans);
+  text-shadow: 0 2px 18px rgba(3, 22, 34, .94);
+}
+.experience-third a { margin-top: 24px; border-bottom-color: #e7f5f5; color: #f5fbfb; text-shadow: 0 2px 12px #082635; }
+.experience-footer { color: #d1e4e9; text-shadow: 0 1px 10px #0b293a; }
+.experience-footer__prompt { color: #f1faf9; }
+.experience-progress { background: rgba(226, 240, 243, .24); }
+.experience-progress span { background: #8cded1; }
+
+/* The operational chapter keeps the ocean palette while increasing information contrast. */
+#workspace { max-width: 1800px; background: #061c29; }
+#workspace::before { background: rgba(194, 226, 231, .29); }
+#workspace .topbar { border-bottom-color: var(--line); }
+#workspace .brand-name { color: #eff8f8; font-size: 18px; }
+#workspace .icon-button { border-color: #5a8490; border-radius: 50%; color: #e3f2f3; }
+#workspace .icon-button:hover { background: #143848; border-color: #8cded1; }
+#workspace .workspace-nav { margin-bottom: clamp(52px, 7vw, 105px); border-bottom-color: var(--line); }
+#workspace .workspace-nav__item { color: #b8cfd5; }
+#workspace .workspace-nav__item:hover:not(:disabled) { color: #f3fbfb; }
+#workspace .workspace-nav__item.is-active { color: #f6fbfb; }
+#workspace .workspace-nav__item.is-active::after { background: #8cded1; height: 2px; }
+#workspace .workspace-nav__item:disabled { opacity: .55; cursor: not-allowed; }
+#workspace .workspace-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  justify-items: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(32px, 4vw, 54px);
+  text-align: center;
+}
+#workspace .workspace-head > div:first-child { display: grid; width: min(100%, 760px); justify-items: center; text-align: center; }
+#workspace .workspace-head h1, #workspace .review-view-heading h1 {
+  max-width: 15ch;
+  color: #f3fafb;
+  font: 600 clamp(48px, 6vw, 88px) / 1 var(--display);
+  letter-spacing: -.045em;
+  text-transform: none;
+}
+#workspace .intro, #workspace .review-view-heading p { color: #c9dce1; font-size: 16px; line-height: 1.58; }
+#workspace .intro { margin-top: 15px; }
+#workspace .voyage-summary { max-width: 340px; justify-self: center; }
+#workspace .voyage-summary .voyage-icon { border-color: #59838e; border-radius: 8px; color: #8cded1; }
+#workspace .voyage-summary strong { color: #eff8f8; }
+#workspace .voyage-summary .subtle { color: #bad3da; }
+#workspace .dashboard { gap: 0; }
+#workspace .map-panel {
+  overflow: hidden;
+  border: 1px solid #3c6878;
+  border-radius: 16px;
+  background: #0a2635;
+}
+#workspace .map-topline { background: #0b2938; border-bottom-color: #335b6c; }
+#workspace .map-title strong { color: #f3fafb; letter-spacing: .015em; text-transform: none; font-size: 15px; }
+#workspace .map-title span:not(.status-pip) { color: #bad4dc; }
+#workspace .map-canvas {
+  height: clamp(620px, 82svh, 880px);
+  min-height: 620px;
+  background: radial-gradient(ellipse at 52% 47%, #17475e, #0a2b3f 67%, #082331);
+}
+#workspace .map-stamp, #workspace .map-legend, #workspace .observation-colorbar { border-radius: 10px; background: rgba(6, 28, 42, .94); border: 1px solid rgba(160, 204, 217, .24); }
+#workspace .map-stamp { color: #ccdde1; }
+#workspace .map-stamp b { color: #eef6f6; }
+#workspace .map-legend { width: 228px; color: #d1e2e5; }
+#workspace .map-legend.collapsed { width: 116px; }
+#workspace .legend-head { color: #f0f8f8; }
+#workspace .legend-item b { color: #cfdee2; }
+#workspace .legend-ice,
+#workspace .map-canvas[data-view="observed"] .legend-ice,
+#workspace .observation-colorbar i,
+#workspace .meter { background: var(--sic-scale); }
+#workspace .legend-route { background: #8cded1; }
+#workspace .legend-alt { background: repeating-linear-gradient(90deg, #e2bd8c 0 3px, transparent 3px 5px); }
+#workspace .legend-berg { background: #9bbfe0; }
+#workspace .observation-colorbar > span, #workspace .observation-colorbar b { color: #e3f0f2; }
+#workspace .map-toolbar { background: #0b2938; border-top-color: #335b6c; }
+#workspace .layer-tab.active { color: #e6f7f4; border-bottom-color: #8cded1; }
+#workspace .toggle.on { background: #286e68; }
+#workspace .toggle.on::after { background: #b2ece3; }
+#workspace .zoom-controls button { border-color: #507986; color: #eaf6f6; }
+#workspace .zoom-controls button:hover { background: #20495a; }
+#workspace .insights-column { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 26px); padding: clamp(18px, 2.5vw, 30px) 0 16px; }
+#workspace .insights-column > .panel,
+#workspace .insights-column > .panel + .panel {
+  min-width: 0;
+  padding: clamp(19px, 2vw, 28px);
+  border: 1px solid #31596a;
+  border-radius: 14px;
+  background: #0b2938;
+  transition: background-color .45s var(--marine-ease), border-color .45s var(--marine-ease), transform .55s var(--marine-ease);
+}
+#workspace .section-top h2 { color: #edf7f8; font: 600 20px / 1.2 var(--display); letter-spacing: -.025em; text-transform: none; }
+#workspace .outlook-panel .section-top { gap: 10px; }
+#workspace .outlook-panel .outlook-valid {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  gap: 5px;
+  margin-left: auto;
+  padding: 6px 9px;
+  border: 1px solid #416b78;
+  border-radius: 100px;
+  background: #143746;
+  white-space: nowrap;
+}
+#workspace .outlook-panel .outlook-valid small { color: #a9cbd2; font: 600 8px / 1.15 var(--mono); letter-spacing: .06em; }
+#workspace .outlook-panel .section-top #forecast-date {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d0e7e9;
+  font: 600 10px / 1.15 var(--mono);
+  letter-spacing: .045em;
+  white-space: nowrap;
+}
+#workspace .berg-panel { padding-block: clamp(19px, 2vw, 28px) !important; }
+#workspace .horizon { border-color: #557b87; border-radius: 7px; color: #d1e3e6; }
+#workspace .horizon-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; min-width: 0; }
+#workspace .horizon { width: 100%; min-width: 0; white-space: nowrap; text-align: center; }
+#workspace .horizon.active { background: #d4eeed; border-color: #d4eeed; color: #092634; }
+#workspace .horizon.active small { color: #305362; }
+#workspace .forecast-date, #workspace .route-count, #workspace .detail-label { color: #bed5da; }
+#workspace .ice-stat-head { color: #d7e5e8; }
+#workspace .ice-stat-head strong { color: #e2bd8c; }
+#workspace .meter i { background: rgba(5, 30, 43, .7); border-right-color: #f0faf9; }
+#workspace .stat-foot { color: #bed1d8; }
+#workspace .route-option { padding: 13px 10px; border-radius: 8px; }
+#workspace .route-option.selected { background: #173c4b; }
+#workspace .route-option:hover { background: #143746; }
+#workspace .route-option.selected .route-radio, #workspace .route-option.selected .route-radio::after { border-color: #8cded1; background-color: #8cded1; }
+#workspace .route-option.selected .route-radio { background: transparent; }
+#workspace .route-copy b, #workspace .route-number b { color: #eef7f8; }
+#workspace .route-copy small, #workspace .route-number small { color: #bbd0d6; }
+#workspace .route-detail { margin-top: 13px; padding: 13px 0 3px; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
+#workspace .route-detail b { color: #eff8f8; }
+#workspace .berg-footnote, #workspace .berg-status { color: #bed0d6; }
+#workspace .berg-source { color: #a6e8dc; }
+#workspace .timeline {
+  margin-top: 8px;
+  padding: 22px 25px;
+  border: 1px solid #31596a;
+  border-radius: 14px;
+  background: #0b2938;
+}
+#workspace .timeline-label strong, #workspace .timeline-dates b { color: #edf7f8; }
+#workspace .timeline-dates, #workspace .timeline-caption, #workspace .compare-control { color: #c5d8dd; }
+#workspace .play-button { border-radius: 50%; background: #d4eeed; color: #092634; }
+#workspace .play-button:hover { background: #b6e6df; }
+#workspace .replay-evidence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+  margin-top: 18px;
+  padding: 28px 30px;
+  border: 1px solid #31596a;
+  border-radius: 14px;
+  background: #0b2938;
+}
+#workspace .replay-evidence__intro {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 4px 20px;
+  border-right: 1px solid var(--line);
+  text-align: center;
+}
+#workspace .replay-evidence__intro h2 { color: #f0f8f8; font: 600 25px / 1.15 var(--display); text-transform: none; }
+#workspace .replay-evidence__intro button { margin-top: 14px; }
+#workspace .replay-evidence__result,
+#workspace[data-map-view="observed"] .replay-evidence__result {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  justify-items: center;
+  min-width: 0;
+  padding: 4px 0;
+  border: 0;
+  text-align: center;
+}
+#workspace .replay-evidence__label,
+#workspace #motion-evidence-value,
+#workspace .evidence-figures,
+#workspace .evidence-method { grid-column: 1 / -1; }
+#workspace .evidence-figures { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 9px 0; }
+#workspace .evidence-figures > div { min-width: 0; justify-items: center; padding: 2px 12px; text-align: center; }
+#workspace .evidence-figures > div:first-child { border-right: 1px solid var(--line); }
+#workspace .evidence-method { justify-self: center; }
+#workspace .replay-evidence__result strong, #workspace .evidence-figures b { color: #eff8f8; }
+#workspace .replay-evidence__label, #workspace .evidence-figures span { color: #c5d9de; }
+#workspace .replay-evidence__result a, #workspace .replay-evidence__intro button { color: #a7e9dc; }
+#workspace .route-screen { border: 1px solid #31596a; border-radius: 14px; background: #0b2938; }
+#workspace .route-screen input, #workspace .route-screen textarea, #workspace .route-screen select { border-color: #5a8290; background: #082331; color: #eff8f8; }
+#workspace .route-evidence-brief { border-color: #426e7b; background: #123947; }
+#workspace .route-evidence-brief strong { color: #a8e6dc; }
+#workspace .primary-button { border-radius: 7px; background: #d4eeed; color: #092634; }
+#workspace .primary-button:hover:not(:disabled) { background: #b6e6df; }
+#workspace .review-workflow { border: 1px solid #31596a; border-radius: 14px; background: #0b2938; }
+#workspace .review-view-heading { display: grid; justify-items: center; margin-bottom: 32px; text-align: center; }
+#workspace .prototype-note { color: #c3d7dc; }
+#workspace .research-status { color: #c2d7dc; border-top-color: var(--line); }
+
+/* The sound control is small enough to stay available over the visual and workspace. */
+.sound-toggle {
+  position: fixed;
+  z-index: 120;
+  right: clamp(17px, 2.4vw, 34px);
+  bottom: clamp(17px, 2.4vw, 34px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid rgba(218, 239, 241, .65);
+  border-radius: 50px;
+  background: rgba(6, 30, 43, .87);
+  color: #f0f8f8;
+  font: 700 10px / 1 var(--sans);
+  letter-spacing: .1em;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(1, 15, 23, .22);
+  transition: background-color .25s, border-color .25s, transform .35s var(--marine-ease), opacity .25s;
+}
+.sound-toggle:hover { transform: translateY(-2px); background: #123b4b; border-color: #aee4de; }
+.sound-toggle[aria-pressed="true"] { background: #174c56; border-color: #8cded1; }
+.sound-toggle__icon { position: relative; display: block; width: 17px; height: 17px; font-size: 0; }
+.sound-toggle__icon::before, .sound-toggle__icon::after { content: ''; position: absolute; border: 1.5px solid currentColor; border-radius: 50%; }
+.sound-toggle__icon::before { inset: 5px; background: currentColor; }
+.sound-toggle__icon::after { inset: 1px; opacity: .72; }
+.sound-toggle[aria-pressed="true"] .sound-toggle__icon::after { animation: marine-sound 1.6s ease-out infinite; }
+@keyframes marine-sound { 0% { transform: scale(.65); opacity: .85; } 100% { transform: scale(1.5); opacity: .12; } }
+body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
+
+/* A restrained water ring marks direct interaction without delaying the control. */
+.marine-splash {
+  position: fixed;
+  z-index: 180;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.marine-splash i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 17px;
+  margin: -8.5px;
+  border: 1.5px solid rgba(214, 247, 247, .85);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(9, 46, 60, .18);
+  animation: marine-ripple .78s var(--marine-ease) both;
+}
+.marine-splash i:nth-child(2) { animation-delay: .11s; }
+.marine-splash b {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  width: 4px;
+  height: 6px;
+  border-radius: 50% 50% 50% 10%;
+  background: #d5f7f4;
+  transform: rotate(-42deg);
+  animation: marine-drop .44s ease-out both;
+}
+@keyframes marine-ripple { from { opacity: .9; transform: scale(.45); } to { opacity: 0; transform: scale(3.5); } }
+@keyframes marine-drop { from { opacity: .9; transform: translateY(-7px) rotate(-42deg); } to { opacity: 0; transform: translateY(0) rotate(-42deg); } }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #workspace .insights-column > .panel:hover { transform: translateY(-4px); border-color: #6593a0; background: #103142; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    #workspace .insights-column > .panel, #workspace .replay-evidence, #workspace .review-workflow {
+      animation: marine-reveal both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 20%;
+    }
+    @keyframes marine-reveal { from { opacity: .74; filter: blur(3px); } to { opacity: 1; filter: blur(0); } }
+  }
+}
+@supports not (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .marine-reveal { opacity: .78; transform: translateY(16px); transition: opacity .65s var(--marine-ease), transform .65s var(--marine-ease); }
+    .marine-reveal.marine-revealed { opacity: 1; transform: none; }
+  }
+}
+
+@media (max-width: 1100px) {
+  #workspace .insights-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #workspace .berg-panel { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .launch-screen__iceberg { width: min(180vw, 950px); bottom: -7svh; }
+  .launch-screen__content { margin-top: -17svh; }
+  .launch-screen__content h1 { font-size: clamp(39px, 10vw, 61px); }
+  .launch-screen__content p { max-width: 30ch; margin: 18px 0 23px; font-size: 13px; }
+  .launch-screen__brand { font-size: 16px; letter-spacing: .11em; }
+  .launch-screen__edition { font-size: 9px; }
+  .experience { height: 330svh; }
+  .experience-stage { min-height: 0; }
+  .experience-image { background-position: 52% center; }
+  .experience-iceberg { width: min(186vw, 940px); bottom: -6svh; }
+  .experience-header { padding: 24px 18px; }
+  .experience-brand { font-size: 13px; letter-spacing: .08em; }
+  .experience-header__action { font-size: 9px; letter-spacing: .03em; }
+  .experience-coordinates { top: 15%; right: 18px; font-size: 8px; }
+  .experience-title, .experience-second, .experience-third { top: clamp(136px, 23svh, 190px); left: 50%; width: calc(100% - 34px); }
+  .experience-title h1, .experience-second strong, .experience-third strong { font-size: clamp(38px, 10.6vw, 65px); line-height: 1.01; }
+  .experience-title__body, .experience-second > span, .experience-third > span { margin-top: 16px; font-size: 13px; }
+  .experience-footer { left: 18px; right: 18px; bottom: 20px; grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .experience-footer > span:first-child, .experience-footer > span:last-child { display: none; }
+  #workspace { padding-inline: 17px; }
+  #workspace .workspace-nav { margin-bottom: 45px; }
+  #workspace .workspace-head { gap: 12px; margin-bottom: 29px; }
+  #workspace .workspace-head h1, #workspace .review-view-heading h1 { font-size: clamp(43px, 9.2vw, 66px); }
+  #workspace .map-canvas { height: min(112vw, 550px); min-height: 390px; }
+  #workspace .map-toolbar { height: auto; min-height: 48px; flex-wrap: wrap; gap: 7px; padding-block: 7px; }
+  #workspace .map-canvas[data-view="observed"] .map-legend { bottom: 74px; }
+  #workspace .insights-column { display: flex; flex-direction: column; gap: 14px; padding-top: 16px; }
+  #workspace .insights-column > .panel, #workspace .insights-column > .panel + .panel { width: 100%; padding: 20px; }
+  #workspace .berg-panel { padding-block: 20px !important; }
+  #workspace .timeline { padding: 19px; }
+  #workspace .replay-evidence { padding: 22px; }
+  #workspace .replay-evidence { grid-template-columns: minmax(0, 1fr); }
+  #workspace .replay-evidence__intro { grid-column: 1; padding: 0 0 18px; border-right: 0; }
+  #workspace .replay-evidence__result,
+  #workspace[data-map-view="observed"] .replay-evidence__result { grid-column: 1; padding: 18px 0 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .launch-screen__content { margin-top: -12svh; }
+  .launch-screen__content h1 { font-size: clamp(38px, 10.4vw, 49px); }
+  #launch-enter { min-width: 206px; min-height: 50px; }
+  .experience-index, .experience-second p, .experience-third p { font-size: 8px; letter-spacing: .07em; }
+  .experience-third a { margin-top: 16px; font-size: 10px; }
+  #workspace .workspace-nav__item { font-size: 9px; }
+  #workspace .demo-label { display: none; }
+  #workspace .map-topline { height: 64px; }
+  #workspace .map-title { gap: 7px; }
+  #workspace .map-title strong { font-size: 12px; }
+  #workspace .map-title span:not(.status-pip) { font-size: 9px; }
+  #workspace .map-controls { gap: 4px; }
+  #workspace .map-controls .control-button { padding: 6px; font-size: 8px; }
+  #workspace .map-legend { right: 9px; bottom: 9px; width: 185px; }
+  #workspace .map-legend.collapsed { width: 110px; }
+  #workspace .horizon { padding-inline: 7px; }
+  #workspace .horizon small { margin-left: 1px; }
+  #workspace .outlook-panel .section-top #forecast-date { font-size: 9px; }
+  #workspace .timeline { padding: 15px; }
+  .sound-toggle { right: 0; bottom: 12px; width: 32px; min-height: 44px; padding: 0; border-radius: 22px 0 0 22px; }
+  .sound-toggle__label { display: none; }
+}
+@media (max-width: 360px) {
+  .launch-screen__brand { font-size: 14px; }
+  .launch-screen__content h1 { font-size: 36px; }
+  .launch-screen__edition { max-width: 32ch; }
+  .experience-brand { font-size: 11px; }
+  .experience-header__action { font-size: 8px; }
+  .experience-title h1, .experience-second strong, .experience-third strong { font-size: 36px; }
+  #workspace { padding-inline: 12px; }
+  #workspace .brand-name { font-size: 12px; }
+  #workspace .workspace-nav__item { padding-inline: 1px; font-size: 8px; }
+  #workspace .map-controls .control-button:first-child { max-width: 88px; white-space: normal; text-align: center; }
+  #workspace .horizon-row { gap: 3px; }
+  #workspace .horizon { padding: 6px; font-size: 11px; }
+  #workspace .horizon small { font-size: 8px; }
+  #workspace .outlook-panel .outlook-valid { gap: 3px; padding-inline: 6px; }
+  #workspace .outlook-panel .section-top #forecast-date { font-size: 8px; }
+  #workspace .map-canvas { min-height: 360px; }
+  #workspace .map-legend { width: 170px; }
+  #workspace .insights-column > .panel, #workspace .insights-column > .panel + .panel { padding: 17px; }
+  #workspace .berg-panel { padding-block: 17px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marine-splash { display: none !important; }
+  .experience-image, .experience-sea-motion, .launch-screen__image { animation: none !important; }
+  .experience-image { transform: none !important; }
+  .experience-iceberg { transform: translateX(-50%) scale(.9) !important; opacity: 1 !important; }
+  .experience-title { transform: translateX(-50%) !important; opacity: 1 !important; }
+  .experience-second, .experience-third { display: none !important; }
+  .sound-toggle:hover, #workspace .insights-column > .panel:hover { transform: none; }
+}

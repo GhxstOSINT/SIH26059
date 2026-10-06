@@ -1,0 +1,518 @@
+{
+  "experiment": "one-day lagged NSIDC-0116 motion-advection SIC hindcast",
+  "decision_status": "research_only_not_navigation_or_operational_forecast",
+  "dataset": "NOAA/NSIDC G02202 v6 SIC + NSIDC-0116 v4 daily sea-ice motion",
+  "sic_file": "sic_pss25_20240101-20241231_v06r00.nc",
+  "sic_file_sha256": "71dbd289308d8d07745b84835b81c7aeb4e43f4b7a7be85c936707f439eb8b40",
+  "motion_manifest_sha256": "8c30169f2172127d7744d704572b28f6891beae5d5ed5cd62cc38194f2dc7aea",
+  "aligned_manifest_sha256": "817063983a4aaea6bc7a3a47bb26d89500982d2b74037fd60d850792b2d0b7f2",
+  "date_range": {
+    "start_issue": "2024-06-02",
+    "end_issue": "2024-06-30",
+    "last_target": "2024-07-01"
+  },
+  "motion_timing_assumption": "For issue date D, use aligned NSIDC motion record D-1. The date label and daily product description do not establish publication/availability time or strict causal availability; this is retrospective research, not operational forecast validation.",
+  "quality_and_sampling": "G02202 QA excludes no-input, invalid-mask, spatial interpolation, and temporal interpolation cells. Motion fill/error values are screened upstream; the aligned support field must be at least 0.75. Scores use common valid SIC/motion cells only.",
+  "aggregation": "Pooled equally across common-valid grid-cell samples; these scores are not ground-area weighted, route-weighted, or adjusted for spatial/temporal correlation.",
+  "blend_formula": "clip(persistence + lambda * (lagged_motion_advected_SIC - persistence), 0, 1)",
+  "coefficient_selection": "convex blend selected by minimum pooled fit-period MAE through 2024-06-15",
+  "selected_lambda": 0.7000000000000001,
+  "fit_metrics": {
+    "n_cell_days": 230702,
+    "evaluated_days": 14,
+    "persistence_mae": 0.0325657777498114,
+    "blend_mae": 0.03161207343039721,
+    "persistence_rmse": 0.05918142339897335,
+    "blend_rmse": 0.05662484398903439,
+    "mae_reduction_percent": 2.928547651283142,
+    "rmse_reduction_percent": 4.319901859581343,
+    "per_date": [
+      {
+        "issue_date": "2024-06-02",
+        "valid_cells": 15867,
+        "persistence_mae": 0.03640890121459961,
+        "blend_mae": 0.035886868834495544
+      },
+      {
+        "issue_date": "2024-06-03",
+        "valid_cells": 15928,
+        "persistence_mae": 0.037521976977586746,
+        "blend_mae": 0.036708276718854904
+      },
+      {
+        "issue_date": "2024-06-04",
+        "valid_cells": 15912,
+        "persistence_mae": 0.030204247683286667,
+        "blend_mae": 0.02945534884929657
+      },
+      {
+        "issue_date": "2024-06-05",
+        "valid_cells": 16008,
+        "persistence_mae": 0.025541603565216064,
+        "blend_mae": 0.02436009608209133
+      },
+      {
+        "issue_date": "2024-06-06",
+        "valid_cells": 16099,
+        "persistence_mae": 0.027544567361474037,
+        "blend_mae": 0.026698356494307518
+      },
+      {
+        "issue_date": "2024-06-07",
+        "valid_cells": 16169,
+        "persistence_mae": 0.03131238743662834,
+        "blend_mae": 0.031054994091391563
+      },
+      {
+        "issue_date": "2024-06-08",
+        "valid_cells": 16359,
+        "persistence_mae": 0.027850722894072533,
+        "blend_mae": 0.027565447613596916
+      },
+      {
+        "issue_date": "2024-06-09",
+        "valid_cells": 16484,
+        "persistence_mae": 0.03358772397041321,
+        "blend_mae": 0.032041870057582855
+      },
+      {
+        "issue_date": "2024-06-10",
+        "valid_cells": 16611,
+        "persistence_mae": 0.03798447176814079,
+        "blend_mae": 0.036503616720438004
+      },
+      {
+        "issue_date": "2024-06-11",
+        "valid_cells": 16693,
+        "persistence_mae": 0.036636315286159515,
+        "blend_mae": 0.03561799228191376
+      },
+      {
+        "issue_date": "2024-06-12",
+        "valid_cells": 16857,
+        "persistence_mae": 0.03257934749126434,
+        "blend_mae": 0.03167380765080452
+      },
+      {
+        "issue_date": "2024-06-13",
+        "valid_cells": 17016,
+        "persistence_mae": 0.02878173440694809,
+        "blend_mae": 0.027563611045479774
+      },
+      {
+        "issue_date": "2024-06-14",
+        "valid_cells": 17269,
+        "persistence_mae": 0.032981641590595245,
+        "blend_mae": 0.031480591744184494
+      },
+      {
+        "issue_date": "2024-06-15",
+        "valid_cells": 17430,
+        "persistence_mae": 0.03661101683974266,
+        "blend_mae": 0.03566420078277588
+      }
+    ]
+  },
+  "holdout_metrics": {
+    "n_cell_days": 276092,
+    "evaluated_days": 15,
+    "persistence_mae": 0.03242904567754818,
+    "blend_mae": 0.031180437795358014,
+    "persistence_rmse": 0.05830012061890495,
+    "blend_rmse": 0.0553742592067383,
+    "mae_reduction_percent": 3.8502763683071484,
+    "rmse_reduction_percent": 5.018619826350557,
+    "per_date": [
+      {
+        "issue_date": "2024-06-16",
+        "valid_cells": 17555,
+        "persistence_mae": 0.03455482795834541,
+        "blend_mae": 0.03242724388837814
+      },
+      {
+        "issue_date": "2024-06-17",
+        "valid_cells": 17633,
+        "persistence_mae": 0.028133045881986618,
+        "blend_mae": 0.026887957006692886
+      },
+      {
+        "issue_date": "2024-06-18",
+        "valid_cells": 17782,
+        "persistence_mae": 0.033099763095378876,
+        "blend_mae": 0.03129180893301964
+      },
+      {
+        "issue_date": "2024-06-19",
+        "valid_cells": 17946,
+        "persistence_mae": 0.035812992602586746,
+        "blend_mae": 0.03589951619505882
+      },
+      {
+        "issue_date": "2024-06-20",
+        "valid_cells": 18143,
+        "persistence_mae": 0.033820755779743195,
+        "blend_mae": 0.03275367617607117
+      },
+      {
+        "issue_date": "2024-06-21",
+        "valid_cells": 18375,
+        "persistence_mae": 0.029025305062532425,
+        "blend_mae": 0.027922090142965317
+      },
+      {
+        "issue_date": "2024-06-22",
+        "valid_cells": 18407,
+        "persistence_mae": 0.032218724489212036,
+        "blend_mae": 0.03200318664312363
+      },
+      {
+        "issue_date": "2024-06-23",
+        "valid_cells": 18596,
+        "persistence_mae": 0.03424876555800438,
+        "blend_mae": 0.033413197845220566
+      },
+      {
+        "issue_date": "2024-06-24",
+        "valid_cells": 18626,
+        "persistence_mae": 0.03287393972277641,
+        "blend_mae": 0.03225230053067207
+      },
+      {
+        "issue_date": "2024-06-25",
+        "valid_cells": 18524,
+        "persistence_mae": 0.03205355256795883,
+        "blend_mae": 0.030483059585094452
+      },
+      {
+        "issue_date": "2024-06-26",
+        "valid_cells": 18556,
+        "persistence_mae": 0.034617915749549866,
+        "blend_mae": 0.03351236879825592
+      },
+      {
+        "issue_date": "2024-06-27",
+        "valid_cells": 18738,
+        "persistence_mae": 0.030606254935264587,
+        "blend_mae": 0.02837727591395378
+      },
+      {
+        "issue_date": "2024-06-28",
+        "valid_cells": 18876,
+        "persistence_mae": 0.03162852302193642,
+        "blend_mae": 0.030350206419825554
+      },
+      {
+        "issue_date": "2024-06-29",
+        "valid_cells": 19084,
+        "persistence_mae": 0.03206560015678406,
+        "blend_mae": 0.02975522354245186
+      },
+      {
+        "issue_date": "2024-06-30",
+        "valid_cells": 19251,
+        "persistence_mae": 0.03177237510681152,
+        "blend_mae": 0.030498657375574112
+      }
+    ]
+  },
+  "coverage_by_issue_date": [
+    {
+      "issue_date": "2024-06-02",
+      "motion_date": "2024-06-01",
+      "valid_common_cells": 15867,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15124104010980632,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "c5a898c72a25781922309653ad7e5e527475eb25801411b60960887d1ccb6400"
+    },
+    {
+      "issue_date": "2024-06-03",
+      "motion_date": "2024-06-02",
+      "valid_common_cells": 15928,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15182247979258806,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "07fa11ddb6bb106f69d21fd2acae3de2d5067ce04fbba6bad0ba6e24bbc9e617"
+    },
+    {
+      "issue_date": "2024-06-04",
+      "motion_date": "2024-06-03",
+      "valid_common_cells": 15912,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15166997102333385,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "fb5e90f2a51a82f28c3f547f4088971ba20d2108c79e8496f592a5f2c0d17b2f"
+    },
+    {
+      "issue_date": "2024-06-05",
+      "motion_date": "2024-06-04",
+      "valid_common_cells": 16008,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15258502363885923,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "8fb4f8fa8dcbe2462ae88d558d879149144ed9aa081743e4d3e1bac94743350e"
+    },
+    {
+      "issue_date": "2024-06-06",
+      "motion_date": "2024-06-05",
+      "valid_common_cells": 16099,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15345241726399267,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "e5fad5f590c863019c7b2f2638f9b06112e98830d78ca7ac31801c1c21fe6c4c"
+    },
+    {
+      "issue_date": "2024-06-07",
+      "motion_date": "2024-06-06",
+      "valid_common_cells": 16169,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15411964312947996,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "39e03d1742cc229b104a45acd73eee2babf282ce93b92ea0c8862b6c49528908"
+    },
+    {
+      "issue_date": "2024-06-08",
+      "motion_date": "2024-06-07",
+      "valid_common_cells": 16359,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15593068476437394,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "90c574db1e576735c891ff7ec65a28d61a0838195b6ec6104384665edf70d5ae"
+    },
+    {
+      "issue_date": "2024-06-09",
+      "motion_date": "2024-06-08",
+      "valid_common_cells": 16484,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15712215952417263,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "7e2597f21de9e06cbc2dcb4a353344cb018fcb51380a1c14901e872b833ab634"
+    },
+    {
+      "issue_date": "2024-06-10",
+      "motion_date": "2024-06-09",
+      "valid_common_cells": 16611,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1583326978801281,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "382b7b5ce7dac9d4f6ffcfb4563d09845db0ff2455052a37ceb45994a13bc3d6"
+    },
+    {
+      "issue_date": "2024-06-11",
+      "motion_date": "2024-06-10",
+      "valid_common_cells": 16693,
+      "grid_cells": 104912,
+      "valid_fraction": 0.15911430532255605,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "529bf4e3aa904911631a7fdaf76144ef883b05e6d2506aaeb73fced301abaa65"
+    },
+    {
+      "issue_date": "2024-06-12",
+      "motion_date": "2024-06-11",
+      "valid_common_cells": 16857,
+      "grid_cells": 104912,
+      "valid_fraction": 0.16067752020741194,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "53be471043eb2b3d390fbf41125ea462a250f29075b0a64b802b2b5f4bcd6c10"
+    },
+    {
+      "issue_date": "2024-06-13",
+      "motion_date": "2024-06-12",
+      "valid_common_cells": 17016,
+      "grid_cells": 104912,
+      "valid_fraction": 0.16219307610187586,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "f9df80ca0a6094e73bb233cf04b49db53af11eb5eeb9f50436624c2ee5432308"
+    },
+    {
+      "issue_date": "2024-06-14",
+      "motion_date": "2024-06-13",
+      "valid_common_cells": 17269,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1646046210157084,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "1250e329c51de4e8fed3866802a3df35802535411556becbfb7d0dc6c220b389"
+    },
+    {
+      "issue_date": "2024-06-15",
+      "motion_date": "2024-06-14",
+      "valid_common_cells": 17430,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1661392405063291,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "733a83eb6454ef2f1a285251b50638270c5f12f3c75c109c1072c640504302dc"
+    },
+    {
+      "issue_date": "2024-06-16",
+      "motion_date": "2024-06-15",
+      "valid_common_cells": 17555,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1673307152661278,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "3e7d70c2c3baf5f5a13622971d405007cab06f1335b42a09b0c9c7f3126f9705"
+    },
+    {
+      "issue_date": "2024-06-17",
+      "motion_date": "2024-06-16",
+      "valid_common_cells": 17633,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1680741955162422,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "08277d9a3f8a176d30b28c54dc99d0201b0af86504718dc551ca68f561e38e49"
+    },
+    {
+      "issue_date": "2024-06-18",
+      "motion_date": "2024-06-17",
+      "valid_common_cells": 17782,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1694944334299222,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "939e02d6e4270a69e1f5dbe6b46b45ab212cb9869b80beec2d457603086a8425"
+    },
+    {
+      "issue_date": "2024-06-19",
+      "motion_date": "2024-06-18",
+      "valid_common_cells": 17946,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1710576483147781,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "205fd6822c9b943fe34dc31fd23f8b227b324f58d43eed3e3ca5fd7887425dd1"
+    },
+    {
+      "issue_date": "2024-06-20",
+      "motion_date": "2024-06-19",
+      "valid_common_cells": 18143,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17293541253622083,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "0cebfa336114ff3faa38911b7c045e95ac847388e204d4431220601c3bdaf240"
+    },
+    {
+      "issue_date": "2024-06-21",
+      "motion_date": "2024-06-20",
+      "valid_common_cells": 18375,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1751467896904072,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "51a20b741b17a44234daf2601f6becad4cf778f69c3d875bc556269ef524d4c6"
+    },
+    {
+      "issue_date": "2024-06-22",
+      "motion_date": "2024-06-21",
+      "valid_common_cells": 18407,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17545180722891565,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "d8061d526e138405b6d8abd0713b674962b14f00fd0899d11b564784fc493874"
+    },
+    {
+      "issue_date": "2024-06-23",
+      "motion_date": "2024-06-22",
+      "valid_common_cells": 18596,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17725331706573128,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "604437bdb390cc69777321f617dcf530077eec349cea27e37d6455498a2c1d6b"
+    },
+    {
+      "issue_date": "2024-06-24",
+      "motion_date": "2024-06-23",
+      "valid_common_cells": 18626,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17753927100808298,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "af881ea53065b9ed15ee0d146ebd78925a9e59752cc673b42ccb25c82e4dff23"
+    },
+    {
+      "issue_date": "2024-06-25",
+      "motion_date": "2024-06-24",
+      "valid_common_cells": 18524,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17656702760408724,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "084992b109eddf3eae926585e243dea0ac582d78481ec9e24d2db016e8f02956"
+    },
+    {
+      "issue_date": "2024-06-26",
+      "motion_date": "2024-06-25",
+      "valid_common_cells": 18556,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1768720451425957,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "9956287667ce816d0a53db32d5366ffbba3b0ee3bfb3688449043d53299c4ac7"
+    },
+    {
+      "issue_date": "2024-06-27",
+      "motion_date": "2024-06-26",
+      "valid_common_cells": 18738,
+      "grid_cells": 104912,
+      "valid_fraction": 0.1786068323928626,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "b222b842827a5617c8ccb4d38d4d7636c105da8c9b753102dd9aa9f5507b3658"
+    },
+    {
+      "issue_date": "2024-06-28",
+      "motion_date": "2024-06-27",
+      "valid_common_cells": 18876,
+      "grid_cells": 104912,
+      "valid_fraction": 0.17992222052768034,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "142f02e27eba5f56ba221743aac2944bddfd4318154dc0b3ef6d15427f1fd7bd"
+    },
+    {
+      "issue_date": "2024-06-29",
+      "motion_date": "2024-06-28",
+      "valid_common_cells": 19084,
+      "grid_cells": 104912,
+      "valid_fraction": 0.18190483452798537,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "14d1edfc900b72d78d24c5b8c8034b0b5842b48f800fff2dcf3d17eb08934c8b"
+    },
+    {
+      "issue_date": "2024-06-30",
+      "motion_date": "2024-06-29",
+      "valid_common_cells": 19251,
+      "grid_cells": 104912,
+      "valid_fraction": 0.18349664480707642,
+      "motion_source_file": "icemotion_daily_sh_25km_20240101_20241231_v4.1.nc",
+      "motion_source_sha256": "85a68226180f45a3500e03f2df23a09f5a46b470c5e3221a44b784524fbb4a23",
+      "aligned_file_sha256": "5dff65ce5440c2204999cc61965321e9aa7a0af9d32ca7fa1a922fa34d88b975"
+    }
+  ],
+  "limitations": [
+    "Same-product retrospective hindcast; not independent sensor validation.",
+    "Grid-cell samples are spatially and temporally correlated; sample count is not an independent-trial count.",
+    "Lagged ice motion may not represent the next-day displacement; no uncertainty calibration is provided.",
+    "Sea-ice concentration and motion do not establish vessel passability, encounter risk, or route safety."
+  ],
+  "created_at_utc": "2026-09-30T04:20:06.298546+00:00",
+  "evaluator_sha256": "baebd2af14ec6c9ecab66fe15bb64e71ef9b8a8930cd2455b9bfee09db091d35"
+}

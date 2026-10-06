@@ -1,0 +1,2956 @@
+{
+  "area_weight_method": "Projected pixel area divided by PROJ ellipsoidal areal_scale at each cell centre.",
+  "by_lead": {
+    "1": {
+      "area_weighted_mae": {
+        "direct_model": 0.012820596593806783,
+        "persistence": 0.012820596592916195
+      },
+      "area_weighted_rmse": {
+        "direct_model": 0.04194432142537738,
+        "persistence": 0.041944321412354574
+      },
+      "by_latitude_band": {
+        "70S_to_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.018994236419585784,
+            "persistence": 0.018994236418188176
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.05100499450286754,
+            "persistence": 0.05100499448821759
+          },
+          "evaluated_area_km2_samples": 49073131768.87036,
+          "period": {
+            "first_target_date": "2017-01-03",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2908,
+          "valid_cell_samples": 81815838
+        },
+        "80S_to_70S": {
+          "area_weighted_mae": {
+            "direct_model": 0.023522456610246635,
+            "persistence": 0.02352245660949446
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0514626432461981,
+            "persistence": 0.05146264320161558
+          },
+          "evaluated_area_km2_samples": 9745957631.94694,
+          "period": {
+            "first_target_date": "2017-01-03",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2908,
+          "valid_cell_samples": 15350074
+        },
+        "north_of_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.0029951663312239875,
+            "persistence": 0.0029951663309010063
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.023520154393058615,
+            "persistence": 0.02352015439742694
+          },
+          "evaluated_area_km2_samples": 41449555295.11722,
+          "period": {
+            "first_target_date": "2017-01-03",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2908,
+          "valid_cell_samples": 74892313
+        },
+        "south_of_80S": {
+          "status": "no_valid_target_cells"
+        }
+      },
+      "by_target_month": {
+        "01": {
+          "area_weighted_mae": {
+            "direct_model": 0.0066960926398562165,
+            "persistence": 0.006696092639752782
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.032321323644536444,
+            "persistence": 0.03232132365704386
+          },
+          "evaluated_area_km2_samples": 7814414358.377421,
+          "period": {
+            "first_target_date": "2017-01-03",
+            "last_target_date": "2024-01-31"
+          },
+          "target_days": 246,
+          "valid_cell_samples": 13330846
+        },
+        "02": {
+          "area_weighted_mae": {
+            "direct_model": 0.004929507784820215,
+            "persistence": 0.004929507784668699
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.030536164603779233,
+            "persistence": 0.030536164605107517
+          },
+          "evaluated_area_km2_samples": 6658821879.794224,
+          "period": {
+            "first_target_date": "2017-02-01",
+            "last_target_date": "2024-02-29"
+          },
+          "target_days": 222,
+          "valid_cell_samples": 11327190
+        },
+        "03": {
+          "area_weighted_mae": {
+            "direct_model": 0.007551746837200559,
+            "persistence": 0.0075517468367258984
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0363620281108705,
+            "persistence": 0.03636202810594478
+          },
+          "evaluated_area_km2_samples": 7551791476.134429,
+          "period": {
+            "first_target_date": "2017-03-01",
+            "last_target_date": "2024-03-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 12852496
+        },
+        "04": {
+          "area_weighted_mae": {
+            "direct_model": 0.010441191763473991,
+            "persistence": 0.010441191762348066
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04076566356083511,
+            "persistence": 0.040765663546214095
+          },
+          "evaluated_area_km2_samples": 7816837122.512712,
+          "period": {
+            "first_target_date": "2017-04-01",
+            "last_target_date": "2024-04-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 13351623
+        },
+        "05": {
+          "area_weighted_mae": {
+            "direct_model": 0.012696446261841507,
+            "persistence": 0.012696446260467457
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04344637633764302,
+            "persistence": 0.04344637631950081
+          },
+          "evaluated_area_km2_samples": 8476068882.542353,
+          "period": {
+            "first_target_date": "2017-05-01",
+            "last_target_date": "2024-05-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14519880
+        },
+        "06": {
+          "area_weighted_mae": {
+            "direct_model": 0.014537323771976536,
+            "persistence": 0.014537323770528738
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04596235116154354,
+            "persistence": 0.045962351142603775
+          },
+          "evaluated_area_km2_samples": 8543556312.750632,
+          "period": {
+            "first_target_date": "2017-06-01",
+            "last_target_date": "2024-06-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 14681041
+        },
+        "07": {
+          "area_weighted_mae": {
+            "direct_model": 0.0158150566469953,
+            "persistence": 0.015815056645409286
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04723691303491532,
+            "persistence": 0.04723691301320217
+          },
+          "evaluated_area_km2_samples": 9211664750.126049,
+          "period": {
+            "first_target_date": "2017-07-01",
+            "last_target_date": "2024-07-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15874279
+        },
+        "08": {
+          "area_weighted_mae": {
+            "direct_model": 0.016293418195491554,
+            "persistence": 0.0162934181939983
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04673559318570418,
+            "persistence": 0.046735593165507114
+          },
+          "evaluated_area_km2_samples": 9236022577.221182,
+          "period": {
+            "first_target_date": "2017-08-01",
+            "last_target_date": "2024-08-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15941128
+        },
+        "09": {
+          "area_weighted_mae": {
+            "direct_model": 0.016723832209910073,
+            "persistence": 0.01672383220860285
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04661532413424814,
+            "persistence": 0.046615324110348244
+          },
+          "evaluated_area_km2_samples": 8622885797.822426,
+          "period": {
+            "first_target_date": "2017-09-01",
+            "last_target_date": "2024-09-30"
+          },
+          "target_days": 232,
+          "valid_cell_samples": 14858831
+        },
+        "10": {
+          "area_weighted_mae": {
+            "direct_model": 0.01600723179196489,
+            "persistence": 0.01600723179119669
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.043205225710556794,
+            "persistence": 0.04320522569046871
+          },
+          "evaluated_area_km2_samples": 9112229206.55648,
+          "period": {
+            "first_target_date": "2017-10-01",
+            "last_target_date": "2024-10-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15704816
+        },
+        "11": {
+          "area_weighted_mae": {
+            "direct_model": 0.015022113320925984,
+            "persistence": 0.01502211332064367
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04066000830102232,
+            "persistence": 0.04066000828655548
+          },
+          "evaluated_area_km2_samples": 8752838822.146673,
+          "period": {
+            "first_target_date": "2017-11-01",
+            "last_target_date": "2024-11-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 15088338
+        },
+        "12": {
+          "area_weighted_mae": {
+            "direct_model": 0.013240326242409999,
+            "persistence": 0.013240326242181097
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04074519653386384,
+            "persistence": 0.04074519654186199
+          },
+          "evaluated_area_km2_samples": 8471513509.94921,
+          "period": {
+            "first_target_date": "2017-12-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14527757
+        }
+      },
+      "by_target_year": {
+        "2017": {
+          "area_weighted_mae": {
+            "direct_model": 0.01260455774632352,
+            "persistence": 0.012604557745467556
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04142481500899515,
+            "persistence": 0.041424814994584704
+          },
+          "evaluated_area_km2_samples": 12567995980.6458,
+          "period": {
+            "first_target_date": "2017-01-03",
+            "last_target_date": "2017-12-31"
+          },
+          "target_days": 363,
+          "valid_cell_samples": 21568468
+        },
+        "2018": {
+          "area_weighted_mae": {
+            "direct_model": 0.012790708758241901,
+            "persistence": 0.012790708757384781
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04141746731583198,
+            "persistence": 0.04141746730287671
+          },
+          "evaluated_area_km2_samples": 12622303565.878298,
+          "period": {
+            "first_target_date": "2018-01-01",
+            "last_target_date": "2018-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21660379
+        },
+        "2019": {
+          "area_weighted_mae": {
+            "direct_model": 0.012507523602805312,
+            "persistence": 0.012507523601899842
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04153258047809206,
+            "persistence": 0.04153258046400099
+          },
+          "evaluated_area_km2_samples": 12603982719.069014,
+          "period": {
+            "first_target_date": "2019-01-01",
+            "last_target_date": "2019-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21628350
+        },
+        "2020": {
+          "area_weighted_mae": {
+            "direct_model": 0.013567310977185077,
+            "persistence": 0.013567310976309283
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04313679022335432,
+            "persistence": 0.04313679020838374
+          },
+          "evaluated_area_km2_samples": 12538532070.969795,
+          "period": {
+            "first_target_date": "2020-01-01",
+            "last_target_date": "2020-12-31"
+          },
+          "target_days": 366,
+          "valid_cell_samples": 21513641
+        },
+        "2021": {
+          "area_weighted_mae": {
+            "direct_model": 0.013709296386159009,
+            "persistence": 0.013709296385167016
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04346100520223251,
+            "persistence": 0.04346100519055536
+          },
+          "evaluated_area_km2_samples": 12467673341.981802,
+          "period": {
+            "first_target_date": "2021-01-01",
+            "last_target_date": "2021-12-31"
+          },
+          "target_days": 361,
+          "valid_cell_samples": 21396582
+        },
+        "2022": {
+          "area_weighted_mae": {
+            "direct_model": 0.01308701260081012,
+            "persistence": 0.013087012599870464
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.042824952435992776,
+            "persistence": 0.04282495242272231
+          },
+          "evaluated_area_km2_samples": 12504488952.187838,
+          "period": {
+            "first_target_date": "2022-01-01",
+            "last_target_date": "2022-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21454634
+        },
+        "2023": {
+          "area_weighted_mae": {
+            "direct_model": 0.012077813668795259,
+            "persistence": 0.01207781366793567
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.041002582979519496,
+            "persistence": 0.04100258296820337
+          },
+          "evaluated_area_km2_samples": 12625105328.085588,
+          "period": {
+            "first_target_date": "2023-01-01",
+            "last_target_date": "2023-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21665329
+        },
+        "2024": {
+          "area_weighted_mae": {
+            "direct_model": 0.012224254119065437,
+            "persistence": 0.01222425411822562
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04066653205524917,
+            "persistence": 0.04066653204382997
+          },
+          "evaluated_area_km2_samples": 12338562737.115788,
+          "period": {
+            "first_target_date": "2024-01-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 358,
+          "valid_cell_samples": 21170842
+        }
+      },
+      "evaluated_area_km2_samples": 100268644695.93445,
+      "period": {
+        "first_target_date": "2017-01-03",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2908,
+      "valid_cell_samples": 172058225
+    },
+    "3": {
+      "area_weighted_mae": {
+        "direct_model": 0.023161909348774816,
+        "persistence": 0.023161909343012557
+      },
+      "area_weighted_rmse": {
+        "direct_model": 0.07147436023582016,
+        "persistence": 0.07147436018331656
+      },
+      "by_latitude_band": {
+        "70S_to_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.03457690282133024,
+            "persistence": 0.034576902812141194
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08806994480777311,
+            "persistence": 0.08806994474203242
+          },
+          "evaluated_area_km2_samples": 48969252319.951584,
+          "period": {
+            "first_target_date": "2017-01-05",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2903,
+          "valid_cell_samples": 81641986
+        },
+        "80S_to_70S": {
+          "area_weighted_mae": {
+            "direct_model": 0.039719485616330194,
+            "persistence": 0.03971948561149474
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08247207992142531,
+            "persistence": 0.08247207984402323
+          },
+          "evaluated_area_km2_samples": 9728194255.390451,
+          "period": {
+            "first_target_date": "2017-01-05",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2903,
+          "valid_cell_samples": 15322089
+        },
+        "north_of_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.005687983144584184,
+            "persistence": 0.005687983142675276
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.039527822311952315,
+            "persistence": 0.03952782229397198
+          },
+          "evaluated_area_km2_samples": 41207625893.756454,
+          "period": {
+            "first_target_date": "2017-01-05",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2903,
+          "valid_cell_samples": 74449550
+        },
+        "south_of_80S": {
+          "status": "no_valid_target_cells"
+        }
+      },
+      "by_target_month": {
+        "01": {
+          "area_weighted_mae": {
+            "direct_model": 0.012922281684459387,
+            "persistence": 0.012922281682361208
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.05319564521330322,
+            "persistence": 0.05319564520746052
+          },
+          "evaluated_area_km2_samples": 7748033317.314464,
+          "period": {
+            "first_target_date": "2017-01-05",
+            "last_target_date": "2024-01-31"
+          },
+          "target_days": 244,
+          "valid_cell_samples": 13217357
+        },
+        "02": {
+          "area_weighted_mae": {
+            "direct_model": 0.008360624699335482,
+            "persistence": 0.008360624697859032
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.04505718957997185,
+            "persistence": 0.04505718956665625
+          },
+          "evaluated_area_km2_samples": 6617654771.57454,
+          "period": {
+            "first_target_date": "2017-02-01",
+            "last_target_date": "2024-02-29"
+          },
+          "target_days": 221,
+          "valid_cell_samples": 11256868
+        },
+        "03": {
+          "area_weighted_mae": {
+            "direct_model": 0.013381062410141293,
+            "persistence": 0.013381062406721123
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.05805971209404979,
+            "persistence": 0.05805971206386218
+          },
+          "evaluated_area_km2_samples": 7535657787.835096,
+          "period": {
+            "first_target_date": "2017-03-01",
+            "last_target_date": "2024-03-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 12823860
+        },
+        "04": {
+          "area_weighted_mae": {
+            "direct_model": 0.019065643341614206,
+            "persistence": 0.019065643336028594
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.06983536804651688,
+            "persistence": 0.06983536799289916
+          },
+          "evaluated_area_km2_samples": 7776853599.592982,
+          "period": {
+            "first_target_date": "2017-04-01",
+            "last_target_date": "2024-04-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 13279831
+        },
+        "05": {
+          "area_weighted_mae": {
+            "direct_model": 0.023180058624501457,
+            "persistence": 0.023180058617085008
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07626156268775994,
+            "persistence": 0.0762615626183466
+          },
+          "evaluated_area_km2_samples": 8441615313.570435,
+          "period": {
+            "first_target_date": "2017-05-01",
+            "last_target_date": "2024-05-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14457131
+        },
+        "06": {
+          "area_weighted_mae": {
+            "direct_model": 0.026056822149019616,
+            "persistence": 0.026056822141174673
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07931669291618905,
+            "persistence": 0.07931669284502488
+          },
+          "evaluated_area_km2_samples": 8515192702.2239275,
+          "period": {
+            "first_target_date": "2017-06-01",
+            "last_target_date": "2024-06-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 14628621
+        },
+        "07": {
+          "area_weighted_mae": {
+            "direct_model": 0.0283075443058215,
+            "persistence": 0.028307544297095942
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08195004581728003,
+            "persistence": 0.0819500457411271
+          },
+          "evaluated_area_km2_samples": 9186588431.746016,
+          "period": {
+            "first_target_date": "2017-07-01",
+            "last_target_date": "2024-07-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15828098
+        },
+        "08": {
+          "area_weighted_mae": {
+            "direct_model": 0.02845185603475183,
+            "persistence": 0.028451856026681155
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07925871015139102,
+            "persistence": 0.07925871008201642
+          },
+          "evaluated_area_km2_samples": 9260425374.416801,
+          "period": {
+            "first_target_date": "2017-08-01",
+            "last_target_date": "2024-08-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15981646
+        },
+        "09": {
+          "area_weighted_mae": {
+            "direct_model": 0.0288435327048814,
+            "persistence": 0.028843532697649114
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07780284984282661,
+            "persistence": 0.07780284977756591
+          },
+          "evaluated_area_km2_samples": 8506928158.882118,
+          "period": {
+            "first_target_date": "2017-09-01",
+            "last_target_date": "2024-09-30"
+          },
+          "target_days": 230,
+          "valid_cell_samples": 14657982
+        },
+        "10": {
+          "area_weighted_mae": {
+            "direct_model": 0.028084765795532325,
+            "persistence": 0.028084765789744545
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07336912333776817,
+            "persistence": 0.07336912328096633
+          },
+          "evaluated_area_km2_samples": 9102120644.122406,
+          "period": {
+            "first_target_date": "2017-10-01",
+            "last_target_date": "2024-10-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15685384
+        },
+        "11": {
+          "area_weighted_mae": {
+            "direct_model": 0.027182123893488633,
+            "persistence": 0.027182123889386123
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.06942357631241773,
+            "persistence": 0.06942357626934385
+          },
+          "evaluated_area_km2_samples": 8743486174.513115,
+          "period": {
+            "first_target_date": "2017-11-01",
+            "last_target_date": "2024-11-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 15070992
+        },
+        "12": {
+          "area_weighted_mae": {
+            "direct_model": 0.02711606303027768,
+            "persistence": 0.027116063024840157
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0741059231615986,
+            "persistence": 0.0741059231330345
+          },
+          "evaluated_area_km2_samples": 8470516193.305903,
+          "period": {
+            "first_target_date": "2017-12-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14525855
+        }
+      },
+      "by_target_year": {
+        "2017": {
+          "area_weighted_mae": {
+            "direct_model": 0.022669868831335982,
+            "persistence": 0.02266986882577866
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0703095026553998,
+            "persistence": 0.0703095026026107
+          },
+          "evaluated_area_km2_samples": 12481270784.832619,
+          "period": {
+            "first_target_date": "2017-01-05",
+            "last_target_date": "2017-12-31"
+          },
+          "target_days": 361,
+          "valid_cell_samples": 21417608
+        },
+        "2018": {
+          "area_weighted_mae": {
+            "direct_model": 0.023439080770623604,
+            "persistence": 0.023439080764753997
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0715097973492204,
+            "persistence": 0.07150979729674262
+          },
+          "evaluated_area_km2_samples": 12598924888.153051,
+          "period": {
+            "first_target_date": "2018-01-01",
+            "last_target_date": "2018-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21617561
+        },
+        "2019": {
+          "area_weighted_mae": {
+            "direct_model": 0.022764514222115905,
+            "persistence": 0.02276451421624577
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0712922318634307,
+            "persistence": 0.07129223180874912
+          },
+          "evaluated_area_km2_samples": 12580539022.18594,
+          "period": {
+            "first_target_date": "2019-01-01",
+            "last_target_date": "2019-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21585410
+        },
+        "2020": {
+          "area_weighted_mae": {
+            "direct_model": 0.02429688237350349,
+            "persistence": 0.024296882367483712
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07306277505008349,
+            "persistence": 0.07306277499402371
+          },
+          "evaluated_area_km2_samples": 12515750901.197247,
+          "period": {
+            "first_target_date": "2020-01-01",
+            "last_target_date": "2020-12-31"
+          },
+          "target_days": 366,
+          "valid_cell_samples": 21472001
+        },
+        "2021": {
+          "area_weighted_mae": {
+            "direct_model": 0.02463215874167775,
+            "persistence": 0.024632158735597712
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07348159377777369,
+            "persistence": 0.07348159372673248
+          },
+          "evaluated_area_km2_samples": 12405729028.973852,
+          "period": {
+            "first_target_date": "2021-01-01",
+            "last_target_date": "2021-12-31"
+          },
+          "target_days": 360,
+          "valid_cell_samples": 21288267
+        },
+        "2022": {
+          "area_weighted_mae": {
+            "direct_model": 0.02369838645353836,
+            "persistence": 0.0236983864479084
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07298501969047054,
+            "persistence": 0.0729850196401688
+          },
+          "evaluated_area_km2_samples": 12481242850.465523,
+          "period": {
+            "first_target_date": "2022-01-01",
+            "last_target_date": "2022-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21412019
+        },
+        "2023": {
+          "area_weighted_mae": {
+            "direct_model": 0.021818829523339616,
+            "persistence": 0.02181882951787378
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.06979268917255704,
+            "persistence": 0.06979268912179604
+          },
+          "evaluated_area_km2_samples": 12601184006.083961,
+          "period": {
+            "first_target_date": "2023-01-01",
+            "last_target_date": "2023-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21621575
+        },
+        "2024": {
+          "area_weighted_mae": {
+            "direct_model": 0.021971805311558887,
+            "persistence": 0.02197180530595445
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0692163725462274,
+            "persistence": 0.06921637249428951
+          },
+          "evaluated_area_km2_samples": 12240430987.20575,
+          "period": {
+            "first_target_date": "2024-01-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 356,
+          "valid_cell_samples": 20999184
+        }
+      },
+      "evaluated_area_km2_samples": 99905072469.09845,
+      "period": {
+        "first_target_date": "2017-01-05",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2903,
+      "valid_cell_samples": 171413625
+    },
+    "5": {
+      "area_weighted_mae": {
+        "direct_model": 0.029864212320067023,
+        "persistence": 0.029864212309568944
+      },
+      "area_weighted_rmse": {
+        "direct_model": 0.09031461244971299,
+        "persistence": 0.09031461236982163
+      },
+      "by_latitude_band": {
+        "70S_to_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.04475989567101751,
+            "persistence": 0.044759895654290796
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1117684728872743,
+            "persistence": 0.11176847278668209
+          },
+          "evaluated_area_km2_samples": 48887382903.91286,
+          "period": {
+            "first_target_date": "2017-01-07",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2899,
+          "valid_cell_samples": 81504809
+        },
+        "80S_to_70S": {
+          "area_weighted_mae": {
+            "direct_model": 0.049703261703297696,
+            "persistence": 0.04970326169269569
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10297212294077863,
+            "persistence": 0.10297212283147905
+          },
+          "evaluated_area_km2_samples": 9714762035.50786,
+          "period": {
+            "first_target_date": "2017-01-07",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2899,
+          "valid_cell_samples": 15300933
+        },
+        "north_of_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.007390871148797658,
+            "persistence": 0.007390871145754864
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.049037116418647005,
+            "persistence": 0.049037116389020016
+          },
+          "evaluated_area_km2_samples": 40979336910.50372,
+          "period": {
+            "first_target_date": "2017-01-07",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2899,
+          "valid_cell_samples": 74031340
+        },
+        "south_of_80S": {
+          "status": "no_valid_target_cells"
+        }
+      },
+      "by_target_month": {
+        "01": {
+          "area_weighted_mae": {
+            "direct_model": 0.018341039982137618,
+            "persistence": 0.018341039976563493
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.06993437181578081,
+            "persistence": 0.06993437178380951
+          },
+          "evaluated_area_km2_samples": 7682227330.343369,
+          "period": {
+            "first_target_date": "2017-01-07",
+            "last_target_date": "2024-01-31"
+          },
+          "target_days": 242,
+          "valid_cell_samples": 13104862
+        },
+        "02": {
+          "area_weighted_mae": {
+            "direct_model": 0.010734155282298076,
+            "persistence": 0.01073415527937194
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.05478888353219714,
+            "persistence": 0.054788883507399654
+          },
+          "evaluated_area_km2_samples": 6614796593.406286,
+          "period": {
+            "first_target_date": "2017-02-01",
+            "last_target_date": "2024-02-29"
+          },
+          "target_days": 221,
+          "valid_cell_samples": 11251588
+        },
+        "03": {
+          "area_weighted_mae": {
+            "direct_model": 0.017241939056385894,
+            "persistence": 0.017241939049965342
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.07249644752536714,
+            "persistence": 0.07249644747241277
+          },
+          "evaluated_area_km2_samples": 7523797934.922142,
+          "period": {
+            "first_target_date": "2017-03-01",
+            "last_target_date": "2024-03-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 12802348
+        },
+        "04": {
+          "area_weighted_mae": {
+            "direct_model": 0.02490673156616096,
+            "persistence": 0.02490673155588673
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08942118881231753,
+            "persistence": 0.08942118872940481
+          },
+          "evaluated_area_km2_samples": 7732923496.938585,
+          "period": {
+            "first_target_date": "2017-04-01",
+            "last_target_date": "2024-04-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 13201510
+        },
+        "05": {
+          "area_weighted_mae": {
+            "direct_model": 0.029852042722681615,
+            "persistence": 0.029852042709729187
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0974088087127893,
+            "persistence": 0.09740880861469561
+          },
+          "evaluated_area_km2_samples": 8419499900.865964,
+          "period": {
+            "first_target_date": "2017-05-01",
+            "last_target_date": "2024-05-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14415332
+        },
+        "06": {
+          "area_weighted_mae": {
+            "direct_model": 0.033471949616872235,
+            "persistence": 0.03347194960306996
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1007752932266131,
+            "persistence": 0.10077529312319196
+          },
+          "evaluated_area_km2_samples": 8475129025.657861,
+          "period": {
+            "first_target_date": "2017-06-01",
+            "last_target_date": "2024-06-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 14556371
+        },
+        "07": {
+          "area_weighted_mae": {
+            "direct_model": 0.03530117061324725,
+            "persistence": 0.03530117059871075
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1014928388462515,
+            "persistence": 0.10149283874126203
+          },
+          "evaluated_area_km2_samples": 9161599760.840582,
+          "period": {
+            "first_target_date": "2017-07-01",
+            "last_target_date": "2024-07-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15782080
+        },
+        "08": {
+          "area_weighted_mae": {
+            "direct_model": 0.03502906468795889,
+            "persistence": 0.035029064675154355
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09706137065437641,
+            "persistence": 0.09706137055912933
+          },
+          "evaluated_area_km2_samples": 9284828171.61242,
+          "period": {
+            "first_target_date": "2017-08-01",
+            "last_target_date": "2024-08-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 16022164
+        },
+        "09": {
+          "area_weighted_mae": {
+            "direct_model": 0.035378593811126464,
+            "persistence": 0.03537859379968428
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09456584648218004,
+            "persistence": 0.09456584639471055
+          },
+          "evaluated_area_km2_samples": 8391360176.772347,
+          "period": {
+            "first_target_date": "2017-09-01",
+            "last_target_date": "2024-09-30"
+          },
+          "target_days": 228,
+          "valid_cell_samples": 14457851
+        },
+        "10": {
+          "area_weighted_mae": {
+            "direct_model": 0.03452089780425342,
+            "persistence": 0.034520897794752585
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08963111976797088,
+            "persistence": 0.08963111968837995
+          },
+          "evaluated_area_km2_samples": 9091997262.937473,
+          "period": {
+            "first_target_date": "2017-10-01",
+            "last_target_date": "2024-10-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15665922
+        },
+        "11": {
+          "area_weighted_mae": {
+            "direct_model": 0.035876723708581436,
+            "persistence": 0.035876723699604915
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08977558894573252,
+            "persistence": 0.08977558887383481
+          },
+          "evaluated_area_km2_samples": 8734147341.894533,
+          "period": {
+            "first_target_date": "2017-11-01",
+            "last_target_date": "2024-11-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 15053674
+        },
+        "12": {
+          "area_weighted_mae": {
+            "direct_model": 0.039192493631234886,
+            "persistence": 0.039192493617468696
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1014544574974011,
+            "persistence": 0.10145445742379065
+          },
+          "evaluated_area_km2_samples": 8469174853.732213,
+          "period": {
+            "first_target_date": "2017-12-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14523380
+        }
+      },
+      "by_target_year": {
+        "2017": {
+          "area_weighted_mae": {
+            "direct_model": 0.029381969622437734,
+            "persistence": 0.02938196961221755
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08942590050258098,
+            "persistence": 0.08942590042267168
+          },
+          "evaluated_area_km2_samples": 12394545589.019436,
+          "period": {
+            "first_target_date": "2017-01-07",
+            "last_target_date": "2017-12-31"
+          },
+          "target_days": 359,
+          "valid_cell_samples": 21266748
+        },
+        "2018": {
+          "area_weighted_mae": {
+            "direct_model": 0.030522234975659184,
+            "persistence": 0.030522234964661797
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09125501047474169,
+            "persistence": 0.09125501039187826
+          },
+          "evaluated_area_km2_samples": 12575546210.427803,
+          "period": {
+            "first_target_date": "2018-01-01",
+            "last_target_date": "2018-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21574743
+        },
+        "2019": {
+          "area_weighted_mae": {
+            "direct_model": 0.029392895913406478,
+            "persistence": 0.029392895902516182
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09027337717193734,
+            "persistence": 0.09027337708983045
+          },
+          "evaluated_area_km2_samples": 12557219915.836329,
+          "period": {
+            "first_target_date": "2019-01-01",
+            "last_target_date": "2019-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21542707
+        },
+        "2020": {
+          "area_weighted_mae": {
+            "direct_model": 0.031295436809578574,
+            "persistence": 0.03129543679845171
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09241804215345871,
+            "persistence": 0.0924180420700708
+          },
+          "evaluated_area_km2_samples": 12493753527.02344,
+          "period": {
+            "first_target_date": "2020-01-01",
+            "last_target_date": "2020-12-31"
+          },
+          "target_days": 366,
+          "valid_cell_samples": 21431767
+        },
+        "2021": {
+          "area_weighted_mae": {
+            "direct_model": 0.03174611724517794,
+            "persistence": 0.03174611723424899
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0926473572312895,
+            "persistence": 0.09264735715077474
+          },
+          "evaluated_area_km2_samples": 12382510509.77001,
+          "period": {
+            "first_target_date": "2021-01-01",
+            "last_target_date": "2021-12-31"
+          },
+          "target_days": 360,
+          "valid_cell_samples": 21245747
+        },
+        "2022": {
+          "area_weighted_mae": {
+            "direct_model": 0.030502657258364776,
+            "persistence": 0.03050265724817334
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.09187370606368434,
+            "persistence": 0.09187370598611505
+          },
+          "evaluated_area_km2_samples": 12457804585.347446,
+          "period": {
+            "first_target_date": "2022-01-01",
+            "last_target_date": "2022-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21369092
+        },
+        "2023": {
+          "area_weighted_mae": {
+            "direct_model": 0.02790118179985748,
+            "persistence": 0.027901181790029216
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08734714077375834,
+            "persistence": 0.08734714069873348
+          },
+          "evaluated_area_km2_samples": 12577802275.203724,
+          "period": {
+            "first_target_date": "2023-01-01",
+            "last_target_date": "2023-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21578752
+        },
+        "2024": {
+          "area_weighted_mae": {
+            "direct_model": 0.0281490118378045,
+            "persistence": 0.028149011828023436
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08703214590439233,
+            "persistence": 0.08703214582687273
+          },
+          "evaluated_area_km2_samples": 12142299237.295713,
+          "period": {
+            "first_target_date": "2024-01-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 354,
+          "valid_cell_samples": 20827526
+        }
+      },
+      "evaluated_area_km2_samples": 99581481849.92422,
+      "period": {
+        "first_target_date": "2017-01-07",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2899,
+      "valid_cell_samples": 170837082
+    },
+    "7": {
+      "area_weighted_mae": {
+        "direct_model": 0.03533162976171104,
+        "persistence": 0.035331629746991076
+      },
+      "area_weighted_rmse": {
+        "direct_model": 0.1051816069925647,
+        "persistence": 0.1051816068913813
+      },
+      "by_latitude_band": {
+        "70S_to_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.053076860091431574,
+            "persistence": 0.05307686006809156
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1303963184268814,
+            "persistence": 0.13039631829907147
+          },
+          "evaluated_area_km2_samples": 48818515939.18015,
+          "period": {
+            "first_target_date": "2017-01-09",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2896,
+          "valid_cell_samples": 81389308
+        },
+        "80S_to_70S": {
+          "area_weighted_mae": {
+            "direct_model": 0.05782827102534958,
+            "persistence": 0.05782827100939925
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1200621090909942,
+            "persistence": 0.12006210895987188
+          },
+          "evaluated_area_km2_samples": 9704426388.829596,
+          "period": {
+            "first_target_date": "2017-01-09",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2896,
+          "valid_cell_samples": 15284651
+        },
+        "north_of_60S": {
+          "area_weighted_mae": {
+            "direct_model": 0.00872321020443401,
+            "persistence": 0.008723210200330579
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.05613505444454173,
+            "persistence": 0.056135054405090985
+          },
+          "evaluated_area_km2_samples": 40762015440.26517,
+          "period": {
+            "first_target_date": "2017-01-09",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 2896,
+          "valid_cell_samples": 73632844
+        },
+        "south_of_80S": {
+          "status": "no_valid_target_cells"
+        }
+      },
+      "by_target_month": {
+        "01": {
+          "area_weighted_mae": {
+            "direct_model": 0.02362887739274445,
+            "persistence": 0.023628877383257623
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0850954996510662,
+            "persistence": 0.08509549959866736
+          },
+          "evaluated_area_km2_samples": 7616424396.527263,
+          "period": {
+            "first_target_date": "2017-01-09",
+            "last_target_date": "2024-01-31"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 12992372
+        },
+        "02": {
+          "area_weighted_mae": {
+            "direct_model": 0.012811081260066701,
+            "persistence": 0.01281108125530771
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.0630070073195552,
+            "persistence": 0.0630070072789772
+          },
+          "evaluated_area_km2_samples": 6647752257.368463,
+          "period": {
+            "first_target_date": "2017-02-01",
+            "last_target_date": "2024-02-29"
+          },
+          "target_days": 222,
+          "valid_cell_samples": 11307080
+        },
+        "03": {
+          "area_weighted_mae": {
+            "direct_model": 0.02044536195325711,
+            "persistence": 0.020445361944893825
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.08433048702978947,
+            "persistence": 0.08433048696597804
+          },
+          "evaluated_area_km2_samples": 7472884360.208375,
+          "period": {
+            "first_target_date": "2017-03-01",
+            "last_target_date": "2024-03-31"
+          },
+          "target_days": 247,
+          "valid_cell_samples": 12714776
+        },
+        "04": {
+          "area_weighted_mae": {
+            "direct_model": 0.02996030481521164,
+            "persistence": 0.029960304801038676
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10551494711781402,
+            "persistence": 0.1055149470125413
+          },
+          "evaluated_area_km2_samples": 7692677762.563473,
+          "period": {
+            "first_target_date": "2017-04-01",
+            "last_target_date": "2024-04-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 13129250
+        },
+        "05": {
+          "area_weighted_mae": {
+            "direct_model": 0.03523880113874522,
+            "persistence": 0.03523880112161067
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.11404082065356148,
+            "persistence": 0.1140408205334337
+          },
+          "evaluated_area_km2_samples": 8385066068.7520685,
+          "period": {
+            "first_target_date": "2017-05-01",
+            "last_target_date": "2024-05-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14352628
+        },
+        "06": {
+          "area_weighted_mae": {
+            "direct_model": 0.03949961550925992,
+            "persistence": 0.03949961549066822
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.11785043344540212,
+            "persistence": 0.11785043332239552
+          },
+          "evaluated_area_km2_samples": 8447319218.408943,
+          "period": {
+            "first_target_date": "2017-06-01",
+            "last_target_date": "2024-06-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 14504914
+        },
+        "07": {
+          "area_weighted_mae": {
+            "direct_model": 0.04028980401447294,
+            "persistence": 0.04028980399566804
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.11505080102976188,
+            "persistence": 0.11505080090435905
+          },
+          "evaluated_area_km2_samples": 9136333724.476274,
+          "period": {
+            "first_target_date": "2017-07-01",
+            "last_target_date": "2024-07-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15735564
+        },
+        "08": {
+          "area_weighted_mae": {
+            "direct_model": 0.03980019002952841,
+            "persistence": 0.03980019001245561
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10976388050966175,
+            "persistence": 0.10976388039584606
+          },
+          "evaluated_area_km2_samples": 9275050089.670624,
+          "period": {
+            "first_target_date": "2017-08-01",
+            "last_target_date": "2024-08-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 16003330
+        },
+        "09": {
+          "area_weighted_mae": {
+            "direct_model": 0.039762972047665456,
+            "persistence": 0.03976297203332665
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10542745471360172,
+            "persistence": 0.10542745460825843
+          },
+          "evaluated_area_km2_samples": 8336954703.091541,
+          "period": {
+            "first_target_date": "2017-09-01",
+            "last_target_date": "2024-09-30"
+          },
+          "target_days": 227,
+          "valid_cell_samples": 14363209
+        },
+        "10": {
+          "area_weighted_mae": {
+            "direct_model": 0.03888896703654092,
+            "persistence": 0.03888896702410635
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10061048865583395,
+            "persistence": 0.1006104885618903
+          },
+          "evaluated_area_km2_samples": 9081868887.410282,
+          "period": {
+            "first_target_date": "2017-10-01",
+            "last_target_date": "2024-10-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 15646450
+        },
+        "11": {
+          "area_weighted_mae": {
+            "direct_model": 0.04328535696566161,
+            "persistence": 0.04328535695127914
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10657862887277592,
+            "persistence": 0.10657862877208858
+          },
+          "evaluated_area_km2_samples": 8724795838.793447,
+          "period": {
+            "first_target_date": "2017-11-01",
+            "last_target_date": "2024-11-30"
+          },
+          "target_days": 240,
+          "valid_cell_samples": 15036330
+        },
+        "12": {
+          "area_weighted_mae": {
+            "direct_model": 0.050871145189037195,
+            "persistence": 0.05087114516574749
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.12641294746151122,
+            "persistence": 0.12641294734664185
+          },
+          "evaluated_area_km2_samples": 8467830461.003533,
+          "period": {
+            "first_target_date": "2017-12-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 248,
+          "valid_cell_samples": 14520900
+        }
+      },
+      "by_target_year": {
+        "2017": {
+          "area_weighted_mae": {
+            "direct_model": 0.034987167037546736,
+            "persistence": 0.03498716702306013
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10487625941410084,
+            "persistence": 0.10487625931236472
+          },
+          "evaluated_area_km2_samples": 12307820393.206255,
+          "period": {
+            "first_target_date": "2017-01-09",
+            "last_target_date": "2017-12-31"
+          },
+          "target_days": 357,
+          "valid_cell_samples": 21115888
+        },
+        "2018": {
+          "area_weighted_mae": {
+            "direct_model": 0.03633100655190546,
+            "persistence": 0.036331006536409235
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10696148880609518,
+            "persistence": 0.1069614887001316
+          },
+          "evaluated_area_km2_samples": 12552167532.702555,
+          "period": {
+            "first_target_date": "2018-01-01",
+            "last_target_date": "2018-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21531925
+        },
+        "2019": {
+          "area_weighted_mae": {
+            "direct_model": 0.03488497620630623,
+            "persistence": 0.03488497619127746
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10560691627437875,
+            "persistence": 0.10560691617421716
+          },
+          "evaluated_area_km2_samples": 12533859574.104567,
+          "period": {
+            "first_target_date": "2019-01-01",
+            "last_target_date": "2019-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21499922
+        },
+        "2020": {
+          "area_weighted_mae": {
+            "direct_model": 0.03681948164276548,
+            "persistence": 0.03681948162760729
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10720402823729354,
+            "persistence": 0.10720402813277848
+          },
+          "evaluated_area_km2_samples": 12469979170.531025,
+          "period": {
+            "first_target_date": "2020-01-01",
+            "last_target_date": "2020-12-31"
+          },
+          "target_days": 366,
+          "valid_cell_samples": 21388220
+        },
+        "2021": {
+          "area_weighted_mae": {
+            "direct_model": 0.03762746313837635,
+            "persistence": 0.03762746312254304
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1079319253417655,
+            "persistence": 0.10793192523753521
+          },
+          "evaluated_area_km2_samples": 12359807756.787897,
+          "period": {
+            "first_target_date": "2021-01-01",
+            "last_target_date": "2021-12-31"
+          },
+          "target_days": 360,
+          "valid_cell_samples": 21204131
+        },
+        "2022": {
+          "area_weighted_mae": {
+            "direct_model": 0.035851414636679825,
+            "persistence": 0.03585141462199555
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.1061772483682862,
+            "persistence": 0.10617724826582958
+          },
+          "evaluated_area_km2_samples": 12434445412.534414,
+          "period": {
+            "first_target_date": "2022-01-01",
+            "last_target_date": "2022-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21326311
+        },
+        "2023": {
+          "area_weighted_mae": {
+            "direct_model": 0.03283694822045474,
+            "persistence": 0.032836948206943925
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10090801803740332,
+            "persistence": 0.10090801794343585
+          },
+          "evaluated_area_km2_samples": 12554430039.537724,
+          "period": {
+            "first_target_date": "2023-01-01",
+            "last_target_date": "2023-12-31"
+          },
+          "target_days": 365,
+          "valid_cell_samples": 21535945
+        },
+        "2024": {
+          "area_weighted_mae": {
+            "direct_model": 0.03327902702859137,
+            "persistence": 0.033279027015059484
+          },
+          "area_weighted_rmse": {
+            "direct_model": 0.10148048915323715,
+            "persistence": 0.1014804890574015
+          },
+          "evaluated_area_km2_samples": 12072447888.869982,
+          "period": {
+            "first_target_date": "2024-01-01",
+            "last_target_date": "2024-12-31"
+          },
+          "target_days": 353,
+          "valid_cell_samples": 20704461
+        }
+      },
+      "evaluated_area_km2_samples": 99284957768.27448,
+      "period": {
+        "first_target_date": "2017-01-09",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2896,
+      "valid_cell_samples": 170306803
+    }
+  },
+  "calibration": {
+    "alpha_by_lead": {
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "7": 0.0
+    },
+    "calibration_period_scores": {
+      "1": {
+        "area_weighted_mae": {
+          "direct_model": 0.013703485943901035,
+          "persistence": 0.013703485942908057
+        },
+        "area_weighted_rmse": {
+          "direct_model": 0.04302744337850953,
+          "persistence": 0.0430274433653454
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.02019610952276242,
+              "persistence": 0.02019610952116348
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.05244293061208597,
+              "persistence": 0.05244293059509379
+            },
+            "evaluated_area_km2_samples": 12267256128.81583,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 20452451
+          },
+          "80S_to_70S": {
+            "area_weighted_mae": {
+              "direct_model": 0.022848704328950926,
+              "persistence": 0.02284870432837242
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04971251791498786,
+              "persistence": 0.04971251787162708
+            },
+            "evaluated_area_km2_samples": 2432404089.9255776,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 3831090
+          },
+          "north_of_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.0038621431316820604,
+              "persistence": 0.0038621431313096877
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.025310936792796113,
+              "persistence": 0.02531093680036821
+            },
+            "evaluated_area_km2_samples": 10353418729.244087,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 18706286
+          },
+          "south_of_80S": {
+            "status": "no_valid_target_cells"
+          }
+        },
+        "by_target_month": {
+          "01": {
+            "area_weighted_mae": {
+              "direct_model": 0.00887181370073568,
+              "persistence": 0.008871813700532347
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.035181402958703194,
+              "persistence": 0.035181402975336784
+            },
+            "evaluated_area_km2_samples": 1972646567.7405915,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-01-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3365426
+          },
+          "02": {
+            "area_weighted_mae": {
+              "direct_model": 0.0059019693428938305,
+              "persistence": 0.005901969342856989
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.030289533876083477,
+              "persistence": 0.030289533887965056
+            },
+            "evaluated_area_km2_samples": 1711970543.7780046,
+            "period": {
+              "first_target_date": "2015-02-01",
+              "last_target_date": "2016-02-29"
+            },
+            "target_days": 57,
+            "valid_cell_samples": 2912180
+          },
+          "03": {
+            "area_weighted_mae": {
+              "direct_model": 0.00927680293244455,
+              "persistence": 0.009276802931697123
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.039417045919003746,
+              "persistence": 0.03941704590979362
+            },
+            "evaluated_area_km2_samples": 1889772164.7260134,
+            "period": {
+              "first_target_date": "2015-03-01",
+              "last_target_date": "2016-03-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3216200
+          },
+          "04": {
+            "area_weighted_mae": {
+              "direct_model": 0.01195794113083057,
+              "persistence": 0.011957941129733595
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.042872104629238836,
+              "persistence": 0.04287210461427599
+            },
+            "evaluated_area_km2_samples": 1952390323.434204,
+            "period": {
+              "first_target_date": "2015-04-01",
+              "last_target_date": "2016-04-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3335140
+          },
+          "05": {
+            "area_weighted_mae": {
+              "direct_model": 0.013582010246305835,
+              "persistence": 0.013582010245020277
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.0439929436667324,
+              "persistence": 0.04399294365015309
+            },
+            "evaluated_area_km2_samples": 2054399250.542225,
+            "period": {
+              "first_target_date": "2015-05-01",
+              "last_target_date": "2016-05-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3518316
+          },
+          "06": {
+            "area_weighted_mae": {
+              "direct_model": 0.01523576472336814,
+              "persistence": 0.015235764721725978
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04645508519487797,
+              "persistence": 0.04645508517406325
+            },
+            "evaluated_area_km2_samples": 2132769100.613399,
+            "period": {
+              "first_target_date": "2015-06-01",
+              "last_target_date": "2016-06-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3664823
+          },
+          "07": {
+            "area_weighted_mae": {
+              "direct_model": 0.016351123340162046,
+              "persistence": 0.016351123338220964
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04813915446437557,
+              "persistence": 0.0481391544444346
+            },
+            "evaluated_area_km2_samples": 2304443600.362814,
+            "period": {
+              "first_target_date": "2015-07-01",
+              "last_target_date": "2016-07-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3971460
+          },
+          "08": {
+            "area_weighted_mae": {
+              "direct_model": 0.017697756894230462,
+              "persistence": 0.017697756892392922
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04952115794420041,
+              "persistence": 0.04952115791623937
+            },
+            "evaluated_area_km2_samples": 2217218931.6053143,
+            "period": {
+              "first_target_date": "2015-08-01",
+              "last_target_date": "2016-08-31"
+            },
+            "target_days": 59,
+            "valid_cell_samples": 3826664
+          },
+          "09": {
+            "area_weighted_mae": {
+              "direct_model": 0.017298652508358544,
+              "persistence": 0.017298652506868746
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04741314420996546,
+              "persistence": 0.04741314418536216
+            },
+            "evaluated_area_km2_samples": 2228893791.5454135,
+            "period": {
+              "first_target_date": "2015-09-01",
+              "last_target_date": "2016-09-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3840482
+          },
+          "10": {
+            "area_weighted_mae": {
+              "direct_model": 0.016641287991964102,
+              "persistence": 0.016641287991163333
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04366706208565603,
+              "persistence": 0.0436670620648952
+            },
+            "evaluated_area_km2_samples": 2276686933.352569,
+            "period": {
+              "first_target_date": "2015-10-01",
+              "last_target_date": "2016-10-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3923868
+          },
+          "11": {
+            "area_weighted_mae": {
+              "direct_model": 0.015207688947400018,
+              "persistence": 0.015207688947109487
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04097702985915789,
+              "persistence": 0.04097702984991368
+            },
+            "evaluated_area_km2_samples": 2211462981.7119417,
+            "period": {
+              "first_target_date": "2015-11-01",
+              "last_target_date": "2016-11-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3812411
+          },
+          "12": {
+            "area_weighted_mae": {
+              "direct_model": 0.013063817574107982,
+              "persistence": 0.01306381757392621
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04037446462247004,
+              "persistence": 0.04037446462626839
+            },
+            "evaluated_area_km2_samples": 2100424758.5730307,
+            "period": {
+              "first_target_date": "2015-12-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3602857
+          }
+        },
+        "by_target_year": {
+          "2015": {
+            "area_weighted_mae": {
+              "direct_model": 0.014001774420227965,
+              "persistence": 0.014001774419239152
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04325849383039126,
+              "persistence": 0.04325849381744665
+            },
+            "evaluated_area_km2_samples": 12498282660.15847,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2015-12-31"
+            },
+            "target_days": 362,
+            "valid_cell_samples": 21444923
+          },
+          "2016": {
+            "area_weighted_mae": {
+              "direct_model": 0.013406540170673494,
+              "persistence": 0.013406540169676373
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04279619398725583,
+              "persistence": 0.04279619397387042
+            },
+            "evaluated_area_km2_samples": 12554796287.827091,
+            "period": {
+              "first_target_date": "2016-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 366,
+            "valid_cell_samples": 21544904
+          }
+        },
+        "evaluated_area_km2_samples": 25053078947.98549,
+        "period": {
+          "first_target_date": "2015-01-01",
+          "last_target_date": "2016-12-31"
+        },
+        "target_days": 728,
+        "valid_cell_samples": 42989827
+      },
+      "3": {
+        "area_weighted_mae": {
+          "direct_model": 0.024907955839357485,
+          "persistence": 0.024907955833114545
+        },
+        "area_weighted_rmse": {
+          "direct_model": 0.07400751750631862,
+          "persistence": 0.07400751745197427
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.036925768880566,
+              "persistence": 0.03692576887055143
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09128002811311348,
+              "persistence": 0.09128002804191945
+            },
+            "evaluated_area_km2_samples": 12266362357.999338,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 20450746
+          },
+          "80S_to_70S": {
+            "area_weighted_mae": {
+              "direct_model": 0.03871431338833114,
+              "persistence": 0.03871431338384656
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.08001695420185055,
+              "persistence": 0.08001695412849066
+            },
+            "evaluated_area_km2_samples": 2434262415.7187023,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 3834012
+          },
+          "north_of_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.007353208289551237,
+              "persistence": 0.007353208287379601
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.043157617604694956,
+              "persistence": 0.043157617589877115
+            },
+            "evaluated_area_km2_samples": 10311919683.264973,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 18629865
+          },
+          "south_of_80S": {
+            "status": "no_valid_target_cells"
+          }
+        },
+        "by_target_month": {
+          "01": {
+            "area_weighted_mae": {
+              "direct_model": 0.017762664304393074,
+              "persistence": 0.01776266430147135
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.06093372833017638,
+              "persistence": 0.06093372832236293
+            },
+            "evaluated_area_km2_samples": 1972032463.8085475,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-01-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3364314
+          },
+          "02": {
+            "area_weighted_mae": {
+              "direct_model": 0.009858896251596088,
+              "persistence": 0.009858896250588741
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.04487954529977578,
+              "persistence": 0.04487954529781402
+            },
+            "evaluated_area_km2_samples": 1711321192.980025,
+            "period": {
+              "first_target_date": "2015-02-01",
+              "last_target_date": "2016-02-29"
+            },
+            "target_days": 57,
+            "valid_cell_samples": 2910976
+          },
+          "03": {
+            "area_weighted_mae": {
+              "direct_model": 0.01662723418892557,
+              "persistence": 0.016627234185196967
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.06461625503159822,
+              "persistence": 0.06461625499918111
+            },
+            "evaluated_area_km2_samples": 1885798483.8442569,
+            "period": {
+              "first_target_date": "2015-03-01",
+              "last_target_date": "2016-03-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3209138
+          },
+          "04": {
+            "area_weighted_mae": {
+              "direct_model": 0.021492096570005136,
+              "persistence": 0.021492096563651267
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07325844743182187,
+              "persistence": 0.07325844737667818
+            },
+            "evaluated_area_km2_samples": 1944114682.7911146,
+            "period": {
+              "first_target_date": "2015-04-01",
+              "last_target_date": "2016-04-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3320022
+          },
+          "05": {
+            "area_weighted_mae": {
+              "direct_model": 0.02445366451963898,
+              "persistence": 0.024453664512416737
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07683943960724972,
+              "persistence": 0.07683943953972056
+            },
+            "evaluated_area_km2_samples": 2045683712.3861275,
+            "period": {
+              "first_target_date": "2015-05-01",
+              "last_target_date": "2016-05-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3502762
+          },
+          "06": {
+            "area_weighted_mae": {
+              "direct_model": 0.026521535869665696,
+              "persistence": 0.0265215358617254
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07826552422531446,
+              "persistence": 0.07826552415729932
+            },
+            "evaluated_area_km2_samples": 2125767698.7444844,
+            "period": {
+              "first_target_date": "2015-06-01",
+              "last_target_date": "2016-06-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3651871
+          },
+          "07": {
+            "area_weighted_mae": {
+              "direct_model": 0.030147217458756845,
+              "persistence": 0.03014721744885169
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.08581595304924955,
+              "persistence": 0.08581595296823775
+            },
+            "evaluated_area_km2_samples": 2298363535.319646,
+            "period": {
+              "first_target_date": "2015-07-01",
+              "last_target_date": "2016-07-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3960247
+          },
+          "08": {
+            "area_weighted_mae": {
+              "direct_model": 0.03139064350470425,
+              "persistence": 0.031390643495688035
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.08550740029882807,
+              "persistence": 0.08550740021870379
+            },
+            "evaluated_area_km2_samples": 2215816938.2393413,
+            "period": {
+              "first_target_date": "2015-08-01",
+              "last_target_date": "2016-08-31"
+            },
+            "target_days": 59,
+            "valid_cell_samples": 3823896
+          },
+          "09": {
+            "area_weighted_mae": {
+              "direct_model": 0.030571670220174426,
+              "persistence": 0.03057167021173942
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.0813798929303028,
+              "persistence": 0.08137989285690456
+            },
+            "evaluated_area_km2_samples": 2225642936.8490815,
+            "period": {
+              "first_target_date": "2015-09-01",
+              "last_target_date": "2016-09-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3834571
+          },
+          "10": {
+            "area_weighted_mae": {
+              "direct_model": 0.029319907495685298,
+              "persistence": 0.029319907489620257
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07407527380354971,
+              "persistence": 0.07407527374535616
+            },
+            "evaluated_area_km2_samples": 2274154839.470772,
+            "period": {
+              "first_target_date": "2015-10-01",
+              "last_target_date": "2016-10-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3919000
+          },
+          "11": {
+            "area_weighted_mae": {
+              "direct_model": 0.0280953255684487,
+              "persistence": 0.02809532556368485
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07025595338758175,
+              "persistence": 0.07025595334556177
+            },
+            "evaluated_area_km2_samples": 2209125105.936671,
+            "period": {
+              "first_target_date": "2015-11-01",
+              "last_target_date": "2016-11-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3808075
+          },
+          "12": {
+            "area_weighted_mae": {
+              "direct_model": 0.02657754069097747,
+              "persistence": 0.026577540685373206
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07414661652604924,
+              "persistence": 0.0741466164940418
+            },
+            "evaluated_area_km2_samples": 2104722866.6129816,
+            "period": {
+              "first_target_date": "2015-12-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3609751
+          }
+        },
+        "by_target_year": {
+          "2015": {
+            "area_weighted_mae": {
+              "direct_model": 0.02511913705628087,
+              "persistence": 0.025119137050014093
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07362663805363134,
+              "persistence": 0.07362663800007287
+            },
+            "evaluated_area_km2_samples": 12474816891.569014,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2015-12-31"
+            },
+            "target_days": 362,
+            "valid_cell_samples": 21401969
+          },
+          "2016": {
+            "area_weighted_mae": {
+              "direct_model": 0.024697834268417724,
+              "persistence": 0.02469783426219842
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.07438455023671292,
+              "persistence": 0.07438455018159312
+            },
+            "evaluated_area_km2_samples": 12537727565.414076,
+            "period": {
+              "first_target_date": "2016-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 366,
+            "valid_cell_samples": 21512654
+          }
+        },
+        "evaluated_area_km2_samples": 25012544456.983006,
+        "period": {
+          "first_target_date": "2015-01-01",
+          "last_target_date": "2016-12-31"
+        },
+        "target_days": 728,
+        "valid_cell_samples": 42914623
+      },
+      "5": {
+        "area_weighted_mae": {
+          "direct_model": 0.03226884779802703,
+          "persistence": 0.0322688477866099
+        },
+        "area_weighted_rmse": {
+          "direct_model": 0.0938232888888527,
+          "persistence": 0.09382328880558745
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.04793779454090861,
+              "persistence": 0.04793779452270504
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11604156916563435,
+              "persistence": 0.1160415690572906
+            },
+            "evaluated_area_km2_samples": 12266355731.817427,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 20450498
+          },
+          "80S_to_70S": {
+            "area_weighted_mae": {
+              "direct_model": 0.048752966127005776,
+              "persistence": 0.04875296611701286
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10060823057600779,
+              "persistence": 0.1006082304723235
+            },
+            "evaluated_area_km2_samples": 2436120741.511827,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 3836934
+          },
+          "north_of_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.009643003622756916,
+              "persistence": 0.009643003619107908
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.05404089537749437,
+              "persistence": 0.054040895349641786
+            },
+            "evaluated_area_km2_samples": 10269591510.393883,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 18551977
+          },
+          "south_of_80S": {
+            "status": "no_valid_target_cells"
+          }
+        },
+        "by_target_month": {
+          "01": {
+            "area_weighted_mae": {
+              "direct_model": 0.025749537754752003,
+              "persistence": 0.0257495377467136
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.0818893884044174,
+              "persistence": 0.08188938837004893
+            },
+            "evaluated_area_km2_samples": 1971418359.8765035,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-01-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3363202
+          },
+          "02": {
+            "area_weighted_mae": {
+              "direct_model": 0.012534492339405644,
+              "persistence": 0.012534492336897515
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.05438280256791417,
+              "persistence": 0.05438280255460201
+            },
+            "evaluated_area_km2_samples": 1710671842.1820455,
+            "period": {
+              "first_target_date": "2015-02-01",
+              "last_target_date": "2016-02-29"
+            },
+            "target_days": 57,
+            "valid_cell_samples": 2909772
+          },
+          "03": {
+            "area_weighted_mae": {
+              "direct_model": 0.021797893916804808,
+              "persistence": 0.021797893908966373
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.08220294599633622,
+              "persistence": 0.08220294593485762
+            },
+            "evaluated_area_km2_samples": 1881751437.3502214,
+            "period": {
+              "first_target_date": "2015-03-01",
+              "last_target_date": "2016-03-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3201954
+          },
+          "04": {
+            "area_weighted_mae": {
+              "direct_model": 0.02816295319717083,
+              "persistence": 0.02816295318538755
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09445738191000905,
+              "persistence": 0.09445738182785234
+            },
+            "evaluated_area_km2_samples": 1934224411.9483855,
+            "period": {
+              "first_target_date": "2015-04-01",
+              "last_target_date": "2016-04-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3302261
+          },
+          "05": {
+            "area_weighted_mae": {
+              "direct_model": 0.03149207643413984,
+              "persistence": 0.031492076420720744
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09794247093009696,
+              "persistence": 0.0979424708312127
+            },
+            "evaluated_area_km2_samples": 2037966668.9665203,
+            "period": {
+              "first_target_date": "2015-05-01",
+              "last_target_date": "2016-05-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3488552
+          },
+          "06": {
+            "area_weighted_mae": {
+              "direct_model": 0.0330534654055056,
+              "persistence": 0.03305346539203637
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09683028337460119,
+              "persistence": 0.09683028327045362
+            },
+            "evaluated_area_km2_samples": 2121059957.5945084,
+            "period": {
+              "first_target_date": "2015-06-01",
+              "last_target_date": "2016-06-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3643067
+          },
+          "07": {
+            "area_weighted_mae": {
+              "direct_model": 0.038287848500500946,
+              "persistence": 0.03828784848386366
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10747575163143824,
+              "persistence": 0.10747575151396713
+            },
+            "evaluated_area_km2_samples": 2289810414.009012,
+            "period": {
+              "first_target_date": "2015-07-01",
+              "last_target_date": "2016-07-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3944571
+          },
+          "08": {
+            "area_weighted_mae": {
+              "direct_model": 0.039087334966818606,
+              "persistence": 0.03908733495137308
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10570611490780518,
+              "persistence": 0.10570611479554377
+            },
+            "evaluated_area_km2_samples": 2215341859.239917,
+            "period": {
+              "first_target_date": "2015-08-01",
+              "last_target_date": "2016-08-31"
+            },
+            "target_days": 59,
+            "valid_cell_samples": 3822854
+          },
+          "09": {
+            "area_weighted_mae": {
+              "direct_model": 0.03797653543089379,
+              "persistence": 0.03797653541845255
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09986301457306748,
+              "persistence": 0.09986301447699372
+            },
+            "evaluated_area_km2_samples": 2222392082.15275,
+            "period": {
+              "first_target_date": "2015-09-01",
+              "last_target_date": "2016-09-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3828660
+          },
+          "10": {
+            "area_weighted_mae": {
+              "direct_model": 0.03671646243790435,
+              "persistence": 0.0367164624279348
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09213693968202805,
+              "persistence": 0.09213693960268082
+            },
+            "evaluated_area_km2_samples": 2271637967.0888104,
+            "period": {
+              "first_target_date": "2015-10-01",
+              "last_target_date": "2016-10-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3914162
+          },
+          "11": {
+            "area_weighted_mae": {
+              "direct_model": 0.03699674393755097,
+              "persistence": 0.03699674392730337
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09046457540260654,
+              "persistence": 0.09046457533100254
+            },
+            "evaluated_area_km2_samples": 2206772008.661564,
+            "period": {
+              "first_target_date": "2015-11-01",
+              "last_target_date": "2016-11-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3803709
+          },
+          "12": {
+            "area_weighted_mae": {
+              "direct_model": 0.03799019037187517,
+              "persistence": 0.0379901903594096
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10078849295361357,
+              "persistence": 0.1007884928819647
+            },
+            "evaluated_area_km2_samples": 2109020974.6529326,
+            "period": {
+              "first_target_date": "2015-12-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3616645
+          }
+        },
+        "by_target_year": {
+          "2015": {
+            "area_weighted_mae": {
+              "direct_model": 0.03226032828689044,
+              "persistence": 0.03226032827587756
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09270424485979907,
+              "persistence": 0.09270424477972859
+            },
+            "evaluated_area_km2_samples": 12452098641.797577,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2015-12-31"
+            },
+            "target_days": 362,
+            "valid_cell_samples": 21360426
+          },
+          "2016": {
+            "area_weighted_mae": {
+              "direct_model": 0.03227732112493002,
+              "persistence": 0.032277321113110796
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09492318221964971,
+              "persistence": 0.09492318213326992
+            },
+            "evaluated_area_km2_samples": 12519969341.92563,
+            "period": {
+              "first_target_date": "2016-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 366,
+            "valid_cell_samples": 21478983
+          }
+        },
+        "evaluated_area_km2_samples": 24972067983.72312,
+        "period": {
+          "first_target_date": "2015-01-01",
+          "last_target_date": "2016-12-31"
+        },
+        "target_days": 728,
+        "valid_cell_samples": 42839409
+      },
+      "7": {
+        "area_weighted_mae": {
+          "direct_model": 0.038176844710700666,
+          "persistence": 0.0381768446945603
+        },
+        "area_weighted_rmse": {
+          "direct_model": 0.1091187178518612,
+          "persistence": 0.10911871774727487
+        },
+        "by_latitude_band": {
+          "70S_to_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.05673402906900877,
+              "persistence": 0.05673402904345316
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.13500954621281175,
+              "persistence": 0.13500954607801788
+            },
+            "evaluated_area_km2_samples": 12261903403.207481,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 20442924
+          },
+          "80S_to_70S": {
+            "area_weighted_mae": {
+              "direct_model": 0.05690160469451232,
+              "persistence": 0.056901604678147706
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11769829285190904,
+              "persistence": 0.11769829271976945
+            },
+            "evaluated_area_km2_samples": 2436120741.511827,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 3836934
+          },
+          "north_of_60S": {
+            "area_weighted_mae": {
+              "direct_model": 0.011465412408043947,
+              "persistence": 0.01146541240324636
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.06216555974107273,
+              "persistence": 0.062165559704249085
+            },
+            "evaluated_area_km2_samples": 10226414484.94371,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 728,
+            "valid_cell_samples": 18472487
+          },
+          "south_of_80S": {
+            "status": "no_valid_target_cells"
+          }
+        },
+        "by_target_month": {
+          "01": {
+            "area_weighted_mae": {
+              "direct_model": 0.0336071086046832,
+              "persistence": 0.03360710859066683
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10128989445349854,
+              "persistence": 0.10128989438838794
+            },
+            "evaluated_area_km2_samples": 1970804255.9444594,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2016-01-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3362090
+          },
+          "02": {
+            "area_weighted_mae": {
+              "direct_model": 0.014945824956765963,
+              "persistence": 0.014945824952663249
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.06285512118211582,
+              "persistence": 0.06285512115152028
+            },
+            "evaluated_area_km2_samples": 1710022491.3840659,
+            "period": {
+              "first_target_date": "2015-02-01",
+              "last_target_date": "2016-02-29"
+            },
+            "target_days": 57,
+            "valid_cell_samples": 2908568
+          },
+          "03": {
+            "area_weighted_mae": {
+              "direct_model": 0.02633799373165123,
+              "persistence": 0.02633799371946707
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.09722754416673697,
+              "persistence": 0.0972275440906999
+            },
+            "evaluated_area_km2_samples": 1877704390.856186,
+            "period": {
+              "first_target_date": "2015-03-01",
+              "last_target_date": "2016-03-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3194770
+          },
+          "04": {
+            "area_weighted_mae": {
+              "direct_model": 0.033978715031604455,
+              "persistence": 0.033978715013394244
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11184678724831594,
+              "persistence": 0.11184678713503947
+            },
+            "evaluated_area_km2_samples": 1924239307.699841,
+            "period": {
+              "first_target_date": "2015-04-01",
+              "last_target_date": "2016-04-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3284333
+          },
+          "05": {
+            "area_weighted_mae": {
+              "direct_model": 0.03648703980390434,
+              "persistence": 0.03648703978603321
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11320658038219437,
+              "persistence": 0.11320658025494086
+            },
+            "evaluated_area_km2_samples": 2028466796.3291793,
+            "period": {
+              "first_target_date": "2015-05-01",
+              "last_target_date": "2016-05-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3471410
+          },
+          "06": {
+            "area_weighted_mae": {
+              "direct_model": 0.03836934755584988,
+              "persistence": 0.0383693475384192
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11204606551048069,
+              "persistence": 0.11204606538804159
+            },
+            "evaluated_area_km2_samples": 2114058555.7255938,
+            "period": {
+              "first_target_date": "2015-06-01",
+              "last_target_date": "2016-06-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3630115
+          },
+          "07": {
+            "area_weighted_mae": {
+              "direct_model": 0.04364660009868028,
+              "persistence": 0.04364660007800315
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.12138446730622804,
+              "persistence": 0.121384467170442
+            },
+            "evaluated_area_km2_samples": 2283550953.417317,
+            "period": {
+              "first_target_date": "2015-07-01",
+              "last_target_date": "2016-07-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3933043
+          },
+          "08": {
+            "area_weighted_mae": {
+              "direct_model": 0.04461286955931075,
+              "persistence": 0.044612869539772136
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11917225663727975,
+              "persistence": 0.1191722565049661
+            },
+            "evaluated_area_km2_samples": 2212917002.7322426,
+            "period": {
+              "first_target_date": "2015-08-01",
+              "last_target_date": "2016-08-31"
+            },
+            "target_days": 59,
+            "valid_cell_samples": 3818184
+          },
+          "09": {
+            "area_weighted_mae": {
+              "direct_model": 0.04275411704739126,
+              "persistence": 0.042754117031443536
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11133608230111597,
+              "persistence": 0.11133608219325915
+            },
+            "evaluated_area_km2_samples": 2220449993.0101037,
+            "period": {
+              "first_target_date": "2015-09-01",
+              "last_target_date": "2016-09-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3825140
+          },
+          "10": {
+            "area_weighted_mae": {
+              "direct_model": 0.04238625101491846,
+              "persistence": 0.042386251001557435
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.105937434227364,
+              "persistence": 0.10593743413607254
+            },
+            "evaluated_area_km2_samples": 2269105873.2070127,
+            "period": {
+              "first_target_date": "2015-10-01",
+              "last_target_date": "2016-10-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3909294
+          },
+          "11": {
+            "area_weighted_mae": {
+              "direct_model": 0.04439131759679918,
+              "persistence": 0.04439131758047702
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10654197046320915,
+              "persistence": 0.10654197036469877
+            },
+            "evaluated_area_km2_samples": 2204434132.886293,
+            "period": {
+              "first_target_date": "2015-11-01",
+              "last_target_date": "2016-11-30"
+            },
+            "target_days": 60,
+            "valid_cell_samples": 3799373
+          },
+          "12": {
+            "area_weighted_mae": {
+              "direct_model": 0.04856862888281949,
+              "persistence": 0.048568628861732265
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.12386273373249161,
+              "persistence": 0.12386273362759741
+            },
+            "evaluated_area_km2_samples": 2108684876.4707637,
+            "period": {
+              "first_target_date": "2015-12-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 62,
+            "valid_cell_samples": 3616025
+          }
+        },
+        "by_target_year": {
+          "2015": {
+            "area_weighted_mae": {
+              "direct_model": 0.037937989935688046,
+              "persistence": 0.037937989919913165
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.10742017309877534,
+              "persistence": 0.1074201729959705
+            },
+            "evaluated_area_km2_samples": 12428739380.071577,
+            "period": {
+              "first_target_date": "2015-01-01",
+              "last_target_date": "2015-12-31"
+            },
+            "target_days": 362,
+            "valid_cell_samples": 21317646
+          },
+          "2016": {
+            "area_weighted_mae": {
+              "direct_model": 0.038414419550572954,
+              "persistence": 0.03841441953406912
+            },
+            "area_weighted_rmse": {
+              "direct_model": 0.11078233014359207,
+              "persistence": 0.11078233003726333
+            },
+            "evaluated_area_km2_samples": 12495699249.591516,
+            "period": {
+              "first_target_date": "2016-01-01",
+              "last_target_date": "2016-12-31"
+            },
+            "target_days": 366,
+            "valid_cell_samples": 21434699
+          }
+        },
+        "evaluated_area_km2_samples": 24924438629.66301,
+        "period": {
+          "first_target_date": "2015-01-01",
+          "last_target_date": "2016-12-31"
+        },
+        "target_days": 728,
+        "valid_cell_samples": 42752345
+      }
+    },
+    "method": "per-lead area-weighted absolute-error minimization over convex blends of direct prediction and persistence; 10,001-bin weighted-median approximation",
+    "period_end": "2016-12-31",
+    "period_start": "2015-01-01",
+    "warning": "Calibration-period metrics are used for parameter selection and are not an independent validation score."
+  },
+  "calibration_warning": "Calibration-period scores are in-sample to alpha selection; use only the later frozen holdout to assess generalization. All scores are pan-Antarctic research diagnostics, not route-safety evidence.",
+  "caveat": "Offline same-product pan-Antarctic diagnostics only. Do not connect to route decisions or represent as operational forecasts.",
+  "evaluation_scope": "G02202 targets strictly after the frozen 2015-2016 calibration period; source QA/ocean masks applied. Training cutoff: 2014-12-31.",
+  "evaluation_source_manifest_sha256": "8afa4082db8a45f6aa173c117c2df247d85591da83d6328cc7319fba6045775c",
+  "method": "Direct horizon-specific SIC regressions fit through the fit cutoff, then blended with persistence using per-lead area-weighted MAE calibration on a disjoint historical window.",
+  "model_fingerprint": "1a81fad0864eacbf2f54bcbc9eccac5626d1041b13b4fdf989a44934b91a8253",
+  "status": "frozen_direct_horizon_research_diagnostic",
+  "training_cutoff": "2014-12-31",
+  "training_source_manifest_sha256": "492b211baab8507c899a1fafd231246e1c67b8d7ac0f0993d465b449e2d808fa"
+}

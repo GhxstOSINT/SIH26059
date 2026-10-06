@@ -1,0 +1,24 @@
+# Local data, environments, caches, and credentials never belong in source control.
+work/
+.venv/
+.tmp/
+.pytest_cache/
+.pytest-*/
+pytest-*/
+pip-*/
+torchinductor_*/
+LibreOffice_*/
+**/__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.db
+
+# Keep only the five curated README images, not generated slide/document bundles.
+deliverables/*
+!deliverables/ppt_screenshots_2026-10-05/
+deliverables/ppt_screenshots_2026-10-05/*
+!deliverables/ppt_screenshots_2026-10-05/0[1-5]_*.png

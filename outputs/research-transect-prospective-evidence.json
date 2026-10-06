@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "scope": "frozen_transect_prospective_research_evidence",
+  "route_id": "weddell-ice-gradient-v1",
+  "route_config_sha256": "33e9df9ff6f7bd12cc4a26703d32ba6e2ea4f9e13caf2e0c897da626271bcc6f",
+  "eligible_bulletins_from": "2026-10-04",
+  "verified_case_count": 0,
+  "excluded_pre_freeze_reports": 0,
+  "rejected_reports": 0,
+  "leads": [
+    {
+      "lead_days": 1,
+      "independent_bulletins": 0,
+      "evaluable_bulletins": 0,
+      "low_coverage_bulletins": 0,
+      "minimum_common_cell_coverage_fraction": 0.5,
+      "mean_bulletin_mae_fraction": null,
+      "mean_bulletin_ice_edge_disagreement_fraction": null,
+      "paired_persistence_bulletins": 0,
+      "mean_paired_mae_improvement_vs_persistence_fraction": null,
+      "route_mean_sic_interval": null
+    },
+    {
+      "lead_days": 3,
+      "independent_bulletins": 0,
+      "evaluable_bulletins": 0,
+      "low_coverage_bulletins": 0,
+      "minimum_common_cell_coverage_fraction": 0.5,
+      "mean_bulletin_mae_fraction": null,
+      "mean_bulletin_ice_edge_disagreement_fraction": null,
+      "paired_persistence_bulletins": 0,
+      "mean_paired_mae_improvement_vs_persistence_fraction": null,
+      "route_mean_sic_interval": null
+    },
+    {
+      "lead_days": 5,
+      "independent_bulletins": 0,
+      "evaluable_bulletins": 0,
+      "low_coverage_bulletins": 0,
+      "minimum_common_cell_coverage_fraction": 0.5,
+      "mean_bulletin_mae_fraction": null,
+      "mean_bulletin_ice_edge_disagreement_fraction": null,
+      "paired_persistence_bulletins": 0,
+      "mean_paired_mae_improvement_vs_persistence_fraction": null,
+      "route_mean_sic_interval": null
+    },
+    {
+      "lead_days": 7,
+      "independent_bulletins": 0,
+      "evaluable_bulletins": 0,
+      "low_coverage_bulletins": 0,
+      "minimum_common_cell_coverage_fraction": 0.5,
+      "mean_bulletin_mae_fraction": null,
+      "mean_bulletin_ice_edge_disagreement_fraction": null,
+      "paired_persistence_bulletins": 0,
+      "mean_paired_mae_improvement_vs_persistence_fraction": null,
+      "route_mean_sic_interval": null
+    }
+  ],
+  "uncertainty_calibrated": false,
+  "operator_decision_ready": false,
+  "navigation_clearance": false,
+  "limitation": "Date-blocked interval covers mean SIC along a research transect, not vessel safety, hazards, or route travel time."
+}

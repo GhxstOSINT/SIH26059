@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "scope": "retrospective_research_experiment",
+  "created_at_utc": "2026-10-02T06:23:06.483357+00:00",
+  "sources": {
+    "sea_ice": {
+      "file": "work\\datasets\\copernicus-osi-sic-south-peninsula-2024-jun-aug\\peninsula_20240601_20240831.nc",
+      "sha256": "dfbc40b0a51e23c818833d777a61c28d7d73f8bfe6d4d20aab5a3babd0de3cdb"
+    },
+    "glorys_reanalysis_currents": {
+      "file": "work\\datasets\\copernicus-glorys-currents-peninsula-2024-jun-aug\\peninsula_surface_currents_20240601_20240831.nc",
+      "sha256": "e059af08a7798e096c5eb68dd04113d8e3cb6ac119ec9f7d17d66048a9621d4c"
+    },
+    "l4_reprocessed_wind": {
+      "file": "work\\datasets\\copernicus-l4-wind-peninsula-2024-jun-aug\\peninsula_hourly_wind_20240601_20240831.nc",
+      "sha256": "02f7016af6e03e8f740fd5f92c6e6957c2e57d34e0636735242a393265bb1dc9"
+    }
+  },
+  "target": "next-day Copernicus sea ice concentration, percent",
+  "alignment": "Daily mean hourly wind; bilinear vector interpolation to SIC grid; prior-day features; common finite-cell mask; no extrapolation across missing values.",
+  "feature_names": [
+    "sic_t",
+    "sic_change_t",
+    "current_u_t",
+    "current_v_t",
+    "wind_u_t",
+    "wind_v_t"
+  ],
+  "train": {
+    "start": "2024-06-03",
+    "end": "2024-07-31",
+    "days": 59,
+    "matched_cells": 102424
+  },
+  "test": {
+    "start": "2024-08-01",
+    "end": "2024-08-31",
+    "days": 31,
+    "matched_cells": 53816,
+    "possible_sic_grid_cells": 124000,
+    "daily": [
+      {
+        "date": "2024-08-01",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-02",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-03",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-04",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-05",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-06",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-07",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-08",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-09",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-10",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-11",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-12",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-13",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-14",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-15",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-16",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-17",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-18",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-19",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-20",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-21",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-22",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-23",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-24",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-25",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-26",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-27",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-28",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-29",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-30",
+        "matched_cells": 1736
+      },
+      {
+        "date": "2024-08-31",
+        "matched_cells": 1736
+      }
+    ]
+  },
+  "metrics": {
+    "persistence": {
+      "mae_percentage_points": 1.313278716919708,
+      "rmse_percentage_points": 3.665073028293888
+    },
+    "sic_lag_ridge": {
+      "mae_percentage_points": 1.3362680002720784,
+      "rmse_percentage_points": 3.744022194760195
+    },
+    "sic_current_wind_ridge": {
+      "mae_percentage_points": 1.3222152353008205,
+      "rmse_percentage_points": 3.721332775036774
+    }
+  },
+  "models": {
+    "sic_lag_ridge": {
+      "mean": [
+        86.51155657627658,
+        0.09300889502935816
+      ],
+      "scale": [
+        23.2757431527887,
+        1.7294316382458157
+      ],
+      "coefficient": [
+        0.08809642021720382,
+        -0.04977760476654339,
+        -0.1756382102978932
+      ],
+      "ridge_penalty": 10.0
+    },
+    "sic_current_wind_ridge": {
+      "mean": [
+        86.51155657627658,
+        0.09300889502935816,
+        0.01410217944950339,
+        0.03916408892357534,
+        0.6041027869449412,
+        1.104600705401337
+      ],
+      "scale": [
+        23.2757431527887,
+        1.7294316382458157,
+        0.03339469434555056,
+        0.0441580653324633,
+        3.5744058380178045,
+        4.965041346042931
+      ],
+      "coefficient": [
+        0.088096420217205,
+        -0.04804289181574966,
+        -0.18350664338259243,
+        -0.019083569698916933,
+        -0.018794344853631947,
+        -0.044721527654377806,
+        0.26029482936406334
+      ],
+      "ridge_penalty": 10.0
+    }
+  },
+  "asof_verified": false,
+  "operational_eligibility": false,
+  "limitations": [
+    "GLORYS and reprocessed L4 wind are retrospective, potentially assimilating observations unavailable at the forecast origin.",
+    "One seasonal holdout is insufficient to establish generalisation across years, regions, or ice regimes.",
+    "Spatial pixels are correlated and are not independent test voyages.",
+    "This predicts sea ice concentration, not individual iceberg trajectories or vessel safety.",
+    "Do not replace the pinned production candidate or issue navigation guidance from this result."
+  ]
+}

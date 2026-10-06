@@ -1,0 +1,2991 @@
+{
+  "schema_version": 1,
+  "scope": "research_source_inventory",
+  "period": {
+    "start_date": "2024-06-01",
+    "end_date": "2024-08-31"
+  },
+  "region": {
+    "center_lon_lat": [
+      -60.0,
+      -66.0
+    ],
+    "half_width_km": 100.0,
+    "crs": "EPSG:3976",
+    "grid_shape": [
+      253,
+      253
+    ],
+    "grid_coordinate_sha256": "c9075784c6d3871b504bcd5577a78aa73d9b657f98530f4451b12722a7caaa03"
+  },
+  "sources": [
+    {
+      "dataset_id": "noaacwVIIRSnppiceconcSP06Daily",
+      "platform": "S-NPP",
+      "manifest_sha256": "8eb39454a47bdd5db34dd797b93ba99a1ed25663ecc630e56c029183315b32c0",
+      "archive_accessed_at_utc": "2026-09-28T17:02:59.988601+00:00",
+      "selection": {
+        "start_date": "2024-06-01",
+        "end_date": "2024-08-31",
+        "center_lon_lat": [
+          -60.0,
+          -66.0
+        ],
+        "half_width_km": 100.0,
+        "projected_bounds_m": {
+          "x_min": -2383720.1063002544,
+          "x_max": -2183720.1063002544,
+          "y_min": 1218506.418126213,
+          "y_max": 1418506.418126213
+        },
+        "crs": "EPSG:3976",
+        "nominal_grid_spacing_m": 795.0,
+        "chunk_days": 14
+      },
+      "grid_shape": [
+        253,
+        253
+      ],
+      "grid_coordinate_sha256": "c9075784c6d3871b504bcd5577a78aa73d9b657f98530f4451b12722a7caaa03"
+    },
+    {
+      "dataset_id": "noaacwVIIRSn21iceconcSP06Daily",
+      "platform": "NOAA-21",
+      "manifest_sha256": "edbbb19f8e9cbceb76ffe3bcc700a4a071827f91aafa4c103ce9698755b692db",
+      "archive_accessed_at_utc": "2026-10-01T22:06:09.739931+00:00",
+      "selection": {
+        "start_date": "2024-06-01",
+        "end_date": "2024-08-31",
+        "center_lon_lat": [
+          -60.0,
+          -66.0
+        ],
+        "half_width_km": 100.0,
+        "projected_bounds_m": {
+          "x_min": -2383720.1063002544,
+          "x_max": -2183720.1063002544,
+          "y_min": 1218506.418126213,
+          "y_max": 1418506.418126213
+        },
+        "crs": "EPSG:3976",
+        "nominal_grid_spacing_m": 795.0,
+        "chunk_days": 7
+      },
+      "grid_shape": [
+        253,
+        253
+      ],
+      "grid_coordinate_sha256": "c9075784c6d3871b504bcd5577a78aa73d9b657f98530f4451b12722a7caaa03"
+    },
+    {
+      "dataset_id": "noaacwVIIRSn20iceconcSP06Daily",
+      "platform": "NOAA-20",
+      "manifest_sha256": "6cc98995a26986d612fe8e58484d1df4c07b68dbc0a6d4a57ce327b725bbf355",
+      "archive_accessed_at_utc": "2026-10-01T22:06:35.305060+00:00",
+      "selection": {
+        "start_date": "2024-06-01",
+        "end_date": "2024-08-31",
+        "center_lon_lat": [
+          -60.0,
+          -66.0
+        ],
+        "half_width_km": 100.0,
+        "projected_bounds_m": {
+          "x_min": -2383720.1063002544,
+          "x_max": -2183720.1063002544,
+          "y_min": 1218506.418126213,
+          "y_max": 1418506.418126213
+        },
+        "crs": "EPSG:3976",
+        "nominal_grid_spacing_m": 795.0,
+        "chunk_days": 7
+      },
+      "grid_shape": [
+        253,
+        253
+      ],
+      "grid_coordinate_sha256": "c9075784c6d3871b504bcd5577a78aa73d9b657f98530f4451b12722a7caaa03"
+    }
+  ],
+  "summary": {
+    "scheduled_days": 92,
+    "observed_days_by_platform": {
+      "S-NPP": 75,
+      "NOAA-21": 89,
+      "NOAA-20": 84
+    },
+    "days_observed_by_all_platforms": 71,
+    "forecast_origins_with_verified_availability": 0
+  },
+  "days": [
+    {
+      "observation_date": "2024-06-01",
+      "forecast_origin_utc": "2024-06-02T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-01T12:01:08Z",
+          "valid_grid_fraction": 0.09903294849161837,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-01T12:01:07Z",
+          "valid_grid_fraction": 0.1461356996672343,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-02",
+      "forecast_origin_utc": "2024-06-03T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-02T11:52:52Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-02T11:42:11Z",
+          "valid_grid_fraction": 1.5622803043322032e-05,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-03",
+      "forecast_origin_utc": "2024-06-04T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-03T12:12:21Z",
+          "valid_grid_fraction": 0.2196722335921511,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-03T12:04:32Z",
+          "valid_grid_fraction": 0.07905138339920949,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-04",
+      "forecast_origin_utc": "2024-06-05T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-04T20:47:35Z",
+          "valid_grid_fraction": 0.02390288865628271,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-04T11:54:09Z",
+          "valid_grid_fraction": 0.12751331843959443,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-04T11:59:08Z",
+          "valid_grid_fraction": 0.05663266103204237,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-05",
+      "forecast_origin_utc": "2024-06-06T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-05T12:00:49Z",
+          "valid_grid_fraction": 0.1750066396912934,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-05T11:35:13Z",
+          "valid_grid_fraction": 0.24146604383758533,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-05T12:26:26Z",
+          "valid_grid_fraction": 0.21098595510006404,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-06",
+      "forecast_origin_utc": "2024-06-07T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-06T11:41:54Z",
+          "valid_grid_fraction": 0.30889406177256323,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-06T12:01:49Z",
+          "valid_grid_fraction": 0.33420300270274494,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-06T12:07:31Z",
+          "valid_grid_fraction": 0.36643284538111826,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-07",
+      "forecast_origin_utc": "2024-06-08T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-07T12:05:39Z",
+          "valid_grid_fraction": 0.0974237997781562,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-07T11:55:41Z",
+          "valid_grid_fraction": 0.1564155040697402,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "d5590acf9112b83f807541a4af751ab83f72f91c3b1f3441f8f70c6ad60f895c",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-07T11:48:35Z",
+          "valid_grid_fraction": 0.10262619319158243,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240601_20240607.nc",
+          "source_sha256": "ee421be1270c07ef4df0abc59887b4f37374be2f7e87dfa169d6f88c591ec97f",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-08",
+      "forecast_origin_utc": "2024-06-09T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-08T11:59:32Z",
+          "valid_grid_fraction": 0.31001890359168244,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-08T12:19:27Z",
+          "valid_grid_fraction": 0.3961474167695168,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-08T12:08:47Z",
+          "valid_grid_fraction": 0.3656048368198222,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-09",
+      "forecast_origin_utc": "2024-06-10T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-09T12:26:08Z",
+          "valid_grid_fraction": 0.4367042134699808,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-09T12:00:32Z",
+          "valid_grid_fraction": 0.5321282944585918,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-09T12:00:32Z",
+          "valid_grid_fraction": 0.4584667781093284,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-10",
+      "forecast_origin_utc": "2024-06-11T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-10T12:07:13Z",
+          "valid_grid_fraction": 0.20362761486665937,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-10T11:41:36Z",
+          "valid_grid_fraction": 0.3062225624521552,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-10T11:52:59Z",
+          "valid_grid_fraction": 0.23399834398287742,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-11",
+      "forecast_origin_utc": "2024-06-12T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-11T11:48:18Z",
+          "valid_grid_fraction": 0.37243200174975394,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-11T12:04:39Z",
+          "valid_grid_fraction": 0.5704354075208173,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-11T12:13:54Z",
+          "valid_grid_fraction": 0.45802933962411535,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-12",
+      "forecast_origin_utc": "2024-06-13T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-12T12:08:29Z",
+          "valid_grid_fraction": 0.29586464403443263,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-12T11:59:14Z",
+          "valid_grid_fraction": 0.3943195488134481,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-12T11:54:59Z",
+          "valid_grid_fraction": 0.272399193863363,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-13",
+      "forecast_origin_utc": "2024-06-14T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-13T12:00:14Z",
+          "valid_grid_fraction": 0.5438141511349966,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-13T12:25:50Z",
+          "valid_grid_fraction": 0.5982283741348873,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-13T11:36:03Z",
+          "valid_grid_fraction": 0.5470949397740943,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-14",
+      "forecast_origin_utc": "2024-06-15T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-14T11:52:41Z",
+          "valid_grid_fraction": 0.3871018138074333,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+          "source_sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-14T12:06:54Z",
+          "valid_grid_fraction": 0.461747566748426,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "6db459c0bdf9ec10bf7e42c43d341bcb41aa65f4a79e71ec1388ac18da42b7d8",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-14T12:02:39Z",
+          "valid_grid_fraction": 0.42358105891359027,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240608_20240614.nc",
+          "source_sha256": "ac12325df052aa843e1a6442e12defb5541384d80bda7a56778408e4e064dc61",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-15",
+      "forecast_origin_utc": "2024-06-16T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-15T12:13:35Z",
+          "valid_grid_fraction": 0.3985689512412317,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-15T11:48:00Z",
+          "valid_grid_fraction": 0.5672014872908497,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-15T11:56:32Z",
+          "valid_grid_fraction": 0.4328766267243669,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-16",
+      "forecast_origin_utc": "2024-06-17T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-16T11:54:40Z",
+          "valid_grid_fraction": 0.06591260603977565,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-16T12:08:11Z",
+          "valid_grid_fraction": 0.11943632926619695,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-16T12:20:17Z",
+          "valid_grid_fraction": 0.07847333968660657,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-17",
+      "forecast_origin_utc": "2024-06-18T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-17T11:35:45Z",
+          "valid_grid_fraction": 0.06711556187411145,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-17T12:00:38Z",
+          "valid_grid_fraction": 0.154368916871065,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-17T12:01:22Z",
+          "valid_grid_fraction": 0.07353653392491681,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-18",
+      "forecast_origin_utc": "2024-06-19T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-18T12:02:21Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-18T11:53:06Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-18T11:41:44Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-19",
+      "forecast_origin_utc": "2024-06-20T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-19T11:56:14Z",
+          "valid_grid_fraction": 4.68684091299661e-05,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-19T12:13:18Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-19T12:04:46Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-20",
+      "forecast_origin_utc": "2024-06-21T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-20T12:19:59Z",
+          "valid_grid_fraction": 0.26571263416082114,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-20T11:54:23Z",
+          "valid_grid_fraction": 0.15347841709759566,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-20T11:59:21Z",
+          "valid_grid_fraction": 0.21297005108656594,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-21",
+      "forecast_origin_utc": "2024-06-22T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-21T12:01:04Z",
+          "valid_grid_fraction": 0.24112234217063225,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-21T11:35:27Z",
+          "valid_grid_fraction": 0.12506053836179287,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "5eed8780dc11dcd481fc492b62267dd260760522d1cba88903e93344f0b16c46",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-21T12:25:57Z",
+          "valid_grid_fraction": 0.2078926400974863,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240615_20240621.nc",
+          "source_sha256": "c3eb6e128fcfc8a0bfd8980d8d53a3a01c7d4dcde5e55faeaf5e4f77f67dcddc",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-22",
+      "forecast_origin_utc": "2024-06-23T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-22T11:42:08Z",
+          "valid_grid_fraction": 0.09706447530815979,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-22T12:02:03Z",
+          "valid_grid_fraction": 0.06925588589104657,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-22T12:06:19Z",
+          "valid_grid_fraction": 0.10068896561421051,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-23",
+      "forecast_origin_utc": "2024-06-24T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-23T12:05:53Z",
+          "valid_grid_fraction": 0.3723070193254074,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-23T11:55:56Z",
+          "valid_grid_fraction": 0.5191457451295911,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-23T11:47:24Z",
+          "valid_grid_fraction": 0.44176600165601715,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-24",
+      "forecast_origin_utc": "2024-06-25T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-24T11:59:46Z",
+          "valid_grid_fraction": 0.00507741098907966,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-24T12:19:41Z",
+          "valid_grid_fraction": 0.001968473183458576,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-24T12:08:18Z",
+          "valid_grid_fraction": 0.02735552812885688,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-25",
+      "forecast_origin_utc": "2024-06-26T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-25T12:26:22Z",
+          "valid_grid_fraction": 0.2396694214876033,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-25T12:00:46Z",
+          "valid_grid_fraction": 0.35924635598119015,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-25T12:00:45Z",
+          "valid_grid_fraction": 0.22150010154821978,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-26",
+      "forecast_origin_utc": "2024-06-27T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-26T12:07:27Z",
+          "valid_grid_fraction": 0.4206908403505757,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-26T11:41:50Z",
+          "valid_grid_fraction": 0.4689184333453108,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-26T11:52:30Z",
+          "valid_grid_fraction": 0.4099892202659001,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-27",
+      "forecast_origin_utc": "2024-06-28T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-27T11:48:32Z",
+          "valid_grid_fraction": 0.23187364276898562,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-27T12:05:35Z",
+          "valid_grid_fraction": 0.34201440422440593,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-27T12:12:42Z",
+          "valid_grid_fraction": 0.2836788576606415,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-28",
+      "forecast_origin_utc": "2024-06-29T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-28T12:08:43Z",
+          "valid_grid_fraction": 0.22443718852036432,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+          "source_sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-28T11:59:28Z",
+          "valid_grid_fraction": 0.34199878142136264,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3331cb77218db9aa93061fa580dcfc3d3e63fc140f894671094aeab894711d88",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-28T11:53:46Z",
+          "valid_grid_fraction": 0.2862722429658329,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240622_20240628.nc",
+          "source_sha256": "3b4d349e2f7481858a62e79221f57772ed76c3ee826d1a7aef0d40d202e44226",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-29",
+      "forecast_origin_utc": "2024-06-30T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-29T10:20:53Z",
+          "valid_grid_fraction": 0.1932384508428502,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-29T10:44:21Z",
+          "valid_grid_fraction": 0.3090815354090831,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-29T10:44:21Z",
+          "valid_grid_fraction": 0.22289053101907544,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-06-30",
+      "forecast_origin_utc": "2024-07-01T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-30T11:52:13Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-30T12:05:44Z",
+          "valid_grid_fraction": 0.003437016669530847,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-06-30T12:00:02Z",
+          "valid_grid_fraction": 0.0012185786373791186,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-01",
+      "forecast_origin_utc": "2024-07-02T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-01T12:13:49Z",
+          "valid_grid_fraction": 0.00806136637035417,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-01T11:48:13Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-01T11:56:03Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-02",
+      "forecast_origin_utc": "2024-07-03T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-02T11:55:37Z",
+          "valid_grid_fraction": 0.02160633660891437,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-02T12:08:25Z",
+          "valid_grid_fraction": 0.003327657048227593,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-02T12:19:06Z",
+          "valid_grid_fraction": 0.012529488040744271,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-03",
+      "forecast_origin_utc": "2024-07-04T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-03T11:35:16Z",
+          "valid_grid_fraction": 0.3868987173678701,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-03T11:59:27Z",
+          "valid_grid_fraction": 0.19622240622412473,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-03T12:00:09Z",
+          "valid_grid_fraction": 0.39278851411520255,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-04",
+      "forecast_origin_utc": "2024-07-05T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-04T12:02:35Z",
+          "valid_grid_fraction": 0.21978159321345436,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-04T11:52:38Z",
+          "valid_grid_fraction": 0.29352122357793436,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-04T11:41:14Z",
+          "valid_grid_fraction": 0.21728194472652285,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-05",
+      "forecast_origin_utc": "2024-07-06T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-05T11:56:29Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-05T09:29:57Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "2d0879442af2e5bb612669db77ef7383ebf69ea77512b909a4d338913248a838",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-05T12:04:59Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240629_20240705.nc",
+          "source_sha256": "8f925773bcb14019ce7e41b9cf214534e9e38439c33e2f1597b163aa40ac4f3c",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-06",
+      "forecast_origin_utc": "2024-07-07T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-06T12:18:48Z",
+          "valid_grid_fraction": 0.0017341311378087456,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-06T11:56:02Z",
+          "valid_grid_fraction": 0.0006405349247762033,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-06T11:11:14Z",
+          "valid_grid_fraction": 7.811401521661016e-05,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-07",
+      "forecast_origin_utc": "2024-07-08T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-07T11:10:05Z",
+          "valid_grid_fraction": 0.0008904997734693558,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-07T10:40:12Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-07T11:30:00Z",
+          "valid_grid_fraction": 0.004546235685606711,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-08",
+      "forecast_origin_utc": "2024-07-09T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-08T10:00:39Z",
+          "valid_grid_fraction": 0.2587448640034995,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-08T10:24:51Z",
+          "valid_grid_fraction": 0.04280648033870237,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-08T10:23:25Z",
+          "valid_grid_fraction": 0.09251823962255308,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-09",
+      "forecast_origin_utc": "2024-07-10T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-09T03:46:06Z",
+          "valid_grid_fraction": 0.009483041447296474,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+          "source_sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-09T05:52:00Z",
+          "valid_grid_fraction": 1.5622803043322032e-05,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-09T04:09:35Z",
+          "valid_grid_fraction": 0.010889093721195457,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-10",
+      "forecast_origin_utc": "2024-07-11T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-10T02:51:38Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-10T09:07:10Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-11",
+      "forecast_origin_utc": "2024-07-12T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-11T05:10:36Z",
+          "valid_grid_fraction": 0.41412926307238046,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "1f18299ae1e8d3d0405b30980ba14539706a1f535339d95302d7000564aebc79",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-11T04:25:48Z",
+          "valid_grid_fraction": 0.32443875080066864,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240706_20240712.nc",
+          "source_sha256": "e1457a64cc07aba50ff0db383bdc9b85bc6065bd06179ff9c0a08d1f09800686",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-12",
+      "forecast_origin_utc": "2024-07-13T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "missing_observation"
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-13",
+      "forecast_origin_utc": "2024-07-14T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "missing_observation"
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-14",
+      "forecast_origin_utc": "2024-07-15T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-14T03:31:53Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-14T04:13:51Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-15",
+      "forecast_origin_utc": "2024-07-16T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-15T12:19:12Z",
+          "valid_grid_fraction": 0.09812682591510569,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-15T11:35:05Z",
+          "valid_grid_fraction": 0.14276117420987675,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-16",
+      "forecast_origin_utc": "2024-07-17T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-16T12:07:22Z",
+          "valid_grid_fraction": 0.04405630458216813,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-16T12:01:41Z",
+          "valid_grid_fraction": 0.09986095705291444,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-17",
+      "forecast_origin_utc": "2024-07-18T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-17T11:48:27Z",
+          "valid_grid_fraction": 0.021028292896311456,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-17T11:55:34Z",
+          "valid_grid_fraction": 0.024543423581058915,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-18",
+      "forecast_origin_utc": "2024-07-19T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-18T20:22:15Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-18T12:08:39Z",
+          "valid_grid_fraction": 0.10732865690762236,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-18T12:19:19Z",
+          "valid_grid_fraction": 0.07567685794185193,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-19",
+      "forecast_origin_utc": "2024-07-20T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-19T11:36:13Z",
+          "valid_grid_fraction": 0.19148869690199816,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-19T12:00:23Z",
+          "valid_grid_fraction": 0.2298114327672671,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "163b3ecb3b756d9f7b4e3ba933546194e413c4da188be6c9c4246853238935c5",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-19T12:00:24Z",
+          "valid_grid_fraction": 0.20220593978971707,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240713_20240719.nc",
+          "source_sha256": "d4d5aa60ff780cd09544183b022ef4d6467f50ec2d2bc04197c06e3cf4d53f4b",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-20",
+      "forecast_origin_utc": "2024-07-21T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-20T12:02:49Z",
+          "valid_grid_fraction": 0.21114218313049726,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-20T11:52:51Z",
+          "valid_grid_fraction": 0.3120811135934009,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-20T11:41:29Z",
+          "valid_grid_fraction": 0.196769204330641,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "d63dbd011f22273c9f033f1db7eaef896ccc9523afa73206115cdd86f4f2d20d",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-21",
+      "forecast_origin_utc": "2024-07-22T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-21T11:56:42Z",
+          "valid_grid_fraction": 0.38989829555218797,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-21T12:13:46Z",
+          "valid_grid_fraction": 0.5934477964036308,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-21T12:05:14Z",
+          "valid_grid_fraction": 0.4411098439281976,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "d63dbd011f22273c9f033f1db7eaef896ccc9523afa73206115cdd86f4f2d20d",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-22",
+      "forecast_origin_utc": "2024-07-23T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-22T07:16:02Z",
+          "valid_grid_fraction": 0.10251683357027917,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-22T07:40:56Z",
+          "valid_grid_fraction": 0.06834976331453389,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-22T06:54:41Z",
+          "valid_grid_fraction": 0.09179959068256026,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "d63dbd011f22273c9f033f1db7eaef896ccc9523afa73206115cdd86f4f2d20d",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-23",
+      "forecast_origin_utc": "2024-07-24T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "missing_observation"
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-24",
+      "forecast_origin_utc": "2024-07-25T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-24T02:24:16Z",
+          "valid_grid_fraction": 0.13390304488431315,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+          "source_sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-24T12:02:31Z",
+          "valid_grid_fraction": 0.3282350919401959,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-25",
+      "forecast_origin_utc": "2024-07-26T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-25T11:56:24Z",
+          "valid_grid_fraction": 0.42590885656704525,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-25T11:47:52Z",
+          "valid_grid_fraction": 0.31828336640159977,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "d63dbd011f22273c9f033f1db7eaef896ccc9523afa73206115cdd86f4f2d20d",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-26",
+      "forecast_origin_utc": "2024-07-27T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-26T12:20:09Z",
+          "valid_grid_fraction": 0.13115343154868847,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240720_20240726.nc",
+          "source_sha256": "4cb2398276b1fef05cabbe55246d9ce09f4d7b00ba6c8cb27b0591623f602cdf",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-27",
+      "forecast_origin_utc": "2024-07-28T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-27T12:01:13Z",
+          "valid_grid_fraction": 0.2541986283178928,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-27T12:00:31Z",
+          "valid_grid_fraction": 0.14647940133418738,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-28",
+      "forecast_origin_utc": "2024-07-29T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-28T11:42:18Z",
+          "valid_grid_fraction": 0.28347576122107826,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-28T11:52:58Z",
+          "valid_grid_fraction": 0.14363605118030276,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-29",
+      "forecast_origin_utc": "2024-07-30T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "missing_observation"
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-29T12:05:21Z",
+          "valid_grid_fraction": 0.3892577606274118,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-29T12:13:10Z",
+          "valid_grid_fraction": 0.28172600728022623,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-30",
+      "forecast_origin_utc": "2024-07-31T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-30T22:18:01Z",
+          "valid_grid_fraction": 0.014076145542033151,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-30T11:59:14Z",
+          "valid_grid_fraction": 0.44899935946507524,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-30T11:54:15Z",
+          "valid_grid_fraction": 0.2964426877470356,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-07-31",
+      "forecast_origin_utc": "2024-08-01T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-31T12:00:56Z",
+          "valid_grid_fraction": 0.1741317627208674,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-31T12:26:32Z",
+          "valid_grid_fraction": 0.1768969988595354,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-07-31T11:35:20Z",
+          "valid_grid_fraction": 0.20734584199097003,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-01",
+      "forecast_origin_utc": "2024-08-02T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-01T11:53:24Z",
+          "valid_grid_fraction": 0.11484322517146027,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-01T12:07:36Z",
+          "valid_grid_fraction": 0.3168773141277008,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-01T12:01:56Z",
+          "valid_grid_fraction": 0.16008686278492087,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-02",
+      "forecast_origin_utc": "2024-08-03T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-02T12:14:18Z",
+          "valid_grid_fraction": 0.2982236872939743,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-02T11:48:41Z",
+          "valid_grid_fraction": 0.38891405896045866,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "dc39bb9617fb98e430c12d04fa7dfb080fe1c2042ffd1796b498fb7e29b77b01",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-02T11:55:48Z",
+          "valid_grid_fraction": 0.27685169273070975,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240727_20240802.nc",
+          "source_sha256": "af46451159492a7234fdf8503bdbb46769014b7391f0e890ac532e62733b6ccf",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-03",
+      "forecast_origin_utc": "2024-08-04T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-03T11:55:22Z",
+          "valid_grid_fraction": 0.3525129278695183,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-03T12:08:54Z",
+          "valid_grid_fraction": 0.4306894342983018,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-03T12:19:33Z",
+          "valid_grid_fraction": 0.35574684809948603,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "3548cbbc9ca551a9e2ae24cc821361d8b35c71061ebd4cd4cb39885cc7ec49ce",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-04",
+      "forecast_origin_utc": "2024-08-05T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-04T11:36:26Z",
+          "valid_grid_fraction": 0.13185645768563795,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-04T12:00:38Z",
+          "valid_grid_fraction": 0.29486478463966004,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-04T12:00:38Z",
+          "valid_grid_fraction": 0.19064506553765875,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "3548cbbc9ca551a9e2ae24cc821361d8b35c71061ebd4cd4cb39885cc7ec49ce",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-05",
+      "forecast_origin_utc": "2024-08-06T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-05T12:02:20Z",
+          "valid_grid_fraction": 0.3387804839944383,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-05T11:53:05Z",
+          "valid_grid_fraction": 0.4604196284897436,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-05T11:41:43Z",
+          "valid_grid_fraction": 0.35996500492118294,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "3548cbbc9ca551a9e2ae24cc821361d8b35c71061ebd4cd4cb39885cc7ec49ce",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-06",
+      "forecast_origin_utc": "2024-08-07T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-06T11:56:55Z",
+          "valid_grid_fraction": 0.31409645518598944,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-06T12:14:00Z",
+          "valid_grid_fraction": 0.6199128247590182,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-06T07:59:22Z",
+          "valid_grid_fraction": 0.3418894218000594,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "3548cbbc9ca551a9e2ae24cc821361d8b35c71061ebd4cd4cb39885cc7ec49ce",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-07",
+      "forecast_origin_utc": "2024-08-08T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-07T12:20:41Z",
+          "valid_grid_fraction": 0.42864284709962663,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-07T11:55:05Z",
+          "valid_grid_fraction": 0.612429502101267,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-08",
+      "forecast_origin_utc": "2024-08-09T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-08T12:01:46Z",
+          "valid_grid_fraction": 0.32745395178802983,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-08T11:36:09Z",
+          "valid_grid_fraction": 0.5426736865128341,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-09",
+      "forecast_origin_utc": "2024-08-10T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-09T11:42:50Z",
+          "valid_grid_fraction": 0.3225171460263401,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+          "source_sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-09T11:59:55Z",
+          "valid_grid_fraction": 0.5694511709290881,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "e56e509b9e9147a271f5c47a047479a226830fac742b801fa6129920ccc02865",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-09T12:07:01Z",
+          "valid_grid_fraction": 0.4336733896795763,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240803_20240809.nc",
+          "source_sha256": "3548cbbc9ca551a9e2ae24cc821361d8b35c71061ebd4cd4cb39885cc7ec49ce",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-10",
+      "forecast_origin_utc": "2024-08-11T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-10T12:05:52Z",
+          "valid_grid_fraction": 0.014044899935946507,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-10T11:56:37Z",
+          "valid_grid_fraction": 0.16127419581621336,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "missing_observation"
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-11",
+      "forecast_origin_utc": "2024-08-12T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-11T11:59:45Z",
+          "valid_grid_fraction": 0.007842647127747661,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-11T11:19:56Z",
+          "valid_grid_fraction": 0.034495149119655046,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-11T12:07:35Z",
+          "valid_grid_fraction": 0.013060663344217219,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-12",
+      "forecast_origin_utc": "2024-08-13T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-12T12:27:04Z",
+          "valid_grid_fraction": 0.07948882188442251,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-12T12:01:27Z",
+          "valid_grid_fraction": 0.20151853645581091,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-12T12:00:44Z",
+          "valid_grid_fraction": 0.11090627880454311,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-13",
+      "forecast_origin_utc": "2024-08-14T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-13T12:08:08Z",
+          "valid_grid_fraction": 0.18309925166773422,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-13T11:42:32Z",
+          "valid_grid_fraction": 0.3915699354778234,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-13T11:53:12Z",
+          "valid_grid_fraction": 0.232232967238982,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-14",
+      "forecast_origin_utc": "2024-08-15T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-14T11:49:13Z",
+          "valid_grid_fraction": 0.3182677435985565,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-14T12:05:35Z",
+          "valid_grid_fraction": 0.5384867752972238,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-14T12:13:23Z",
+          "valid_grid_fraction": 0.34493586839350715,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-15",
+      "forecast_origin_utc": "2024-08-16T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-15T12:09:25Z",
+          "valid_grid_fraction": 0.14743239231983002,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-15T11:59:27Z",
+          "valid_grid_fraction": 0.14854161133590588,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-15T11:54:28Z",
+          "valid_grid_fraction": 0.1550719430080145,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-16",
+      "forecast_origin_utc": "2024-08-17T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-16T12:01:10Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-16T12:26:46Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "e27fa84bc8459371b37b3b479cd9b38d8b8ed1f5e946a86f86d5933d9b9073dc",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-16T11:35:33Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240810_20240816.nc",
+          "source_sha256": "7b57a0d319d0a13ad66416fbc4077ad689ee0a407577f1393aa026a2c13963eb",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-17",
+      "forecast_origin_utc": "2024-08-18T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-17T11:53:38Z",
+          "valid_grid_fraction": 0.0055929634895092875,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-17T12:07:08Z",
+          "valid_grid_fraction": 0.01560718024027871,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-17T12:02:09Z",
+          "valid_grid_fraction": 0.008576918870783797,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-18",
+      "forecast_origin_utc": "2024-08-19T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-18T12:14:32Z",
+          "valid_grid_fraction": 0.06997453483103938,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-18T11:48:56Z",
+          "valid_grid_fraction": 0.2841944101610711,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-18T11:56:02Z",
+          "valid_grid_fraction": 0.1873330312924745,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-19",
+      "forecast_origin_utc": "2024-08-20T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-19T11:55:36Z",
+          "valid_grid_fraction": 0.25849489915480633,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-19T12:09:07Z",
+          "valid_grid_fraction": 0.2949741442609633,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-19T12:19:48Z",
+          "valid_grid_fraction": 0.2720711149994532,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-20",
+      "forecast_origin_utc": "2024-08-21T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-20T11:36:41Z",
+          "valid_grid_fraction": 0.5629208392569794,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-20T12:00:51Z",
+          "valid_grid_fraction": 0.629505225827618,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-20T12:00:51Z",
+          "valid_grid_fraction": 0.6286459716602353,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-21",
+      "forecast_origin_utc": "2024-08-22T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-21T11:58:17Z",
+          "valid_grid_fraction": 0.0878470215125998,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-21T11:53:19Z",
+          "valid_grid_fraction": 0.0020465871986751864,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-21T11:40:31Z",
+          "valid_grid_fraction": 0.17010107953569029,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-22",
+      "forecast_origin_utc": "2024-08-23T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-22T11:57:52Z",
+          "valid_grid_fraction": 0.025183958505835116,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-22T12:14:57Z",
+          "valid_grid_fraction": 0.028933431236232404,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-22T12:05:41Z",
+          "valid_grid_fraction": 0.010248558796419253,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-23",
+      "forecast_origin_utc": "2024-08-24T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-23T12:20:55Z",
+          "valid_grid_fraction": 0.09440859879079505,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+          "source_sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-23T11:55:19Z",
+          "valid_grid_fraction": 0.1915199425080848,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "efb0654d99b64c70a6e4ae9c7da921a71bb7d89939eb6f6d6f38aa2b91984db3",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-23T11:59:34Z",
+          "valid_grid_fraction": 0.0722554640753644,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240817_20240823.nc",
+          "source_sha256": "59cbb379563d83d9d46bb7ce42a4ee64fd6ead973e73a701c262fe23549592d7",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-24",
+      "forecast_origin_utc": "2024-08-25T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-24T12:02:00Z",
+          "valid_grid_fraction": 0.2754768860628974,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-24T11:36:23Z",
+          "valid_grid_fraction": 0.3448733771813339,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-24T12:26:11Z",
+          "valid_grid_fraction": 0.25869799559436957,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-25",
+      "forecast_origin_utc": "2024-08-26T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-25T11:43:04Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-25T12:02:59Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-25T12:07:16Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-26",
+      "forecast_origin_utc": "2024-08-27T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-26T12:06:06Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-26T11:56:52Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-26T11:47:37Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-27",
+      "forecast_origin_utc": "2024-08-28T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-27T11:59:59Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-27T12:20:37Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-27T12:07:49Z",
+          "valid_grid_fraction": 0.0,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-28",
+      "forecast_origin_utc": "2024-08-29T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-28T12:27:18Z",
+          "valid_grid_fraction": 0.00753019106688122,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-28T12:01:41Z",
+          "valid_grid_fraction": 0.007827024324704338,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-28T12:00:17Z",
+          "valid_grid_fraction": 0.010670374478588948,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-29",
+      "forecast_origin_utc": "2024-08-30T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-29T12:08:22Z",
+          "valid_grid_fraction": 0.02099704729022481,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-29T11:42:46Z",
+          "valid_grid_fraction": 0.017106969332437626,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-29T11:52:44Z",
+          "valid_grid_fraction": 0.016778890468527864,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-30",
+      "forecast_origin_utc": "2024-08-31T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-30T11:48:44Z",
+          "valid_grid_fraction": 0.007295849021231389,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-30T12:05:49Z",
+          "valid_grid_fraction": 0.03118311487447078,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "56c3704f5a1cf490041fbccea33a275de234da33e72971417a8aa0084e8959ca",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-30T12:12:13Z",
+          "valid_grid_fraction": 0.010670374478588948,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240824_20240830.nc",
+          "source_sha256": "ad6a550bc878af6ed62bb222b43f89b8dbc76e045f7d4af4e73f86a81f2f63be",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    },
+    {
+      "observation_date": "2024-08-31",
+      "forecast_origin_utc": "2024-09-01T00:00:00Z",
+      "platforms": {
+        "S-NPP": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-31T12:08:14Z",
+          "valid_grid_fraction": 0.10484463122373416,
+          "source_file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+          "source_sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-21": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-31T11:58:17Z",
+          "valid_grid_fraction": 0.2251245918542705,
+          "source_file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20240831_20240831.nc",
+          "source_sha256": "a6b785e00b5545b560b2be7d4a846103293725665511e88a169e707e4c58086e",
+          "published_at_utc": null,
+          "asof_verified": false
+        },
+        "NOAA-20": {
+          "status": "observed_availability_unverified",
+          "observed_at_utc": "2024-08-31T11:53:18Z",
+          "valid_grid_fraction": 0.04464997109781437,
+          "source_file": "polarwatch_viirs_south_noaa20_lonm60p00_latm66p00_w100p0km_20240831_20240831.nc",
+          "source_sha256": "b817f1b2041e6c16f73c62d4c8f6092ceea592339a1dd220b3fc000f411190fd",
+          "published_at_utc": null,
+          "asof_verified": false
+        }
+      }
+    }
+  ],
+  "next_gate": "Obtain source publication/availability timestamps and source-specific QA policy before causal training; archive access dates are not historical publication times."
+}

@@ -1,0 +1,81 @@
+{
+  "artifact_sha256": "4c8ab2a6d717fe1bdab5861f8d223542af67e97e82d7b832b4ad585c825fb99c",
+  "features": [
+    "intercept",
+    "origin_day_sic",
+    "previous_observed_day_sic",
+    "target_day_sin",
+    "target_day_cos"
+  ],
+  "lead_models": {
+    "1": {
+      "coefficients": [
+        0.0016434664884846816,
+        0.9474108815711191,
+        0.0466074546004409,
+        0.0009665177362989858,
+        -0.003642642868426556
+      ],
+      "first_target_date": "1989-01-03",
+      "last_target_date": "2016-12-31",
+      "lead_days": 1,
+      "training_cutoff": "2016-12-31",
+      "training_samples": 587717153
+    },
+    "3": {
+      "coefficients": [
+        0.0045606460753194,
+        0.8841544801569986,
+        0.0992821381322561,
+        0.002827643947807624,
+        -0.010704794997969598
+      ],
+      "first_target_date": "1989-01-05",
+      "last_target_date": "2016-12-31",
+      "lead_days": 3,
+      "training_cutoff": "2016-12-31",
+      "training_samples": 585160737
+    },
+    "5": {
+      "coefficients": [
+        0.0071738038194620645,
+        0.8443393184339313,
+        0.12965624904746512,
+        0.004555202656244686,
+        -0.01762231043932791
+      ],
+      "first_target_date": "1989-01-07",
+      "last_target_date": "2016-12-31",
+      "lead_days": 5,
+      "training_cutoff": "2016-12-31",
+      "training_samples": 583561178
+    },
+    "7": {
+      "coefficients": [
+        0.00962091311578582,
+        0.8273213706663577,
+        0.1378599882448029,
+        0.00609584946617554,
+        -0.024451795404098895
+      ],
+      "first_target_date": "1989-01-09",
+      "last_target_date": "2016-12-31",
+      "lead_days": 7,
+      "training_cutoff": "2016-12-31",
+      "training_samples": 581984511
+    }
+  },
+  "limitations": [
+    "same-product hindcast",
+    "correlated daily and spatial samples",
+    "not route-scale validation",
+    "not calibrated uncertainty",
+    "not for navigation"
+  ],
+  "model_fingerprint": "79f78b78cbc8569dfea2f704431a94360b17876f0fb61dc6dab31c8673993482",
+  "model_id": "sic-direct-horizon-regression-research-v1",
+  "target": "daily sea-ice concentration fraction, Antarctic G02202 grid",
+  "training_cutoff": "2016-12-31",
+  "training_dataset_id": "G02202",
+  "training_source_manifest_sha256": "492b211baab8507c899a1fafd231246e1c67b8d7ac0f0993d465b449e2d808fa"
+}

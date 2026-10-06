@@ -1,0 +1,137 @@
+{
+  "cycle_date_utc": "2026-10-05",
+  "observation_region_id": "peninsula-weddell",
+  "observation_bbox_west_east_south_north": [
+    -73.0,
+    -20.0,
+    -78.0,
+    -58.0
+  ],
+  "observation_region_config_sha256": "8c119c04e571f16d14513d0ebf70da2e6a46e9126ed9c14c44fb2cd90a97b5c7",
+  "research_transect_id": "weddell-ice-gradient-v1",
+  "research_transect_config_sha256": "33e9df9ff6f7bd12cc4a26703d32ba6e2ea4f9e13caf2e0c897da626271bcc6f",
+  "forecast_archive_attempted": true,
+  "completed_verifications": [
+    {
+      "bulletin_date": "2026-10-03",
+      "valid_date": "2026-10-04",
+      "lead_days": 1,
+      "matched_cells": 70735,
+      "as_issued_persistence_compared": true,
+      "research_transect_status": "not_eligible_pre_freeze"
+    }
+  ],
+  "observation_capture_pending_dates": [],
+  "pending_observations": [],
+  "remaining_backlog": 0,
+  "calibration": {
+    "schema_version": 1,
+    "scope": "prospective_forecast_calibration_prerequisites",
+    "leads": [
+      {
+        "lead_days": 1,
+        "independent_bulletin_dates": 2,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 3,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 5,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      },
+      {
+        "lead_days": 7,
+        "independent_bulletin_dates": 0,
+        "minimum_earlier_fit_dates": 30,
+        "minimum_later_holdout_dates": 10,
+        "enough_dates_for_research_calibration": false
+      }
+    ],
+    "rejected_reports": 0,
+    "research_calibration_sample_gate_passed": false,
+    "uncertainty_calibrated": false,
+    "operator_decision_ready": false,
+    "navigation_clearance": false,
+    "remaining_requirements": [
+      "Later observations must be matched to each original, as-issued forecast bulletin.",
+      "Fit only on earlier bulletin dates and evaluate on later held-out dates.",
+      "Compare skill and interval coverage with an as-issued persistence baseline.",
+      "Check region, ice regime, season, and lead-specific reliability before any operational review."
+    ]
+  },
+  "research_transect_evidence": {
+    "schema_version": 1,
+    "scope": "frozen_transect_prospective_research_evidence",
+    "route_id": "weddell-ice-gradient-v1",
+    "route_config_sha256": "33e9df9ff6f7bd12cc4a26703d32ba6e2ea4f9e13caf2e0c897da626271bcc6f",
+    "eligible_bulletins_from": "2026-10-04",
+    "verified_case_count": 0,
+    "excluded_pre_freeze_reports": 2,
+    "rejected_reports": 0,
+    "leads": [
+      {
+        "lead_days": 1,
+        "independent_bulletins": 0,
+        "evaluable_bulletins": 0,
+        "low_coverage_bulletins": 0,
+        "minimum_common_cell_coverage_fraction": 0.5,
+        "mean_bulletin_mae_fraction": null,
+        "mean_bulletin_ice_edge_disagreement_fraction": null,
+        "paired_persistence_bulletins": 0,
+        "mean_paired_mae_improvement_vs_persistence_fraction": null,
+        "route_mean_sic_interval": null
+      },
+      {
+        "lead_days": 3,
+        "independent_bulletins": 0,
+        "evaluable_bulletins": 0,
+        "low_coverage_bulletins": 0,
+        "minimum_common_cell_coverage_fraction": 0.5,
+        "mean_bulletin_mae_fraction": null,
+        "mean_bulletin_ice_edge_disagreement_fraction": null,
+        "paired_persistence_bulletins": 0,
+        "mean_paired_mae_improvement_vs_persistence_fraction": null,
+        "route_mean_sic_interval": null
+      },
+      {
+        "lead_days": 5,
+        "independent_bulletins": 0,
+        "evaluable_bulletins": 0,
+        "low_coverage_bulletins": 0,
+        "minimum_common_cell_coverage_fraction": 0.5,
+        "mean_bulletin_mae_fraction": null,
+        "mean_bulletin_ice_edge_disagreement_fraction": null,
+        "paired_persistence_bulletins": 0,
+        "mean_paired_mae_improvement_vs_persistence_fraction": null,
+        "route_mean_sic_interval": null
+      },
+      {
+        "lead_days": 7,
+        "independent_bulletins": 0,
+        "evaluable_bulletins": 0,
+        "low_coverage_bulletins": 0,
+        "minimum_common_cell_coverage_fraction": 0.5,
+        "mean_bulletin_mae_fraction": null,
+        "mean_bulletin_ice_edge_disagreement_fraction": null,
+        "paired_persistence_bulletins": 0,
+        "mean_paired_mae_improvement_vs_persistence_fraction": null,
+        "route_mean_sic_interval": null
+      }
+    ],
+    "uncertainty_calibrated": false,
+    "operator_decision_ready": false,
+    "navigation_clearance": false,
+    "limitation": "Date-blocked interval covers mean SIC along a research transect, not vessel safety, hazards, or route travel time."
+  },
+  "navigation_clearance": false
+}

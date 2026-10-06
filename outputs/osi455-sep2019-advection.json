@@ -1,0 +1,317 @@
+{
+  "experiment": "OSI-455 lagged 24h drift advection diagnostic; not an operational forecast",
+  "period": {
+    "start": "2019-09-01",
+    "end": "2019-09-30"
+  },
+  "sic": {
+    "dataset": "NOAA/NSIDC G02202 v6",
+    "file": "sic_pss25_20190101-20191231_v06r00.nc",
+    "sha256": "d3b54d247cfb6e12f26367b80aab149a183c9ebbab447a9b358d7c1ad61ffe71",
+    "quality": "excluded QA missing/invalid/spatially interpolated flags and every temporal interpolation; regridded by area average; >=75% valid source coverage"
+  },
+  "motion": {
+    "dataset": "EUMETSAT OSI-455 CDR",
+    "quality": "status flags 21/30 only; OSI vectors are 24h displacement in km on 75km grid",
+    "timing": "use file date issue_date-1; interval ends 12h before 00Z SIC issue"
+  },
+  "provenance": {
+    "motion_manifest": "work\\datasets\\osi455-sep2019\\manifest.json",
+    "motion_manifest_sha256": "6d7cef3f3efbb1a758e0319e6e8987f37d46ce8e48c2be2597c6a5e6fb9eb346"
+  },
+  "protocol": {
+    "issue_time": "SIC issue date D is at 00Z; use OSI file D-1, whose completed 24h motion interval ends 12 hours before the issue time, avoiding post-issue vector leakage.",
+    "split": "fit shrinkage lambda on issue dates through 2019-09-16; evaluate chronologically from 2019-09-17 onward",
+    "baseline": "persistence; both methods evaluated on identical strict common-valid cells",
+    "motion_advection": "backtrace SIC using the most recent causal 24h displacement; assumes that lagged drift represents the next 24h; blend forecast = persistence + lambda*(advected-persistence)"
+  },
+  "selected_lambda": 0.2,
+  "training_mae_by_lambda": {
+    "0.0": 0.015762492416838837,
+    "0.1": 0.015693903015339444,
+    "0.2": 0.01566267446740767,
+    "0.3": 0.01566376863779163,
+    "0.4": 0.01568932912144245,
+    "0.5": 0.01573744182252658,
+    "0.6": 0.015808848205173986,
+    "0.7": 0.015901739607318697,
+    "0.8": 0.016013040959747104,
+    "0.9": 0.01614200256853414,
+    "1.0": 0.01628848672027323,
+    "1.1": 0.0164516817413737,
+    "1.2": 0.01663047350158705,
+    "1.3": 0.016823227006208856,
+    "1.4": 0.017030323724039922,
+    "1.5": 0.01725043049492722
+  },
+  "train": {
+    "pooled": {
+      "n_cells": 38631,
+      "persistence_mae": 0.015762493014335632,
+      "advection_mae": 0.015662675723433495,
+      "persistence_rmse": 0.026290956884622574,
+      "advection_rmse": 0.025997621938586235
+    },
+    "evaluated_days": 16,
+    "daily": [
+      {
+        "issue_date": "2019-09-01",
+        "n_cells": 2443,
+        "persistence_mae": 0.013345204293727875,
+        "advection_mae": 0.013239238411188126,
+        "persistence_rmse": 0.0262548066675663,
+        "advection_rmse": 0.026017332449555397
+      },
+      {
+        "issue_date": "2019-09-02",
+        "n_cells": 2442,
+        "persistence_mae": 0.014547749422490597,
+        "advection_mae": 0.014284837059676647,
+        "persistence_rmse": 0.02525855042040348,
+        "advection_rmse": 0.024488277733325958
+      },
+      {
+        "issue_date": "2019-09-03",
+        "n_cells": 2439,
+        "persistence_mae": 0.01426269207149744,
+        "advection_mae": 0.0140467444434762,
+        "persistence_rmse": 0.024386238306760788,
+        "advection_rmse": 0.023963116109371185
+      },
+      {
+        "issue_date": "2019-09-04",
+        "n_cells": 2424,
+        "persistence_mae": 0.015726465731859207,
+        "advection_mae": 0.01574118062853813,
+        "persistence_rmse": 0.025513704866170883,
+        "advection_rmse": 0.025316594168543816
+      },
+      {
+        "issue_date": "2019-09-05",
+        "n_cells": 2370,
+        "persistence_mae": 0.019584041088819504,
+        "advection_mae": 0.019378220662474632,
+        "persistence_rmse": 0.031278613954782486,
+        "advection_rmse": 0.030906612053513527
+      },
+      {
+        "issue_date": "2019-09-06",
+        "n_cells": 2358,
+        "persistence_mae": 0.016892511397600174,
+        "advection_mae": 0.01703704334795475,
+        "persistence_rmse": 0.027074288576841354,
+        "advection_rmse": 0.0269515048712492
+      },
+      {
+        "issue_date": "2019-09-07",
+        "n_cells": 2233,
+        "persistence_mae": 0.01693117432296276,
+        "advection_mae": 0.016979381442070007,
+        "persistence_rmse": 0.027236972004175186,
+        "advection_rmse": 0.027015971019864082
+      },
+      {
+        "issue_date": "2019-09-08",
+        "n_cells": 2235,
+        "persistence_mae": 0.01652105338871479,
+        "advection_mae": 0.016535673290491104,
+        "persistence_rmse": 0.024728406220674515,
+        "advection_rmse": 0.024686850607395172
+      },
+      {
+        "issue_date": "2019-09-09",
+        "n_cells": 2462,
+        "persistence_mae": 0.016531063243746758,
+        "advection_mae": 0.01639156974852085,
+        "persistence_rmse": 0.025708897039294243,
+        "advection_rmse": 0.02531832456588745
+      },
+      {
+        "issue_date": "2019-09-10",
+        "n_cells": 2451,
+        "persistence_mae": 0.016088953241705894,
+        "advection_mae": 0.01591312326490879,
+        "persistence_rmse": 0.026647869497537613,
+        "advection_rmse": 0.026100793853402138
+      },
+      {
+        "issue_date": "2019-09-11",
+        "n_cells": 2455,
+        "persistence_mae": 0.014772674068808556,
+        "advection_mae": 0.014728314243257046,
+        "persistence_rmse": 0.024670805782079697,
+        "advection_rmse": 0.024641800671815872
+      },
+      {
+        "issue_date": "2019-09-12",
+        "n_cells": 2452,
+        "persistence_mae": 0.01558525487780571,
+        "advection_mae": 0.015272688120603561,
+        "persistence_rmse": 0.026970822364091873,
+        "advection_rmse": 0.02631581760942936
+      },
+      {
+        "issue_date": "2019-09-13",
+        "n_cells": 2436,
+        "persistence_mae": 0.014481965452432632,
+        "advection_mae": 0.014340274035930634,
+        "persistence_rmse": 0.02359374426305294,
+        "advection_rmse": 0.023336194455623627
+      },
+      {
+        "issue_date": "2019-09-14",
+        "n_cells": 2471,
+        "persistence_mae": 0.015794051811099052,
+        "advection_mae": 0.015843326225876808,
+        "persistence_rmse": 0.026834886521100998,
+        "advection_rmse": 0.02676568552851677
+      },
+      {
+        "issue_date": "2019-09-15",
+        "n_cells": 2474,
+        "persistence_mae": 0.016579842194914818,
+        "advection_mae": 0.016483480110764503,
+        "persistence_rmse": 0.02815614454448223,
+        "advection_rmse": 0.02795323170721531
+      },
+      {
+        "issue_date": "2019-09-16",
+        "n_cells": 2486,
+        "persistence_mae": 0.014870270155370235,
+        "advection_mae": 0.01473111193627119,
+        "persistence_rmse": 0.02552141807973385,
+        "advection_rmse": 0.02538749948143959
+      }
+    ]
+  },
+  "holdout": {
+    "pooled": {
+      "n_cells": 34727,
+      "persistence_mae": 0.014499478973448277,
+      "advection_mae": 0.014467976987361908,
+      "persistence_rmse": 0.025683198124170303,
+      "advection_rmse": 0.02557525970041752
+    },
+    "evaluated_days": 14,
+    "daily": [
+      {
+        "issue_date": "2019-09-17",
+        "n_cells": 2487,
+        "persistence_mae": 0.01706019416451454,
+        "advection_mae": 0.017100820317864418,
+        "persistence_rmse": 0.03060440719127655,
+        "advection_rmse": 0.030689241364598274
+      },
+      {
+        "issue_date": "2019-09-18",
+        "n_cells": 2490,
+        "persistence_mae": 0.015799416229128838,
+        "advection_mae": 0.01566319540143013,
+        "persistence_rmse": 0.025936458259820938,
+        "advection_rmse": 0.02564086765050888
+      },
+      {
+        "issue_date": "2019-09-19",
+        "n_cells": 2455,
+        "persistence_mae": 0.014157162047922611,
+        "advection_mae": 0.014065390452742577,
+        "persistence_rmse": 0.025661364197731018,
+        "advection_rmse": 0.025492524728178978
+      },
+      {
+        "issue_date": "2019-09-20",
+        "n_cells": 2455,
+        "persistence_mae": 0.01362999714910984,
+        "advection_mae": 0.01361671183258295,
+        "persistence_rmse": 0.02375020459294319,
+        "advection_rmse": 0.023702634498476982
+      },
+      {
+        "issue_date": "2019-09-21",
+        "n_cells": 2471,
+        "persistence_mae": 0.013546294532716274,
+        "advection_mae": 0.013648533262312412,
+        "persistence_rmse": 0.022353455424308777,
+        "advection_rmse": 0.022410526871681213
+      },
+      {
+        "issue_date": "2019-09-22",
+        "n_cells": 2469,
+        "persistence_mae": 0.01546611450612545,
+        "advection_mae": 0.015270605683326721,
+        "persistence_rmse": 0.028352679684758186,
+        "advection_rmse": 0.027951233088970184
+      },
+      {
+        "issue_date": "2019-09-23",
+        "n_cells": 2474,
+        "persistence_mae": 0.01649555005133152,
+        "advection_mae": 0.016226671636104584,
+        "persistence_rmse": 0.02973235212266445,
+        "advection_rmse": 0.029171116650104523
+      },
+      {
+        "issue_date": "2019-09-24",
+        "n_cells": 2468,
+        "persistence_mae": 0.01465529389679432,
+        "advection_mae": 0.014625150710344315,
+        "persistence_rmse": 0.0285751111805439,
+        "advection_rmse": 0.028394268825650215
+      },
+      {
+        "issue_date": "2019-09-25",
+        "n_cells": 2477,
+        "persistence_mae": 0.014271349646151066,
+        "advection_mae": 0.014197169803082943,
+        "persistence_rmse": 0.027050871402025223,
+        "advection_rmse": 0.02692119963467121
+      },
+      {
+        "issue_date": "2019-09-26",
+        "n_cells": 2497,
+        "persistence_mae": 0.01244169007986784,
+        "advection_mae": 0.0123678557574749,
+        "persistence_rmse": 0.022069305181503296,
+        "advection_rmse": 0.0219488013535738
+      },
+      {
+        "issue_date": "2019-09-27",
+        "n_cells": 2501,
+        "persistence_mae": 0.013077203184366226,
+        "advection_mae": 0.013091986067593098,
+        "persistence_rmse": 0.023871609941124916,
+        "advection_rmse": 0.02387780323624611
+      },
+      {
+        "issue_date": "2019-09-28",
+        "n_cells": 2511,
+        "persistence_mae": 0.012737374752759933,
+        "advection_mae": 0.01282467506825924,
+        "persistence_rmse": 0.02002919651567936,
+        "advection_rmse": 0.020184507593512535
+      },
+      {
+        "issue_date": "2019-09-29",
+        "n_cells": 2508,
+        "persistence_mae": 0.013911718502640724,
+        "advection_mae": 0.014009436592459679,
+        "persistence_rmse": 0.021701933816075325,
+        "advection_rmse": 0.021866586059331894
+      },
+      {
+        "issue_date": "2019-09-30",
+        "n_cells": 2464,
+        "persistence_mae": 0.01578792743384838,
+        "advection_mae": 0.01588478311896324,
+        "persistence_rmse": 0.027303164824843407,
+        "advection_rmse": 0.027395982295274734
+      }
+    ]
+  },
+  "limitations": [
+    "Short period(s) and limited season/year coverage; spatially correlated cell samples are not independent trials.",
+    "Retrospective CDR can include interpolated/corrected vectors; only flags 21 and 30 retained here.",
+    "This evaluates gridded SIC changes, not ice-edge safety, iceberg drift, route clearance, or voyage decisions.",
+    "A small apparent gain is not evidence of generalizable forecast skill; multi-year blocked tests and independent products are required."
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "model_id": "sic-lag-regression-v1",
+  "model_fingerprint": "bea7e34b3847e58aaefac538dc734c9a2978871672a4edb6578083a0f0c8ad29",
+  "training_scope": {
+    "files": 36,
+    "daily_fields": 13149,
+    "samples": 738706672,
+    "selected_period_start": "1989-01-01",
+    "selected_period_end": "2024-12-31",
+    "first_train_target_date": "1989-01-03",
+    "last_train_target_date": "2023-12-31",
+    "validation_start": "2024-01-01",
+    "validation_end": "2024-12-31"
+  },
+  "evaluation_data_dir": "work\\datasets\\g02202-v6-2025",
+  "spatial_evaluation": {
+    "coarsen_factor": 1,
+    "method": "native grid",
+    "nominal_pixel_spacing_m": null
+  },
+  "source_manifest": {
+    "dataset": "NOAA/NSIDC Climate Data Record of Passive Microwave Sea Ice Concentration, Version 6",
+    "dataset_id": "G02202",
+    "doi": "10.7265/b18j-z797",
+    "hemisphere": "Southern",
+    "source": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate",
+    "accessed_at_utc": "2026-09-29T15:54:11.516527+00:00",
+    "requested_years": [
+      2025,
+      2025
+    ],
+    "complete": true,
+    "files": [
+      {
+        "year": 2025,
+        "file": "sic_pss25_20250101-20251231_v06r00.nc",
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/sic_pss25_20250101-20251231_v06r00.nc",
+        "bytes": 60863465,
+        "sha256": "723a807bdffc530b13b9e5657dfc40be13c66173a47eaf73b7b42c628df370cf",
+        "downloaded_at_utc": "2026-09-29T15:54:11.511010+00:00"
+      }
+    ],
+    "terms": "Retain provider citation; review current NSIDC terms before redistribution."
+  },
+  "period": {
+    "first_target_date": "2025-01-03",
+    "last_target_date": "2025-12-31"
+  },
+  "overall": {
+    "grid_cell_samples": 20883244,
+    "mae": 0.01410654465285101,
+    "rmse": 0.0448343155812574,
+    "persistence_rmse": 0.04499918884768108
+  },
+  "by_target_month": {
+    "01": {
+      "grid_cell_samples": 1574671,
+      "mae": 0.009451336923679523,
+      "rmse": 0.040534102597446615,
+      "persistence_rmse": 0.04111382349595608
+    },
+    "02": {
+      "grid_cell_samples": 1430507,
+      "mae": 0.004934292866478963,
+      "rmse": 0.03224991905770387,
+      "persistence_rmse": 0.0325358490983962
+    },
+    "03": {
+      "grid_cell_samples": 1608222,
+      "mae": 0.008627026162829851,
+      "rmse": 0.0404282437088152,
+      "persistence_rmse": 0.04055058318678342
+    },
+    "04": {
+      "grid_cell_samples": 1671906,
+      "mae": 0.012790094697794513,
+      "rmse": 0.04444120571985176,
+      "persistence_rmse": 0.04447055917299651
+    },
+    "05": {
+      "grid_cell_samples": 1820460,
+      "mae": 0.014748290266431938,
+      "rmse": 0.045701765918718384,
+      "persistence_rmse": 0.04562617038224363
+    },
+    "06": {
+      "grid_cell_samples": 1843231,
+      "mae": 0.01658009534453787,
+      "rmse": 0.04677159101683407,
+      "persistence_rmse": 0.04680667878550921
+    },
+    "07": {
+      "grid_cell_samples": 1986267,
+      "mae": 0.017310439404525556,
+      "rmse": 0.04838220177207368,
+      "persistence_rmse": 0.04840860644803071
+    },
+    "08": {
+      "grid_cell_samples": 1949866,
+      "mae": 0.018217871497723716,
+      "rmse": 0.05031597483600418,
+      "persistence_rmse": 0.05042946136890866
+    },
+    "09": {
+      "grid_cell_samples": 1507894,
+      "mae": 0.018581615150389426,
+      "rmse": 0.050216990784194206,
+      "persistence_rmse": 0.05033621866896124
+    },
+    "10": {
+      "grid_cell_samples": 1956753,
+      "mae": 0.016508029948472037,
+      "rmse": 0.04563621077891515,
+      "persistence_rmse": 0.04573270617293913
+    },
+    "11": {
+      "grid_cell_samples": 1892677,
+      "mae": 0.014662457201020006,
+      "rmse": 0.04329702279147299,
+      "persistence_rmse": 0.04362647663040031
+    },
+    "12": {
+      "grid_cell_samples": 1640790,
+      "mae": 0.013410246513151274,
+      "rmse": 0.043646604378762166,
+      "persistence_rmse": 0.044185010870326336
+    }
+  },
+  "by_target_year": {
+    "2025": {
+      "grid_cell_samples": 20883244,
+      "mae": 0.01410654465285101,
+      "rmse": 0.0448343155812574,
+      "persistence_rmse": 0.04499918884768108
+    }
+  },
+  "metric_weighting": "Cell-pooled metrics give each finite valid grid cell equal weight; G02202 reports separate estimated ground-area-weighted metrics.",
+  "warning": "Separate 2025 sensor-era transfer diagnostic: same G02202 product family, but NSIDC documents AMSR2 input beginning 2025-01-01. Do not pool with the pre-2025 holdout or use for tuning. Area weights are projection-scale estimates. Research only; not navigation guidance.",
+  "area_weighted": {
+    "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at each pixel centre",
+    "area_unit": "km2",
+    "overall": {
+      "evaluated_area_km2_samples": 12171189647.444464,
+      "mae": 0.014533333689459594,
+      "rmse": 0.04558689486700223,
+      "persistence_rmse": 0.04575888199250719
+    },
+    "by_target_month": {
+      "01": {
+        "evaluated_area_km2_samples": 922976765.7823615,
+        "mae": 0.009977049633883557,
+        "rmse": 0.04156924100027719,
+        "persistence_rmse": 0.04216237390027993
+      },
+      "02": {
+        "evaluated_area_km2_samples": 840948225.3771857,
+        "mae": 0.005228543327007008,
+        "rmse": 0.03316123252165283,
+        "persistence_rmse": 0.03345405157202689
+      },
+      "03": {
+        "evaluated_area_km2_samples": 944959447.975284,
+        "mae": 0.009089868269420513,
+        "rmse": 0.04167726723323459,
+        "persistence_rmse": 0.04180240214295218
+      },
+      "04": {
+        "evaluated_area_km2_samples": 978789130.9849538,
+        "mae": 0.013302900622365778,
+        "rmse": 0.04560464180022917,
+        "persistence_rmse": 0.04564088023101346
+      },
+      "05": {
+        "evaluated_area_km2_samples": 1062797061.284646,
+        "mae": 0.015178032702520204,
+        "rmse": 0.046650454779261906,
+        "persistence_rmse": 0.0465851824151656
+      },
+      "06": {
+        "evaluated_area_km2_samples": 1072496917.1428818,
+        "mae": 0.01699225377735226,
+        "rmse": 0.047596930572151,
+        "persistence_rmse": 0.047645987876775035
+      },
+      "07": {
+        "evaluated_area_km2_samples": 1152566897.8158278,
+        "mae": 0.01767960577282238,
+        "rmse": 0.04904115050130987,
+        "persistence_rmse": 0.04907889744517025
+      },
+      "08": {
+        "evaluated_area_km2_samples": 1129647071.482772,
+        "mae": 0.018569008291963104,
+        "rmse": 0.05080086428008549,
+        "persistence_rmse": 0.05092234889771738
+      },
+      "09": {
+        "evaluated_area_km2_samples": 875667356.2350433,
+        "mae": 0.01896712870575515,
+        "rmse": 0.050596525608897325,
+        "persistence_rmse": 0.05071536528577842
+      },
+      "10": {
+        "evaluated_area_km2_samples": 1135389473.5478158,
+        "mae": 0.01696782064096784,
+        "rmse": 0.0460891131697243,
+        "persistence_rmse": 0.046183400014316894
+      },
+      "11": {
+        "evaluated_area_km2_samples": 1098178099.6892931,
+        "mae": 0.015203479723700515,
+        "rmse": 0.043942569341579404,
+        "persistence_rmse": 0.04427101190627459
+      },
+      "12": {
+        "evaluated_area_km2_samples": 956773200.1263753,
+        "mae": 0.013998488291899858,
+        "rmse": 0.04448130988846371,
+        "persistence_rmse": 0.04502839199833303
+      }
+    },
+    "by_target_year": {
+      "2025": {
+        "evaluated_area_km2_samples": 12171189647.444464,
+        "mae": 0.014533333689459594,
+        "rmse": 0.04558689486700223,
+        "persistence_rmse": 0.04575888199250719
+      }
+    },
+    "by_latitude_band": {
+      "70S_to_60S": {
+        "evaluated_area_km2_samples": 5960824950.827104,
+        "mae": 0.020529839633925122,
+        "rmse": 0.055558187861473034,
+        "persistence_rmse": 0.05580830028816885
+      },
+      "80S_to_70S": {
+        "evaluated_area_km2_samples": 1188047705.4849935,
+        "mae": 0.023433829033302295,
+        "rmse": 0.057545523045507724,
+        "persistence_rmse": 0.05784182676338316
+      },
+      "north_of_60S": {
+        "evaluated_area_km2_samples": 5022316991.132336,
+        "mae": 0.005310830330100373,
+        "rmse": 0.024277686220870297,
+        "persistence_rmse": 0.024214289978975463
+      }
+    },
+    "ice_edge": {
+      "aggregation": "mean of per-day pan-domain errors over shared valid cells",
+      "overall": {
+        "valid_daily_fields": 363,
+        "threshold_sic_fraction": 0.15,
+        "mean_daily_iiee_million_km2": 0.31369362910107634,
+        "persistence_mean_daily_iiee_million_km2": 0.31369362910107634,
+        "mean_daily_absolute_sie_error_million_km2": 0.09213095711678045,
+        "persistence_mean_daily_absolute_sie_error_million_km2": 0.09213095711678045
+      },
+      "by_target_month": {
+        "01": {
+          "valid_daily_fields": 29,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.293745877426371,
+          "persistence_mean_daily_iiee_million_km2": 0.293745877426371,
+          "mean_daily_absolute_sie_error_million_km2": 0.12633918408980144,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.12633918408980144
+        },
+        "02": {
+          "valid_daily_fields": 28,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.1795295570777573,
+          "persistence_mean_daily_iiee_million_km2": 0.1795295570777573,
+          "mean_daily_absolute_sie_error_million_km2": 0.0626695799778008,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.0626695799778008
+        },
+        "03": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.23514969645049738,
+          "persistence_mean_daily_iiee_million_km2": 0.23514969645049738,
+          "mean_daily_absolute_sie_error_million_km2": 0.07897742945542799,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.07897742945542799
+        },
+        "04": {
+          "valid_daily_fields": 30,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.2680366548187355,
+          "persistence_mean_daily_iiee_million_km2": 0.2680366548187355,
+          "mean_daily_absolute_sie_error_million_km2": 0.11165222453884054,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.11165222453884054
+        },
+        "05": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.2983187690782212,
+          "persistence_mean_daily_iiee_million_km2": 0.2983187690782212,
+          "mean_daily_absolute_sie_error_million_km2": 0.09327545901740888,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.09327545901740888
+        },
+        "06": {
+          "valid_daily_fields": 30,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.36848214371867954,
+          "persistence_mean_daily_iiee_million_km2": 0.36848214371867954,
+          "mean_daily_absolute_sie_error_million_km2": 0.10219494267421035,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.10219494267421035
+        },
+        "07": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.3816769844106659,
+          "persistence_mean_daily_iiee_million_km2": 0.3816769844106659,
+          "mean_daily_absolute_sie_error_million_km2": 0.07663000497307015,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.07663000497307015
+        },
+        "08": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.39692124270562396,
+          "persistence_mean_daily_iiee_million_km2": 0.39692124270562396,
+          "mean_daily_absolute_sie_error_million_km2": 0.0571465556043357,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.0571465556043357
+        },
+        "09": {
+          "valid_daily_fields": 30,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.31543759020536766,
+          "persistence_mean_daily_iiee_million_km2": 0.31543759020536766,
+          "mean_daily_absolute_sie_error_million_km2": 0.04441809283813567,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.04441809283813567
+        },
+        "10": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.3623637322229744,
+          "persistence_mean_daily_iiee_million_km2": 0.3623637322229744,
+          "mean_daily_absolute_sie_error_million_km2": 0.049569350276987036,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.049569350276987036
+        },
+        "11": {
+          "valid_daily_fields": 30,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.3491234262544326,
+          "persistence_mean_daily_iiee_million_km2": 0.3491234262544326,
+          "mean_daily_absolute_sie_error_million_km2": 0.12221819925135281,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.12221819925135281
+        },
+        "12": {
+          "valid_daily_fields": 31,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.3027610225588664,
+          "persistence_mean_daily_iiee_million_km2": 0.3027610225588664,
+          "mean_daily_absolute_sie_error_million_km2": 0.1802221386189783,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.1802221386189783
+        }
+      },
+      "by_target_year": {
+        "2025": {
+          "valid_daily_fields": 363,
+          "threshold_sic_fraction": 0.15,
+          "mean_daily_iiee_million_km2": 0.31369362910107634,
+          "persistence_mean_daily_iiee_million_km2": 0.31369362910107634,
+          "mean_daily_absolute_sie_error_million_km2": 0.09213095711678045,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.09213095711678045
+        }
+      }
+    }
+  }
+}

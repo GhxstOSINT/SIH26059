@@ -1,0 +1,122 @@
+{
+  "source": "Lin et al. Ice-kNN-South released verification sample",
+  "doi": "10.5281/zenodo.13144175",
+  "archive_sha256": "d4bc977c8ba2a52a5faf6dd4adee6d1074e701e525843060cefa685cc8b595d5",
+  "evaluation_scope": "Authors' archived 2023-2024 verification statistics; this report summarizes aggregate outputs and does not rerun the model or independently reconstruct its SIC fields.",
+  "forecast_initialization_dates": {
+    "first": "20221003",
+    "last": "20240629"
+  },
+  "verified_target_dates": {
+    "first": "2022-10-04",
+    "last": "2024-09-27"
+  },
+  "units_note": "IIEE and absolute SIE error are reported in million km^2, matching the archive verification script's area scaling.",
+  "initialization_count": 635,
+  "lead_days": [
+    1,
+    7,
+    30,
+    60,
+    90
+  ],
+  "models": {
+    "persistence": {
+      "1": {
+        "iiee_sample_count": 635,
+        "sie_error_sample_count": 635,
+        "mean_iiee_million_km2": 0.30899449063567663,
+        "mean_absolute_sie_error_million_km2": 0.07825794614206148
+      },
+      "7": {
+        "iiee_sample_count": 629,
+        "sie_error_sample_count": 629,
+        "mean_iiee_million_km2": 0.9948238956909301,
+        "mean_absolute_sie_error_million_km2": 0.30544618127455964
+      },
+      "30": {
+        "iiee_sample_count": 606,
+        "sie_error_sample_count": 606,
+        "mean_iiee_million_km2": 2.5945522598307518,
+        "mean_absolute_sie_error_million_km2": 1.613558825879994
+      },
+      "60": {
+        "iiee_sample_count": 576,
+        "sie_error_sample_count": 576,
+        "mean_iiee_million_km2": 3.2613376463866897,
+        "mean_absolute_sie_error_million_km2": 2.2982803425855107
+      },
+      "90": {
+        "iiee_sample_count": 546,
+        "sie_error_sample_count": 546,
+        "mean_iiee_million_km2": 3.493182652162545,
+        "mean_absolute_sie_error_million_km2": 2.474442666703528
+      }
+    },
+    "climatology": {
+      "1": {
+        "iiee_sample_count": 635,
+        "sie_error_sample_count": 635,
+        "mean_iiee_million_km2": 3.003902459895517,
+        "mean_absolute_sie_error_million_km2": 2.5104204910007986
+      },
+      "7": {
+        "iiee_sample_count": 629,
+        "sie_error_sample_count": 629,
+        "mean_iiee_million_km2": 3.0077965894450442,
+        "mean_absolute_sie_error_million_km2": 2.518312714626755
+      },
+      "30": {
+        "iiee_sample_count": 606,
+        "sie_error_sample_count": 606,
+        "mean_iiee_million_km2": 3.0114071166554695,
+        "mean_absolute_sie_error_million_km2": 2.5464232979041124
+      },
+      "60": {
+        "iiee_sample_count": 576,
+        "sie_error_sample_count": 576,
+        "mean_iiee_million_km2": 3.013039886744486,
+        "mean_absolute_sie_error_million_km2": 2.5869883344405227
+      },
+      "90": {
+        "iiee_sample_count": 546,
+        "sie_error_sample_count": 546,
+        "mean_iiee_million_km2": 2.9686605570080515,
+        "mean_absolute_sie_error_million_km2": 2.563517439059722
+      }
+    },
+    "Ice-kNN-South": {
+      "1": {
+        "iiee_sample_count": 635,
+        "sie_error_sample_count": 635,
+        "mean_iiee_million_km2": 0.4571207481106435,
+        "mean_absolute_sie_error_million_km2": 0.14034179139324998
+      },
+      "7": {
+        "iiee_sample_count": 629,
+        "sie_error_sample_count": 629,
+        "mean_iiee_million_km2": 1.2560071757089921,
+        "mean_absolute_sie_error_million_km2": 0.5775051702566102
+      },
+      "30": {
+        "iiee_sample_count": 606,
+        "sie_error_sample_count": 606,
+        "mean_iiee_million_km2": 2.2219101728582538,
+        "mean_absolute_sie_error_million_km2": 1.5361364698252662
+      },
+      "60": {
+        "iiee_sample_count": 576,
+        "sie_error_sample_count": 576,
+        "mean_iiee_million_km2": 2.418984896296428,
+        "mean_absolute_sie_error_million_km2": 1.683963974730836
+      },
+      "90": {
+        "iiee_sample_count": 546,
+        "sie_error_sample_count": 546,
+        "mean_iiee_million_km2": 2.4892100196181635,
+        "mean_absolute_sie_error_million_km2": 1.7858153070722307
+      }
+    }
+  },
+  "warning": "Pan-Antarctic archived verification only. No regional route-scale SIC forecasts, uncertainty, vessel hazards, or navigation advice are included."
+}

@@ -1,0 +1,46 @@
+{
+  "purpose": "Diagnostic comparison of existing and expanded SIC models on a shared 2025 holdout",
+  "generated_at_utc": "2026-09-30T23:00:34.450927+00:00",
+  "holdout_period": {
+    "first_target_date": "2025-01-03",
+    "last_target_date": "2025-12-31"
+  },
+  "source_dataset_id": "G02202",
+  "embedded_source_manifest_canonical_sha256": "6a6dd55ecd6195e8fddaeda94ec8dfea468781565eca9384b2b431fc103cb394",
+  "grid_cell_samples": 20883244,
+  "models": {
+    "current": {
+      "path": "models\\sic_g02202_1989_2016.json",
+      "fingerprint": "0b807b4fe1de6c725e95719f9766d7edfd67c63f35863900b8aaf96bf7c09830",
+      "fit_last_target": "2011-05-26"
+    },
+    "candidate": {
+      "path": "models\\sic_g02202_1989_2023_candidate.json",
+      "fingerprint": "bea7e34b3847e58aaefac538dc734c9a2978871672a4edb6578083a0f0c8ad29",
+      "fit_last_target": "2023-12-31"
+    }
+  },
+  "metrics": {
+    "area_weighted_rmse": {
+      "current": 0.045603737277556296,
+      "candidate": 0.04558689486700223,
+      "persistence": 0.04575888199250719
+    },
+    "area_weighted_mae": {
+      "current": 0.01463159515309633,
+      "candidate": 0.014533333689459594
+    },
+    "mean_daily_ice_edge_disagreement_million_km2": {
+      "current": 0.3136902270181551,
+      "candidate": 0.31369362910107634,
+      "persistence": 0.31369362910107634
+    }
+  },
+  "candidate_change_percent": {
+    "rmse_reduction_vs_current": 0.03693208399030423,
+    "mae_reduction_vs_current": 0.6715704105299869
+  },
+  "decision": "retain_current_model",
+  "reason": "The candidate fails the research screening rule: at least 1% lower area-weighted RMSE, lower MAE, and lower ice-edge disagreement on this common 2025 holdout. The same 2025 dataset has been examined before and is not a pristine release gate.",
+  "limitations": "Same G02202 product family; 2025 AMSR2 sensor transition; spatially and temporally correlated cells; no route-scale outcome validation."
+}

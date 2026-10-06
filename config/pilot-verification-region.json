@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "region_id": "peninsula-weddell",
+  "label": "Antarctic Peninsula–Weddell research envelope",
+  "crs": "EPSG:4326",
+  "bbox_west_east_south_north": [-73.0, -20.0, -78.0, -58.0],
+  "purpose": "Frozen broad observation domain for prospective forecast verification around the public Rothera and Halley areas; not a vessel track or navigable corridor.",
+  "reference_sites": [
+    {
+      "name": "Rothera Research Station",
+      "longitude": -68.1248,
+      "latitude": -67.568889,
+      "source": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rothera/rothera-air-facility/"
+    },
+    {
+      "name": "Halley VI Research Station",
+      "longitude": -25.50852,
+      "latitude": -75.56821,
+      "source": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/halley/"
+    }
+  ],
+  "limitations": [
+    "The browser route drawing is schematic and does not supply WGS84 waypoints.",
+    "The direct line between reference sites is not a water-only vessel route.",
+    "Halley VI's position changes on a moving ice shelf; the coordinates are contextual, not a navigation fix.",
+    "The rectangular envelope includes land and large waters not traversed by a vessel; corridor-specific skill requires approved waypoints."
+  ],
+  "navigation_clearance": false
+}

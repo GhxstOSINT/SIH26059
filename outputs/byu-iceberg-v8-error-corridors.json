@@ -1,0 +1,260 @@
+{
+  "archive_sha256": "47d899c8bb1c3266d0b8c94a6f87c435dc68827a53f39dea3d78fe68ccc40cae",
+  "by_next_report_lead": {
+    "1-2d": {
+      "constant_velocity": {
+        "calibrated_radius_km": {
+          "80": 4.723291077715467,
+          "90": 10.051017084768603
+        },
+        "calibration_count": 28615,
+        "calibration_error_km": {
+          "median": 0.6153580578007466,
+          "p80": 4.723291077715467,
+          "p90": 10.051017084768603
+        },
+        "holdout_count": 88401,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.8674562504949039,
+          "90_percent_radius": 0.9423649053743736
+        },
+        "holdout_error_km": {
+          "mean": 2.497007686238531,
+          "median": 0.1850430013162942,
+          "p80": 2.788912105812831,
+          "p90": 6.339631616046704
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "persistence": {
+        "calibrated_radius_km": {
+          "80": 6.6008539403905235,
+          "90": 11.814113275636805
+        },
+        "calibration_count": 28615,
+        "calibration_error_km": {
+          "median": 1.2013490942196337,
+          "p80": 6.6008539403905235,
+          "p90": 11.814113275636805
+        },
+        "holdout_count": 88401,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.8535310686530695,
+          "90_percent_radius": 0.9349781111073404
+        },
+        "holdout_error_km": {
+          "mean": 3.099611523090316,
+          "median": 0.46424673698408714,
+          "p80": 4.825761467308821,
+          "p90": 8.977818505379457
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "trained_damped_velocity": {
+        "calibrated_radius_km": {
+          "80": 6.6008539403905235,
+          "90": 11.814113275636805
+        },
+        "calibration_count": 28615,
+        "calibration_error_km": {
+          "median": 1.2013490942196337,
+          "p80": 6.6008539403905235,
+          "p90": 11.814113275636805
+        },
+        "holdout_count": 88401,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.8535310686530695,
+          "90_percent_radius": 0.9349781111073404
+        },
+        "holdout_error_km": {
+          "mean": 3.099611523090316,
+          "median": 0.46424673698408714,
+          "p80": 4.825761467308821,
+          "p90": 8.977818505379457
+        },
+        "status": "scored_next_report_distribution"
+      }
+    },
+    "3-7d": {
+      "constant_velocity": {
+        "calibrated_radius_km": {
+          "80": 21.845309902984834,
+          "90": 39.50726745635435
+        },
+        "calibration_count": 679,
+        "calibration_error_km": {
+          "median": 6.611211473968625,
+          "p80": 21.845309902984834,
+          "p90": 39.50726745635435
+        },
+        "holdout_count": 1150,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.76,
+          "90_percent_radius": 0.8756521739130435
+        },
+        "holdout_error_km": {
+          "mean": 20.386072675387364,
+          "median": 4.991900727927582,
+          "p80": 26.477104687081102,
+          "p90": 45.84503898375755
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "persistence": {
+        "calibrated_radius_km": {
+          "80": 16.089182319248557,
+          "90": 33.14948701843401
+        },
+        "calibration_count": 679,
+        "calibration_error_km": {
+          "median": 4.248291558960049,
+          "p80": 16.089182319248557,
+          "p90": 33.14948701843401
+        },
+        "holdout_count": 1150,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.7452173913043478,
+          "90_percent_radius": 0.8747826086956522
+        },
+        "holdout_error_km": {
+          "mean": 14.174676693002587,
+          "median": 2.7533510063244817,
+          "p80": 23.397322211997913,
+          "p90": 40.280947566288326
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "trained_damped_velocity": {
+        "calibrated_radius_km": {
+          "80": 16.089182319248557,
+          "90": 33.14948701843401
+        },
+        "calibration_count": 679,
+        "calibration_error_km": {
+          "median": 4.248291558960049,
+          "p80": 16.089182319248557,
+          "p90": 33.14948701843401
+        },
+        "holdout_count": 1150,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.7452173913043478,
+          "90_percent_radius": 0.8747826086956522
+        },
+        "holdout_error_km": {
+          "mean": 14.174676693002587,
+          "median": 2.7533510063244817,
+          "p80": 23.397322211997913,
+          "p90": 40.280947566288326
+        },
+        "status": "scored_next_report_distribution"
+      }
+    },
+    "8-14d": {
+      "constant_velocity": {
+        "calibrated_radius_km": {
+          "80": 52.973871589801185,
+          "90": 99.53884571004303
+        },
+        "calibration_count": 338,
+        "calibration_error_km": {
+          "median": 12.175389232263814,
+          "p80": 52.973871589801185,
+          "p90": 99.53884571004303
+        },
+        "holdout_count": 522,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.8045977011494253,
+          "90_percent_radius": 0.9118773946360154
+        },
+        "holdout_error_km": {
+          "mean": 36.20825989724859,
+          "median": 9.616810879511519,
+          "p80": 52.04002759382938,
+          "p90": 90.66208717158658
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "persistence": {
+        "calibrated_radius_km": {
+          "80": 30.680947451294692,
+          "90": 57.53300564831892
+        },
+        "calibration_count": 338,
+        "calibration_error_km": {
+          "median": 6.026732931969379,
+          "p80": 30.680947451294692,
+          "p90": 57.53300564831892
+        },
+        "holdout_count": 522,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.7413793103448276,
+          "90_percent_radius": 0.8563218390804598
+        },
+        "holdout_error_km": {
+          "mean": 30.684066622754244,
+          "median": 3.9333656773659254,
+          "p80": 43.46491266239401,
+          "p90": 82.39397086540735
+        },
+        "status": "scored_next_report_distribution"
+      },
+      "trained_damped_velocity": {
+        "calibrated_radius_km": {
+          "80": 30.680947451294692,
+          "90": 57.53300564831892
+        },
+        "calibration_count": 338,
+        "calibration_error_km": {
+          "median": 6.026732931969379,
+          "p80": 30.680947451294692,
+          "p90": 57.53300564831892
+        },
+        "holdout_count": 522,
+        "holdout_empirical_coverage": {
+          "80_percent_radius": 0.7413793103448276,
+          "90_percent_radius": 0.8563218390804598
+        },
+        "holdout_error_km": {
+          "mean": 30.684066622754244,
+          "median": 3.9333656773659254,
+          "p80": 43.46491266239401,
+          "p90": 82.39397086540735
+        },
+        "status": "scored_next_report_distribution"
+      }
+    }
+  },
+  "calibration_examples": 29632,
+  "calibration_target_period": {
+    "end": "2016-12-31",
+    "start": "2014-01-01"
+  },
+  "data_summary": {
+    "files": 647,
+    "observed_sensor_positions": 236970,
+    "rows": 516691,
+    "track_days": 211009
+  },
+  "dataset": "BYU/NIC Antarctic Iceberg Tracking Database v8.0",
+  "fit_target_end": "2013-12-31",
+  "fitted_velocity_damping_from_fit_period": 0.0,
+  "holdout_examples": 90073,
+  "holdout_target_period": {
+    "end": "2025-04-22",
+    "start": "2017-01-01"
+  },
+  "limitations": [
+    "The target is the next source-measured report, not a fixed-time forecast.",
+    "Circular radii summarize historical position-error distributions and do not represent ellipse orientation, physical process uncertainty, or true-position accuracy.",
+    "Temporal and within-track dependence violate the exchangeability assumptions behind formal conformal coverage guarantees; empirical test coverage is descriptive only.",
+    "Coverage is evaluated on known tracks, not on independent bergs or independent trials.",
+    "BYU/NIC positions have heterogeneous sensor precision; the published paper reports location accuracy of roughly one sensor pixel, about 2.2-8.9 km by sensor.",
+    "The selected large-berg archive is not a complete live iceberg-obstacle feed; this report does not estimate route encounter probability or navigational clearance."
+  ],
+  "manifest_sha256": "ab3dc1d4fc1840bbf3d87a4296a05b1598a53e9965d591d0cd2e42906fb8b15a",
+  "max_history_gap_days": 30,
+  "max_lead_days": 14,
+  "method": "Empirical radial error quantiles for the next source-measured report; calibration uses 2014-2016 and is frozen before the 2017-2025 holdout.",
+  "schema_version": 1,
+  "training_examples": 73003
+}

@@ -1,0 +1,60 @@
+{
+  "model": "scar-npi-observation-conditional-climatology-v1",
+  "decision_status": "research_only",
+  "source": {
+    "doi": "https://doi.org/10.21334/npolar.2021.e4b9a604",
+    "archive_sha256": "77ec7c73b2c1d1151f6c9854fb3ce4b795013cb3f2e10e2c1a45166f8d834749",
+    "file": "NPI_Iceberg_database_1977-2010_version_2022-05-20.csv"
+  },
+  "method": {
+    "target": "at least one iceberg recorded during a ship observation",
+    "train_years": "1977-1999",
+    "holdout_years": "2000-2010",
+    "latitude_bin_degrees": 5,
+    "longitude_bin_degrees": 15,
+    "calendar_season_months": 3,
+    "cell_prior_observations": 30,
+    "parent_prior_observations": 30,
+    "training_rows": 20326,
+    "holdout_rows": 5995,
+    "training_cruises": 194,
+    "holdout_cruises": 39,
+    "cruise_ids_in_both_periods": 0,
+    "earlier_rows_excluded_for_cruise_disjoint_holdout": 170,
+    "rejected_rows": {
+      "invalid_fields": 110
+    },
+    "aad_files": "not fitted; separate protocols and size classes require harmonization"
+  },
+  "holdout": {
+    "global_rate_baseline": {
+      "observations": 5995,
+      "observed_positive_fraction": 0.6190158465387823,
+      "brier": 0.2617105928317204,
+      "log_loss": 0.7305421119057081,
+      "at_least_10_training_observations_fraction": null
+    },
+    "latitude_season_baseline": {
+      "observations": 5995,
+      "observed_positive_fraction": 0.6190158465387823,
+      "brier": 0.1887916872340119,
+      "log_loss": 0.563446768757171,
+      "at_least_10_training_observations_fraction": 0.9741451209341118
+    },
+    "spatial_season_climatology": {
+      "observations": 5995,
+      "observed_positive_fraction": 0.6190158465387823,
+      "brier": 0.17860482389362428,
+      "log_loss": 0.5473745735603558,
+      "at_least_10_training_observations_fraction": 0.8780650542118432
+    }
+  },
+  "limitations": [
+    "Historical ship-observation conditional rate, not current iceberg presence or encounter probability for a vessel.",
+    "Ship routes, observation range, visibility, and observation frequency vary; row counts are not a uniform spatial survey.",
+    "Nearby observations and repeat voyages are correlated; this holdout is chronological but not fully independent by route.",
+    "No current meteorology, currents, ice motion, satellite detections, or vessel-specific constraints are used.",
+    "No estimate may be displayed as navigation clearance or a live iceberg forecast."
+  ],
+  "artifact_sha256": "944c5c94c688dbed0d96eba972d155a0cd72f8dbb8f2211c3d8b2b5f62ed0e10"
+}

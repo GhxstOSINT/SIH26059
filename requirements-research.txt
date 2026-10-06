@@ -1,0 +1,2 @@
+# Optional authenticated acquisition of NASA NSIDC DAAC granules.
+earthaccess==0.19.0

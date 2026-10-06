@@ -1,0 +1,1717 @@
+{
+  "experiment": "Lagged OSI-455 one-day SIC advection diagnostic under a date-label timing convention; not an operational forecast",
+  "period": {
+    "start": "2018-01-01",
+    "end": "2018-12-30"
+  },
+  "sic": {
+    "dataset": "NOAA/NSIDC G02202 v6",
+    "file": "sic_pss25_20180101-20181231_v06r00.nc",
+    "sha256": "b2ed329df5e09874785184fef8fde006c746fadf13462c98e4e83c89a955ac5b",
+    "quality": "excluded QA missing/invalid/spatially interpolated flags and every temporal interpolation; regridded by area average; >=75% valid source coverage"
+  },
+  "motion": {
+    "dataset": "EUMETSAT OSI-455 CDR",
+    "quality": "status flags 21/30 only; OSI vectors are 24h displacement in km on 75km grid",
+    "timing": "use file date issue_date-1; interval ends 12h before the experiment's assumed 00Z issue label"
+  },
+  "provenance": {
+    "motion_manifest": "work\\datasets\\osi455-hindcast-2017-2020\\manifest.json",
+    "motion_manifest_sha256": "83ab9726bb8af528b58faa4ef035e8163607d1904e67c73170dbbaf095aef006",
+    "motion_manifest_period": {
+      "end": "2020-12-31",
+      "start": "2016-12-31"
+    }
+  },
+  "motion_coverage": {
+    "strict_status_flags": [
+      21,
+      30
+    ],
+    "issue_days": 364,
+    "days_with_strict_motion": 183,
+    "days_with_common_valid_forecast_cells": 183,
+    "status_21_cell_days": 4809,
+    "status_30_cell_days": 297603,
+    "strict_motion_cell_days": 302412,
+    "common_valid_forecast_cell_days": 302289,
+    "possible_grid_cell_days": 7547904,
+    "by_month": [
+      {
+        "month": 1,
+        "issue_days": 31,
+        "days_with_strict_motion": 0,
+        "strict_motion_cell_days": 0,
+        "common_valid_forecast_cell_days": 0,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 2,
+        "issue_days": 28,
+        "days_with_strict_motion": 0,
+        "strict_motion_cell_days": 0,
+        "common_valid_forecast_cell_days": 0,
+        "possible_grid_cell_days": 580608
+      },
+      {
+        "month": 3,
+        "issue_days": 31,
+        "days_with_strict_motion": 0,
+        "strict_motion_cell_days": 0,
+        "common_valid_forecast_cell_days": 0,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 4,
+        "issue_days": 30,
+        "days_with_strict_motion": 29,
+        "strict_motion_cell_days": 14552,
+        "common_valid_forecast_cell_days": 14550,
+        "possible_grid_cell_days": 622080
+      },
+      {
+        "month": 5,
+        "issue_days": 31,
+        "days_with_strict_motion": 31,
+        "strict_motion_cell_days": 31235,
+        "common_valid_forecast_cell_days": 31230,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 6,
+        "issue_days": 30,
+        "days_with_strict_motion": 30,
+        "strict_motion_cell_days": 47445,
+        "common_valid_forecast_cell_days": 47441,
+        "possible_grid_cell_days": 622080
+      },
+      {
+        "month": 7,
+        "issue_days": 31,
+        "days_with_strict_motion": 31,
+        "strict_motion_cell_days": 63059,
+        "common_valid_forecast_cell_days": 63054,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 8,
+        "issue_days": 31,
+        "days_with_strict_motion": 31,
+        "strict_motion_cell_days": 71325,
+        "common_valid_forecast_cell_days": 71320,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 9,
+        "issue_days": 30,
+        "days_with_strict_motion": 30,
+        "strict_motion_cell_days": 72331,
+        "common_valid_forecast_cell_days": 72229,
+        "possible_grid_cell_days": 622080
+      },
+      {
+        "month": 10,
+        "issue_days": 31,
+        "days_with_strict_motion": 1,
+        "strict_motion_cell_days": 2465,
+        "common_valid_forecast_cell_days": 2465,
+        "possible_grid_cell_days": 642816
+      },
+      {
+        "month": 11,
+        "issue_days": 30,
+        "days_with_strict_motion": 0,
+        "strict_motion_cell_days": 0,
+        "common_valid_forecast_cell_days": 0,
+        "possible_grid_cell_days": 622080
+      },
+      {
+        "month": 12,
+        "issue_days": 30,
+        "days_with_strict_motion": 0,
+        "strict_motion_cell_days": 0,
+        "common_valid_forecast_cell_days": 0,
+        "possible_grid_cell_days": 622080
+      }
+    ]
+  },
+  "geographic_grouping": {
+    "longitude_sectors": "four equal 90-degree bins; longitude normalized to [0, 360)",
+    "latitude_bands": "50S-60S, 60S-70S, 70S-80S, 80S-90S",
+    "interpretation": "broad grid-level diagnostics only; not route-corridor or vessel-specific validation"
+  },
+  "protocol": {
+    "issue_time": "Experiment convention: SIC date D is treated as an issue label at 00Z; use OSI file D-1, whose completed 24h motion interval ends 12 hours before that label, avoiding post-label vector leakage. G02202 is a daily product whose midnight coordinate is a date label, not evidence that the daily SIC field was operationally available at that instant.",
+    "split": "evaluate every requested date using a coefficient selected independently before this evaluation period; no fitting on these dates",
+    "baseline": "persistence; both methods evaluated on identical strict common-valid cells",
+    "motion_advection": "backtrace SIC using the most recent causal 24h displacement; assumes that lagged drift represents the next 24h; blend forecast = persistence + lambda*(advected-persistence)"
+  },
+  "selected_lambda": 0.2,
+  "training_mae_by_lambda": {},
+  "train": null,
+  "holdout": {
+    "pooled": {
+      "n_cells": 302289,
+      "persistence_mae": 0.016440022736787796,
+      "advection_mae": 0.016367051750421524,
+      "persistence_rmse": 0.027186764404177666,
+      "advection_rmse": 0.026963958516716957
+    },
+    "evaluated_days": 183,
+    "daily": [
+      {
+        "issue_date": "2018-04-02",
+        "n_cells": 349,
+        "persistence_mae": 0.026195332407951355,
+        "advection_mae": 0.026181822642683983,
+        "persistence_rmse": 0.0417509563267231,
+        "advection_rmse": 0.04167536646127701
+      },
+      {
+        "issue_date": "2018-04-03",
+        "n_cells": 364,
+        "persistence_mae": 0.027966106310486794,
+        "advection_mae": 0.028008518740534782,
+        "persistence_rmse": 0.04399009421467781,
+        "advection_rmse": 0.04386818781495094
+      },
+      {
+        "issue_date": "2018-04-04",
+        "n_cells": 370,
+        "persistence_mae": 0.03339290991425514,
+        "advection_mae": 0.033252913504838943,
+        "persistence_rmse": 0.05686510354280472,
+        "advection_rmse": 0.05637689679861069
+      },
+      {
+        "issue_date": "2018-04-05",
+        "n_cells": 384,
+        "persistence_mae": 0.028175577521324158,
+        "advection_mae": 0.02793271280825138,
+        "persistence_rmse": 0.04564357176423073,
+        "advection_rmse": 0.04477521777153015
+      },
+      {
+        "issue_date": "2018-04-06",
+        "n_cells": 364,
+        "persistence_mae": 0.03197310119867325,
+        "advection_mae": 0.032029103487730026,
+        "persistence_rmse": 0.04811650514602661,
+        "advection_rmse": 0.04810532182455063
+      },
+      {
+        "issue_date": "2018-04-07",
+        "n_cells": 384,
+        "persistence_mae": 0.019719230011105537,
+        "advection_mae": 0.019944174215197563,
+        "persistence_rmse": 0.03111688420176506,
+        "advection_rmse": 0.0312519297003746
+      },
+      {
+        "issue_date": "2018-04-08",
+        "n_cells": 421,
+        "persistence_mae": 0.028823314234614372,
+        "advection_mae": 0.02878485433757305,
+        "persistence_rmse": 0.04451046139001846,
+        "advection_rmse": 0.04444888234138489
+      },
+      {
+        "issue_date": "2018-04-09",
+        "n_cells": 433,
+        "persistence_mae": 0.026067201048135757,
+        "advection_mae": 0.025807123631238937,
+        "persistence_rmse": 0.03826248645782471,
+        "advection_rmse": 0.037830255925655365
+      },
+      {
+        "issue_date": "2018-04-10",
+        "n_cells": 438,
+        "persistence_mae": 0.020385345444083214,
+        "advection_mae": 0.02052326872944832,
+        "persistence_rmse": 0.03432236611843109,
+        "advection_rmse": 0.034452490508556366
+      },
+      {
+        "issue_date": "2018-04-11",
+        "n_cells": 457,
+        "persistence_mae": 0.021342160180211067,
+        "advection_mae": 0.021232496947050095,
+        "persistence_rmse": 0.036496154963970184,
+        "advection_rmse": 0.03633715584874153
+      },
+      {
+        "issue_date": "2018-04-12",
+        "n_cells": 458,
+        "persistence_mae": 0.023585358634591103,
+        "advection_mae": 0.02371986210346222,
+        "persistence_rmse": 0.037540268152952194,
+        "advection_rmse": 0.03785974159836769
+      },
+      {
+        "issue_date": "2018-04-13",
+        "n_cells": 464,
+        "persistence_mae": 0.0251679178327322,
+        "advection_mae": 0.02513911761343479,
+        "persistence_rmse": 0.039387982338666916,
+        "advection_rmse": 0.03914647176861763
+      },
+      {
+        "issue_date": "2018-04-14",
+        "n_cells": 479,
+        "persistence_mae": 0.024698596447706223,
+        "advection_mae": 0.02453150600194931,
+        "persistence_rmse": 0.04007286578416824,
+        "advection_rmse": 0.03988578915596008
+      },
+      {
+        "issue_date": "2018-04-15",
+        "n_cells": 495,
+        "persistence_mae": 0.0218205489218235,
+        "advection_mae": 0.021610107272863388,
+        "persistence_rmse": 0.03427629917860031,
+        "advection_rmse": 0.033801253885030746
+      },
+      {
+        "issue_date": "2018-04-16",
+        "n_cells": 500,
+        "persistence_mae": 0.020664379000663757,
+        "advection_mae": 0.020482731983065605,
+        "persistence_rmse": 0.034047532826662064,
+        "advection_rmse": 0.0338062159717083
+      },
+      {
+        "issue_date": "2018-04-17",
+        "n_cells": 498,
+        "persistence_mae": 0.026208315044641495,
+        "advection_mae": 0.025866789743304253,
+        "persistence_rmse": 0.04123467579483986,
+        "advection_rmse": 0.04031049460172653
+      },
+      {
+        "issue_date": "2018-04-18",
+        "n_cells": 522,
+        "persistence_mae": 0.02913784608244896,
+        "advection_mae": 0.028906511142849922,
+        "persistence_rmse": 0.043888211250305176,
+        "advection_rmse": 0.043285176157951355
+      },
+      {
+        "issue_date": "2018-04-19",
+        "n_cells": 537,
+        "persistence_mae": 0.02753238007426262,
+        "advection_mae": 0.02740473486483097,
+        "persistence_rmse": 0.04021070897579193,
+        "advection_rmse": 0.039958298206329346
+      },
+      {
+        "issue_date": "2018-04-20",
+        "n_cells": 534,
+        "persistence_mae": 0.019140079617500305,
+        "advection_mae": 0.019230103120207787,
+        "persistence_rmse": 0.02809721976518631,
+        "advection_rmse": 0.028231840580701828
+      },
+      {
+        "issue_date": "2018-04-21",
+        "n_cells": 560,
+        "persistence_mae": 0.021771140396595,
+        "advection_mae": 0.022036071866750717,
+        "persistence_rmse": 0.030833754688501358,
+        "advection_rmse": 0.03091699816286564
+      },
+      {
+        "issue_date": "2018-04-22",
+        "n_cells": 573,
+        "persistence_mae": 0.025029582902789116,
+        "advection_mae": 0.025140229612588882,
+        "persistence_rmse": 0.0392543189227581,
+        "advection_rmse": 0.03912995383143425
+      },
+      {
+        "issue_date": "2018-04-23",
+        "n_cells": 582,
+        "persistence_mae": 0.021425124257802963,
+        "advection_mae": 0.021579336374998093,
+        "persistence_rmse": 0.03423070162534714,
+        "advection_rmse": 0.034262895584106445
+      },
+      {
+        "issue_date": "2018-04-24",
+        "n_cells": 575,
+        "persistence_mae": 0.02310658060014248,
+        "advection_mae": 0.023458942770957947,
+        "persistence_rmse": 0.03470758721232414,
+        "advection_rmse": 0.035033151507377625
+      },
+      {
+        "issue_date": "2018-04-25",
+        "n_cells": 593,
+        "persistence_mae": 0.02086063288152218,
+        "advection_mae": 0.021174047142267227,
+        "persistence_rmse": 0.03430018946528435,
+        "advection_rmse": 0.034559216350317
+      },
+      {
+        "issue_date": "2018-04-26",
+        "n_cells": 618,
+        "persistence_mae": 0.015439553186297417,
+        "advection_mae": 0.015337863937020302,
+        "persistence_rmse": 0.025507450103759766,
+        "advection_rmse": 0.025213245302438736
+      },
+      {
+        "issue_date": "2018-04-27",
+        "n_cells": 627,
+        "persistence_mae": 0.018885158002376556,
+        "advection_mae": 0.01888944022357464,
+        "persistence_rmse": 0.029211897403001785,
+        "advection_rmse": 0.02909117005765438
+      },
+      {
+        "issue_date": "2018-04-28",
+        "n_cells": 649,
+        "persistence_mae": 0.016805263236165047,
+        "advection_mae": 0.016813017427921295,
+        "persistence_rmse": 0.028036240488290787,
+        "advection_rmse": 0.02793043665587902
+      },
+      {
+        "issue_date": "2018-04-29",
+        "n_cells": 652,
+        "persistence_mae": 0.014896562322974205,
+        "advection_mae": 0.014787441119551659,
+        "persistence_rmse": 0.023167120292782784,
+        "advection_rmse": 0.02293778397142887
+      },
+      {
+        "issue_date": "2018-04-30",
+        "n_cells": 670,
+        "persistence_mae": 0.020775971934199333,
+        "advection_mae": 0.02066388912498951,
+        "persistence_rmse": 0.0332147590816021,
+        "advection_rmse": 0.03307977691292763
+      },
+      {
+        "issue_date": "2018-05-01",
+        "n_cells": 690,
+        "persistence_mae": 0.01746990717947483,
+        "advection_mae": 0.01725034788250923,
+        "persistence_rmse": 0.02522488869726658,
+        "advection_rmse": 0.025034312158823013
+      },
+      {
+        "issue_date": "2018-05-02",
+        "n_cells": 708,
+        "persistence_mae": 0.01980837807059288,
+        "advection_mae": 0.019899744540452957,
+        "persistence_rmse": 0.03004811704158783,
+        "advection_rmse": 0.0300422515720129
+      },
+      {
+        "issue_date": "2018-05-03",
+        "n_cells": 732,
+        "persistence_mae": 0.01974846050143242,
+        "advection_mae": 0.019816119223833084,
+        "persistence_rmse": 0.028716642409563065,
+        "advection_rmse": 0.028753945603966713
+      },
+      {
+        "issue_date": "2018-05-04",
+        "n_cells": 752,
+        "persistence_mae": 0.018323808908462524,
+        "advection_mae": 0.018405212089419365,
+        "persistence_rmse": 0.029376251623034477,
+        "advection_rmse": 0.029532354325056076
+      },
+      {
+        "issue_date": "2018-05-05",
+        "n_cells": 769,
+        "persistence_mae": 0.015165718272328377,
+        "advection_mae": 0.015112446621060371,
+        "persistence_rmse": 0.022456228733062744,
+        "advection_rmse": 0.022340990602970123
+      },
+      {
+        "issue_date": "2018-05-06",
+        "n_cells": 806,
+        "persistence_mae": 0.016191335394978523,
+        "advection_mae": 0.016227828338742256,
+        "persistence_rmse": 0.02424473874270916,
+        "advection_rmse": 0.024270959198474884
+      },
+      {
+        "issue_date": "2018-05-07",
+        "n_cells": 845,
+        "persistence_mae": 0.01928633823990822,
+        "advection_mae": 0.019062913954257965,
+        "persistence_rmse": 0.030694974586367607,
+        "advection_rmse": 0.030195174738764763
+      },
+      {
+        "issue_date": "2018-05-08",
+        "n_cells": 859,
+        "persistence_mae": 0.020200837403535843,
+        "advection_mae": 0.020067758858203888,
+        "persistence_rmse": 0.029457662254571915,
+        "advection_rmse": 0.0292243380099535
+      },
+      {
+        "issue_date": "2018-05-09",
+        "n_cells": 877,
+        "persistence_mae": 0.016935989260673523,
+        "advection_mae": 0.016872188076376915,
+        "persistence_rmse": 0.027468431740999222,
+        "advection_rmse": 0.027149682864546776
+      },
+      {
+        "issue_date": "2018-05-10",
+        "n_cells": 894,
+        "persistence_mae": 0.016746319830417633,
+        "advection_mae": 0.01642807200551033,
+        "persistence_rmse": 0.026433678343892097,
+        "advection_rmse": 0.02586742676794529
+      },
+      {
+        "issue_date": "2018-05-11",
+        "n_cells": 913,
+        "persistence_mae": 0.017303355038166046,
+        "advection_mae": 0.017115700989961624,
+        "persistence_rmse": 0.02579093724489212,
+        "advection_rmse": 0.025362709537148476
+      },
+      {
+        "issue_date": "2018-05-12",
+        "n_cells": 931,
+        "persistence_mae": 0.015633247792720795,
+        "advection_mae": 0.015442639589309692,
+        "persistence_rmse": 0.02499583549797535,
+        "advection_rmse": 0.02461978606879711
+      },
+      {
+        "issue_date": "2018-05-13",
+        "n_cells": 965,
+        "persistence_mae": 0.015625733882188797,
+        "advection_mae": 0.015509829856455326,
+        "persistence_rmse": 0.02334260568022728,
+        "advection_rmse": 0.022958457469940186
+      },
+      {
+        "issue_date": "2018-05-14",
+        "n_cells": 996,
+        "persistence_mae": 0.014929934404790401,
+        "advection_mae": 0.014817358925938606,
+        "persistence_rmse": 0.02294997125864029,
+        "advection_rmse": 0.022630352526903152
+      },
+      {
+        "issue_date": "2018-05-15",
+        "n_cells": 1014,
+        "persistence_mae": 0.01677381433546543,
+        "advection_mae": 0.016665609553456306,
+        "persistence_rmse": 0.02490987442433834,
+        "advection_rmse": 0.024606024846434593
+      },
+      {
+        "issue_date": "2018-05-16",
+        "n_cells": 1032,
+        "persistence_mae": 0.015261759981513023,
+        "advection_mae": 0.015502111054956913,
+        "persistence_rmse": 0.023139959201216698,
+        "advection_rmse": 0.02343626320362091
+      },
+      {
+        "issue_date": "2018-05-17",
+        "n_cells": 1045,
+        "persistence_mae": 0.0168268121778965,
+        "advection_mae": 0.016862034797668457,
+        "persistence_rmse": 0.025777563452720642,
+        "advection_rmse": 0.02584855630993843
+      },
+      {
+        "issue_date": "2018-05-18",
+        "n_cells": 1064,
+        "persistence_mae": 0.01687125489115715,
+        "advection_mae": 0.01691994071006775,
+        "persistence_rmse": 0.02638360671699047,
+        "advection_rmse": 0.026451027020812035
+      },
+      {
+        "issue_date": "2018-05-19",
+        "n_cells": 1082,
+        "persistence_mae": 0.01631210185587406,
+        "advection_mae": 0.016201753169298172,
+        "persistence_rmse": 0.025060130283236504,
+        "advection_rmse": 0.02482539974153042
+      },
+      {
+        "issue_date": "2018-05-20",
+        "n_cells": 1100,
+        "persistence_mae": 0.016410069540143013,
+        "advection_mae": 0.016383590176701546,
+        "persistence_rmse": 0.024340583011507988,
+        "advection_rmse": 0.024230722337961197
+      },
+      {
+        "issue_date": "2018-05-21",
+        "n_cells": 1110,
+        "persistence_mae": 0.024560105055570602,
+        "advection_mae": 0.024499963968992233,
+        "persistence_rmse": 0.03662721440196037,
+        "advection_rmse": 0.03630062937736511
+      },
+      {
+        "issue_date": "2018-05-22",
+        "n_cells": 1154,
+        "persistence_mae": 0.021709980443120003,
+        "advection_mae": 0.021706780418753624,
+        "persistence_rmse": 0.03370707482099533,
+        "advection_rmse": 0.03366221487522125
+      },
+      {
+        "issue_date": "2018-05-23",
+        "n_cells": 1140,
+        "persistence_mae": 0.018115967512130737,
+        "advection_mae": 0.018158821389079094,
+        "persistence_rmse": 0.029558414593338966,
+        "advection_rmse": 0.02930968813598156
+      },
+      {
+        "issue_date": "2018-05-24",
+        "n_cells": 1144,
+        "persistence_mae": 0.022830002009868622,
+        "advection_mae": 0.022668231278657913,
+        "persistence_rmse": 0.0370757021009922,
+        "advection_rmse": 0.036537013947963715
+      },
+      {
+        "issue_date": "2018-05-25",
+        "n_cells": 1182,
+        "persistence_mae": 0.022615887224674225,
+        "advection_mae": 0.022484151646494865,
+        "persistence_rmse": 0.03541484475135803,
+        "advection_rmse": 0.035135429352521896
+      },
+      {
+        "issue_date": "2018-05-26",
+        "n_cells": 1182,
+        "persistence_mae": 0.021212853491306305,
+        "advection_mae": 0.021418828517198563,
+        "persistence_rmse": 0.03473532199859619,
+        "advection_rmse": 0.03495199978351593
+      },
+      {
+        "issue_date": "2018-05-27",
+        "n_cells": 1205,
+        "persistence_mae": 0.0164988674223423,
+        "advection_mae": 0.01646595634520054,
+        "persistence_rmse": 0.02706366963684559,
+        "advection_rmse": 0.026924192905426025
+      },
+      {
+        "issue_date": "2018-05-28",
+        "n_cells": 1228,
+        "persistence_mae": 0.01822453737258911,
+        "advection_mae": 0.01824375055730343,
+        "persistence_rmse": 0.028595000505447388,
+        "advection_rmse": 0.02860456146299839
+      },
+      {
+        "issue_date": "2018-05-29",
+        "n_cells": 1247,
+        "persistence_mae": 0.016235167160630226,
+        "advection_mae": 0.01617036946117878,
+        "persistence_rmse": 0.026332885026931763,
+        "advection_rmse": 0.026081623509526253
+      },
+      {
+        "issue_date": "2018-05-30",
+        "n_cells": 1273,
+        "persistence_mae": 0.015863468870520592,
+        "advection_mae": 0.01564141735434532,
+        "persistence_rmse": 0.02392081543803215,
+        "advection_rmse": 0.023451760411262512
+      },
+      {
+        "issue_date": "2018-05-31",
+        "n_cells": 1291,
+        "persistence_mae": 0.017728209495544434,
+        "advection_mae": 0.017500152811408043,
+        "persistence_rmse": 0.025407755747437477,
+        "advection_rmse": 0.02503647655248642
+      },
+      {
+        "issue_date": "2018-06-01",
+        "n_cells": 1314,
+        "persistence_mae": 0.015011664479970932,
+        "advection_mae": 0.014778140000998974,
+        "persistence_rmse": 0.022650524973869324,
+        "advection_rmse": 0.02222522720694542
+      },
+      {
+        "issue_date": "2018-06-02",
+        "n_cells": 1327,
+        "persistence_mae": 0.014640598557889462,
+        "advection_mae": 0.014580748975276947,
+        "persistence_rmse": 0.022276172414422035,
+        "advection_rmse": 0.02200182154774666
+      },
+      {
+        "issue_date": "2018-06-03",
+        "n_cells": 1325,
+        "persistence_mae": 0.014213214628398418,
+        "advection_mae": 0.014157573692500591,
+        "persistence_rmse": 0.02032661624252796,
+        "advection_rmse": 0.02016352117061615
+      },
+      {
+        "issue_date": "2018-06-04",
+        "n_cells": 1376,
+        "persistence_mae": 0.01689019240438938,
+        "advection_mae": 0.016757089644670486,
+        "persistence_rmse": 0.02470136247575283,
+        "advection_rmse": 0.02446776255965233
+      },
+      {
+        "issue_date": "2018-06-05",
+        "n_cells": 1402,
+        "persistence_mae": 0.014716824516654015,
+        "advection_mae": 0.01482484582811594,
+        "persistence_rmse": 0.022406525909900665,
+        "advection_rmse": 0.022502290084958076
+      },
+      {
+        "issue_date": "2018-06-06",
+        "n_cells": 1422,
+        "persistence_mae": 0.01654336228966713,
+        "advection_mae": 0.016719190403819084,
+        "persistence_rmse": 0.025044653564691544,
+        "advection_rmse": 0.025377096608281136
+      },
+      {
+        "issue_date": "2018-06-07",
+        "n_cells": 1427,
+        "persistence_mae": 0.01737055554986,
+        "advection_mae": 0.017445484176278114,
+        "persistence_rmse": 0.02578890509903431,
+        "advection_rmse": 0.02576248161494732
+      },
+      {
+        "issue_date": "2018-06-08",
+        "n_cells": 1450,
+        "persistence_mae": 0.016247913241386414,
+        "advection_mae": 0.016138602048158646,
+        "persistence_rmse": 0.026592407375574112,
+        "advection_rmse": 0.026195669546723366
+      },
+      {
+        "issue_date": "2018-06-09",
+        "n_cells": 1487,
+        "persistence_mae": 0.013381506316363811,
+        "advection_mae": 0.013241575099527836,
+        "persistence_rmse": 0.01958446577191353,
+        "advection_rmse": 0.019392957910895348
+      },
+      {
+        "issue_date": "2018-06-10",
+        "n_cells": 1507,
+        "persistence_mae": 0.0157706867903471,
+        "advection_mae": 0.01560674887150526,
+        "persistence_rmse": 0.025652341544628143,
+        "advection_rmse": 0.025390353053808212
+      },
+      {
+        "issue_date": "2018-06-11",
+        "n_cells": 1530,
+        "persistence_mae": 0.014880047179758549,
+        "advection_mae": 0.01471037045121193,
+        "persistence_rmse": 0.022453932091593742,
+        "advection_rmse": 0.022211527451872826
+      },
+      {
+        "issue_date": "2018-06-12",
+        "n_cells": 1543,
+        "persistence_mae": 0.01389760710299015,
+        "advection_mae": 0.013651841320097446,
+        "persistence_rmse": 0.020377609878778458,
+        "advection_rmse": 0.020029133185744286
+      },
+      {
+        "issue_date": "2018-06-13",
+        "n_cells": 1581,
+        "persistence_mae": 0.016116615384817123,
+        "advection_mae": 0.015969716012477875,
+        "persistence_rmse": 0.027893513441085815,
+        "advection_rmse": 0.02752668969333172
+      },
+      {
+        "issue_date": "2018-06-14",
+        "n_cells": 1603,
+        "persistence_mae": 0.016990602016448975,
+        "advection_mae": 0.016835955902934074,
+        "persistence_rmse": 0.033377133309841156,
+        "advection_rmse": 0.03308954834938049
+      },
+      {
+        "issue_date": "2018-06-15",
+        "n_cells": 1604,
+        "persistence_mae": 0.021665077656507492,
+        "advection_mae": 0.021532053127884865,
+        "persistence_rmse": 0.039517756551504135,
+        "advection_rmse": 0.0392286479473114
+      },
+      {
+        "issue_date": "2018-06-16",
+        "n_cells": 1617,
+        "persistence_mae": 0.025922710075974464,
+        "advection_mae": 0.025901352986693382,
+        "persistence_rmse": 0.04140206426382065,
+        "advection_rmse": 0.04103070870041847
+      },
+      {
+        "issue_date": "2018-06-17",
+        "n_cells": 1606,
+        "persistence_mae": 0.022012485191226006,
+        "advection_mae": 0.021503061056137085,
+        "persistence_rmse": 0.03410007804632187,
+        "advection_rmse": 0.033159300684928894
+      },
+      {
+        "issue_date": "2018-06-18",
+        "n_cells": 1588,
+        "persistence_mae": 0.018847649917006493,
+        "advection_mae": 0.0188143327832222,
+        "persistence_rmse": 0.027592146769165993,
+        "advection_rmse": 0.027367040514945984
+      },
+      {
+        "issue_date": "2018-06-19",
+        "n_cells": 1630,
+        "persistence_mae": 0.01946256309747696,
+        "advection_mae": 0.019289156422019005,
+        "persistence_rmse": 0.028869489207863808,
+        "advection_rmse": 0.028419801965355873
+      },
+      {
+        "issue_date": "2018-06-20",
+        "n_cells": 1659,
+        "persistence_mae": 0.017181912437081337,
+        "advection_mae": 0.01706290803849697,
+        "persistence_rmse": 0.02497742883861065,
+        "advection_rmse": 0.024745536968111992
+      },
+      {
+        "issue_date": "2018-06-21",
+        "n_cells": 1676,
+        "persistence_mae": 0.016073573380708694,
+        "advection_mae": 0.015880273655056953,
+        "persistence_rmse": 0.023988422006368637,
+        "advection_rmse": 0.023463385179638863
+      },
+      {
+        "issue_date": "2018-06-22",
+        "n_cells": 1700,
+        "persistence_mae": 0.017572784796357155,
+        "advection_mae": 0.01743091084063053,
+        "persistence_rmse": 0.02827182039618492,
+        "advection_rmse": 0.028004774823784828
+      },
+      {
+        "issue_date": "2018-06-23",
+        "n_cells": 1701,
+        "persistence_mae": 0.01732132025063038,
+        "advection_mae": 0.017229873687028885,
+        "persistence_rmse": 0.02637358382344246,
+        "advection_rmse": 0.02630557492375374
+      },
+      {
+        "issue_date": "2018-06-24",
+        "n_cells": 1700,
+        "persistence_mae": 0.019426601007580757,
+        "advection_mae": 0.019467946141958237,
+        "persistence_rmse": 0.030798882246017456,
+        "advection_rmse": 0.030826276168227196
+      },
+      {
+        "issue_date": "2018-06-25",
+        "n_cells": 1721,
+        "persistence_mae": 0.01795257069170475,
+        "advection_mae": 0.017832458019256592,
+        "persistence_rmse": 0.02814762480556965,
+        "advection_rmse": 0.02785813808441162
+      },
+      {
+        "issue_date": "2018-06-26",
+        "n_cells": 1741,
+        "persistence_mae": 0.016649536788463593,
+        "advection_mae": 0.016491735354065895,
+        "persistence_rmse": 0.025133593007922173,
+        "advection_rmse": 0.02474207803606987
+      },
+      {
+        "issue_date": "2018-06-27",
+        "n_cells": 1770,
+        "persistence_mae": 0.017269380390644073,
+        "advection_mae": 0.01739555597305298,
+        "persistence_rmse": 0.027133913710713387,
+        "advection_rmse": 0.027257177978754044
+      },
+      {
+        "issue_date": "2018-06-28",
+        "n_cells": 1799,
+        "persistence_mae": 0.015858890488743782,
+        "advection_mae": 0.01573382504284382,
+        "persistence_rmse": 0.025343433022499084,
+        "advection_rmse": 0.025019707158207893
+      },
+      {
+        "issue_date": "2018-06-29",
+        "n_cells": 1803,
+        "persistence_mae": 0.015515935607254505,
+        "advection_mae": 0.01537312101572752,
+        "persistence_rmse": 0.02264922298491001,
+        "advection_rmse": 0.022377504035830498
+      },
+      {
+        "issue_date": "2018-06-30",
+        "n_cells": 1832,
+        "persistence_mae": 0.01722603663802147,
+        "advection_mae": 0.017244845628738403,
+        "persistence_rmse": 0.02673158049583435,
+        "advection_rmse": 0.026723509654402733
+      },
+      {
+        "issue_date": "2018-07-01",
+        "n_cells": 1836,
+        "persistence_mae": 0.015400086529552937,
+        "advection_mae": 0.01532715279608965,
+        "persistence_rmse": 0.027710936963558197,
+        "advection_rmse": 0.027513105422258377
+      },
+      {
+        "issue_date": "2018-07-02",
+        "n_cells": 1852,
+        "persistence_mae": 0.017298519611358643,
+        "advection_mae": 0.01716308481991291,
+        "persistence_rmse": 0.02835424430668354,
+        "advection_rmse": 0.027964182198047638
+      },
+      {
+        "issue_date": "2018-07-03",
+        "n_cells": 1870,
+        "persistence_mae": 0.02303827367722988,
+        "advection_mae": 0.022994887083768845,
+        "persistence_rmse": 0.037174735218286514,
+        "advection_rmse": 0.03709859773516655
+      },
+      {
+        "issue_date": "2018-07-04",
+        "n_cells": 1873,
+        "persistence_mae": 0.018533077090978622,
+        "advection_mae": 0.018591400235891342,
+        "persistence_rmse": 0.028625905513763428,
+        "advection_rmse": 0.028525281697511673
+      },
+      {
+        "issue_date": "2018-07-05",
+        "n_cells": 1862,
+        "persistence_mae": 0.019800053909420967,
+        "advection_mae": 0.019918622449040413,
+        "persistence_rmse": 0.029201598837971687,
+        "advection_rmse": 0.02937917783856392
+      },
+      {
+        "issue_date": "2018-07-06",
+        "n_cells": 1917,
+        "persistence_mae": 0.014842499978840351,
+        "advection_mae": 0.014742240309715271,
+        "persistence_rmse": 0.02319025807082653,
+        "advection_rmse": 0.02288769744336605
+      },
+      {
+        "issue_date": "2018-07-07",
+        "n_cells": 1947,
+        "persistence_mae": 0.014673694036900997,
+        "advection_mae": 0.014578437432646751,
+        "persistence_rmse": 0.023474959656596184,
+        "advection_rmse": 0.023194320499897003
+      },
+      {
+        "issue_date": "2018-07-08",
+        "n_cells": 1952,
+        "persistence_mae": 0.015247326344251633,
+        "advection_mae": 0.015254476107656956,
+        "persistence_rmse": 0.02293369360268116,
+        "advection_rmse": 0.022875819355249405
+      },
+      {
+        "issue_date": "2018-07-09",
+        "n_cells": 1962,
+        "persistence_mae": 0.01727081835269928,
+        "advection_mae": 0.01716502010822296,
+        "persistence_rmse": 0.028197195380926132,
+        "advection_rmse": 0.027896808460354805
+      },
+      {
+        "issue_date": "2018-07-10",
+        "n_cells": 1977,
+        "persistence_mae": 0.018175210803747177,
+        "advection_mae": 0.018188681453466415,
+        "persistence_rmse": 0.028743570670485497,
+        "advection_rmse": 0.028678473085165024
+      },
+      {
+        "issue_date": "2018-07-11",
+        "n_cells": 1986,
+        "persistence_mae": 0.0181014072149992,
+        "advection_mae": 0.018045010045170784,
+        "persistence_rmse": 0.03147749975323677,
+        "advection_rmse": 0.03127063810825348
+      },
+      {
+        "issue_date": "2018-07-12",
+        "n_cells": 1979,
+        "persistence_mae": 0.0159232746809721,
+        "advection_mae": 0.0160701721906662,
+        "persistence_rmse": 0.027659576386213303,
+        "advection_rmse": 0.027807321399450302
+      },
+      {
+        "issue_date": "2018-07-13",
+        "n_cells": 2018,
+        "persistence_mae": 0.017837513238191605,
+        "advection_mae": 0.01768685318529606,
+        "persistence_rmse": 0.03004632517695427,
+        "advection_rmse": 0.029569188132882118
+      },
+      {
+        "issue_date": "2018-07-14",
+        "n_cells": 2030,
+        "persistence_mae": 0.0157665703445673,
+        "advection_mae": 0.015560629777610302,
+        "persistence_rmse": 0.02479737251996994,
+        "advection_rmse": 0.024465104565024376
+      },
+      {
+        "issue_date": "2018-07-15",
+        "n_cells": 2041,
+        "persistence_mae": 0.01454299408942461,
+        "advection_mae": 0.014364278875291348,
+        "persistence_rmse": 0.023626796901226044,
+        "advection_rmse": 0.023205243051052094
+      },
+      {
+        "issue_date": "2018-07-16",
+        "n_cells": 2050,
+        "persistence_mae": 0.01498342864215374,
+        "advection_mae": 0.01478791143745184,
+        "persistence_rmse": 0.02434590272605419,
+        "advection_rmse": 0.02382780984044075
+      },
+      {
+        "issue_date": "2018-07-17",
+        "n_cells": 2065,
+        "persistence_mae": 0.019947463646531105,
+        "advection_mae": 0.019711151719093323,
+        "persistence_rmse": 0.03705887496471405,
+        "advection_rmse": 0.0364985466003418
+      },
+      {
+        "issue_date": "2018-07-18",
+        "n_cells": 2078,
+        "persistence_mae": 0.019152499735355377,
+        "advection_mae": 0.01892176643013954,
+        "persistence_rmse": 0.030914122238755226,
+        "advection_rmse": 0.03045060858130455
+      },
+      {
+        "issue_date": "2018-07-19",
+        "n_cells": 2037,
+        "persistence_mae": 0.022350477054715157,
+        "advection_mae": 0.022275982424616814,
+        "persistence_rmse": 0.036721788346767426,
+        "advection_rmse": 0.0363117940723896
+      },
+      {
+        "issue_date": "2018-07-20",
+        "n_cells": 2083,
+        "persistence_mae": 0.016695575788617134,
+        "advection_mae": 0.016500145196914673,
+        "persistence_rmse": 0.026809511706233025,
+        "advection_rmse": 0.026342391967773438
+      },
+      {
+        "issue_date": "2018-07-21",
+        "n_cells": 2080,
+        "persistence_mae": 0.013505767099559307,
+        "advection_mae": 0.013475487008690834,
+        "persistence_rmse": 0.022037727758288383,
+        "advection_rmse": 0.021884433925151825
+      },
+      {
+        "issue_date": "2018-07-22",
+        "n_cells": 2104,
+        "persistence_mae": 0.014986440539360046,
+        "advection_mae": 0.014919222332537174,
+        "persistence_rmse": 0.024949179962277412,
+        "advection_rmse": 0.02467244118452072
+      },
+      {
+        "issue_date": "2018-07-23",
+        "n_cells": 2132,
+        "persistence_mae": 0.014334184117615223,
+        "advection_mae": 0.014198157005012035,
+        "persistence_rmse": 0.024649284780025482,
+        "advection_rmse": 0.024403410032391548
+      },
+      {
+        "issue_date": "2018-07-24",
+        "n_cells": 2137,
+        "persistence_mae": 0.015433330088853836,
+        "advection_mae": 0.01556574646383524,
+        "persistence_rmse": 0.027286767959594727,
+        "advection_rmse": 0.02759440243244171
+      },
+      {
+        "issue_date": "2018-07-25",
+        "n_cells": 2134,
+        "persistence_mae": 0.014732814393937588,
+        "advection_mae": 0.014646111987531185,
+        "persistence_rmse": 0.025678392499685287,
+        "advection_rmse": 0.025261783972382545
+      },
+      {
+        "issue_date": "2018-07-26",
+        "n_cells": 2143,
+        "persistence_mae": 0.013973284512758255,
+        "advection_mae": 0.013831321150064468,
+        "persistence_rmse": 0.02174515090882778,
+        "advection_rmse": 0.02132105641067028
+      },
+      {
+        "issue_date": "2018-07-27",
+        "n_cells": 2157,
+        "persistence_mae": 0.01216825656592846,
+        "advection_mae": 0.012057272717356682,
+        "persistence_rmse": 0.018754178658127785,
+        "advection_rmse": 0.018385179340839386
+      },
+      {
+        "issue_date": "2018-07-28",
+        "n_cells": 2177,
+        "persistence_mae": 0.012258125469088554,
+        "advection_mae": 0.012244121171534061,
+        "persistence_rmse": 0.020066309720277786,
+        "advection_rmse": 0.020029978826642036
+      },
+      {
+        "issue_date": "2018-07-29",
+        "n_cells": 2179,
+        "persistence_mae": 0.012212582863867283,
+        "advection_mae": 0.012224244885146618,
+        "persistence_rmse": 0.020523907616734505,
+        "advection_rmse": 0.020532982423901558
+      },
+      {
+        "issue_date": "2018-07-30",
+        "n_cells": 2197,
+        "persistence_mae": 0.013509782031178474,
+        "advection_mae": 0.01341827493160963,
+        "persistence_rmse": 0.02438836172223091,
+        "advection_rmse": 0.023978931829333305
+      },
+      {
+        "issue_date": "2018-07-31",
+        "n_cells": 2199,
+        "persistence_mae": 0.013360714539885521,
+        "advection_mae": 0.013276034034788609,
+        "persistence_rmse": 0.023839157074689865,
+        "advection_rmse": 0.023447448387742043
+      },
+      {
+        "issue_date": "2018-08-01",
+        "n_cells": 2200,
+        "persistence_mae": 0.015387704595923424,
+        "advection_mae": 0.015346315689384937,
+        "persistence_rmse": 0.025375520810484886,
+        "advection_rmse": 0.025186939164996147
+      },
+      {
+        "issue_date": "2018-08-02",
+        "n_cells": 2189,
+        "persistence_mae": 0.015240547247231007,
+        "advection_mae": 0.0151105597615242,
+        "persistence_rmse": 0.025014465674757957,
+        "advection_rmse": 0.02483178861439228
+      },
+      {
+        "issue_date": "2018-08-03",
+        "n_cells": 2260,
+        "persistence_mae": 0.016540907323360443,
+        "advection_mae": 0.016501454636454582,
+        "persistence_rmse": 0.02820616587996483,
+        "advection_rmse": 0.02808995358645916
+      },
+      {
+        "issue_date": "2018-08-04",
+        "n_cells": 2238,
+        "persistence_mae": 0.016329336911439896,
+        "advection_mae": 0.016189802438020706,
+        "persistence_rmse": 0.028319891542196274,
+        "advection_rmse": 0.027825333178043365
+      },
+      {
+        "issue_date": "2018-08-05",
+        "n_cells": 2207,
+        "persistence_mae": 0.01502484641969204,
+        "advection_mae": 0.014860461466014385,
+        "persistence_rmse": 0.025807799771428108,
+        "advection_rmse": 0.025521650910377502
+      },
+      {
+        "issue_date": "2018-08-06",
+        "n_cells": 2235,
+        "persistence_mae": 0.01220223493874073,
+        "advection_mae": 0.012102887965738773,
+        "persistence_rmse": 0.021444516256451607,
+        "advection_rmse": 0.021240519359707832
+      },
+      {
+        "issue_date": "2018-08-07",
+        "n_cells": 2251,
+        "persistence_mae": 0.01630564220249653,
+        "advection_mae": 0.01615213043987751,
+        "persistence_rmse": 0.03272213041782379,
+        "advection_rmse": 0.03228788822889328
+      },
+      {
+        "issue_date": "2018-08-08",
+        "n_cells": 2270,
+        "persistence_mae": 0.016345201060175896,
+        "advection_mae": 0.016272980719804764,
+        "persistence_rmse": 0.028814472258090973,
+        "advection_rmse": 0.028529277071356773
+      },
+      {
+        "issue_date": "2018-08-09",
+        "n_cells": 2249,
+        "persistence_mae": 0.01660759747028351,
+        "advection_mae": 0.016794783994555473,
+        "persistence_rmse": 0.02885672077536583,
+        "advection_rmse": 0.029293637722730637
+      },
+      {
+        "issue_date": "2018-08-10",
+        "n_cells": 2208,
+        "persistence_mae": 0.017930325120687485,
+        "advection_mae": 0.017737170681357384,
+        "persistence_rmse": 0.030589455738663673,
+        "advection_rmse": 0.029979655519127846
+      },
+      {
+        "issue_date": "2018-08-11",
+        "n_cells": 2199,
+        "persistence_mae": 0.01844838261604309,
+        "advection_mae": 0.018267067149281502,
+        "persistence_rmse": 0.030211903154850006,
+        "advection_rmse": 0.02983228862285614
+      },
+      {
+        "issue_date": "2018-08-12",
+        "n_cells": 2239,
+        "persistence_mae": 0.016339754685759544,
+        "advection_mae": 0.016182787716388702,
+        "persistence_rmse": 0.025217318907380104,
+        "advection_rmse": 0.02491244673728943
+      },
+      {
+        "issue_date": "2018-08-13",
+        "n_cells": 2247,
+        "persistence_mae": 0.014177047647535801,
+        "advection_mae": 0.014175241813063622,
+        "persistence_rmse": 0.02283230982720852,
+        "advection_rmse": 0.022799579426646233
+      },
+      {
+        "issue_date": "2018-08-14",
+        "n_cells": 2272,
+        "persistence_mae": 0.014591715298593044,
+        "advection_mae": 0.014271692372858524,
+        "persistence_rmse": 0.023564785718917847,
+        "advection_rmse": 0.022921156138181686
+      },
+      {
+        "issue_date": "2018-08-15",
+        "n_cells": 2295,
+        "persistence_mae": 0.013502838090062141,
+        "advection_mae": 0.013270027004182339,
+        "persistence_rmse": 0.022649435326457024,
+        "advection_rmse": 0.022074420005083084
+      },
+      {
+        "issue_date": "2018-08-16",
+        "n_cells": 2300,
+        "persistence_mae": 0.014431432820856571,
+        "advection_mae": 0.01429425273090601,
+        "persistence_rmse": 0.023548226803541183,
+        "advection_rmse": 0.02315826155245304
+      },
+      {
+        "issue_date": "2018-08-17",
+        "n_cells": 2282,
+        "persistence_mae": 0.014385179616510868,
+        "advection_mae": 0.01427664328366518,
+        "persistence_rmse": 0.02310575544834137,
+        "advection_rmse": 0.022806841880083084
+      },
+      {
+        "issue_date": "2018-08-18",
+        "n_cells": 2304,
+        "persistence_mae": 0.01542752981185913,
+        "advection_mae": 0.015245065093040466,
+        "persistence_rmse": 0.025012847036123276,
+        "advection_rmse": 0.024536892771720886
+      },
+      {
+        "issue_date": "2018-08-19",
+        "n_cells": 2325,
+        "persistence_mae": 0.01368633285164833,
+        "advection_mae": 0.01354286726564169,
+        "persistence_rmse": 0.023365994915366173,
+        "advection_rmse": 0.02300199121236801
+      },
+      {
+        "issue_date": "2018-08-20",
+        "n_cells": 2325,
+        "persistence_mae": 0.014647278934717178,
+        "advection_mae": 0.014600414782762527,
+        "persistence_rmse": 0.02551775611937046,
+        "advection_rmse": 0.025525709614157677
+      },
+      {
+        "issue_date": "2018-08-21",
+        "n_cells": 2341,
+        "persistence_mae": 0.013269579969346523,
+        "advection_mae": 0.013194512575864792,
+        "persistence_rmse": 0.021722910925745964,
+        "advection_rmse": 0.021617799997329712
+      },
+      {
+        "issue_date": "2018-08-22",
+        "n_cells": 2352,
+        "persistence_mae": 0.015820594504475594,
+        "advection_mae": 0.015869827941060066,
+        "persistence_rmse": 0.02622935175895691,
+        "advection_rmse": 0.026188770309090614
+      },
+      {
+        "issue_date": "2018-08-23",
+        "n_cells": 2347,
+        "persistence_mae": 0.011960488744080067,
+        "advection_mae": 0.012099134735763073,
+        "persistence_rmse": 0.019737502560019493,
+        "advection_rmse": 0.01985032670199871
+      },
+      {
+        "issue_date": "2018-08-24",
+        "n_cells": 2362,
+        "persistence_mae": 0.01198172103613615,
+        "advection_mae": 0.012055047787725925,
+        "persistence_rmse": 0.019902445375919342,
+        "advection_rmse": 0.019980568438768387
+      },
+      {
+        "issue_date": "2018-08-25",
+        "n_cells": 2399,
+        "persistence_mae": 0.01595665141940117,
+        "advection_mae": 0.016045955941081047,
+        "persistence_rmse": 0.027294833213090897,
+        "advection_rmse": 0.02735183574259281
+      },
+      {
+        "issue_date": "2018-08-26",
+        "n_cells": 2409,
+        "persistence_mae": 0.018396122381091118,
+        "advection_mae": 0.018299024552106857,
+        "persistence_rmse": 0.032040636986494064,
+        "advection_rmse": 0.03178666532039642
+      },
+      {
+        "issue_date": "2018-08-27",
+        "n_cells": 2405,
+        "persistence_mae": 0.016682378947734833,
+        "advection_mae": 0.016800234094262123,
+        "persistence_rmse": 0.02739548869431019,
+        "advection_rmse": 0.02742854692041874
+      },
+      {
+        "issue_date": "2018-08-28",
+        "n_cells": 2393,
+        "persistence_mae": 0.01628579944372177,
+        "advection_mae": 0.016439834609627724,
+        "persistence_rmse": 0.027895545586943626,
+        "advection_rmse": 0.027947943657636642
+      },
+      {
+        "issue_date": "2018-08-29",
+        "n_cells": 2403,
+        "persistence_mae": 0.015238342806696892,
+        "advection_mae": 0.015150826424360275,
+        "persistence_rmse": 0.025249091908335686,
+        "advection_rmse": 0.024901501834392548
+      },
+      {
+        "issue_date": "2018-08-30",
+        "n_cells": 2407,
+        "persistence_mae": 0.01604345068335533,
+        "advection_mae": 0.016253165900707245,
+        "persistence_rmse": 0.02905133366584778,
+        "advection_rmse": 0.029167156666517258
+      },
+      {
+        "issue_date": "2018-08-31",
+        "n_cells": 2407,
+        "persistence_mae": 0.014988989569246769,
+        "advection_mae": 0.015127593651413918,
+        "persistence_rmse": 0.02498844638466835,
+        "advection_rmse": 0.025049688294529915
+      },
+      {
+        "issue_date": "2018-09-01",
+        "n_cells": 2395,
+        "persistence_mae": 0.01641618274152279,
+        "advection_mae": 0.016348034143447876,
+        "persistence_rmse": 0.026374181732535362,
+        "advection_rmse": 0.026239998638629913
+      },
+      {
+        "issue_date": "2018-09-02",
+        "n_cells": 2407,
+        "persistence_mae": 0.01644999533891678,
+        "advection_mae": 0.016314569860696793,
+        "persistence_rmse": 0.026783090084791183,
+        "advection_rmse": 0.026531534269452095
+      },
+      {
+        "issue_date": "2018-09-03",
+        "n_cells": 2359,
+        "persistence_mae": 0.016581423580646515,
+        "advection_mae": 0.016603514552116394,
+        "persistence_rmse": 0.027061522006988525,
+        "advection_rmse": 0.02697041817009449
+      },
+      {
+        "issue_date": "2018-09-04",
+        "n_cells": 2350,
+        "persistence_mae": 0.017146725207567215,
+        "advection_mae": 0.017011011019349098,
+        "persistence_rmse": 0.032022297382354736,
+        "advection_rmse": 0.03179362043738365
+      },
+      {
+        "issue_date": "2018-09-05",
+        "n_cells": 2402,
+        "persistence_mae": 0.017238494008779526,
+        "advection_mae": 0.017053447663784027,
+        "persistence_rmse": 0.029910515993833542,
+        "advection_rmse": 0.029285011813044548
+      },
+      {
+        "issue_date": "2018-09-06",
+        "n_cells": 2392,
+        "persistence_mae": 0.015529240481555462,
+        "advection_mae": 0.015387299470603466,
+        "persistence_rmse": 0.026836195960640907,
+        "advection_rmse": 0.026558859273791313
+      },
+      {
+        "issue_date": "2018-09-07",
+        "n_cells": 2362,
+        "persistence_mae": 0.014395950362086296,
+        "advection_mae": 0.014262059703469276,
+        "persistence_rmse": 0.02344195917248726,
+        "advection_rmse": 0.02303219586610794
+      },
+      {
+        "issue_date": "2018-09-08",
+        "n_cells": 2386,
+        "persistence_mae": 0.01371025014668703,
+        "advection_mae": 0.013530937023460865,
+        "persistence_rmse": 0.024135231971740723,
+        "advection_rmse": 0.023428788408637047
+      },
+      {
+        "issue_date": "2018-09-09",
+        "n_cells": 2401,
+        "persistence_mae": 0.012547084130346775,
+        "advection_mae": 0.012309764511883259,
+        "persistence_rmse": 0.022561384364962578,
+        "advection_rmse": 0.02198551781475544
+      },
+      {
+        "issue_date": "2018-09-10",
+        "n_cells": 2395,
+        "persistence_mae": 0.0141373286023736,
+        "advection_mae": 0.014009770005941391,
+        "persistence_rmse": 0.024405376985669136,
+        "advection_rmse": 0.024114632979035378
+      },
+      {
+        "issue_date": "2018-09-11",
+        "n_cells": 2398,
+        "persistence_mae": 0.01335655152797699,
+        "advection_mae": 0.013234556652605534,
+        "persistence_rmse": 0.022382613271474838,
+        "advection_rmse": 0.022117210552096367
+      },
+      {
+        "issue_date": "2018-09-12",
+        "n_cells": 2395,
+        "persistence_mae": 0.014057635329663754,
+        "advection_mae": 0.013942086137831211,
+        "persistence_rmse": 0.022565700113773346,
+        "advection_rmse": 0.022235624492168427
+      },
+      {
+        "issue_date": "2018-09-13",
+        "n_cells": 2392,
+        "persistence_mae": 0.013553818687796593,
+        "advection_mae": 0.013378595001995564,
+        "persistence_rmse": 0.02216816321015358,
+        "advection_rmse": 0.021717604249715805
+      },
+      {
+        "issue_date": "2018-09-14",
+        "n_cells": 2373,
+        "persistence_mae": 0.014800108969211578,
+        "advection_mae": 0.014705733396112919,
+        "persistence_rmse": 0.0239696204662323,
+        "advection_rmse": 0.023829953745007515
+      },
+      {
+        "issue_date": "2018-09-15",
+        "n_cells": 2347,
+        "persistence_mae": 0.013663922436535358,
+        "advection_mae": 0.01366888452321291,
+        "persistence_rmse": 0.02240532822906971,
+        "advection_rmse": 0.02235301584005356
+      },
+      {
+        "issue_date": "2018-09-16",
+        "n_cells": 2331,
+        "persistence_mae": 0.016546107828617096,
+        "advection_mae": 0.016513753682374954,
+        "persistence_rmse": 0.02796478383243084,
+        "advection_rmse": 0.02793693169951439
+      },
+      {
+        "issue_date": "2018-09-17",
+        "n_cells": 2362,
+        "persistence_mae": 0.01678154431283474,
+        "advection_mae": 0.01663423888385296,
+        "persistence_rmse": 0.026200992986559868,
+        "advection_rmse": 0.025868898257613182
+      },
+      {
+        "issue_date": "2018-09-18",
+        "n_cells": 2382,
+        "persistence_mae": 0.013851492665708065,
+        "advection_mae": 0.013888482935726643,
+        "persistence_rmse": 0.023044528439641,
+        "advection_rmse": 0.023027000948786736
+      },
+      {
+        "issue_date": "2018-09-19",
+        "n_cells": 2405,
+        "persistence_mae": 0.015695320442318916,
+        "advection_mae": 0.015409226529300213,
+        "persistence_rmse": 0.025161320343613625,
+        "advection_rmse": 0.024622026830911636
+      },
+      {
+        "issue_date": "2018-09-20",
+        "n_cells": 2436,
+        "persistence_mae": 0.01385271456092596,
+        "advection_mae": 0.013836699537932873,
+        "persistence_rmse": 0.022882191464304924,
+        "advection_rmse": 0.022723190486431122
+      },
+      {
+        "issue_date": "2018-09-21",
+        "n_cells": 2439,
+        "persistence_mae": 0.01488274335861206,
+        "advection_mae": 0.01477423682808876,
+        "persistence_rmse": 0.022976426407694817,
+        "advection_rmse": 0.022821126505732536
+      },
+      {
+        "issue_date": "2018-09-22",
+        "n_cells": 2465,
+        "persistence_mae": 0.017050478607416153,
+        "advection_mae": 0.01701265200972557,
+        "persistence_rmse": 0.02777187153697014,
+        "advection_rmse": 0.027672402560710907
+      },
+      {
+        "issue_date": "2018-09-23",
+        "n_cells": 2476,
+        "persistence_mae": 0.018420884385704994,
+        "advection_mae": 0.018280135467648506,
+        "persistence_rmse": 0.031028857454657555,
+        "advection_rmse": 0.030764754861593246
+      },
+      {
+        "issue_date": "2018-09-24",
+        "n_cells": 2463,
+        "persistence_mae": 0.016265302896499634,
+        "advection_mae": 0.01608511246740818,
+        "persistence_rmse": 0.02577846311032772,
+        "advection_rmse": 0.025304753333330154
+      },
+      {
+        "issue_date": "2018-09-25",
+        "n_cells": 2453,
+        "persistence_mae": 0.014985347166657448,
+        "advection_mae": 0.015057274140417576,
+        "persistence_rmse": 0.024375343695282936,
+        "advection_rmse": 0.024446768686175346
+      },
+      {
+        "issue_date": "2018-09-26",
+        "n_cells": 2452,
+        "persistence_mae": 0.017331158742308617,
+        "advection_mae": 0.017365342006087303,
+        "persistence_rmse": 0.027627259492874146,
+        "advection_rmse": 0.027485888451337814
+      },
+      {
+        "issue_date": "2018-09-27",
+        "n_cells": 2467,
+        "persistence_mae": 0.016068685799837112,
+        "advection_mae": 0.016301829367876053,
+        "persistence_rmse": 0.025119667872786522,
+        "advection_rmse": 0.025376223027706146
+      },
+      {
+        "issue_date": "2018-09-28",
+        "n_cells": 2450,
+        "persistence_mae": 0.016280701383948326,
+        "advection_mae": 0.01641124300658703,
+        "persistence_rmse": 0.027297792956233025,
+        "advection_rmse": 0.02764427848160267
+      },
+      {
+        "issue_date": "2018-09-29",
+        "n_cells": 2445,
+        "persistence_mae": 0.017800986766815186,
+        "advection_mae": 0.01748625375330448,
+        "persistence_rmse": 0.03012261725962162,
+        "advection_rmse": 0.029447508975863457
+      },
+      {
+        "issue_date": "2018-09-30",
+        "n_cells": 2449,
+        "persistence_mae": 0.01348705030977726,
+        "advection_mae": 0.013396160677075386,
+        "persistence_rmse": 0.021589189767837524,
+        "advection_rmse": 0.021207032725214958
+      },
+      {
+        "issue_date": "2018-10-01",
+        "n_cells": 2465,
+        "persistence_mae": 0.01686834916472435,
+        "advection_mae": 0.01676880195736885,
+        "persistence_rmse": 0.028557833284139633,
+        "advection_rmse": 0.028328007087111473
+      }
+    ],
+    "geographic_strata": {
+      "longitude_000_090E": {
+        "n_cells": 64628,
+        "persistence_mae": 0.01988329365849495,
+        "advection_mae": 0.019756654277443886,
+        "persistence_rmse": 0.029880598187446594,
+        "advection_rmse": 0.029642801731824875,
+        "evaluated_days": 183,
+        "mae_reduction_percent": 0.6369134974625212,
+        "rmse_reduction_percent": 0.7958222728004949
+      },
+      "longitude_090_180E": {
+        "n_cells": 41104,
+        "persistence_mae": 0.020598281174898148,
+        "advection_mae": 0.020528316497802734,
+        "persistence_rmse": 0.03241147845983505,
+        "advection_rmse": 0.03221102058887482,
+        "evaluated_days": 183,
+        "mae_reduction_percent": 0.3396626956460591,
+        "rmse_reduction_percent": 0.61847802224958
+      },
+      "longitude_180_270E": {
+        "n_cells": 93205,
+        "persistence_mae": 0.016972607001662254,
+        "advection_mae": 0.016881193965673447,
+        "persistence_rmse": 0.027452843263745308,
+        "advection_rmse": 0.02719084918498993,
+        "evaluated_days": 183,
+        "mae_reduction_percent": 0.5385916022202952,
+        "rmse_reduction_percent": 0.9543422378452626
+      },
+      "longitude_270_360E": {
+        "n_cells": 103352,
+        "persistence_mae": 0.012152813374996185,
+        "advection_mae": 0.012128827162086964,
+        "persistence_rmse": 0.02249530889093876,
+        "advection_rmse": 0.02230837568640709,
+        "evaluated_days": 183,
+        "mae_reduction_percent": 0.19737168809463856,
+        "rmse_reduction_percent": 0.8309874980510612
+      },
+      "latitude_50S_60S": {
+        "n_cells": 6851,
+        "persistence_mae": 0.025555353611707687,
+        "advection_mae": 0.02531491592526436,
+        "persistence_rmse": 0.03647419810295105,
+        "advection_rmse": 0.036009982228279114,
+        "evaluated_days": 105,
+        "mae_reduction_percent": 0.9408505556079527,
+        "rmse_reduction_percent": 1.272724004408965
+      },
+      "latitude_60S_70S": {
+        "n_cells": 212660,
+        "persistence_mae": 0.016995983198285103,
+        "advection_mae": 0.016891520470380783,
+        "persistence_rmse": 0.027898596599698067,
+        "advection_rmse": 0.027631990611553192,
+        "evaluated_days": 183,
+        "mae_reduction_percent": 0.6146318614557167,
+        "rmse_reduction_percent": 0.9556250874202088
+      },
+      "latitude_70S_80S": {
+        "n_cells": 82778,
+        "persistence_mae": 0.014257329516112804,
+        "advection_mae": 0.014279104769229889,
+        "persistence_rmse": 0.024278605356812477,
+        "advection_rmse": 0.024211768060922623,
+        "evaluated_days": 183,
+        "mae_reduction_percent": -0.1527302367001937,
+        "rmse_reduction_percent": 0.27529297876700554
+      },
+      "latitude_80S_90S": {
+        "n_cells": 0,
+        "evaluated_days": 0,
+        "persistence_mae": null,
+        "advection_mae": null,
+        "mae_reduction_percent": null,
+        "persistence_rmse": null,
+        "advection_rmse": null,
+        "rmse_reduction_percent": null
+      }
+    }
+  },
+  "limitations": [
+    "The retrospective 00Z issue convention prevents post-label OSI-vector leakage, but the G02202 daily product does not establish a single observation or operational availability time; strict real-time causality is not proven.",
+    "Short period(s) and limited season/year coverage; spatially correlated cell samples are not independent trials.",
+    "Retrospective CDR can include interpolated/corrected vectors; only flags 21 and 30 retained here.",
+    "This evaluates gridded SIC changes, not ice-edge safety, iceberg drift, route clearance, or voyage decisions.",
+    "A small apparent gain is not evidence of generalizable forecast skill; multi-year blocked tests and independent products are required."
+  ]
+}

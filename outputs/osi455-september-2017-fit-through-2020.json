@@ -1,0 +1,85 @@
+{
+  "experiment": "Causal OSI-455 one-day SIC advection with a coefficient frozen on 2017 September training dates",
+  "fit": {
+    "year": 2017,
+    "selected_lambda": 0.1,
+    "fit_output_provenance": {
+      "motion_manifest": "work\\datasets\\osi455-sep2017\\manifest.json",
+      "motion_manifest_sha256": "34c6ae0049a770c2f241b1366aeabe3105ff8823d24181435380c3c00f019bce"
+    },
+    "split": "fit shrinkage lambda on issue dates through 2017-09-16; evaluate chronologically from 2017-09-17 onward"
+  },
+  "evaluations": [
+    {
+      "year": 2018,
+      "issue_period": {
+        "start": "2018-09-01",
+        "end": "2018-09-30"
+      },
+      "n_correlated_cell_days": 72229,
+      "persistence_mae": 0.015435825102031231,
+      "advection_mae": 0.015374031849205494,
+      "persistence_rmse": 0.025688573718070984,
+      "advection_rmse": 0.025535009801387787,
+      "mae_reduction_percent": 0.40032361352426715,
+      "rmse_reduction_percent": 0.5977907468454391,
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-sep2018\\manifest.json",
+        "motion_manifest_sha256": "1ed3f8486ec1d39487c77167570414ce75e0babca07b70d172c26ae109bf6cff"
+      }
+    },
+    {
+      "year": 2019,
+      "issue_period": {
+        "start": "2019-09-01",
+        "end": "2019-09-30"
+      },
+      "n_correlated_cell_days": 73358,
+      "persistence_mae": 0.01516459509730339,
+      "advection_mae": 0.015114499256014824,
+      "persistence_rmse": 0.02600502222776413,
+      "advection_rmse": 0.025872113183140755,
+      "mae_reduction_percent": 0.3303473714077243,
+      "rmse_reduction_percent": 0.511089909707807,
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-sep2019\\manifest.json",
+        "motion_manifest_sha256": "6d7cef3f3efbb1a758e0319e6e8987f37d46ce8e48c2be2597c6a5e6fb9eb346"
+      }
+    },
+    {
+      "year": 2020,
+      "issue_period": {
+        "start": "2020-09-01",
+        "end": "2020-09-30"
+      },
+      "n_correlated_cell_days": 76237,
+      "persistence_mae": 0.014824828132987022,
+      "advection_mae": 0.014790507033467293,
+      "persistence_rmse": 0.02487664297223091,
+      "advection_rmse": 0.02477552741765976,
+      "mae_reduction_percent": 0.23151094374821435,
+      "rmse_reduction_percent": 0.4064678448937986,
+      "provenance": {
+        "motion_manifest": "work\\datasets\\osi455-sep2020\\manifest.json",
+        "motion_manifest_sha256": "a87a53006ccd3cb9fffe8567703774331abaeef6a12f048b483d0e2894d451bf"
+      }
+    }
+  ],
+  "combined": {
+    "n_correlated_cell_days": 221824,
+    "persistence_mae": 0.015136139465599429,
+    "advection_mae": 0.015087656284123653,
+    "persistence_rmse": 0.025518670672387056,
+    "advection_rmse": 0.02538967441018745,
+    "equal_year_mean_mae_reduction_percent": 0.3207273095600686,
+    "equal_year_mean_rmse_reduction_percent": 0.5051161671490149,
+    "mae_reduction_percent": 0.3203140509240532,
+    "rmse_reduction_percent": 0.5054975780505178
+  },
+  "interpretation": [
+    "Grid-cell-day observations are spatially and temporally correlated, not independent trials.",
+    "Three later September months do not establish all-season, all-region, or operational forecast skill.",
+    "The motion product is 75 km and lags the 00Z SIC issue by 12 hours; real-time availability is unverified.",
+    "This evaluates SIC concentration only, not route clearance, ship safety, iceberg drift, or encounter risk."
+  ]
+}

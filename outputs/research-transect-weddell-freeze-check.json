@@ -1,0 +1,17 @@
+{
+  "scope": "frozen_research_ice_gradient_transect",
+  "route_id": "weddell-ice-gradient-v1",
+  "route_config_sha256": "33e9df9ff6f7bd12cc4a26703d32ba6e2ea4f9e13caf2e0c897da626271bcc6f",
+  "eligible_bulletins_from": "2026-10-04",
+  "sample_points_at_2km": 400,
+  "unique_observation_cells": 161,
+  "nominal_observation_cells": 161,
+  "nominal_cell_coverage_fraction": 1.0,
+  "navigation_clearance": false,
+  "evaluation_status": "observation_selection_check_only",
+  "observed_sic_range_fraction": [
+    0.2580263912677765,
+    1.0
+  ],
+  "selection_observation_sha256": "f0efbfb7958f1febfcae2db1435a6b5e1961d33578948197b2c41d945212314d"
+}

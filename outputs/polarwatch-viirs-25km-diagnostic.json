@@ -1,0 +1,155 @@
+{
+  "model_id": "sic-lag-regression-v1",
+  "model_fingerprint": "4866f61e667131a37d9bea93b255afd850ea0c07cbc2d3a9335110137baecb91",
+  "evaluation_data_dir": "work\\datasets\\polarwatch-viirs",
+  "spatial_evaluation": {
+    "coarsen_factor": 31,
+    "method": "simple finite-value block mean; not a formal reprojection",
+    "nominal_pixel_spacing_m": 24645.0
+  },
+  "source_manifest": {
+    "dataset_title": "Ice Concentration, NOAA S-NPP VIIRS, Near Real-Time, Polar Stereographic (South), Daily",
+    "dataset_id": "noaacwVIIRSnppiceconcSP06Daily",
+    "source_info": "https://polarwatch.noaa.gov/erddap/info/noaacwVIIRSnppiceconcSP06Daily/index.csv",
+    "accessed_at_utc": "2026-09-28T17:02:59.988601+00:00",
+    "selection": {
+      "start_date": "2024-06-01",
+      "end_date": "2024-08-31",
+      "center_lon_lat": [
+        -60.0,
+        -66.0
+      ],
+      "half_width_km": 100.0,
+      "projected_bounds_m": {
+        "x_min": -2383720.1063002544,
+        "x_max": -2183720.1063002544,
+        "y_min": 1218506.418126213,
+        "y_max": 1418506.418126213
+      },
+      "crs": "EPSG:3976",
+      "nominal_grid_spacing_m": 795.0,
+      "chunk_days": 14
+    },
+    "complete": true,
+    "files": [
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240601_20240614.nc",
+        "start_date": "2024-06-01",
+        "end_date": "2024-06-14",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-06-01T00%3A00%3A00Z%29%3A1%3A%282024-06-14T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 621859,
+        "sha256": "8033cc7e7c2c2167734e0925a554beeb0ab6c36bbff15748d6a4ca0b1b85cd70",
+        "actual_time_start_utc": "2024-06-04T20:47:35Z",
+        "actual_time_end_utc": "2024-06-14T11:52:41Z",
+        "time_count": 11
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240615_20240628.nc",
+        "start_date": "2024-06-15",
+        "end_date": "2024-06-28",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-06-15T00%3A00%3A00Z%29%3A1%3A%282024-06-28T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 574087,
+        "sha256": "1dfc260a0e6e9232e8c1614e2a9507fc68b599aa30ad89b7010671c452f2dfba",
+        "actual_time_start_utc": "2024-06-15T12:13:35Z",
+        "actual_time_end_utc": "2024-06-28T12:08:43Z",
+        "time_count": 14
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240629_20240712.nc",
+        "start_date": "2024-06-29",
+        "end_date": "2024-07-12",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-06-29T00%3A00%3A00Z%29%3A1%3A%282024-07-12T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 274979,
+        "sha256": "c390ef631a5507fe9976875447486587dcfe035a58ca348d029311d0fec4dc9d",
+        "actual_time_start_utc": "2024-06-29T10:20:53Z",
+        "actual_time_end_utc": "2024-07-09T03:46:06Z",
+        "time_count": 11
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240713_20240726.nc",
+        "start_date": "2024-07-13",
+        "end_date": "2024-07-26",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-07-13T00%3A00%3A00Z%29%3A1%3A%282024-07-26T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 267904,
+        "sha256": "f071f32e40a232317106fcd6a09a4db464cc99293dcaf264741e964db608b84e",
+        "actual_time_start_utc": "2024-07-18T20:22:15Z",
+        "actual_time_end_utc": "2024-07-24T02:24:16Z",
+        "time_count": 6
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240727_20240809.nc",
+        "start_date": "2024-07-27",
+        "end_date": "2024-08-09",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-07-27T00%3A00%3A00Z%29%3A1%3A%282024-08-09T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 583461,
+        "sha256": "da040eb6fa8c23f2c6621f0397c2ff1ef1f9308cc5d3ea2c039666530479142f",
+        "actual_time_start_utc": "2024-07-30T22:18:01Z",
+        "actual_time_end_utc": "2024-08-09T11:42:50Z",
+        "time_count": 11
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240810_20240823.nc",
+        "start_date": "2024-08-10",
+        "end_date": "2024-08-23",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-08-10T00%3A00%3A00Z%29%3A1%3A%282024-08-23T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 411324,
+        "sha256": "2a1c8186266bc0018e49e573619f18707833acbcc5f3f3b6cba8c5da7392578f",
+        "actual_time_start_utc": "2024-08-10T12:05:52Z",
+        "actual_time_end_utc": "2024-08-23T12:20:55Z",
+        "time_count": 14
+      },
+      {
+        "file": "polarwatch_viirs_south_lonm60p00_latm66p00_w100p0km_20240824_20240831.nc",
+        "start_date": "2024-08-24",
+        "end_date": "2024-08-31",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSnppiceconcSP06Daily.nc?IceConc%5B%282024-08-24T00%3A00%3A00Z%29%3A1%3A%282024-08-31T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 133854,
+        "sha256": "c7cd47029b642c14a6279e8eb7639eba387acbd47633bb53586dd8fb691af1f9",
+        "actual_time_start_utc": "2024-08-24T12:02:00Z",
+        "actual_time_end_utc": "2024-08-31T12:08:14Z",
+        "time_count": 8
+      }
+    ],
+    "terms_note": "NOAA data service metadata permits free redistribution but disclaims accuracy/warranty; cite NOAA CoastWatch/PolarWatch and verify current terms before operational use.",
+    "variable": "IceConc",
+    "units": "fraction [0,1]",
+    "dimensions": [
+      "time",
+      "altitude",
+      "rows",
+      "cols"
+    ],
+    "product_scope": "S-NPP VIIRS near-real-time product; different sensor/algorithm and resolution from G02202 CDR. Independent research evaluation only."
+  },
+  "period": {
+    "first_target_date": "2024-06-06",
+    "last_target_date": "2024-08-31"
+  },
+  "overall": {
+    "grid_cell_samples": 1516,
+    "mae": 0.03157497267000309,
+    "rmse": 0.053682127805774124,
+    "persistence_rmse": 0.0493908843262986
+  },
+  "by_target_month": {
+    "06": {
+      "grid_cell_samples": 758,
+      "mae": 0.02957070376929034,
+      "rmse": 0.04931404098582126,
+      "persistence_rmse": 0.04557027437622896
+    },
+    "07": {
+      "grid_cell_samples": 94,
+      "mae": 0.032594643863179736,
+      "rmse": 0.04805918049614571,
+      "persistence_rmse": 0.04361403606636241
+    },
+    "08": {
+      "grid_cell_samples": 664,
+      "mae": 0.033718627390758614,
+      "rmse": 0.05896053985044454,
+      "persistence_rmse": 0.0541266168743172
+    }
+  },
+  "warning": "Independent research evaluation only; product, period and grid may differ from training. Not navigation guidance."
+}

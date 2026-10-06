@@ -1,0 +1,75 @@
+{
+  "status": "preprocessing_compatibility_probe_not_valid_model_skill_evidence",
+  "model": "Dong et al. Antarctic ConvLSTM checkpoint (2024)",
+  "paper_doi": "10.1016/j.ocemod.2024.102386",
+  "checkpoint_sha256": "26ea046d9b097f56853a0f705eed933477b0c34b5f4f510c27183292da23c4db",
+  "test_dataset_sha256": "8c3b42a1ddcf66a299c4ebdf3e171ba02a86a23ee64443a14773ba3c03f90579",
+  "training_product": "NOAA/NSIDC G02202 v6 1989-2016; related passive-microwave source lineage to the paper's NSIDC-0051/0081 inputs, but a distinct processed product",
+  "source_independence": "Not an independent satellite/source-family evaluation: the paper and this probe use related passive-microwave observation products. G02202 is not the original NSIDC-0051/0081 input sequence.",
+  "test_product": "author-packaged held-out 100-km SIC testing_set.nc (2017-2022)",
+  "preprocessing_caveat": "Approximate Gaussian normalization and G02202-derived climatology/std; paper's exact preprocessing, normalization parameters, original input files and inference pipeline are unavailable in this package.",
+  "interpretation": "The approximate pipeline produces substantially worse values than persistence. Because preprocessing compatibility with the published checkpoint is unverified, these numbers are not a valid estimate of the checkpoint's model skill and must not be used for model selection.",
+  "valid_model_skill_evidence": false,
+  "origin_count": 8,
+  "results": [
+    {
+      "origin": "2017-12-31",
+      "target": "2018-01-01",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.24362570060588273,
+      "persistence_area_weighted_rmse": 0.01862516082746076
+    },
+    {
+      "origin": "2018-09-13",
+      "target": "2018-09-14",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.49271065783313706,
+      "persistence_area_weighted_rmse": 0.02599484033444976
+    },
+    {
+      "origin": "2019-05-28",
+      "target": "2019-05-29",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.36563811826931647,
+      "persistence_area_weighted_rmse": 0.023128067182358127
+    },
+    {
+      "origin": "2020-02-08",
+      "target": "2020-02-09",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.1688568414283808,
+      "persistence_area_weighted_rmse": 0.015264470034815918
+    },
+    {
+      "origin": "2020-10-22",
+      "target": "2020-10-23",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.5016767567315324,
+      "persistence_area_weighted_rmse": 0.025248712424764744
+    },
+    {
+      "origin": "2021-07-05",
+      "target": "2021-07-06",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.48157977023838683,
+      "persistence_area_weighted_rmse": 0.03208290147224003
+    },
+    {
+      "origin": "2022-03-19",
+      "target": "2022-03-20",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.1699175825799193,
+      "persistence_area_weighted_rmse": 0.014853409548074707
+    },
+    {
+      "origin": "2022-11-30",
+      "target": "2022-12-01",
+      "valid_cells": 5176,
+      "convlstm_area_weighted_rmse": 0.3422014211213696,
+      "persistence_area_weighted_rmse": 0.025493968740983225
+    }
+  ],
+  "mean_model_rmse": 0.34577585610099065,
+  "mean_persistence_rmse": 0.02258644132064341,
+  "decision": "Do not promote to application without broader validation and preprocessing reproduction."
+}

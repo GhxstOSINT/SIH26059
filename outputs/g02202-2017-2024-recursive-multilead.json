@@ -1,0 +1,136 @@
+{
+  "status": "frozen_recursive_holdout_diagnostic",
+  "model_id": "sic-lag-regression-v1",
+  "model_fingerprint": "0b807b4fe1de6c725e95719f9766d7edfd67c63f35863900b8aaf96bf7c09830",
+  "model_artifact_sha256": "1c0ca29781acdcc7b780aabad6c2d1042a4008ee1a0722c32418365b1f4fddad",
+  "training_period_end": "2016-12-31",
+  "evaluation_product": "G02202",
+  "evaluation_manifest_sha256": "8afa4082db8a45f6aa173c117c2df247d85591da83d6328cc7319fba6045775c",
+  "evaluation_method": {
+    "type": "recursive autoregressive rollout of the frozen one-day lag-regression model",
+    "leads_days": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "baseline": "persistence of the latest observed origin field",
+    "quality": "source QA masking and ocean mask from ml.train_sic.grids; forecasts reset across date gaps",
+    "target_scope": "chronological targets strictly after the model's selected training-period end"
+  },
+  "by_lead": {
+    "1": {
+      "period": {
+        "first_target_date": "2017-01-03",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2908,
+      "valid_cell_samples": 172058225,
+      "rmse": 0.04119156955151849,
+      "mae": 0.014162528161611095,
+      "persistence_rmse": 0.041281126442241134,
+      "persistence_mae": 0.012351480247043032,
+      "area_weighted": {
+        "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at pixel centres",
+        "evaluated_area_km2_samples": 100268644695.93445,
+        "rmse": 0.041848652144127765,
+        "mae": 0.014609588563419318,
+        "persistence_rmse": 0.041944321419173376,
+        "persistence_mae": 0.012820596592916195,
+        "ice_edge": {
+          "threshold_sic_fraction": 0.15,
+          "aggregation": "mean daily pan-domain error over shared valid cells",
+          "mean_daily_iiee_million_km2": 0.32688520231410595,
+          "persistence_mean_daily_iiee_million_km2": 0.3266958356850885,
+          "mean_daily_absolute_sie_error_million_km2": 0.09328454923225761,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.09335988671157318
+        }
+      }
+    },
+    "3": {
+      "period": {
+        "first_target_date": "2017-01-05",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2903,
+      "valid_cell_samples": 171413625,
+      "rmse": 0.06959910845535527,
+      "mae": 0.026927169049091777,
+      "persistence_rmse": 0.07036659717554858,
+      "persistence_mae": 0.022342997358503425,
+      "area_weighted": {
+        "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at pixel centres",
+        "evaluated_area_km2_samples": 99905072469.09845,
+        "rmse": 0.07067722105440351,
+        "mae": 0.02766256466462115,
+        "persistence_rmse": 0.0714743602048694,
+        "persistence_mae": 0.023161909343012557,
+        "ice_edge": {
+          "threshold_sic_fraction": 0.15,
+          "aggregation": "mean daily pan-domain error over shared valid cells",
+          "mean_daily_iiee_million_km2": 0.6540352036508216,
+          "persistence_mean_daily_iiee_million_km2": 0.654121750519369,
+          "mean_daily_absolute_sie_error_million_km2": 0.2684013228093165,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.26871244764428764
+        }
+      }
+    },
+    "5": {
+      "period": {
+        "first_target_date": "2017-01-07",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2899,
+      "valid_cell_samples": 170837082,
+      "rmse": 0.08733005354103396,
+      "mae": 0.036143970555938904,
+      "persistence_rmse": 0.0889069278315772,
+      "persistence_mae": 0.028822437862454663,
+      "area_weighted": {
+        "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at pixel centres",
+        "evaluated_area_km2_samples": 99581481849.92422,
+        "rmse": 0.0886756108391061,
+        "mae": 0.03704348909879716,
+        "persistence_rmse": 0.09031461240038616,
+        "persistence_mae": 0.029864212309568944,
+        "ice_edge": {
+          "threshold_sic_fraction": 0.15,
+          "aggregation": "mean daily pan-domain error over shared valid cells",
+          "mean_daily_iiee_million_km2": 0.8860563295799155,
+          "persistence_mean_daily_iiee_million_km2": 0.8866914854675111,
+          "mean_daily_absolute_sie_error_million_km2": 0.4405638270958388,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.44182318926046693
+        }
+      }
+    },
+    "7": {
+      "period": {
+        "first_target_date": "2017-01-09",
+        "last_target_date": "2024-12-31"
+      },
+      "target_days": 2896,
+      "valid_cell_samples": 170306803,
+      "rmse": 0.1010126081600038,
+      "mae": 0.04409565131604421,
+      "persistence_rmse": 0.10352700741820463,
+      "persistence_mae": 0.034108378633257816,
+      "area_weighted": {
+        "method": "projected pixel area divided by PROJ ellipsoidal areal_scale at pixel centres",
+        "evaluated_area_km2_samples": 99284957768.27448,
+        "rmse": 0.10256560767379147,
+        "mae": 0.045119407935034016,
+        "persistence_rmse": 0.1051816069302618,
+        "persistence_mae": 0.035331629746991076,
+        "ice_edge": {
+          "threshold_sic_fraction": 0.15,
+          "aggregation": "mean daily pan-domain error over shared valid cells",
+          "mean_daily_iiee_million_km2": 1.0809215539485084,
+          "persistence_mean_daily_iiee_million_km2": 1.0821346040100268,
+          "mean_daily_absolute_sie_error_million_km2": 0.6128387023443846,
+          "persistence_mean_daily_absolute_sie_error_million_km2": 0.6149097262945905
+        }
+      }
+    }
+  },
+  "warning": "Retrospective research diagnostic only. Recursive errors can compound with lead; the held-out targets are from the same G02202 product family, not independent sensor validation. Not an operational forecast, route-skill estimate, or navigation guidance."
+}

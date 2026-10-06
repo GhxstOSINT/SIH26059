@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "selection": "sic-lag-regression-v1",
+  "scope": "research_only",
+  "forecast_horizon_days": 1,
+  "source_dataset_id": "G02202",
+  "artifact": {
+    "path": "models/sic_g02202_1989_2016.json",
+    "file_sha256": "0810de7b22bde438cdc89bc8a03190a1c3f538e925bb7fdacdfbcb6e72e4d124",
+    "model_fingerprint": "0b807b4fe1de6c725e95719f9766d7edfd67c63f35863900b8aaf96bf7c09830",
+    "artifact_sha256": "1c0ca29781acdcc7b780aabad6c2d1042a4008ee1a0722c32418365b1f4fddad"
+  },
+  "evidence": {
+    "post_training_holdout": {
+      "path": "outputs/g02202-2017-2024-holdout.json",
+      "file_sha256": "b56dbacfe5e58a0679cc8f2f50e8e876220df9df2edea53048de761fb323edf7"
+    },
+    "candidate_comparison": {
+      "path": "outputs/sic-expanded-training-decision-20261001.json",
+      "file_sha256": "0c4449ce4c5c8c53b7479bb330836eeac24074278942dec4a01f56b618c940f5"
+    }
+  },
+  "promotion_rule": "A challenger requires at least 1% lower area-weighted RMSE, lower MAE, and lower mean daily ice-edge disagreement on a prospectively frozen holdout; also require independent cross-product and route-scale evidence before operational use.",
+  "operational_decision_ready": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scope": "research_only",
+  "id": "weddell-ice-gradient-v1",
+  "label": "Northern Weddell ice-gradient sampling transect",
+  "coordinate_reference_system": "EPSG:4326",
+  "coordinates_lon_lat": [[-52.0, -61.5], [-47.0, -62.0], [-42.0, -62.5], [-37.0, -63.0]],
+  "sampling_interval_km": 2.0,
+  "frozen_at_utc": "2026-10-03T16:55:05+00:00",
+  "eligible_bulletins_from": "2026-10-04",
+  "selection_observation_date": "2026-10-01",
+  "selection_observation_sha256": "f0efbfb7958f1febfcae2db1435a6b5e1961d33578948197b2c41d945212314d",
+  "selection_note": "Chosen for prospective ice-gradient measurement after inspecting a dated OSI-SAF observation. Do not score earlier forecast bulletins on this selected line.",
+  "navigation_clearance": false,
+  "limitations": [
+    "This is a geodesic research sampling line, not an ECDIS passage plan or safe vessel route.",
+    "Nominal OSI-SAF retrieval flags do not assess charted hazards, water depth, iceberg clearance, or vessel capability.",
+    "High sea-ice concentration on the selection day makes the line unsuitable for any inference of navigability.",
+    "One line and one observation cannot establish forecast skill or calibrated uncertainty."
+  ]
+}

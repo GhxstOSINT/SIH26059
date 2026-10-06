@@ -1,0 +1,82 @@
+{
+  "model_id": "sic-lag-regression-v1",
+  "target": "daily sea-ice concentration fraction, Antarctic grid",
+  "features": [
+    "intercept",
+    "previous_day_sic",
+    "two_days_prior_sic",
+    "day_of_year_sin",
+    "day_of_year_cos"
+  ],
+  "coefficients": [
+    0.0005108432336687565,
+    1.191888592060355,
+    -0.19495225025738905,
+    0.0006077575027155203,
+    -0.001707049638038867
+  ],
+  "training": {
+    "files": 1,
+    "daily_fields": 2191,
+    "samples": 6790912,
+    "first_train_target_date": "2017-01-03",
+    "last_train_target_date": "2020-08-06",
+    "validation_start": "2020-08-07",
+    "validation_end": "2022-12-31"
+  },
+  "validation": {
+    "grid_cell_samples": 4539352,
+    "mae": 0.00873288747594334,
+    "rmse": 0.023802133259274074,
+    "persistence_rmse": 0.02431933970334907,
+    "monthly_climatology_rmse": 0.11346556311129413,
+    "monthly_climatology_samples": 4539352
+  },
+  "validation_scope": "Chronological holdout from the test dataset released with the Antarctic ConvLSTM paper. It is held out from this baseline fit but is not an independent external-product evaluation.",
+  "data_source": "NetCDF input files; upstream provenance is not independently verified by the trainer.",
+  "input_file_names": [
+    "testing_set.nc"
+  ],
+  "source_manifest": {
+    "source": "Xiaoran Dong, Antarctic Sea Ice Prediction with A Convolutional Long Short-Term Memory Network",
+    "zenodo_record": "https://zenodo.org/records/11234961",
+    "record_doi": "10.5281/zenodo.11234961",
+    "record_version": "v2, published 2024-05-21",
+    "license": "CC BY 4.0",
+    "paper_doi": "10.1016/j.ocemod.2024.102386",
+    "paper_training_data": [
+      "NSIDC-0051 v2",
+      "NSIDC-0081 v2"
+    ],
+    "archive_retrieval_sha256": "b5aa2db9336f25e8f141bb735999261905036fd4f419ccc6ec583401f191cd4d",
+    "files": {
+      "testing_set.nc": {
+        "sha256": "8c3b42a1ddcf66a299c4ebdf3e171ba02a86a23ee64443a14773ba3c03f90579",
+        "bytes": 57651997,
+        "variable": "sic",
+        "dimensions": [
+          "time",
+          "y",
+          "x"
+        ],
+        "time_range": [
+          "2017-01-01",
+          "2022-12-31"
+        ],
+        "grid_shape": [
+          83,
+          79
+        ],
+        "concentration_units": "fraction [0, 1]"
+      },
+      "ConvLSTM.params": {
+        "sha256": "26ea046d9b097f56853a0f705eed933477b0c34b5f4f510c27183292da23c4db",
+        "bytes": 125431
+      }
+    },
+    "reuse_note": "The archive supplies paper weights/design and the held-out SIC dataset, not the original 1989-2016 training archive or a ready inference service. The Southern Passage lag-regression experiment trains only on 2017-2020-08-06 and validates chronologically on 2020-08-07 through 2022-12-31; this is a new experiment, not a reproduction of the paper."
+  },
+  "validation_masking": "Finite SIC cells; static ocean mask applied when provided by the source NetCDF.",
+  "warning": "Research baseline only. Not calibrated or approved for navigation or operational decisions.",
+  "model_fingerprint": "4866f61e667131a37d9bea93b255afd850ea0c07cbc2d3a9335110137baecb91"
+}

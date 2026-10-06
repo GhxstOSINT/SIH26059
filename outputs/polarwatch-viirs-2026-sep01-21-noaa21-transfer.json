@@ -1,0 +1,120 @@
+{
+  "model_id": "sic-lag-regression-v1",
+  "model_fingerprint": "0b807b4fe1de6c725e95719f9766d7edfd67c63f35863900b8aaf96bf7c09830",
+  "training_scope": {
+    "files": 28,
+    "daily_fields": 10227,
+    "samples": 465909115,
+    "selected_period_start": "1989-01-01",
+    "selected_period_end": "2016-12-31",
+    "first_train_target_date": "1989-01-03",
+    "last_train_target_date": "2011-05-26",
+    "validation_start": "2011-05-27",
+    "validation_end": "2016-12-31"
+  },
+  "evaluation_data_dir": "work\\datasets\\polarwatch-viirs-noaa21-2026-sep01-21",
+  "spatial_evaluation": {
+    "coarsen_factor": 1,
+    "method": "native grid",
+    "nominal_pixel_spacing_m": 795.0
+  },
+  "source_manifest": {
+    "dataset_title": "Ice Concentration, NOAA-21 VIIRS, Near Real-Time, Polar Stereographic (South), Daily",
+    "dataset_id": "noaacwVIIRSn21iceconcSP06Daily",
+    "platform": "NOAA-21",
+    "source_info": "https://polarwatch.noaa.gov/erddap/info/noaacwVIIRSn21iceconcSP06Daily/index.csv",
+    "accessed_at_utc": "2026-09-30T00:39:59.610958+00:00",
+    "selection": {
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-21",
+      "center_lon_lat": [
+        -60.0,
+        -66.0
+      ],
+      "half_width_km": 100.0,
+      "projected_bounds_m": {
+        "x_min": -2383720.1063002544,
+        "x_max": -2183720.1063002544,
+        "y_min": 1218506.418126213,
+        "y_max": 1418506.418126213
+      },
+      "crs": "EPSG:3976",
+      "nominal_grid_spacing_m": 795.0,
+      "chunk_days": 7
+    },
+    "complete": true,
+    "files": [
+      {
+        "file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20260901_20260907.nc",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSn21iceconcSP06Daily.nc?IceConc%5B%282026-09-01T00%3A00%3A00Z%29%3A1%3A%282026-09-07T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 176654,
+        "sha256": "477b824c7d6c72de27eedd5ed71babf791ffc8a9ec0219c3ff859a6114366313",
+        "actual_time_start_utc": "2026-09-01T11:56:53Z",
+        "actual_time_end_utc": "2026-09-07T12:27:44Z",
+        "time_count": 7
+      },
+      {
+        "file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20260908_20260914.nc",
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-14",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSn21iceconcSP06Daily.nc?IceConc%5B%282026-09-08T00%3A00%3A00Z%29%3A1%3A%282026-09-14T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 179640,
+        "sha256": "e2b316f323a71b5c6a4166c464ffb10673fe73a16d21a4958277f30a253f7c4e",
+        "actual_time_start_utc": "2026-09-08T12:08:49Z",
+        "actual_time_end_utc": "2026-09-14T11:55:34Z",
+        "time_count": 7
+      },
+      {
+        "file": "polarwatch_viirs_south_noaa21_lonm60p00_latm66p00_w100p0km_20260915_20260921.nc",
+        "start_date": "2026-09-15",
+        "end_date": "2026-09-21",
+        "access_url": "https://polarwatch.noaa.gov/erddap/griddap/noaacwVIIRSn21iceconcSP06Daily.nc?IceConc%5B%282026-09-15T00%3A00%3A00Z%29%3A1%3A%282026-09-21T23%3A59%3A59Z%29%5D%5B%280.0%29%5D%5B%281418506.4%29%3A1%3A%281218506.4%29%5D%5B%28-2383720.1%29%3A1%3A%28-2183720.1%29%5D",
+        "bytes": 175181,
+        "sha256": "c4664abd0992d82d2d4ceb09fbba285a91229bb8bd20838813441fb8d20205a4",
+        "actual_time_start_utc": "2026-09-15T11:36:39Z",
+        "actual_time_end_utc": "2026-09-21T12:05:22Z",
+        "time_count": 7
+      }
+    ],
+    "terms_note": "NOAA data service metadata permits free redistribution but disclaims accuracy/warranty; cite NOAA CoastWatch/PolarWatch and verify current terms before operational use.",
+    "variable": "IceConc",
+    "units": "fraction [0,1]",
+    "dimensions": [
+      "time",
+      "altitude",
+      "rows",
+      "cols"
+    ],
+    "product_scope": "NOAA-21 VIIRS near-real-time product; different sensor/algorithm and resolution from G02202 CDR. Independent research evaluation only."
+  },
+  "period": {
+    "first_target_date": "2026-09-03",
+    "last_target_date": "2026-09-21"
+  },
+  "overall": {
+    "grid_cell_samples": 7934,
+    "mae": 0.047301291399228285,
+    "rmse": 0.09428347427372974,
+    "persistence_rmse": 0.09628322992995884
+  },
+  "by_target_month": {
+    "09": {
+      "grid_cell_samples": 7934,
+      "mae": 0.047301291399228285,
+      "rmse": 0.09428347427372974,
+      "persistence_rmse": 0.09628322992995884
+    }
+  },
+  "by_target_year": {
+    "2026": {
+      "grid_cell_samples": 7934,
+      "mae": 0.047301291399228285,
+      "rmse": 0.09428347427372974,
+      "persistence_rmse": 0.09628322992995884
+    }
+  },
+  "metric_weighting": "Cell-pooled metrics give each finite valid grid cell equal weight; G02202 reports separate estimated ground-area-weighted metrics.",
+  "warning": "Independent research evaluation only; product, period and grid may differ from training. Not navigation guidance."
+}

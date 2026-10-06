@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "dataset": "BYU/NIC Antarctic Iceberg Tracking Database v8.0",
+  "archive_sha256": "47d899c8bb1c3266d0b8c94a6f87c435dc68827a53f39dea3d78fe68ccc40cae",
+  "task": "Observed-position-only next-report displacement error; not a fixed-time operational forecast",
+  "train_target_end": "2016-12-31",
+  "test_target_period": {
+    "start": "2017-01-01",
+    "end": "2025-04-22"
+  },
+  "max_lead_days": 14,
+  "max_history_gap_days": 30,
+  "training_examples": 102635,
+  "test_examples": 90073,
+  "training_icebergs": 397,
+  "test_icebergs": 145,
+  "fitted_velocity_damping": 0.0,
+  "data_summary": {
+    "files": 647,
+    "rows": 516691,
+    "observed_sensor_positions": 236970,
+    "track_days": 211009
+  },
+  "metrics": {
+    "1-2d": {
+      "persistence": {
+        "count": 88401,
+        "mean_error_km": 3.0996115230903163,
+        "median_error_km": 0.46424673698408714,
+        "p90_error_km": 8.977818505379457
+      },
+      "constant_velocity": {
+        "count": 88401,
+        "mean_error_km": 2.497007686238531,
+        "median_error_km": 0.1850430013162942,
+        "p90_error_km": 6.339631616046704
+      },
+      "trained_damped_velocity": {
+        "count": 88401,
+        "mean_error_km": 3.0996115230903163,
+        "median_error_km": 0.46424673698408714,
+        "p90_error_km": 8.977818505379457
+      }
+    },
+    "3-7d": {
+      "persistence": {
+        "count": 1150,
+        "mean_error_km": 14.174676693002587,
+        "median_error_km": 2.7726524841791456,
+        "p90_error_km": 40.280947566288326
+      },
+      "constant_velocity": {
+        "count": 1150,
+        "mean_error_km": 20.386072675387364,
+        "median_error_km": 5.007731802247846,
+        "p90_error_km": 45.84503898375755
+      },
+      "trained_damped_velocity": {
+        "count": 1150,
+        "mean_error_km": 14.174676693002587,
+        "median_error_km": 2.7726524841791456,
+        "p90_error_km": 40.280947566288326
+      }
+    },
+    "8-14d": {
+      "persistence": {
+        "count": 522,
+        "mean_error_km": 30.684066622754248,
+        "median_error_km": 3.993076451848882,
+        "p90_error_km": 82.39397086540735
+      },
+      "constant_velocity": {
+        "count": 522,
+        "mean_error_km": 36.208259897248595,
+        "median_error_km": 9.623154000412866,
+        "p90_error_km": 90.66208717158658
+      },
+      "trained_damped_velocity": {
+        "count": 522,
+        "mean_error_km": 30.684066622754248,
+        "median_error_km": 3.993076451848882,
+        "p90_error_km": 82.39397086540735
+      }
+    }
+  },
+  "limitations": [
+    "Training targets end before the held-out period; model tuning on the test period is not permitted.",
+    "Only per-sensor rows with interpolation marker 0 are included; marker 1 rows are excluded.",
+    "The target is the next observed report (1-14 days later), not a complete fixed-horizon census.",
+    "Tracks represent a selected large-iceberg archive and have heterogeneous sensor precision/coverage.",
+    "The official landing page describes coverage through 2025-04-22, but this archive contains source-measured positions through 2026-04-29; this evaluation is restricted to the page-declared end pending confirmation.",
+    "Forecast cases from the same iceberg are serially dependent and are not independent samples.",
+    "Iceberg identities can occur in both chronological splits; this tests continuation of known tracks, not cold-start generalization to unseen bergs.",
+    "The source paper reports location accuracy no better than about one sensor pixel (roughly 2.2-8.9 km by sensor), comparable to or larger than some reported errors.",
+    "This retrospective benchmark does not establish live detection, route encounter probability, or navigation safety."
+  ]
+}
