@@ -4,12 +4,8 @@ WORKDIR /app
 COPY requirements.lock .
 RUN pip install --no-cache-dir --require-hashes -r requirements.lock
 COPY service ./service
-COPY ml/identity.py ./ml/identity.py
-COPY ml/verify_initial_model.py ./ml/verify_initial_model.py
-COPY ml/evaluate_iceberg_tracks.py ./ml/evaluate_iceberg_tracks.py
-COPY ml/check_polarwatch_viirs.py ml/fetch_polarwatch_viirs.py ml/refresh_viirs.py ./ml/
-COPY config/viirs-research-policy.example.json ./config/viirs-research-policy.example.json
-COPY config/initial-model.json ./config/initial-model.json
+COPY ml ./ml
+COPY config ./config
 COPY index.html app.js review-workflow.js experience.js marine-interactions.js styles.css refinement.css product.css cinematic.css orbital.css marine.css polar-orbit.png orbital-satellite.png antarctic-sea.png hero-iceberg.png indian-research-vessel.png ./portal/
 COPY models ./models
 COPY outputs ./outputs
