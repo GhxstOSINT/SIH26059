@@ -1,0 +1,5 @@
+# Release artifacts are checksum-pinned to their exact local bytes.
+# Do not normalize line endings when adding these files to Git.
+models/sic_g02202_1989_2016.json -text
+outputs/g02202-2017-2024-holdout.json -text
+outputs/sic-expanded-training-decision-20261001.json -text
