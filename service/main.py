@@ -82,6 +82,23 @@ REVIEW_DB_PATH = Path(os.getenv("SOUTHERN_PASSAGE_REVIEW_DB", ROOT / "work" / "r
 CORS_ORIGINS = [origin.strip() for origin in os.getenv("CORS_ORIGINS", "http://localhost:4173,http://127.0.0.1:4173").split(",") if origin.strip()]
 AUDIT_LOGGER = logging.getLogger("southern_passage.api_audit")
 REQUEST_ID_RE = re.compile(r"^[A-Za-z0-9._:-]{1,128}$")
+CONTENT_SECURITY_POLICY = "; ".join((
+    "default-src 'self'",
+    "base-uri 'none'",
+    "object-src 'none'",
+    "frame-ancestors 'none'",
+    "form-action 'self'",
+    "script-src 'self'",
+    # The map and replay update CSS custom properties at runtime. Script
+    # execution remains restricted to same-origin files.
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data:",
+    "connect-src 'self'",
+    "media-src 'self'",
+    "manifest-src 'self'",
+    "upgrade-insecure-requests",
+))
 AUDIT_LOGGER.setLevel(logging.INFO)
 AUDIT_LOGGER.propagate = False
 if not AUDIT_LOGGER.handlers:
@@ -168,7 +185,20 @@ async def protect_api_routes(request, call_next):
     status_code = response.status_code
     if is_api:
         log_api_request(request, request_id, status_code, started)
+        response.headers["Cache-Control"] = "no-store"
     response.headers["X-Request-ID"] = request_id
+    response.headers["Content-Security-Policy"] = CONTENT_SECURITY_POLICY
+    response.headers["Cross-Origin-Opener-Policy"] = "same-origin"
+    response.headers["Cross-Origin-Resource-Policy"] = "same-origin"
+    response.headers["Permissions-Policy"] = (
+        "camera=(), microphone=(), geolocation=(), payment=(), usb=(), "
+        "accelerometer=(), gyroscope=(), magnetometer=()"
+    )
+    response.headers["Referrer-Policy"] = "no-referrer"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    if APP_ENV == "production":
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
     return response
 
 

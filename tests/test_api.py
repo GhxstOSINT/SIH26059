@@ -292,6 +292,18 @@ def test_production_configuration_fails_closed():
     validate("production", "x" * 40, ["https://ministry.example"])
 
 
+def test_security_headers_are_applied_to_portal_and_api(monkeypatch):
+    monkeypatch.setattr(service_main, "APP_ENV", "production")
+    portal = client.get("/portal/")
+    assert portal.headers["content-security-policy"].startswith("default-src 'self'")
+    assert portal.headers["x-frame-options"] == "DENY"
+    assert portal.headers["referrer-policy"] == "no-referrer"
+    assert portal.headers["strict-transport-security"].startswith("max-age=31536000")
+    api = client.get("/api/v1/model", headers={"Authorization": "Bearer test-secret"})
+    assert api.headers["cache-control"] == "no-store"
+    assert api.headers["x-content-type-options"] == "nosniff"
+
+
 def test_grid_schema_rejects_unrecognized_crs_singular_transform_and_non_boolean_mask():
     import pytest
     from pydantic import ValidationError

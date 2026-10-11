@@ -554,3 +554,57 @@ body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
   .experience-second, .experience-third { display: none !important; }
   .sound-toggle:hover, #workspace .insights-column > .panel:hover { transform: none; }
 }
+
+/* Release hardening: predictable safe-area layout and touch ergonomics. */
+html { min-width: 0; overflow-x: clip; }
+body { min-width: 0; padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+button, a, input, select, textarea { touch-action: manipulation; }
+#workspace .icon-button,
+#workspace .play-button,
+#workspace .control-button,
+#workspace .horizon,
+#workspace .primary-button,
+#workspace #replay-observation-button,
+#workspace .review-form-actions button { min-height: 44px; }
+#workspace .icon-button,
+#workspace .play-button { min-width: 44px; width: 44px; height: 44px; }
+#workspace .route-option { min-height: 54px; }
+#workspace input,
+#workspace select,
+#workspace textarea { max-width: 100%; font-size: 16px; }
+#workspace img,
+#workspace svg,
+#workspace canvas { max-width: 100%; }
+.sound-toggle { bottom: max(clamp(17px, 2.4vw, 34px), calc(env(safe-area-inset-bottom) + 10px)); }
+
+@media (max-width: 760px) {
+  #workspace { padding-left: max(17px, env(safe-area-inset-left)); padding-right: max(17px, env(safe-area-inset-right)); }
+  #workspace .workspace-nav { overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; }
+  #workspace .workspace-nav::-webkit-scrollbar { display: none; }
+  #workspace .workspace-nav__item { min-width: 92px; min-height: 48px; font-size: 12px; }
+  #workspace .map-controls .control-button { min-height: 44px; padding: 9px 10px; font-size: 10px; }
+  #workspace .horizon { min-height: 48px; padding: 8px 5px; font-size: 13px; }
+  #workspace .horizon small { font-size: 9px; }
+  #workspace .timeline { gap: 14px; }
+  #workspace .replay-evidence__intro h2 { font-size: 24px; }
+  #workspace .evidence-figures b { font-size: clamp(24px, 8vw, 34px); }
+  .sound-toggle { right: max(0px, env(safe-area-inset-right)); }
+}
+
+@media (max-width: 480px) {
+  #workspace .workspace-nav__item { font-size: 11px; }
+  #workspace .map-topline { min-height: 70px; height: auto; padding-block: 9px; }
+  #workspace .map-controls { flex-wrap: wrap; justify-content: flex-end; }
+  #workspace .map-controls .control-button { font-size: 10px; }
+  #workspace .map-title strong { font-size: 14px; }
+  #workspace .map-title span:not(.status-pip) { font-size: 11px; }
+  #workspace .outlook-panel .section-top #forecast-date { font-size: 11px; }
+}
+
+@media (max-width: 360px) {
+  #workspace { padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }
+  #workspace .workspace-nav__item { min-width: 86px; padding-inline: 4px; font-size: 10px; }
+  #workspace .horizon { min-height: 48px; padding: 7px 4px; font-size: 12px; }
+  #workspace .horizon small { font-size: 9px; }
+  #workspace .outlook-panel .section-top #forecast-date { font-size: 10px; }
+}
