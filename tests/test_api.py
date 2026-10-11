@@ -281,7 +281,7 @@ def test_production_configuration_fails_closed():
     validate = service_main.validate_runtime_configuration
     import pytest
 
-    with pytest.raises(RuntimeError, match="at least 32 characters"):
+    with pytest.raises(RuntimeError, match="32\\+ character"):
         validate("production", "short", ["https://ministry.example"])
     with pytest.raises(RuntimeError, match="CORS_ORIGINS"):
         validate("production", "x" * 40, ["*"])
@@ -290,6 +290,9 @@ def test_production_configuration_fails_closed():
     with pytest.raises(RuntimeError, match="APP_ENV"):
         validate("prod", "x" * 40, ["https://ministry.example"])
     validate("production", "x" * 40, ["https://ministry.example"])
+    validate("production", "", ["https://ministry.example"], "reviewer", "p" * 40)
+    with pytest.raises(RuntimeError, match="Production requires"):
+        validate("production", "", ["https://ministry.example"], "reviewer", "short")
 
 
 def test_security_headers_are_applied_to_portal_and_api(monkeypatch):
@@ -302,6 +305,20 @@ def test_security_headers_are_applied_to_portal_and_api(monkeypatch):
     api = client.get("/api/v1/model", headers={"Authorization": "Bearer test-secret"})
     assert api.headers["cache-control"] == "no-store"
     assert api.headers["x-content-type-options"] == "nosniff"
+
+
+def test_production_preview_login_protects_portal_and_api(monkeypatch):
+    import base64
+
+    monkeypatch.setattr(service_main, "APP_ENV", "production")
+    monkeypatch.setattr(service_main, "API_AUTH_TOKEN", "")
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_USER", "reviewer")
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_PASSWORD", "p" * 40)
+    assert client.get("/portal/").status_code == 401
+    credential = base64.b64encode(("reviewer:" + "p" * 40).encode()).decode()
+    headers = {"Authorization": f"Basic {credential}"}
+    assert client.get("/portal/", headers=headers).status_code == 200
+    assert client.get("/api/v1/model", headers=headers).status_code == 200
 
 
 def test_grid_schema_rejects_unrecognized_crs_singular_transform_and_non_boolean_mask():

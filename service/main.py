@@ -5,6 +5,8 @@ exposing it beyond a trusted development environment.
 """
 from __future__ import annotations
 
+import base64
+import binascii
 import json
 import hashlib
 import logging
@@ -70,6 +72,8 @@ GLO12_VERIFICATION_ROOT = Path(os.environ.get("SOUTHERN_PASSAGE_GLO12_VERIFICATI
 OBSERVED_FORECAST_MIN_COMMON_COVERAGE = 0.10
 APP_ENV = os.getenv("APP_ENV", "development").strip().lower()
 API_AUTH_TOKEN = os.getenv("SOUTHERN_PASSAGE_API_TOKEN", "")
+PREVIEW_AUTH_USER = os.getenv("SOUTHERN_PASSAGE_PREVIEW_USER", "")
+PREVIEW_AUTH_PASSWORD = os.getenv("SOUTHERN_PASSAGE_PREVIEW_PASSWORD", "")
 REVIEW_WORKFLOW_ENABLED = os.getenv("SOUTHERN_PASSAGE_REVIEW_ENABLED", "false").lower() in {"1", "true", "yes"}
 REVIEW_ASSERTION_SECRET_FILE = os.getenv("SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET_FILE", "")
 if REVIEW_ASSERTION_SECRET_FILE and os.getenv("SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET"):
@@ -106,18 +110,27 @@ if not AUDIT_LOGGER.handlers:
     _audit_handler.setFormatter(logging.Formatter("%(message)s"))
     AUDIT_LOGGER.addHandler(_audit_handler)
 
-def validate_runtime_configuration(environment: str, token: str, cors_origins: list[str]) -> None:
+def validate_runtime_configuration(environment: str, token: str, cors_origins: list[str],
+                                   preview_user: str = "", preview_password: str = "") -> None:
     if environment not in {"development", "test", "production"}:
         raise RuntimeError("APP_ENV must be one of: development, test, production.")
     if environment == "production":
-        if len(token) < 32:
-            raise RuntimeError("Production requires SOUTHERN_PASSAGE_API_TOKEN with at least 32 characters; provide secrets through the ministry secret manager.")
+        has_bearer = len(token) >= 32
+        has_preview_login = (3 <= len(preview_user) <= 80 and ":" not in preview_user
+                             and len(preview_password) >= 32)
+        if not (has_bearer or has_preview_login):
+            raise RuntimeError(
+                "Production requires either a 32+ character SOUTHERN_PASSAGE_API_TOKEN or "
+                "a SOUTHERN_PASSAGE_PREVIEW_USER with a 32+ character preview password; "
+                "provide secrets through the deployment secret manager."
+            )
         if (not cors_origins or "*" in cors_origins
                 or any(not origin.startswith("https://") or "localhost" in origin or "127.0.0.1" in origin for origin in cors_origins)):
             raise RuntimeError("Production requires exact HTTPS CORS_ORIGINS without wildcard or localhost origins.")
 
 
-validate_runtime_configuration(APP_ENV, API_AUTH_TOKEN, CORS_ORIGINS)
+validate_runtime_configuration(APP_ENV, API_AUTH_TOKEN, CORS_ORIGINS,
+                               PREVIEW_AUTH_USER, PREVIEW_AUTH_PASSWORD)
 if REVIEW_WORKFLOW_ENABLED and (len(REVIEW_ASSERTION_SECRET) < 32 or not REVIEW_ASSERTION_ISSUER):
     raise RuntimeError("Review workflow requires a 32+ character gateway assertion secret and an explicit issuer.")
 
@@ -157,6 +170,7 @@ def portal_asset(asset_name: str) -> FileResponse:
 async def protect_api_routes(request, call_next):
     """Enforce the interim service credential and emit body-free audit events."""
     is_api = request.url.path.startswith("/api/")
+    is_production_portal = APP_ENV == "production" and request.url.path.startswith("/portal")
     candidate = request.headers.get("x-request-id", "")
     request_id = candidate if REQUEST_ID_RE.fullmatch(candidate) else secrets.token_hex(16)
     request.state.request_id = request_id
@@ -168,13 +182,16 @@ async def protect_api_routes(request, call_next):
         # gateway must still enforce its own policy; the actual API request is
         # authenticated here after CORS has authorized the exact origin.
         pass
-    elif is_api and (APP_ENV == "production" or API_AUTH_TOKEN):
+    elif (is_api and (APP_ENV == "production" or API_AUTH_TOKEN)) or is_production_portal:
         supplied = request.headers.get("authorization", "")
         scheme, _, credential = supplied.partition(" ")
-        if scheme.lower() != "bearer" or not credential or not secrets.compare_digest(credential.encode("utf-8"), API_AUTH_TOKEN.encode("utf-8")):
+        bearer_ok = bool(API_AUTH_TOKEN and scheme.lower() == "bearer" and credential
+                         and secrets.compare_digest(credential.encode("utf-8"), API_AUTH_TOKEN.encode("utf-8")))
+        basic_ok = valid_preview_basic_auth(scheme, credential)
+        if not (bearer_ok or basic_ok):
             response = JSONResponse(
-                {"detail": "A valid bearer credential is required."}, status_code=401,
-                headers={"WWW-Authenticate": "Bearer"})
+                {"detail": "A valid service credential is required."}, status_code=401,
+                headers={"WWW-Authenticate": 'Basic realm="Southern Passage", charset="UTF-8"'})
     if response is None:
         try:
             response = await call_next(request)
@@ -200,6 +217,19 @@ async def protect_api_routes(request, call_next):
     if APP_ENV == "production":
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
     return response
+
+
+def valid_preview_basic_auth(scheme: str, credential: str) -> bool:
+    """Validate the optional controlled-preview login without logging secrets."""
+    if not (PREVIEW_AUTH_USER and PREVIEW_AUTH_PASSWORD and scheme.lower() == "basic" and credential):
+        return False
+    try:
+        decoded = base64.b64decode(credential, validate=True).decode("utf-8")
+    except (binascii.Error, UnicodeDecodeError):
+        return False
+    username, separator, password = decoded.partition(":")
+    return bool(separator and secrets.compare_digest(username, PREVIEW_AUTH_USER)
+                and secrets.compare_digest(password, PREVIEW_AUTH_PASSWORD))
 
 
 def log_api_request(request, request_id: str, status_code: int, started: float) -> None:
