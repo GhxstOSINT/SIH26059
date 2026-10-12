@@ -88,6 +88,21 @@ body { min-width: 320px; background: #061c29; color: var(--ink); }
 /* One continuous scroll composition: sea pans, ice rises, three lines of thought crossfade. */
 .experience { height: 420svh; background: #061c29; }
 .experience-stage { min-height: 560px; background: #102c3d; }
+.experience-stage::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: -12%;
+  bottom: -12%;
+  left: -28vw;
+  width: 28vw;
+  background: linear-gradient(90deg, transparent, rgba(218, 244, 245, .11) 46%, rgba(239, 251, 251, .2) 50%, rgba(218, 244, 245, .08) 54%, transparent);
+  opacity: var(--ice-sweep-opacity, 0);
+  transform: translate3d(var(--ice-sweep-x, -18vw), 0, 0) skewX(-7deg);
+  filter: blur(7px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
 .experience-image {
   z-index: -5;
   inset: -9%;
@@ -158,6 +173,9 @@ body { min-width: 320px; background: #061c29; color: var(--ink); }
   text-transform: uppercase;
   text-shadow: 0 3px 32px rgba(2, 19, 31, .82), 0 1px 2px rgba(2, 19, 31, .6);
 }
+.experience-title h1 { clip-path: inset(calc(100% - var(--scene-one-reveal, 100%)) 0 0); filter: blur(var(--scene-one-blur, 0)); }
+.experience-second strong { clip-path: inset(calc(100% - var(--scene-two-reveal, 0%)) 0 0); filter: blur(var(--scene-two-blur, 6px)); }
+.experience-third strong { clip-path: inset(calc(100% - var(--scene-three-reveal, 0%)) 0 0); filter: blur(var(--scene-three-blur, 6px)); }
 .experience-title__body, .experience-second > span, .experience-third > span {
   max-width: 46ch;
   margin-top: 20px;
@@ -171,18 +189,39 @@ body { min-width: 320px; background: #061c29; color: var(--ink); }
 .experience-progress { background: rgba(226, 240, 243, .24); }
 .experience-progress span { background: #8cded1; }
 
+/* Keep navigational and measurement labels legible on high-density displays. */
+#launch-skip,
+.experience-header__action,
+.experience-index,
+.experience-second p,
+.experience-third p { font-size: 11px; }
+
 /* The operational chapter keeps the ocean palette while increasing information contrast. */
-#workspace { max-width: 1800px; background: #061c29; }
+#workspace { max-width: 1800px; min-height: 100svh; background: #061c29; }
 #workspace::before { background: rgba(194, 226, 231, .29); }
 #workspace .topbar { border-bottom-color: var(--line); }
 #workspace .brand-name { color: #eff8f8; font-size: 18px; }
 #workspace .icon-button { border-color: #5a8490; border-radius: 50%; color: #e3f2f3; }
 #workspace .icon-button:hover { background: #143848; border-color: #8cded1; }
-#workspace .workspace-nav { margin-bottom: clamp(52px, 7vw, 105px); border-bottom-color: var(--line); }
-#workspace .workspace-nav__item { color: #b8cfd5; }
+#workspace .workspace-nav { position: relative; margin-bottom: clamp(52px, 7vw, 105px); border-bottom-color: var(--line); }
+#workspace .workspace-nav__item { color: #b8cfd5; font-size: 12px; }
 #workspace .workspace-nav__item:hover:not(:disabled) { color: #f3fbfb; }
 #workspace .workspace-nav__item.is-active { color: #f6fbfb; }
-#workspace .workspace-nav__item.is-active::after { background: #8cded1; height: 2px; }
+#workspace .workspace-nav__item::after { display: none; }
+#workspace .workspace-nav__indicator {
+  position: absolute;
+  z-index: 2;
+  bottom: -1px;
+  left: 0;
+  width: var(--nav-indicator-width, 0px);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8cded1 18%, #e2eef0 50%, #8cded1 82%, transparent);
+  opacity: 0;
+  transform: translate3d(var(--nav-indicator-x, 0px), 0, 0);
+  transition: transform .48s var(--marine-ease), opacity .2s ease;
+  pointer-events: none;
+}
+#workspace .workspace-nav.indicator-ready .workspace-nav__indicator { opacity: 1; }
 #workspace .workspace-nav__item:disabled { opacity: .55; cursor: not-allowed; }
 #workspace .workspace-head {
   display: grid;
@@ -442,15 +481,29 @@ body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   #workspace .insights-column > .panel:hover { transform: translateY(-4px); border-color: #6593a0; background: #103142; }
+  .marine-magnet {
+    transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0);
+    transition: transform .38s var(--marine-ease), color .25s, background-color .25s, border-color .25s;
+    will-change: transform;
+  }
 }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    #workspace .insights-column > .panel, #workspace .replay-evidence, #workspace .review-workflow {
-      animation: marine-reveal both;
+    #workspace .map-panel {
+      animation: marine-map-reveal both;
       animation-timeline: view();
-      animation-range: entry 0% cover 20%;
+      animation-range: entry 0% cover 24%;
     }
-    @keyframes marine-reveal { from { opacity: .74; filter: blur(3px); } to { opacity: 1; filter: blur(0); } }
+    #workspace .insights-column > .panel, #workspace .replay-evidence, #workspace .review-workflow {
+      animation: marine-instrument-reveal both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 18%;
+    }
+    @keyframes marine-map-reveal {
+      from { opacity: .72; clip-path: inset(0 0 13% 0 round 16px); filter: blur(4px); }
+      to { opacity: 1; clip-path: inset(0 0 0 0 round 16px); filter: blur(0); }
+    }
+    @keyframes marine-instrument-reveal { from { opacity: .78; filter: blur(3px); } to { opacity: 1; filter: blur(0); } }
   }
 }
 @supports not (animation-timeline: view()) {
@@ -505,7 +558,7 @@ body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
   .launch-screen__content { margin-top: -12svh; }
   .launch-screen__content h1 { font-size: clamp(38px, 10.4vw, 49px); }
   #launch-enter { min-width: 206px; min-height: 50px; }
-  .experience-index, .experience-second p, .experience-third p { font-size: 8px; letter-spacing: .07em; }
+  .experience-index, .experience-second p, .experience-third p { font-size: 10px; letter-spacing: .07em; }
   .experience-third a { margin-top: 16px; font-size: 10px; }
   #workspace .workspace-nav__item { font-size: 9px; }
   #workspace .demo-label { display: none; }
@@ -529,7 +582,7 @@ body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
   .launch-screen__content h1 { font-size: 36px; }
   .launch-screen__edition { max-width: 32ch; }
   .experience-brand { font-size: 11px; }
-  .experience-header__action { font-size: 8px; }
+  .experience-header__action { font-size: 10px; }
   .experience-title h1, .experience-second strong, .experience-third strong { font-size: 36px; }
   #workspace { padding-inline: 12px; }
   #workspace .brand-name { font-size: 12px; }
@@ -553,6 +606,9 @@ body.experience-loading .sound-toggle { opacity: 0; pointer-events: none; }
   .experience-title { transform: translateX(-50%) !important; opacity: 1 !important; }
   .experience-second, .experience-third { display: none !important; }
   .sound-toggle:hover, #workspace .insights-column > .panel:hover { transform: none; }
+  .experience-stage::before { display: none; }
+  .experience-title h1, .experience-second strong, .experience-third strong { clip-path: none !important; filter: none !important; }
+  #workspace .workspace-nav__indicator { transition: none; }
 }
 
 /* Release hardening: predictable safe-area layout and touch ergonomics. */

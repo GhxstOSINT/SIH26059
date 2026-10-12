@@ -585,6 +585,15 @@
       button.classList.toggle('is-active',active);
       if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
     });
+    requestAnimationFrame(updateWorkAreaIndicator);
+  }
+  function updateWorkAreaIndicator(){
+    const nav=document.querySelector('.workspace-nav');
+    const active=nav?.querySelector('.workspace-nav__item.is-active');
+    if(!nav||!active)return;
+    nav.style.setProperty('--nav-indicator-x',`${active.offsetLeft}px`);
+    nav.style.setProperty('--nav-indicator-width',`${active.offsetWidth}px`);
+    nav.classList.add('indicator-ready');
   }
   async function showObservation(day){
     stopReplay();
@@ -930,6 +939,8 @@
   document.getElementById('route-analysis-half-width').addEventListener('change',()=>{if(routeReviewInput)clearRouteExposure(true);});
   document.getElementById('route-export-button').addEventListener('click',downloadRouteReviewPacket);
   document.getElementById('route-geojson-button').addEventListener('click',downloadRouteGeoJSON);
+  window.addEventListener('resize',updateWorkAreaIndicator,{passive:true});
+  updateWorkAreaIndicator();
   render();
   loadObservationCatalog();
   loadObservedIcebergTracks();

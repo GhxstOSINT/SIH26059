@@ -85,4 +85,23 @@
       observer.observe(element);
     });
   }
+
+  const finePointer = window.matchMedia('(pointer: fine) and (hover: hover)');
+  if (finePointer.matches && !reducedMotion.matches) {
+    const magneticTargets = document.querySelectorAll('#launch-enter, .experience-header__action, .experience-third a, #workspace .play-button, #workspace .icon-button');
+    magneticTargets.forEach(element => {
+      element.classList.add('marine-magnet');
+      element.addEventListener('pointermove', event => {
+        const bounds = element.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width - .5) * 8;
+        const y = ((event.clientY - bounds.top) / bounds.height - .5) * 8;
+        element.style.setProperty('--magnet-x', `${x.toFixed(2)}px`);
+        element.style.setProperty('--magnet-y', `${y.toFixed(2)}px`);
+      }, { passive: true });
+      element.addEventListener('pointerleave', () => {
+        element.style.setProperty('--magnet-x', '0px');
+        element.style.setProperty('--magnet-y', '0px');
+      });
+    });
+  }
 })();

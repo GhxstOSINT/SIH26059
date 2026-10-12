@@ -14,12 +14,21 @@
     return t * t * (3 - 2 * t);
   };
   let animationFrame = 0;
+  let targetProgress = 0;
+  let displayedProgress = 0;
+
+  function readProgress() {
+    const travel = Math.max(1, experience.offsetHeight - window.innerHeight);
+    return clamp(-experience.getBoundingClientRect().top / travel);
+  }
 
   function render() {
     animationFrame = 0;
     if (reducedMotion.matches) return;
-    const travel = Math.max(1, experience.offsetHeight - window.innerHeight);
-    const progress = clamp(-experience.getBoundingClientRect().top / travel);
+    const delta = targetProgress - displayedProgress;
+    displayedProgress += delta * (Math.abs(delta) > .12 ? .16 : .11);
+    if (Math.abs(delta) < .0004) displayedProgress = targetProgress;
+    const progress = clamp(displayedProgress);
     const sceneOne = 1 - smoothstep(.08, .28, progress);
     const sceneTwo = smoothstep(.20, .34, progress) * (1 - smoothstep(.48, .65, progress));
     const sceneThree = smoothstep(.56, .73, progress) * (1 - smoothstep(.91, 1, progress));
@@ -36,12 +45,24 @@
       '--iceberg-x': smoothstep(.08, .72, progress) * -5,
       '--iceberg-y': -smoothstep(.12, .8, progress) * 7,
       '--iceberg-scale': .9 + smoothstep(0, .82, progress) * .32,
-      '--sea-shift': smoothstep(0, 1, progress) * 8
+      '--sea-shift': smoothstep(0, 1, progress) * 8,
+      '--scene-one-reveal': `${(sceneOne * 100).toFixed(2)}%`,
+      '--scene-two-reveal': `${(sceneTwo * 100).toFixed(2)}%`,
+      '--scene-three-reveal': `${(sceneThree * 100).toFixed(2)}%`,
+      '--scene-one-blur': `${((1 - sceneOne) * 6).toFixed(2)}px`,
+      '--scene-two-blur': `${((1 - sceneTwo) * 6).toFixed(2)}px`,
+      '--scene-three-blur': `${((1 - sceneThree) * 6).toFixed(2)}px`,
+      '--ice-sweep-x': `${(-18 + progress * 148).toFixed(2)}vw`,
+      '--ice-sweep-opacity': (Math.sin(progress * Math.PI) * .22).toFixed(3)
     };
-    for (const [name, value] of Object.entries(values)) stage.style.setProperty(name, value.toFixed(4));
+    for (const [name, value] of Object.entries(values)) {
+      stage.style.setProperty(name, typeof value === 'number' ? value.toFixed(4) : value);
+    }
+    if (displayedProgress !== targetProgress) animationFrame = requestAnimationFrame(render);
   }
 
   function scheduleRender() {
+    targetProgress = readProgress();
     if (!animationFrame) animationFrame = requestAnimationFrame(render);
   }
 
@@ -72,6 +93,7 @@
     if (reducedMotion.matches && document.body.classList.contains('launch-ready')) closeLaunch();
     scheduleRender();
   });
+  targetProgress = displayedProgress = readProgress();
   scheduleRender();
 
   if (reducedMotion.matches || location.hash === '#workspace' || location.hash.startsWith('#review')) return;
