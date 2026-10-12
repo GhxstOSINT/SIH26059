@@ -1,5 +1,7 @@
 FROM python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PORT=8000
+ENV SOUTHERN_PASSAGE_VIIRS_DATA=/app/work/datasets/polarwatch-viirs \
+    SOUTHERN_PASSAGE_VIIRS_SUPPLEMENT_DATA=/app/work/datasets/polarwatch-viirs-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa21-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa20-2026-sep01-21
 WORKDIR /app
 COPY requirements.lock .
 RUN pip install --no-cache-dir --require-hashes -r requirements.lock
@@ -10,6 +12,10 @@ COPY index.html app.js review-workflow.js experience.js marine-interactions.js s
 COPY portal/login.html portal/login.css ./portal/
 COPY models ./models
 COPY outputs ./outputs
+COPY work/datasets/polarwatch-viirs ./work/datasets/polarwatch-viirs
+COPY work/datasets/polarwatch-viirs-2026-sep01-21 ./work/datasets/polarwatch-viirs-2026-sep01-21
+COPY work/datasets/polarwatch-viirs-noaa21-2026-sep01-21 ./work/datasets/polarwatch-viirs-noaa21-2026-sep01-21
+COPY work/datasets/polarwatch-viirs-noaa20-2026-sep01-21 ./work/datasets/polarwatch-viirs-noaa20-2026-sep01-21
 RUN mkdir -p /app/state && chown 10001:10001 /app/state
 USER 10001:10001
 EXPOSE 8000

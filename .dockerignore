@@ -1,4 +1,16 @@
 work/
+!work/
+work/*
+!work/datasets/
+work/datasets/*
+!work/datasets/polarwatch-viirs/
+!work/datasets/polarwatch-viirs/**
+!work/datasets/polarwatch-viirs-2026-sep01-21/
+!work/datasets/polarwatch-viirs-2026-sep01-21/**
+!work/datasets/polarwatch-viirs-noaa21-2026-sep01-21/
+!work/datasets/polarwatch-viirs-noaa21-2026-sep01-21/**
+!work/datasets/polarwatch-viirs-noaa20-2026-sep01-21/
+!work/datasets/polarwatch-viirs-noaa20-2026-sep01-21/**
 deliverables/
 LibreOffice_*/
 torchinductor_*/

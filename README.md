@@ -30,7 +30,7 @@ FastAPI service ──► provenance-checked observation catalog
 Health, readiness, audit correlation, and evidence exports
 ```
 
-The container runs as a non-root user with hash-locked Python dependencies and a pinned base image. The browser assets and API are served from one origin. Raw observations are **not** baked into the image; the Compose example mounts local source archives read-only. The optional SQLite review ledger needs persistent storage and verified backups.
+The container runs as a non-root user with hash-locked Python dependencies and a pinned base image. The browser assets and API are served from one origin. The release image includes only the small, checksum-manifested NOAA PolarWatch VIIRS research subsets used by the observation workspace; future/live acquisitions remain external and require persistent storage. The optional SQLite review ledger needs persistent storage and verified backups.
 
 ## Evidence at a glance
 
@@ -68,7 +68,7 @@ Before enabling a public hostname:
 
 1. Put the service behind an approved HTTPS identity gateway that protects **both** `/portal/` and `/api/v1/`, maps users to permitted roles, injects the workload bearer server-side, and prevents direct access to the container. The bearer must never be sent to browser JavaScript.
 2. Set `APP_ENV=production`, a random 32+ character `SOUTHERN_PASSAGE_API_TOKEN` in the host secret store, and `CORS_ORIGINS` to the exact approved HTTPS portal origin. Do not use wildcard origins. Configure `PORT=8000` if the host requires an explicit port.
-3. Mount source-licensed, checksum-manifested VIIRS and historical iceberg archives at the paths specified by the `SOUTHERN_PASSAGE_*` variables in [`docker-compose.yml`](docker-compose.yml); do not assume they are part of the image. Keep review storage on an encrypted persistent volume. Leave `SOUTHERN_PASSAGE_REVIEW_ENABLED=false` until gateway assertions and independent reviewer roles are configured.
+3. The image contains the curated VIIRS research subsets. Mount refreshed source-licensed, checksum-manifested observations and historical iceberg archives at the paths specified by the `SOUTHERN_PASSAGE_*` variables in [`docker-compose.yml`](docker-compose.yml) when enabling ingestion. Keep review storage on an encrypted persistent volume. Leave `SOUTHERN_PASSAGE_REVIEW_ENABLED=false` until gateway assertions and independent reviewer roles are configured.
 4. Set the host health-check path to `/readyz`. After deployment, run `python -m ops.smoke --base-url https://YOUR-APP-ORIGIN` from an authorized network with the workload token available only to the operator process. Check source age, integrity, review access, logs, backup recovery, and rate limiting separately.
 
 See [`STANDALONE_OPERATIONS.md`](STANDALONE_OPERATIONS.md) for the runbook and [`MINISTRY_INTEGRATION.md`](MINISTRY_INTEGRATION.md) for the gateway, role, audit, and acceptance contract. A green `/readyz` verifies the selected model artifact; it does **not** mean live observations, SSO, or voyage-safety approval are ready.
