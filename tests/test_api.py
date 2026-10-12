@@ -314,11 +314,44 @@ def test_production_preview_login_protects_portal_and_api(monkeypatch):
     monkeypatch.setattr(service_main, "API_AUTH_TOKEN", "")
     monkeypatch.setattr(service_main, "PREVIEW_AUTH_USER", "reviewer")
     monkeypatch.setattr(service_main, "PREVIEW_AUTH_PASSWORD", "p" * 40)
-    assert client.get("/portal/").status_code == 401
+    protected = client.get("/portal/", follow_redirects=False)
+    assert protected.status_code == 303
+    assert protected.headers["location"] == "/login"
     credential = base64.b64encode(("reviewer:" + "p" * 40).encode()).decode()
     headers = {"Authorization": f"Basic {credential}"}
     assert client.get("/portal/", headers=headers).status_code == 200
     assert client.get("/api/v1/model", headers=headers).status_code == 200
+
+
+def test_production_preview_form_issues_secure_session_cookie(monkeypatch):
+    monkeypatch.setattr(service_main, "APP_ENV", "production")
+    monkeypatch.setattr(service_main, "API_AUTH_TOKEN", "")
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_USER", "reviewer")
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_PASSWORD", "p" * 40)
+    login = client.post("/login", data={"username": "reviewer", "password": "p" * 40},
+                        follow_redirects=False)
+    assert login.status_code == 303
+    assert login.headers["location"] == "/portal/"
+    assert "HttpOnly" in login.headers["set-cookie"]
+    assert "Secure" in login.headers["set-cookie"]
+    assert "SameSite=strict" in login.headers["set-cookie"]
+    session_cookie = login.cookies[service_main.PREVIEW_SESSION_COOKIE]
+    cookie_header = {"Cookie": f"{service_main.PREVIEW_SESSION_COOKIE}={session_cookie}"}
+    assert client.get("/portal/", headers=cookie_header).status_code == 200
+    assert client.get("/api/v1/model", headers=cookie_header).status_code == 200
+    rejected = client.post("/login", data={"username": "reviewer", "password": "wrong"})
+    assert rejected.status_code == 401
+    assert "not accepted" in rejected.text
+
+
+def test_preview_session_expiry_and_tampering(monkeypatch):
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_USER", "reviewer")
+    monkeypatch.setattr(service_main, "PREVIEW_AUTH_PASSWORD", "p" * 40)
+    token = service_main.create_preview_session(now=1000)
+    assert service_main.valid_preview_session(token, now=1001)
+    assert not service_main.valid_preview_session(
+        token, now=1000 + service_main.PREVIEW_SESSION_SECONDS + 1)
+    assert not service_main.valid_preview_session(token + "x", now=1001)
 
 
 def test_grid_schema_rejects_unrecognized_crs_singular_transform_and_non_boolean_mask():

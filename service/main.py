@@ -9,6 +9,7 @@ import base64
 import binascii
 import json
 import hashlib
+import hmac
 import logging
 import math
 import os
@@ -16,6 +17,7 @@ import re
 import secrets
 import time
 import uuid
+from urllib.parse import parse_qs
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated, Any, Literal
@@ -26,7 +28,7 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, StrictBool, field_validator, model_validator
 from pyproj import CRS, Geod, Transformer
-from starlette.responses import FileResponse, JSONResponse, RedirectResponse
+from starlette.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from ml.identity import model_artifact_sha256, model_fingerprint
 from ml.verify_initial_model import verify_initial_model
 from ml.summarize_research_transect import summarize as summarize_research_transect
@@ -39,6 +41,7 @@ from service.review_workflow import GATES, append_decision, create_case, get_cas
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTAL_ROOT = ROOT / "portal" if (ROOT / "portal" / "index.html").is_file() else ROOT
+LOGIN_ROOT = ROOT / "portal" if (ROOT / "portal" / "login.html").is_file() else ROOT
 PORTAL_ASSETS = frozenset({"index.html", "app.js", "review-workflow.js", "experience.js", "marine-interactions.js", "styles.css", "refinement.css", "product.css", "cinematic.css", "orbital.css", "marine.css", "polar-orbit.png", "orbital-satellite.png", "antarctic-sea.png", "hero-iceberg.png", "indian-research-vessel.png"})
 MODEL_PATH = Path(os.environ.get("SOUTHERN_PASSAGE_MODEL", ROOT / "models" / "sic_g02202_1989_2016.json"))
 MODEL_SELECTION_PATH = Path(os.environ.get("SOUTHERN_PASSAGE_MODEL_SELECTION", ROOT / "config" / "initial-model.json"))
@@ -74,6 +77,8 @@ APP_ENV = os.getenv("APP_ENV", "development").strip().lower()
 API_AUTH_TOKEN = os.getenv("SOUTHERN_PASSAGE_API_TOKEN", "")
 PREVIEW_AUTH_USER = os.getenv("SOUTHERN_PASSAGE_PREVIEW_USER", "")
 PREVIEW_AUTH_PASSWORD = os.getenv("SOUTHERN_PASSAGE_PREVIEW_PASSWORD", "")
+PREVIEW_SESSION_COOKIE = "sp_session"
+PREVIEW_SESSION_SECONDS = 8 * 60 * 60
 REVIEW_WORKFLOW_ENABLED = os.getenv("SOUTHERN_PASSAGE_REVIEW_ENABLED", "false").lower() in {"1", "true", "yes"}
 REVIEW_ASSERTION_SECRET_FILE = os.getenv("SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET_FILE", "")
 if REVIEW_ASSERTION_SECRET_FILE and os.getenv("SOUTHERN_PASSAGE_REVIEW_ASSERTION_SECRET"):
@@ -151,6 +156,42 @@ def portal_redirect() -> RedirectResponse:
     return RedirectResponse(url="/portal/", status_code=308)
 
 
+def preview_login_page(error: bool = False) -> HTMLResponse:
+    message = '<p class="login-error" role="alert">The username or password was not accepted.</p>' if error else ""
+    document = (LOGIN_ROOT / "login.html").read_text(encoding="utf-8").replace("{{ERROR}}", message)
+    return HTMLResponse(document, status_code=401 if error else 200,
+                        headers={"Cache-Control": "no-store"})
+
+
+@app.get("/login", include_in_schema=False)
+def preview_login() -> HTMLResponse:
+    return preview_login_page()
+
+
+@app.post("/login", include_in_schema=False)
+async def preview_login_submit(request: Request):
+    form = parse_qs((await request.body()).decode("utf-8", errors="replace"), keep_blank_values=True)
+    username = form.get("username", [""])[0]
+    password = form.get("password", [""])[0]
+    if not (PREVIEW_AUTH_USER and PREVIEW_AUTH_PASSWORD
+            and secrets.compare_digest(username, PREVIEW_AUTH_USER)
+            and secrets.compare_digest(password, PREVIEW_AUTH_PASSWORD)):
+        return preview_login_page(error=True)
+    response = RedirectResponse(url="/portal/", status_code=303)
+    response.set_cookie(PREVIEW_SESSION_COOKIE, create_preview_session(),
+                        max_age=PREVIEW_SESSION_SECONDS, secure=APP_ENV == "production",
+                        httponly=True, samesite="strict", path="/")
+    return response
+
+
+@app.post("/logout", include_in_schema=False)
+def preview_logout() -> RedirectResponse:
+    response = RedirectResponse(url="/login", status_code=303)
+    response.delete_cookie(PREVIEW_SESSION_COOKIE, path="/", secure=APP_ENV == "production",
+                           httponly=True, samesite="strict")
+    return response
+
+
 @app.get("/portal/", include_in_schema=False)
 def portal_index() -> FileResponse:
     """Serve only the bundled portal shell; the identity gateway protects this path."""
@@ -164,6 +205,13 @@ def portal_asset(asset_name: str) -> FileResponse:
         raise HTTPException(status_code=404, detail="Portal asset not found.")
     return FileResponse(PORTAL_ROOT / asset_name, headers={"Cache-Control": "no-cache",
                          "X-Content-Type-Options": "nosniff"})
+
+
+@app.get("/login.css", include_in_schema=False)
+def preview_login_styles() -> FileResponse:
+    return FileResponse(LOGIN_ROOT / "login.css", media_type="text/css",
+                        headers={"Cache-Control": "public, max-age=3600",
+                                 "X-Content-Type-Options": "nosniff"})
 
 
 @app.middleware("http")
@@ -187,11 +235,14 @@ async def protect_api_routes(request, call_next):
         scheme, _, credential = supplied.partition(" ")
         bearer_ok = bool(API_AUTH_TOKEN and scheme.lower() == "bearer" and credential
                          and secrets.compare_digest(credential.encode("utf-8"), API_AUTH_TOKEN.encode("utf-8")))
-        basic_ok = valid_preview_basic_auth(scheme, credential)
-        if not (bearer_ok or basic_ok):
-            response = JSONResponse(
-                {"detail": "A valid service credential is required."}, status_code=401,
-                headers={"WWW-Authenticate": 'Basic realm="Southern Passage", charset="UTF-8"'})
+        preview_ok = valid_preview_basic_auth(scheme, credential) or valid_preview_session(
+            request.cookies.get(PREVIEW_SESSION_COOKIE, ""))
+        if not (bearer_ok or preview_ok):
+            if is_production_portal and request.method in {"GET", "HEAD"}:
+                response = RedirectResponse(url="/login", status_code=303)
+            else:
+                response = JSONResponse(
+                    {"detail": "A valid service credential is required."}, status_code=401)
     if response is None:
         try:
             response = await call_next(request)
@@ -230,6 +281,31 @@ def valid_preview_basic_auth(scheme: str, credential: str) -> bool:
     username, separator, password = decoded.partition(":")
     return bool(separator and secrets.compare_digest(username, PREVIEW_AUTH_USER)
                 and secrets.compare_digest(password, PREVIEW_AUTH_PASSWORD))
+
+
+def create_preview_session(now: int | None = None) -> str:
+    """Create a short-lived, signed preview session without storing credentials."""
+    expires = (int(time.time()) if now is None else now) + PREVIEW_SESSION_SECONDS
+    payload = f"{PREVIEW_AUTH_USER}:{expires}"
+    signature = hmac.new(PREVIEW_AUTH_PASSWORD.encode("utf-8"), payload.encode("utf-8"),
+                         hashlib.sha256).hexdigest()
+    return f"{expires}.{signature}"
+
+
+def valid_preview_session(token: str, now: int | None = None) -> bool:
+    if not (PREVIEW_AUTH_USER and PREVIEW_AUTH_PASSWORD and token):
+        return False
+    expires_text, separator, supplied_signature = token.partition(".")
+    if not separator or not expires_text.isdigit():
+        return False
+    expires = int(expires_text)
+    current = int(time.time()) if now is None else now
+    if expires < current or expires > current + PREVIEW_SESSION_SECONDS:
+        return False
+    payload = f"{PREVIEW_AUTH_USER}:{expires}"
+    expected = hmac.new(PREVIEW_AUTH_PASSWORD.encode("utf-8"), payload.encode("utf-8"),
+                        hashlib.sha256).hexdigest()
+    return secrets.compare_digest(supplied_signature, expected)
 
 
 def log_api_request(request, request_id: str, status_code: int, started: float) -> None:

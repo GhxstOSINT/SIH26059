@@ -7,6 +7,7 @@ COPY service ./service
 COPY ml ./ml
 COPY config ./config
 COPY index.html app.js review-workflow.js experience.js marine-interactions.js styles.css refinement.css product.css cinematic.css orbital.css marine.css polar-orbit.png orbital-satellite.png antarctic-sea.png hero-iceberg.png indian-research-vessel.png ./portal/
+COPY portal/login.html portal/login.css ./portal/
 COPY models ./models
 COPY outputs ./outputs
 RUN mkdir -p /app/state && chown 10001:10001 /app/state

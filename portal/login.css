@@ -1,0 +1,22 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #041720; color: #ecf8f7; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; min-height: 100vh; min-height: 100svh; background: radial-gradient(circle at 20% 0%, #124553 0, transparent 42%), linear-gradient(155deg, #03141d, #082936 60%, #061b25); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .25; background: linear-gradient(110deg, transparent 35%, rgba(159,240,225,.14) 50%, transparent 65%); animation: tide 8s ease-in-out infinite alternate; }
+.login-shell { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; padding: max(24px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left)); }
+.login-card { width: min(100%, 430px); padding: clamp(28px, 7vw, 48px); border: 1px solid rgba(169,235,224,.22); border-radius: 26px; background: rgba(5,31,41,.88); box-shadow: 0 30px 80px rgba(0,0,0,.34); backdrop-filter: blur(18px); }
+.mark { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 30px; border: 1px solid rgba(171,240,226,.35); border-radius: 50%; }
+.mark span { width: 12px; height: 18px; border-radius: 55% 55% 60% 60%; background: #9fe8da; transform: rotate(42deg); box-shadow: 0 0 22px rgba(159,232,218,.48); }
+.eyebrow, .support { margin: 0; color: #9bd9cf; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+h1 { margin: 10px 0 12px; font-size: clamp(2rem, 8vw, 3.2rem); font-weight: 500; letter-spacing: -.055em; line-height: .98; }
+.intro { margin: 0 0 30px; color: #b7d0d2; line-height: 1.55; }
+form { display: grid; gap: 10px; }
+label { margin-top: 8px; color: #c8dddd; font-size: .82rem; font-weight: 650; }
+input { width: 100%; min-height: 50px; padding: 0 15px; border: 1px solid rgba(174,230,222,.24); border-radius: 13px; background: #061b25; color: #f4ffff; font: inherit; outline: none; }
+input:focus { border-color: #9fe8da; box-shadow: 0 0 0 4px rgba(159,232,218,.1); }
+button { min-height: 52px; margin-top: 15px; border: 0; border-radius: 13px; background: #a7eadf; color: #062029; font: inherit; font-weight: 750; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+button:hover { background: #c4f5ec; transform: translateY(-2px); }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.login-error { padding: 12px 14px; border: 1px solid rgba(255,150,140,.4); border-radius: 12px; background: rgba(142,43,40,.22); color: #ffd2cc; font-size: .86rem; }
+.support { margin-top: 26px; color: #6f9ca0; font-size: .62rem; text-align: center; }
+@keyframes tide { to { transform: translate3d(5%, 1%, 0) scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { body::before, button { animation: none; transition: none; } }
