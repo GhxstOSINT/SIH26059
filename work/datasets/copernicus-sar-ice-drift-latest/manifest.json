@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cmems_sat-si_glo_drift_nrt_south_d",
+  "product_id": "SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_006",
+  "product_url": "https://data.marine.copernicus.eu/product/SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_006/description",
+  "dataset_title": "Antarctic Sea Ice Drift, L4 SAR, 10km daily",
+  "provider": "Copernicus Marine / DTU Space",
+  "source_file": "peninsula-weddell-sar-drift-20261011-12.nc",
+  "source_bytes": 3428058,
+  "source_sha256": "ac2e11f109190f995a94315f8f9f172a7e4512bf680d01fd55d535f34ffc58b1",
+  "inventory_created_at_utc": "2026-10-12T10:35:38.833601+00:00",
+  "timestamps_utc": [
+    "2026-10-11T00:00:00Z",
+    "2026-10-11T12:00:00Z"
+  ],
+  "grid": {
+    "crs": "EPSG:4326",
+    "shape": [
+      2,
+      200,
+      530
+    ],
+    "bbox_west_east_south_north": [
+      -72.90000000000609,
+      -20.000000000009095,
+      -77.90000000000069,
+      -58.00000000000182
+    ],
+    "nominal_resolution_km": 10
+  },
+  "valid_vector_cells": 27587,
+  "valid_vector_fraction": 0.13012735849056603,
+  "displacement_km": {
+    "median": 8.266963005065918,
+    "p95": 20.470317840576172
+  },
+  "quality_fields": [
+    "dX_std",
+    "dY_std",
+    "qos_mean_dX",
+    "qos_mean_dY",
+    "qos_stddev_dX",
+    "qos_stddev_dY",
+    "status_flag"
+  ],
+  "catalog_product_status": "preoperational",
+  "decision_status": "research_motion_evidence_only",
+  "limitations": [
+    "This is sea-ice displacement, not iceberg displacement or vessel drift.",
+    "The provider labels the file metadata preoperational; it is not an approved navigation product.",
+    "Spatially correlated grid cells are not independent route outcomes.",
+    "The file's global start/stop attributes can lag the aggregated coordinate range; verified time coordinates govern this subset."
+  ]
+}

@@ -2,6 +2,12 @@
 
 **Sea-ice context, route scenarios, and evidence review for Southern Ocean voyages.** Southern Passage brings a vessel-facing map, dated satellite observations, research forecasts, and traceable review cases into one web application.
 
+The release data stack combines checksum-manifested NOAA VIIRS observations
+with the current operational EUMETSAT OSI SAF AMSR3 Antarctic concentration
+product. AMSR3 retains provider screening flags and retrieval-uncertainty
+components, allowing future training and evaluation to weight observation
+quality instead of treating every satellite cell as equally reliable.
+
 ![Southern Passage opening](deliverables/ppt_screenshots_2026-10-05/01_opening.png)
 
 > **Release boundary:** this is a deployable *research decision-support product*, not a certified navigation system. The animated voyage and its route metrics are illustrative; archived observations are dated; the selected model is a one-day sea-ice-concentration research baseline. Southern Passage never issues route or vessel clearance.
@@ -10,6 +16,8 @@
 
 - Explore three illustrative Antarctic Peninsula route alternatives and scrub a seven-day simulated vessel replay.
 - Inspect a georeferenced NOAA VIIRS sea-ice observation with its acquisition date, source status, and provenance.
+- Inspect API-level provenance and quality summaries for the latest original OSI-408-g AMSR3 Southern Hemisphere files.
+- Inspect a checksum-verified, bounded Copernicus Sentinel-1 SAR sea-ice displacement subset with its quality fields and explicit pre-operational/research-only status.
 - Compare user-specified paths against an observed ice grid, with coverage, exposure, fixed-path sensitivity, and research-only travel-time assumptions. Export a paired JSON/GeoJSON evidence packet.
 - Inspect checksum-pinned model and retrospective evaluation results. The interface distinguishes observations, scenario graphics, and research estimates.
 - Prepare review cases and independent sign-offs **only when** an approved identity gateway, roles, and persistent review store are connected. The local review panel otherwise fails closed.
@@ -30,7 +38,7 @@ FastAPI service ──► provenance-checked observation catalog
 Health, readiness, audit correlation, and evidence exports
 ```
 
-The container runs as a non-root user with hash-locked Python dependencies and a pinned base image. The browser assets and API are served from one origin. The release image includes only the small, checksum-manifested NOAA PolarWatch VIIRS research subsets used by the observation workspace; future/live acquisitions remain external and require persistent storage. The optional SQLite review ledger needs persistent storage and verified backups.
+The container runs as a non-root user with hash-locked Python dependencies and a pinned base image. The browser assets and API are served from one origin. The release image includes checksum-manifested NOAA PolarWatch VIIRS research subsets, the latest three original OSI SAF AMSR3 observation files, and a bounded current Copernicus SAR sea-ice displacement subset; subsequent automated acquisitions require persistent storage. The optional SQLite review ledger needs persistent storage and verified backups.
 
 ## Evidence at a glance
 

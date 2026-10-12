@@ -1,0 +1,158 @@
+{
+  "accessed_at_utc": "2026-10-12T10:09:21.641805+00:00",
+  "complete": true,
+  "dataset_id": "EUMETSAT-OSI-408-g",
+  "dataset_title": "Operational Southern Hemisphere AMSR3 Sea Ice Concentration (OSI-408-g)",
+  "decision_status": "observational_evidence_only",
+  "files": [
+    {
+      "bytes": 7419762,
+      "file": "ice_conc_sh_polstere-100_amsr3_202610091200.nc",
+      "sha256": "49d05de0bd7a2da3911d2efe334ce1b94eb9ffd77b1a843208a043ddbb974f79",
+      "timestamp": "2026-10-09T12:00:00+00:00",
+      "url": "https://thredds.met.no/thredds/fileServer/osisaf/met.no/ice/amsr2_conc/2026/10/ice_conc_sh_polstere-100_amsr3_202610091200.nc",
+      "validation": {
+        "grid_spacing_km": [
+          10.0,
+          10.0
+        ],
+        "nominal_cells": 165435,
+        "nominal_fraction": 0.2523028824157389,
+        "nominal_total_uncertainty_percent": {
+          "median": 13.2529296875,
+          "p90": 13.2900390625
+        },
+        "product_version": "4.1",
+        "projection": {
+          "area_extent": "'(-3950000.0, -3950000.0, 3950000.0, 4350000.0)'",
+          "false_easting": "0.0",
+          "false_northing": "0.0",
+          "grid_mapping_name": "polar_stereographic",
+          "latitude_of_projection_origin": "-90.0",
+          "proj4_string": "+proj=stere +a=6378273 +b=6356889.44891 +lat_0=-90 +lat_ts=-70 +lon_0=0",
+          "semi_major_axis": "6378273.0",
+          "semi_minor_axis": "6356889.44891",
+          "standard_parallel": "-70.0",
+          "straight_vertical_longitude_from_pole": "0.0"
+        },
+        "shape": [
+          830,
+          790
+        ],
+        "sic_percent_range": [
+          0.0,
+          100.0
+        ],
+        "software_version": "3.0.35",
+        "timestamp_utc": "2026-10-09T12:00:00Z",
+        "valid_sic_cells": 515139,
+        "valid_sic_fraction": 0.7856321488485588
+      }
+    },
+    {
+      "bytes": 7394974,
+      "file": "ice_conc_sh_polstere-100_amsr3_202610101200.nc",
+      "sha256": "e21cf2c4e486fe7215acce3ac55636a4680c6b4974b9362c250bb62e40e86205",
+      "timestamp": "2026-10-10T12:00:00+00:00",
+      "url": "https://thredds.met.no/thredds/fileServer/osisaf/met.no/ice/amsr2_conc/2026/10/ice_conc_sh_polstere-100_amsr3_202610101200.nc",
+      "validation": {
+        "grid_spacing_km": [
+          10.0,
+          10.0
+        ],
+        "nominal_cells": 165739,
+        "nominal_fraction": 0.2527665090742718,
+        "nominal_total_uncertainty_percent": {
+          "median": 13.251953125,
+          "p90": 13.29296875
+        },
+        "product_version": "4.1",
+        "projection": {
+          "area_extent": "'(-3950000.0, -3950000.0, 3950000.0, 4350000.0)'",
+          "false_easting": "0.0",
+          "false_northing": "0.0",
+          "grid_mapping_name": "polar_stereographic",
+          "latitude_of_projection_origin": "-90.0",
+          "proj4_string": "+proj=stere +a=6378273 +b=6356889.44891 +lat_0=-90 +lat_ts=-70 +lon_0=0",
+          "semi_major_axis": "6378273.0",
+          "semi_minor_axis": "6356889.44891",
+          "standard_parallel": "-70.0",
+          "straight_vertical_longitude_from_pole": "0.0"
+        },
+        "shape": [
+          830,
+          790
+        ],
+        "sic_percent_range": [
+          0.0,
+          100.0
+        ],
+        "software_version": "3.0.35",
+        "timestamp_utc": "2026-10-10T12:00:00Z",
+        "valid_sic_cells": 515139,
+        "valid_sic_fraction": 0.7856321488485588
+      }
+    },
+    {
+      "bytes": 7491567,
+      "file": "ice_conc_sh_polstere-100_amsr3_202610111200.nc",
+      "sha256": "43029c580f6631a3c08ae66bc0db38f2aa8509588cb4c912779062391befbbc1",
+      "timestamp": "2026-10-11T12:00:00+00:00",
+      "url": "https://thredds.met.no/thredds/fileServer/osisaf/met.no/ice/amsr2_conc/2026/10/ice_conc_sh_polstere-100_amsr3_202610111200.nc",
+      "validation": {
+        "grid_spacing_km": [
+          10.0,
+          10.0
+        ],
+        "nominal_cells": 165187,
+        "nominal_fraction": 0.2519246606679884,
+        "nominal_total_uncertainty_percent": {
+          "median": 13.251953125,
+          "p90": 13.2900390625
+        },
+        "product_version": "4.1",
+        "projection": {
+          "area_extent": "'(-3950000.0, -3950000.0, 3950000.0, 4350000.0)'",
+          "false_easting": "0.0",
+          "false_northing": "0.0",
+          "grid_mapping_name": "polar_stereographic",
+          "latitude_of_projection_origin": "-90.0",
+          "proj4_string": "+proj=stere +a=6378273 +b=6356889.44891 +lat_0=-90 +lat_ts=-70 +lon_0=0",
+          "semi_major_axis": "6378273.0",
+          "semi_minor_axis": "6356889.44891",
+          "standard_parallel": "-70.0",
+          "straight_vertical_longitude_from_pole": "0.0"
+        },
+        "shape": [
+          830,
+          790
+        ],
+        "sic_percent_range": [
+          0.0,
+          100.0
+        ],
+        "software_version": "3.0.35",
+        "timestamp_utc": "2026-10-11T12:00:00Z",
+        "valid_sic_cells": 515139,
+        "valid_sic_fraction": 0.7856321488485588
+      }
+    }
+  ],
+  "limitations": [
+    "Retrieval uncertainty is observation uncertainty, not forecast uncertainty or passage-safety probability.",
+    "Ten-kilometre passive-microwave cells cannot resolve individual icebergs or narrow leads.",
+    "Status flags must be retained and screened before model training or scoring.",
+    "SHA-256 proves local byte integrity, not operational fitness or ministry approval."
+  ],
+  "product_url": "https://osi-saf.eumetsat.int/products/osi-408-g",
+  "provider": "EUMETSAT OSI SAF / MET Norway",
+  "schema_version": 1,
+  "selection": {
+    "grid_spacing_km": 10,
+    "hemisphere": "Southern",
+    "instrument": "AMSR3",
+    "latest_files": 3,
+    "platform": "GOSAT-GW"
+  },
+  "source_catalog": "https://thredds.met.no/thredds/catalog/osisaf/met.no/ice/amsr2_conc"
+}

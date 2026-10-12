@@ -34,6 +34,63 @@ def test_health_and_readiness():
     assert readiness["mode"] == "research-only"
 
 
+def test_amsr3_status_rechecks_manifested_bytes(tmp_path, monkeypatch):
+    source = tmp_path / "amsr3"
+    source.mkdir()
+    payload = b"immutable operational observation"
+    data = source / "latest.nc"
+    data.write_bytes(payload)
+    digest = __import__("hashlib").sha256(payload).hexdigest()
+    manifest = {
+        "schema_version": 1, "complete": True, "dataset_id": "EUMETSAT-OSI-408-g",
+        "dataset_title": "Operational AMSR3", "provider": "EUMETSAT OSI SAF / MET Norway",
+        "product_url": "https://osi-saf.eumetsat.int/products/osi-408-g",
+        "decision_status": "observational_evidence_only", "limitations": ["not navigation guidance"],
+        "files": [{"file": data.name, "bytes": len(payload), "sha256": digest,
+                   "timestamp": "2026-10-11T12:00:00+00:00",
+                   "validation": {"shape": [830, 790], "nominal_fraction": 0.5,
+                                  "nominal_total_uncertainty_percent": {"median": 3.0, "p90": 7.0}}}],
+    }
+    (source / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(service_main, "AMSR3_OBSERVATIONS_PATH", source)
+    result = client.get("/api/v1/observations/amsr3").json()
+    assert result["available"] is True
+    assert result["product_status"] == "operational"
+    assert result["quality_fields"] == ["status_flag", "total_uncertainty", "smearing_uncertainty",
+                                        "algorithm_uncertainty"]
+    data.write_bytes(payload + b"changed")
+    assert client.get("/api/v1/observations/amsr3").json()["available"] is False
+
+
+def test_sar_drift_status_rechecks_manifested_bytes(tmp_path, monkeypatch):
+    source = tmp_path / "sar"
+    source.mkdir()
+    payload = b"bounded current SAR motion subset"
+    data = source / "drift.nc"
+    data.write_bytes(payload)
+    digest = __import__("hashlib").sha256(payload).hexdigest()
+    manifest = {
+        "schema_version": 1, "dataset_id": "cmems_sat-si_glo_drift_nrt_south_d",
+        "product_id": "SEAICE_GLO_SEAICE_L4_NRT_OBSERVATIONS_011_006",
+        "dataset_title": "Antarctic Sea Ice Drift, L4 SAR, 10km daily",
+        "provider": "Copernicus Marine / DTU Space", "product_url": "https://example.test",
+        "source_file": data.name, "source_bytes": len(payload), "source_sha256": digest,
+        "timestamps_utc": ["2026-10-11T00:00:00Z", "2026-10-11T12:00:00Z"],
+        "grid": {"shape": [2, 200, 530]}, "valid_vector_cells": 200,
+        "valid_vector_fraction": 0.5, "displacement_km": {"median": 1.0, "p95": 3.0},
+        "quality_fields": ["status_flag"], "catalog_product_status": "preoperational",
+        "decision_status": "research_motion_evidence_only", "limitations": ["not iceberg drift"],
+    }
+    (source / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(service_main, "SAR_DRIFT_PATH", source)
+    result = client.get("/api/v1/observations/sar-ice-drift").json()
+    assert result["available"] is True
+    assert result["catalog_product_status"] == "preoperational"
+    assert result["decision_status"] == "research_motion_evidence_only"
+    data.write_bytes(payload + b"changed")
+    assert client.get("/api/v1/observations/sar-ice-drift").json()["available"] is False
+
+
 def test_glo12_archive_status_fails_closed_when_missing(tmp_path, monkeypatch):
     monkeypatch.setattr(service_main, "GLO12_FORECAST_ROOT", tmp_path / "absent")
     response = client.get("/api/v1/forecast-runs/glo12/status")

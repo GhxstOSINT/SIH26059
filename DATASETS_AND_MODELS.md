@@ -1,5 +1,43 @@
 # Southern Passage: data, papers, and model plan
 
+## Operational AMSR3 observation layer (updated 2026-10-12)
+
+Southern Passage now acquires the original Southern Hemisphere OSI SAF
+**OSI-408-g** files from MET Norway's official THREDDS file service. This is the
+operational GOSAT-GW **AMSR3** Level-3 sea-ice concentration product introduced
+on 1 September 2026. The checked-in release sample contains the three newest
+provider files available at acquisition time, ending at 2026-10-11 12:00 UTC.
+Each 10 km field retains `ice_conc`, `status_flag`, `total_uncertainty`,
+`smearing_uncertainty`, and `algorithm_uncertainty`; the original NetCDF bytes,
+source URL, validation summary, size, and SHA-256 are recorded in a manifest.
+
+Refresh reproducibly with:
+
+```powershell
+work\convlstm-env\Scripts\python.exe -m ml.fetch_amsr3 --days 3
+```
+
+`GET /api/v1/observations/amsr3` rehashes every mounted file before exposing its
+provenance and quality summary. Retrieval uncertainty is not forecast
+uncertainty, and 10 km passive-microwave data cannot identify individual
+icebergs or narrow leads. The layer is therefore observational evidence and an
+independent model-verification source, never route clearance.
+
+## Current Sentinel-1 SAR ice-motion evidence (updated 2026-10-12)
+
+The frozen Peninsula–Weddell envelope now also has a current bounded subset of
+Copernicus Marine's `cmems_sat-si_glo_drift_nrt_south_d`: Antarctic L4 SAR
+ice drift at nominal 10 km resolution. The acquired 11 October fields retain
+mean x/y displacement, component standard deviations, status flags, sample
+counts, and buoy-comparison quality summaries. `ml/inventory_sar_drift.py`
+validates ranges, dimensions, time coordinates, and SHA-256 before use.
+
+This is an advanced motion feature for research-model comparison, not an
+automatic promotion: the source file labels itself `preoperational`, sea-ice
+motion is not iceberg motion, and grid cells are not vessel outcomes. A model
+candidate may use it only in chronological tests against the same as-issued
+persistence baseline and frozen routes.
+
 This is a research and integration guide for SIH26059, not a claim that any forecast or route is operationally validated. The browser's default map and routes remain illustrative; its separate observation mode displays actual NOAA S-NPP VIIRS SIC from the checksummed regional subset described below. Research baselines have been trained from real Antarctic SIC NetCDF data and installed for the API; they are not operational forecasts. A NOAA/NSIDC G02202 v6 archive for 1989-2016 has been acquired, verified against its 28-file SHA-256 manifest, and used for chronological training, a strict 2017-2024 holdout, and ten expanding-window hindcast folds with ground-area-weighted reporting. The model's advantage over persistence remains only about 0.2-0.4% on these retrospective tests, with some regional/seasonal regressions; the limited 2024 VIIRS comparison is not grid-matched. None of this establishes forecast or route skill.
 
 ## Initial model selection
@@ -33,11 +71,11 @@ The readiness screen counts **independent bulletin dates**, not millions of corr
 
 ### Daily research collection
 
-Update, 2026-10-03: After a logging/exit-code fix, the Windows scheduled task completed with result code 0 and archived all four leads. The latest daily status still has zero matched future outcomes.
+Update, 2026-10-12: the archive contains the original 1/3/5/7-day files for the 12 October bulletin, and all eligible observations through 11 October have been matched. The frozen transect evidence now has 12 post-freeze verified bulletin/lead cases with zero rejected reports. This is enough to show the end-to-end prospective measurement loop, but not enough for uncertainty calibration.
 
 The frozen [northern Weddell research transect](config/research-transect-weddell-ice-gradient.json) is sampled geodesically every 2 km. It was selected after inspecting the 2026-10-01 observation; the [selection check](outputs/research-transect-weddell-freeze-check.json) reports 161 distinct nominal cells from 400 sampled positions and observed concentration of 25.8–100%. That is a coverage check, not model skill. **Only bulletins from 2026-10-04 onward are eligible for prospective transect scoring.** The verification workflow records matched-cell coverage, MAE, RMSE, bias, and, where available, an as-issued persistence comparison; it binds the route and source hashes. This line is strictly research-only, is not a water-only vessel passage, and has no navigation clearance or validated route-risk interpretation.
 
-`ml/summarize_research_transect.py` now recomputes route-line metrics from checksum-bound matched cell arrays, rejects altered or duplicate reports, excludes pre-freeze bulletins, and aggregates by **independent bulletin date** rather than treating nearby cells as independent voyages. It reports coverage, mean bulletin MAE, 15% ice-edge disagreement, and paired improvement versus as-issued persistence. Once at least 30 earlier and 10 later adequately covered dates exist for a lead, it fits a 90% split-conformal absolute-error interval for **mean sea-ice concentration along this research line** on the earlier dates and evaluates empirical coverage on the later dates. Temporal dependence, seasonal drift, and changing source products can invalidate nominal interval guarantees; the held-out check is a research screen, not a calibrated vessel-hazard probability. The current [evidence snapshot](outputs/research-transect-prospective-evidence.json) contains **zero** matched cases, so all intervals remain absent and `uncertainty_calibrated`, `operator_decision_ready`, and `navigation_clearance` remain false. The daily cycle includes a freshly computed rollup in its status, and `/api/v1/research/transect-evidence` recomputes it for the portal.
+`ml/summarize_research_transect.py` now recomputes route-line metrics from checksum-bound matched cell arrays, rejects altered or duplicate reports, excludes pre-freeze bulletins, and aggregates by **independent bulletin date** rather than treating nearby cells as independent voyages. It reports coverage, mean bulletin MAE, 15% ice-edge disagreement, and paired improvement versus as-issued persistence. Once at least 30 earlier and 10 later adequately covered dates exist for a lead, it fits a 90% split-conformal absolute-error interval for **mean sea-ice concentration along this research line** on the earlier dates and evaluates empirical coverage on the later dates. Temporal dependence, seasonal drift, and changing source products can invalidate nominal interval guarantees; the held-out check is a research screen, not a calibrated vessel-hazard probability. The current [evidence snapshot](outputs/research-transect-prospective-evidence.json) contains **12** matched post-freeze cases: 5/4/2/1 independent bulletins at 1/3/5/7 days. All interval fields remain absent and `uncertainty_calibrated`, `operator_decision_ready`, and `navigation_clearance` remain false because the 30-fit-plus-10-holdout date gate has not been met. The daily cycle includes a freshly computed rollup in its status, and `/api/v1/research/transect-evidence` recomputes it for the portal.
 
 `ml/run_daily_forecast_cycle.py` combines the current-day original bulletin archive, two recent dated OSI-SAF observation captures, and retries of forecasts whose valid dates have passed. It is safe to rerun: existing source files are rehashed rather than replaced, and verification reports cannot be overwritten. The 2026-10-02 run captured 2026-09-30 and 2026-10-01 OSI-SAF Peninsula subsets; these were captured **after** the 2026-10-02 bulletin and are therefore not valid as-issued persistence inputs for that bulletin. Future comparisons use a previous observation only if its capture time predates the forecast bulletin's 00 UTC base time. No baseline is invented if such a capture does not exist.
 
@@ -47,7 +85,7 @@ Run this once after each new UTC bulletin is available, and retry later if the o
 work\convlstm-env\Scripts\python.exe -m ml.run_daily_forecast_cycle --status-output outputs\glo12-daily-cycle-latest.json
 ```
 
-The configured Copernicus Marine login must be available to the toolbox; do not place credentials in arguments, source, or logs. An unattended ministry deployment still needs an approved scheduler, secret manager, network egress, storage retention, alerts, and an owner for failed runs. This command alone does **not** create an operating-system scheduled task. The earlier 65–55°W, 68–64°S Peninsula samples remain untouched. The daily workflow now uses a separately named, frozen **Peninsula–Weddell research envelope** of 73–20°W and 78–58°S, defined and source-linked in [`config/pilot-verification-region.json`](config/pilot-verification-region.json). On 2026-10-02 it captured the 2026-09-30 and 2026-10-01 fields there (each 200 × 530 cells, with 72,091 nominal cells on the latter date). These cells are not independent voyages or a vessel corridor. [Rothera's public position](https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rothera/rothera-air-facility/) and [Halley's public position](https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/halley/) provide context only: the interface route is schematic, a direct line is not a water-only route, and Halley moves with its ice shelf. The [latest daily status](outputs/glo12-daily-cycle-latest.json) still reports zero matched future outcomes.
+The configured Copernicus Marine login must be available to the toolbox; do not place credentials in arguments, source, or logs. An unattended ministry deployment still needs an approved scheduler, secret manager, network egress, storage retention, alerts, and an owner for failed runs. This command alone does **not** create an operating-system scheduled task. The earlier 65–55°W, 68–64°S Peninsula samples remain untouched. The daily workflow now uses a separately named, frozen **Peninsula–Weddell research envelope** of 73–20°W and 78–58°S, defined and source-linked in [`config/pilot-verification-region.json`](config/pilot-verification-region.json). On 2026-10-02 it captured the 2026-09-30 and 2026-10-01 fields there (each 200 × 530 cells, with 72,091 nominal cells on the latter date). These cells are not independent voyages or a vessel corridor. [Rothera's public position](https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rothera/rothera-air-facility/) and [Halley's public position](https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/halley/) provide context only: the interface route is schematic, a direct line is not a water-only route, and Halley moves with its ice shelf. The [latest daily status](outputs/glo12-daily-cycle-latest.json) reports a cleared verification backlog and 12 post-freeze transect cases, while keeping every calibration and navigation gate false.
 
 On the current Windows development PC, `run_daily_forecast.ps1` has also been registered as the current-user task **Southern Passage Daily Forecast Collection** for 18:00 India Standard Time daily, starting 2026-10-03. It runs missed starts when available and retries failures three times at 30-minute intervals; the 2026-10-02 manual Task Scheduler run returned result code 0. It requires this Windows user to remain signed in, as well as network access and valid Copernicus credentials. The latest machine-readable status is `outputs/glo12-daily-cycle-latest.json`; individual run logs are in `work/monitoring/daily-forecast/`. This is a development-PC collection schedule, not a ministry production scheduler or a guarantee of uninterrupted evidence capture. `register_daily_forecast_task.ps1` refuses to replace an existing task of the same name.
 

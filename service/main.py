@@ -60,6 +60,10 @@ VIIRS_SOURCE_STATUS_PATH = Path(os.environ.get("SOUTHERN_PASSAGE_VIIRS_SOURCE_ST
                                                ROOT / "work" / "monitoring" / "polarwatch-source-status.json"))
 ACTIVE_VIIRS_ROOT = Path(os.environ.get("SOUTHERN_PASSAGE_ACTIVE_VIIRS_ROOT", ROOT / "work" / "active-viirs"))
 ACTIVE_VIIRS_POLICY = Path(os.environ.get("SOUTHERN_PASSAGE_ACTIVE_VIIRS_POLICY", ROOT / "config" / "viirs-research-policy.example.json"))
+AMSR3_OBSERVATIONS_PATH = Path(os.environ.get(
+    "SOUTHERN_PASSAGE_AMSR3_DATA", ROOT / "work" / "datasets" / "osisaf-amsr3-operational-latest"))
+SAR_DRIFT_PATH = Path(os.environ.get(
+    "SOUTHERN_PASSAGE_SAR_DRIFT_DATA", ROOT / "work" / "datasets" / "copernicus-sar-ice-drift-latest"))
 CORRIDOR_EVALUATION_PATH = Path(os.environ.get("SOUTHERN_PASSAGE_CORRIDOR_EVALUATION", ROOT / "outputs" / "viirs-2024-frozen-corridor-evaluation.json"))
 MULTIPLATFORM_CORRIDOR_PATH = ROOT / "outputs" / "viirs-2024-multiplatform-frozen-corridors.json"
 MULTIPLATFORM_CORRIDOR_SHA256 = "19abdcc0c26658efd5cfd8cbf1686a1c5dfc6be18d485143d7e13a23e5ce38b9"
@@ -1035,6 +1039,100 @@ def list_sic_observations() -> dict[str, Any]:
 def viirs_source_status() -> dict[str, Any]:
     """Return the latest separately checked NOAA catalog metadata snapshot, if mounted."""
     return load_viirs_source_status()
+
+
+@app.get("/api/v1/observations/amsr3")
+def amsr3_observation_status() -> dict[str, Any]:
+    """Expose checksum-reverified operational AMSR3 observation provenance."""
+    unavailable = {"available": False, "dataset_id": "EUMETSAT-OSI-408-g",
+                   "decision_status": "observational_evidence_only",
+                   "message": "The operational AMSR3 observation archive is not mounted or failed integrity checks."}
+    try:
+        manifest_path = AMSR3_OBSERVATIONS_PATH / "manifest.json"
+        if not manifest_path.is_file() or manifest_path.is_symlink():
+            return unavailable
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if (manifest.get("schema_version") != 1 or manifest.get("complete") is not True
+                or manifest.get("dataset_id") != "EUMETSAT-OSI-408-g"
+                or manifest.get("decision_status") != "observational_evidence_only"
+                or not isinstance(manifest.get("files"), list) or not manifest["files"]):
+            return unavailable
+        observations = []
+        for record in manifest["files"]:
+            name = record.get("file")
+            digest = record.get("sha256")
+            if (not isinstance(name, str) or Path(name).name != name
+                    or not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest)):
+                return unavailable
+            path = AMSR3_OBSERVATIONS_PATH / name
+            if (not path.is_file() or path.is_symlink() or path.stat().st_size != record.get("bytes")
+                    or hashlib.sha256(path.read_bytes()).hexdigest() != digest):
+                return unavailable
+            validation = record.get("validation", {})
+            observations.append({"timestamp": record.get("timestamp"), "source_file": name,
+                                 "source_sha256": digest, "shape": validation.get("shape"),
+                                 "nominal_fraction": validation.get("nominal_fraction"),
+                                 "nominal_total_uncertainty_percent": validation.get(
+                                     "nominal_total_uncertainty_percent")})
+        observations.sort(key=lambda item: item["timestamp"] or "")
+        latest = observations[-1]
+        timestamp = datetime.fromisoformat(latest["timestamp"])
+        age_hours = max(0.0, (datetime.now(timezone.utc) - timestamp).total_seconds() / 3600)
+        return {"available": True, "dataset_id": manifest["dataset_id"],
+                "dataset_title": manifest.get("dataset_title"), "provider": manifest.get("provider"),
+                "product_url": manifest.get("product_url"), "instrument": "AMSR3",
+                "platform": "GOSAT-GW", "product_status": "operational",
+                "observation_count": len(observations), "latest_timestamp": latest["timestamp"],
+                "latest_age_hours": round(age_hours, 2), "observations": observations,
+                "quality_fields": ["status_flag", "total_uncertainty", "smearing_uncertainty",
+                                   "algorithm_uncertainty"],
+                "decision_status": "observational_evidence_only",
+                "limitations": manifest.get("limitations", [])}
+    except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+        return unavailable
+
+
+@app.get("/api/v1/observations/sar-ice-drift")
+def sar_ice_drift_status() -> dict[str, Any]:
+    """Expose checksum-reverified, bounded SAR sea-ice motion evidence."""
+    unavailable = {"available": False, "dataset_id": "cmems_sat-si_glo_drift_nrt_south_d",
+                   "decision_status": "research_motion_evidence_only",
+                   "message": "The current SAR sea-ice drift subset is not mounted or failed integrity checks."}
+    try:
+        manifest_path = SAR_DRIFT_PATH / "manifest.json"
+        if not manifest_path.is_file() or manifest_path.is_symlink():
+            return unavailable
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if (manifest.get("schema_version") != 1
+                or manifest.get("dataset_id") != "cmems_sat-si_glo_drift_nrt_south_d"
+                or manifest.get("decision_status") != "research_motion_evidence_only"):
+            return unavailable
+        name = manifest.get("source_file")
+        digest = manifest.get("source_sha256")
+        if (not isinstance(name, str) or Path(name).name != name
+                or not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest)):
+            return unavailable
+        source = SAR_DRIFT_PATH / name
+        if (not source.is_file() or source.is_symlink()
+                or source.stat().st_size != manifest.get("source_bytes")
+                or hashlib.sha256(source.read_bytes()).hexdigest() != digest):
+            return unavailable
+        timestamps = manifest.get("timestamps_utc")
+        if not isinstance(timestamps, list) or not timestamps:
+            return unavailable
+        return {"available": True, "dataset_id": manifest["dataset_id"],
+                "product_id": manifest.get("product_id"), "dataset_title": manifest.get("dataset_title"),
+                "provider": manifest.get("provider"), "product_url": manifest.get("product_url"),
+                "catalog_product_status": manifest.get("catalog_product_status"),
+                "timestamps_utc": timestamps, "latest_timestamp": timestamps[-1],
+                "grid": manifest.get("grid"), "valid_vector_cells": manifest.get("valid_vector_cells"),
+                "valid_vector_fraction": manifest.get("valid_vector_fraction"),
+                "displacement_km": manifest.get("displacement_km"),
+                "quality_fields": manifest.get("quality_fields", []), "source_sha256": digest,
+                "decision_status": manifest["decision_status"],
+                "limitations": manifest.get("limitations", [])}
+    except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+        return unavailable
 
 
 @app.get("/api/v1/icebergs/observed-tracks")
