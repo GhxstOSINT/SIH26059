@@ -1,4 +1,4 @@
-FROM python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+FROM python:3.15.0-slim-bookworm@sha256:0e019bbdfb5d9874cb2389f1c2884b64aa2ac97c99960b5bc521cef978c0617d
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PORT=8000
 ENV SOUTHERN_PASSAGE_VIIRS_DATA=/app/work/datasets/polarwatch-viirs \
     SOUTHERN_PASSAGE_VIIRS_SUPPLEMENT_DATA=/app/work/datasets/polarwatch-viirs-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa21-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa20-2026-sep01-21 \
