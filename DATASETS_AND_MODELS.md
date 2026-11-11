@@ -51,6 +51,18 @@ Update, 2026-10-03: The 00 UTC bulletin for 3 October has been captured with all
 The original [Copernicus Marine Global Ocean Physics Analysis and Forecast](https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description) 2-D daily NetCDF files for the 2026-10-02 00 UTC bulletin are mounted at `work/datasets/copernicus-glo12-forecast/`, with lead days 1, 3, 5, and 7. Each native filename contains `fcst`, its valid date, and `R20261002` bulletin date. `ml/archive_glo12_forecast.py` checks those against the NetCDF time and sea-ice fraction, then records SHA-256, provider modification time, and actual local capture time. `ml/fetch_glo12_forecast.py` fetches the same four leads of a specified bulletin through the official toolbox and refuses changed files or manifests. It does not read or print the saved account password.
 
 This is **one prospective bulletin**, not a verified forecasting result. The file is proven available no later than its recorded capture time, not necessarily at an earlier assumed publication time. The provider's catalogue replaces daily forecasts with newer forecasts and later analyses, so a historical date alone is not an as-issued forecast. The source's native grid extends only to 80°S and cannot resolve individual icebergs. These files are held outside the operator decision gate while observations accumulate and errors are calibrated by lead, season, and region. The uncertainty status remains `false`; no probability of safe passage exists.
+### Regional Parquet snapshot
+
+The repository includes a compact, checksummed Parquet derivative for the latest complete bulletin in `data/glo12-peninsula-weddell-parquet/`. It contains only the frozen Peninsula–Weddell bounding box and the four prospectively captured 1/3/5/7-day leads. The manifest records each original NetCDF filename and SHA-256. This crop is research context, not an iceberg-track dataset, and does not replace the original NetCDF files or the as-issued verification workflow.
+
+To export another complete bulletin after fetching its original NetCDF files and manifests, install the optional Parquet dependency and run:
+
+```powershell
+work\convlstm-env\Scripts\python.exe -m pip install -r requirements-parquet.txt
+work\convlstm-env\Scripts\python.exe -m tools.export_glo12_parquet --run-date YYYY-MM-DD --output-dir data\glo12-peninsula-weddell-parquet-YYYYMMDD
+```
+
+The Copernicus Marine product DOI is `10.48670/moi-00016`. Redistribution attribution is recorded in the package manifest and README.
 
 Install the optional official toolbox with `work\convlstm-env\Scripts\python.exe -m pip install -r requirements-forecast.txt`. To archive the next current-day bulletin using an existing Copernicus Marine login:
 

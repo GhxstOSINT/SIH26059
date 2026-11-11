@@ -1,0 +1,200 @@
+{
+  "attribution": "E.U. Copernicus Marine Service Information",
+  "compression": "Zstandard level 9",
+  "coordinates": [
+    "latitude",
+    "longitude"
+  ],
+  "dataset_id": "cmems_mod_glo_phy_anfc_0.083deg_P1D-m",
+  "dataset_version": "202406",
+  "fields": [
+    "sialb",
+    "siage",
+    "siconc",
+    "ist",
+    "sivelo",
+    "sithick",
+    "sisnthick",
+    "mlotst",
+    "pbo",
+    "sob",
+    "zos",
+    "tob",
+    "usi",
+    "vsi"
+  ],
+  "files": [
+    {
+      "bulletin_date": "2026-11-11",
+      "bytes": 5020937,
+      "columns": [
+        "latitude",
+        "longitude",
+        "sialb",
+        "siage",
+        "siconc",
+        "ist",
+        "sivelo",
+        "sithick",
+        "sisnthick",
+        "mlotst",
+        "pbo",
+        "sob",
+        "zos",
+        "tob",
+        "usi",
+        "vsi"
+      ],
+      "file": "glo12_rg_1d-m_20261112-20261112_2D_fcst_R20261111__peninsula-weddell.parquet",
+      "lead_days": 1,
+      "rows": 153517,
+      "sha256": "51cab9cde555bb7fed5cf852eafc0918ec797a6b7173b1403fb0beb774694a8c",
+      "source_bytes": 139723075,
+      "source_file": "glo12_rg_1d-m_20261112-20261112_2D_fcst_R20261111.nc",
+      "source_manifest": "glo12_rg_1d-m_20261112-20261112_2D_fcst_R20261111.manifest.json",
+      "source_sha256": "d5d5e12aa420bf0628f526116d7577d743a939285a6540fba4040991d93635c2",
+      "valid_date": "2026-11-12"
+    },
+    {
+      "bulletin_date": "2026-11-11",
+      "bytes": 5022853,
+      "columns": [
+        "latitude",
+        "longitude",
+        "sialb",
+        "siage",
+        "siconc",
+        "ist",
+        "sivelo",
+        "sithick",
+        "sisnthick",
+        "mlotst",
+        "pbo",
+        "sob",
+        "zos",
+        "tob",
+        "usi",
+        "vsi"
+      ],
+      "file": "glo12_rg_1d-m_20261114-20261114_2D_fcst_R20261111__peninsula-weddell.parquet",
+      "lead_days": 3,
+      "rows": 153517,
+      "sha256": "aa3f42da6f9bf4f5572500a83c3f5d9949c997b7f217f029dce2ae1fe6dcb7f3",
+      "source_bytes": 139926960,
+      "source_file": "glo12_rg_1d-m_20261114-20261114_2D_fcst_R20261111.nc",
+      "source_manifest": "glo12_rg_1d-m_20261114-20261114_2D_fcst_R20261111.manifest.json",
+      "source_sha256": "16abec001f2d40492fcae8aae66f25258b4697fb3ddaa862d023d80299691d19",
+      "valid_date": "2026-11-14"
+    },
+    {
+      "bulletin_date": "2026-11-11",
+      "bytes": 5016470,
+      "columns": [
+        "latitude",
+        "longitude",
+        "sialb",
+        "siage",
+        "siconc",
+        "ist",
+        "sivelo",
+        "sithick",
+        "sisnthick",
+        "mlotst",
+        "pbo",
+        "sob",
+        "zos",
+        "tob",
+        "usi",
+        "vsi"
+      ],
+      "file": "glo12_rg_1d-m_20261116-20261116_2D_fcst_R20261111__peninsula-weddell.parquet",
+      "lead_days": 5,
+      "rows": 153517,
+      "sha256": "9736b75645a2561762ca94bfff33792fd2390e3872ac95513144d6eadf4e6436",
+      "source_bytes": 140311824,
+      "source_file": "glo12_rg_1d-m_20261116-20261116_2D_fcst_R20261111.nc",
+      "source_manifest": "glo12_rg_1d-m_20261116-20261116_2D_fcst_R20261111.manifest.json",
+      "source_sha256": "f071fb812e5f72ddb605b415cad2d3e82a95ff954b4ea31c9d816657d4fa6ecc",
+      "valid_date": "2026-11-16"
+    },
+    {
+      "bulletin_date": "2026-11-11",
+      "bytes": 4986759,
+      "columns": [
+        "latitude",
+        "longitude",
+        "sialb",
+        "siage",
+        "siconc",
+        "ist",
+        "sivelo",
+        "sithick",
+        "sisnthick",
+        "mlotst",
+        "pbo",
+        "sob",
+        "zos",
+        "tob",
+        "usi",
+        "vsi"
+      ],
+      "file": "glo12_rg_1d-m_20261118-20261118_2D_fcst_R20261111__peninsula-weddell.parquet",
+      "lead_days": 7,
+      "rows": 153517,
+      "sha256": "c00fe7fb2686feb13da2187daf46d8e510ab723b943ceb106a8483d24c74b296",
+      "source_bytes": 140408539,
+      "source_file": "glo12_rg_1d-m_20261118-20261118_2D_fcst_R20261111.nc",
+      "source_manifest": "glo12_rg_1d-m_20261118-20261118_2D_fcst_R20261111.manifest.json",
+      "source_sha256": "87cbca67e7c0b331ae8e413d910b7fe2535feb0e823eb9d2360f99f13a41917a",
+      "valid_date": "2026-11-18"
+    }
+  ],
+  "kind": "derived_regional_forecast_subset",
+  "notes": [
+    "This package contains only the frozen Peninsula-Weddell bounding box.",
+    "It is sea-ice/ocean forecast context, not an iceberg-track observation dataset.",
+    "Original NetCDF files remain the source for exact as-issued verification.",
+    "Missing NetCDF fill values are decoded to NaN in the Parquet files."
+  ],
+  "product_doi": "10.48670/moi-00016",
+  "product_id": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+  "product_url": "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description",
+  "redistribution_attribution": "E.U. Copernicus Marine Service Information; Source: European Union, Copernicus Marine Service Information or Data (2026), \u00a9Mercator Ocean.",
+  "region": {
+    "bbox_west_east_south_north": [
+      -73.0,
+      -20.0,
+      -78.0,
+      -58.0
+    ],
+    "crs": "EPSG:4326",
+    "label": "Antarctic Peninsula\u2013Weddell research envelope",
+    "limitations": [
+      "The browser route drawing is schematic and does not supply WGS84 waypoints.",
+      "The direct line between reference sites is not a water-only vessel route.",
+      "Halley VI's position changes on a moving ice shelf; the coordinates are contextual, not a navigation fix.",
+      "The rectangular envelope includes land and large waters not traversed by a vessel; corridor-specific skill requires approved waypoints."
+    ],
+    "navigation_clearance": false,
+    "purpose": "Frozen broad observation domain for prospective forecast verification around the public Rothera and Halley areas; not a vessel track or navigable corridor.",
+    "reference_sites": [
+      {
+        "latitude": -67.568889,
+        "longitude": -68.1248,
+        "name": "Rothera Research Station",
+        "source": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rothera/rothera-air-facility/"
+      },
+      {
+        "latitude": -75.56821,
+        "longitude": -25.50852,
+        "name": "Halley VI Research Station",
+        "source": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/halley/"
+      }
+    ],
+    "region_id": "peninsula-weddell",
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "source_format": "original Copernicus Marine NetCDF",
+  "source_run_date": "2026-11-11"
+}
