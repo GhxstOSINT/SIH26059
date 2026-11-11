@@ -13,7 +13,12 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from ml.evaluate_iceberg_tracks import read_observed_tracks
+from ml.evaluate_iceberg_tracks import (
+    PUBLISHED_COVERAGE_END,
+    PUBLISHED_COVERAGE_START,
+    read_observed_tracks,
+    restrict_tracks_to_published_coverage,
+)
 
 
 DATASET_ID = "BYU/NIC Antarctic Iceberg Tracking Database"
@@ -52,7 +57,25 @@ def main() -> None:
             or archive_record.get("sha256") != sha256_file(args.archive)):
         raise ValueError("BYU/NIC archive does not match its pinned source manifest")
 
-    tracks, source_counts = read_observed_tracks(args.archive)
+    source_tracks, source_counts = read_observed_tracks(args.archive)
+    tracks, coverage_counts = restrict_tracks_to_published_coverage(source_tracks)
+    inspection = source.get("inspection", {})
+    source_dates = [day for points in source_tracks.values() for day, _, _ in points]
+    archive_start = min(source_dates).isoformat()
+    archive_end = max(source_dates).isoformat()
+    if (inspection.get("earliest_source_measured_date") not in (None, archive_start)
+            or inspection.get("latest_source_measured_date") not in (None, archive_end)):
+        raise ValueError("BYU/NIC archive dates do not match its pinned source manifest")
+    published_coverage = {
+        "start": PUBLISHED_COVERAGE_START.isoformat(),
+        "end": PUBLISHED_COVERAGE_END.isoformat(),
+        "source_track_days": coverage_counts["source_track_days"],
+        "published_track_days": coverage_counts["published_track_days"],
+        "excluded_before_start_track_days": coverage_counts["excluded_before_start_track_days"],
+        "excluded_after_end_track_days": coverage_counts["excluded_after_end_track_days"],
+        "source_icebergs": coverage_counts["source_icebergs"],
+        "published_icebergs": coverage_counts["published_icebergs"],
+    }
     rows = [
         (iceberg_id, day, latitude, longitude)
         for iceberg_id in sorted(tracks)
@@ -75,14 +98,16 @@ def main() -> None:
         "source_url": source.get("download_url"),
         "citation": source.get("citation") or source.get("paper"),
         "source_counts": source_counts,
+        "published_coverage": published_coverage,
         "position_method": (
             "Per-sensor interpolation marker 0 only; valid Antarctic coordinates; "
             "same-day sensor positions averaged, with circular-mean longitude."
         ),
         "date_coverage_note": (
-            "The archive copy contains source-measured rows through 2026-04-29, while "
-            "the BYU landing page states coverage through 2025-04-22. The service keeps "
-            "its published-coverage cutoff until BYU confirms the discrepancy."
+            f"BYU's v8.0 page declares coverage from {PUBLISHED_COVERAGE_START.isoformat()} "
+            f"through {PUBLISHED_COVERAGE_END.isoformat()}. The source ZIP contains "
+            f"measured track days from {archive_start} through {archive_end}; this Parquet "
+            "excludes all daily points outside BYU's declared interval."
         ),
     }
     table = table.replace_schema_metadata({
@@ -126,10 +151,8 @@ def main() -> None:
             "columns": table.schema.names,
             "compression": "Zstandard level 9",
         }
-        coverage = source.get("coverage", {})
-        inspection = source.get("inspection", {})
         manifest = {
-            "schema_version": 1,
+            "schema_version": 2,
             "dataset": DATASET_ID,
             "version": DATASET_VERSION,
             "complete": True,
@@ -143,18 +166,24 @@ def main() -> None:
                 "sha256": archive_record["sha256"],
             },
             "source_coverage": {
-                "provider_page_through": coverage.get("provider_page_through") or "2025-04-22",
-                "archive_measured_through": (
-                    inspection.get("latest_source_measured_date")
-                    or coverage.get("observed_in_local_archive_through")
-                ),
-                "service_cutoff": coverage.get("served_api_cutoff") or "2025-04-22",
+                "provider_page_url": "https://www.scp.byu.edu/iceberg/default.html",
+                "provider_page_start": PUBLISHED_COVERAGE_START.isoformat(),
+                "provider_page_through": PUBLISHED_COVERAGE_END.isoformat(),
+                "archive_measured_from": archive_start,
+                "archive_measured_through": archive_end,
+                "service_start": PUBLISHED_COVERAGE_START.isoformat(),
+                "service_cutoff": PUBLISHED_COVERAGE_END.isoformat(),
+                "excluded_before_start_track_days": coverage_counts["excluded_before_start_track_days"],
+                "excluded_after_end_track_days": coverage_counts["excluded_after_end_track_days"],
             },
             "processing": {
                 "source_csv_files": source_counts["files"],
                 "source_rows": source_counts["rows"],
                 "source_measured_sensor_positions": source_counts["observed_sensor_positions"],
-                "daily_track_points": source_counts["track_days"],
+                "source_daily_track_points": source_counts["track_days"],
+                "daily_track_points": table.num_rows,
+                "source_icebergs_with_measured_positions": source_counts["icebergs"],
+                "icebergs_in_published_coverage": len(tracks),
                 "interpolated_positions_included": False,
                 "same_day_sensor_positions": "averaged by latitude and circular-mean longitude",
             },
@@ -175,7 +204,10 @@ def main() -> None:
         "source_csv_files": source_counts["files"],
         "source_rows": source_counts["rows"],
         "source_measured_sensor_positions": source_counts["observed_sensor_positions"],
-        "daily_track_points": source_counts["track_days"],
+        "source_daily_track_points": source_counts["track_days"],
+        "published_daily_track_points": table.num_rows,
+        "excluded_before_start_track_days": coverage_counts["excluded_before_start_track_days"],
+        "excluded_after_end_track_days": coverage_counts["excluded_after_end_track_days"],
         "icebergs": len(tracks),
     }, indent=2))
 

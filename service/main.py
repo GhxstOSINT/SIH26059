@@ -35,7 +35,12 @@ from ml.summarize_research_transect import summarize as summarize_research_trans
 from service.body_limit import ApiBodySizeLimitMiddleware
 from service.decision_support import evidence_gate, fixed_path_counterfactuals, ice_edge_fragility, vessel_screen
 from service.glo12_status import forecast_archive_status
-from service.iceberg_tracks import observed_tracks_geojson, historical_short_iceberg_projection
+from service.iceberg_tracks import (
+    PUBLISHED_COVERAGE_END,
+    PUBLISHED_COVERAGE_START,
+    observed_tracks_geojson,
+    historical_short_iceberg_projection,
+)
 from service.route_planner import route_candidates, research_transit_sensitivity
 from service.review_workflow import GATES, append_decision, create_case, get_case, list_cases, verify_gateway_assertion
 
@@ -72,7 +77,7 @@ ICEBERG_TRACKS_PATH = Path(os.environ.get(
     ROOT / "data" / "byu-iceberg-v8-tracks-parquet" / "byu_iceberg_observed_track_days_v8.0.parquet",
 ))
 ICEBERG_EVIDENCE_PATH = ROOT / "outputs" / "byu-iceberg-v8-drift-holdout.json"
-ICEBERG_EVIDENCE_SHA256 = "4ca3563b346ae0af3c62df4dcdd825595cf43c4bdd8ee1ccb32ba6d8b5825d57"
+ICEBERG_EVIDENCE_SHA256 = "b28e4e39fb907bf0ea3690420a859908b6866786cd59c7f21a642992d71c74c7"
 GLO12_FORECAST_ROOT = Path(os.environ.get("SOUTHERN_PASSAGE_GLO12_FORECAST_ROOT", ROOT / "work" / "datasets" / "copernicus-glo12-forecast"))
 GLO12_VERIFICATION_ROOT = Path(os.environ.get("SOUTHERN_PASSAGE_GLO12_VERIFICATION_ROOT", ROOT / "work" / "verification"))
 # Demo-only display gate, not an operational data-quality or voyage-safety threshold.
@@ -887,8 +892,17 @@ def integration_status() -> dict[str, Any]:
         manifest_path = ICEBERG_TRACKS_PATH.parent / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         item = manifest.get("parquet" if ICEBERG_TRACKS_PATH.suffix.lower() == ".parquet" else "archive", {})
+        coverage = manifest.get("source_coverage")
+        coverage_ok = (ICEBERG_TRACKS_PATH.suffix.lower() != ".parquet"
+                       or (manifest.get("schema_version") == 2
+                           and isinstance(coverage, dict)
+                           and coverage.get("provider_page_start") == PUBLISHED_COVERAGE_START.isoformat()
+                           and coverage.get("provider_page_through") == PUBLISHED_COVERAGE_END.isoformat()
+                           and coverage.get("service_start") == PUBLISHED_COVERAGE_START.isoformat()
+                           and coverage.get("service_cutoff") == PUBLISHED_COVERAGE_END.isoformat()))
         iceberg_available = (manifest.get("complete") is True
                              and item.get("file") == ICEBERG_TRACKS_PATH.name
+                             and coverage_ok
                              and ICEBERG_TRACKS_PATH.is_file()
                              and ICEBERG_TRACKS_PATH.stat().st_size == item.get("bytes")
                              and hashlib.sha256(ICEBERG_TRACKS_PATH.read_bytes()).hexdigest() == item.get("sha256"))
@@ -915,7 +929,8 @@ def integration_status() -> dict[str, Any]:
             "ice_motion_evidence": {"available": motion["available"],
                                     "report_sha256": motion.get("report_sha256")},
             "historical_iceberg_archive": {"available": iceberg_available,
-                                            "published_coverage_end": "2025-04-22"},
+                                            "published_coverage_start": PUBLISHED_COVERAGE_START.isoformat(),
+                                            "published_coverage_end": PUBLISHED_COVERAGE_END.isoformat()},
         },
         "operational_decision_ready": False,
         "reason": "Live source availability, vessel constraints, authoritative hazards, and route-outcome validation are not established.",

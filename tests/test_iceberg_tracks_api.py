@@ -45,6 +45,8 @@ def test_observed_iceberg_track_api_returns_only_measured_positions(tmp_path, mo
     report = response.json()
     assert report["status"] == "historical_observations_only"
     assert report["dataset"]["archive_sha256"] == digest
+    assert report["dataset"]["published_coverage_start"] == "1978-01-01"
+    assert report["dataset"]["published_coverage_end"] == "2025-04-22"
     assert report["query"] == {
         "as_of_date": "2025-01-10", "window_days": 10, "window_start": "2025-01-01"
     }
@@ -68,6 +70,16 @@ def test_observed_iceberg_track_api_withholds_unconfirmed_archive_period(tmp_pat
 
     assert response.status_code == 422
     assert "published BYU/NIC v8.0 coverage ends on 2025-04-22" in response.json()["detail"]
+
+
+def test_observed_iceberg_track_api_rejects_dates_before_published_coverage(tmp_path, monkeypatch):
+    monkeypatch.setattr(service_main, "ICEBERG_TRACKS_PATH", tmp_path / "missing.zip")
+
+    response = client.get("/api/v1/icebergs/observed-tracks",
+                          params={"as_of_date": "1977-12-31"})
+
+    assert response.status_code == 422
+    assert "published BYU/NIC v8.0 coverage starts on 1978-01-01" in response.json()["detail"]
 
 
 def test_observed_iceberg_track_api_rejects_archive_checksum_mismatch(tmp_path, monkeypatch):

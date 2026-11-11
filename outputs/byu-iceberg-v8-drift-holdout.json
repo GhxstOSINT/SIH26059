@@ -10,16 +10,22 @@
   },
   "max_lead_days": 14,
   "max_history_gap_days": 30,
-  "training_examples": 102635,
+  "training_examples": 102622,
   "test_examples": 90073,
-  "training_icebergs": 397,
+  "training_icebergs": 395,
   "test_icebergs": 145,
   "fitted_velocity_damping": 0.0,
   "data_summary": {
     "files": 647,
     "rows": 516691,
     "observed_sensor_positions": 236970,
-    "track_days": 211009
+    "track_days": 199720,
+    "source_track_days": 211009,
+    "icebergs": 540,
+    "source_icebergs": 545,
+    "published_coverage_excluded_before_start": 17,
+    "published_coverage_excluded_after_end": 11272,
+    "source_archive_sha256": "47d899c8bb1c3266d0b8c94a6f87c435dc68827a53f39dea3d78fe68ccc40cae"
   },
   "metrics": {
     "1-2d": {
@@ -88,7 +94,7 @@
     "Only per-sensor rows with interpolation marker 0 are included; marker 1 rows are excluded.",
     "The target is the next observed report (1-14 days later), not a complete fixed-horizon census.",
     "Tracks represent a selected large-iceberg archive and have heterogeneous sensor precision/coverage.",
-    "The official landing page describes coverage through 2025-04-22, but this archive contains source-measured positions through 2026-04-29; this evaluation is restricted to the page-declared end pending confirmation.",
+    "BYU's v8.0 page declares coverage from 1978-01-01 through 2025-04-22. The source ZIP has measured positions outside that interval; this evaluation excludes them pending source clarification.",
     "Forecast cases from the same iceberg are serially dependent and are not independent samples.",
     "Iceberg identities can occur in both chronological splits; this tests continuation of known tracks, not cold-start generalization to unseen bergs.",
     "The source paper reports location accuracy no better than about one sensor pixel (roughly 2.2-8.9 km by sensor), comparable to or larger than some reported errors.",

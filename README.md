@@ -61,7 +61,7 @@ Open **http://127.0.0.1:8000/portal/**. The scenario works without a data mount;
 
 ### Data files
 
-A fresh clone includes a compact, checksummed BYU/NIC v8.0 Parquet dataset for the historical iceberg-track endpoint at `data/byu-iceberg-v8-tracks-parquet/`. It contains 211,009 source-measured daily track points for 545 iceberg IDs and is about 1.21 MB. Interpolated positions are excluded, and multiple sensor positions on the same day are averaged. The source ZIP is about 4.07 MB; this project-ready Parquet export is 70.2% smaller.
+A fresh clone includes a compact, checksummed BYU/NIC v8.0 Parquet dataset for the historical iceberg-track endpoint at `data/byu-iceberg-v8-tracks-parquet/`. It contains 199,720 source-measured daily track points for 540 iceberg IDs within BYU's published 1978-01-01 through 2025-04-22 interval and is 1,138,617 bytes (about 1.14 MB). Interpolated positions are excluded, and multiple sensor positions on the same day are averaged. The source ZIP is about 4.07 MB; this project-ready Parquet export is 72.0% smaller.
 
 To fetch the original archive for reprocessing, first verify its SHA-256, then export the same daily tracks to Parquet:
 
@@ -70,7 +70,7 @@ To fetch the original archive for reprocessing, first verify its SHA-256, then e
 python tools/export_byu_iceberg_tracks_parquet.py
 ```
 
-The upstream BYU page does not state a redistribution license. The repository includes only the attributed, derived daily positions rather than the original ZIP; the companion manifest records the source URL, archive and Parquet checksums, processing counts, citation, and coverage caveat. The service reads the checked-in Parquet by default. Set `SOUTHERN_PASSAGE_ICEBERG_TRACKS` to the fetched ZIP path to use the original archive instead.
+The upstream BYU page does not state a redistribution license. The repository includes only the attributed, derived daily positions rather than the original ZIP; the companion manifest records the source URL, archive and Parquet checksums, processing counts, citation, and coverage caveat. The local source ZIP contains measured dates outside BYU's published interval (1976-12-28 to 2026-04-29); those points are excluded from the committed Parquet pending source clarification. The service reads the checked-in Parquet by default. Set `SOUTHERN_PASSAGE_ICEBERG_TRACKS` to the fetched ZIP path to use the original archive instead.
 
 The full `copernicus-glo12-forecast` and `g02202-v6` archives remain local research inputs excluded from Git. A compact Peninsula–Weddell Parquet derivative of the latest complete GLO12 bulletin is versioned under [`data/glo12-peninsula-weddell-parquet/`](data/glo12-peninsula-weddell-parquet/), with source checksums and Copernicus attribution. It is forecast context, not iceberg-track observations, and does not replace the original NetCDFs used for exact as-issued verification. BYU/NIC contains the historical iceberg positions; its archive is fetched directly from BYU because the source page does not state a redistribution license. The packaged service can run its selected model without these research archives; acquisition and conversion commands are documented in [`DATASETS_AND_MODELS.md`](DATASETS_AND_MODELS.md).
 

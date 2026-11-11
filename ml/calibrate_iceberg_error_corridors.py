@@ -15,11 +15,11 @@ import tempfile
 
 try:
     from .evaluate_iceberg_tracks import (
-        GEOD, examples, fit_damping, read_observed_tracks, sha256_file,
+        GEOD, examples, fit_damping, read_published_tracks, sha256_file,
     )
 except ImportError:
     from evaluate_iceberg_tracks import (
-        GEOD, examples, fit_damping, read_observed_tracks, sha256_file,
+        GEOD, examples, fit_damping, read_published_tracks, sha256_file,
     )
 
 
@@ -89,7 +89,7 @@ def evaluate(archive: Path, fit_through: date, calibration_start: date,
     if not fit_through < calibration_start <= calibration_end < test_start <= test_end:
         raise ValueError("Require fit end < calibration period < untouched test period")
     manifest, archive_hash = verify_archive_manifest(archive)
-    tracks, data_summary = read_observed_tracks(archive)
+    tracks, data_summary = read_published_tracks(archive)
     all_examples = list(examples(tracks, max_lead_days, max_history_gap_days))
     training = [item for item in all_examples if item["target_date"] <= fit_through]
     calibration = [item for item in all_examples

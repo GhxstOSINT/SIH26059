@@ -12,14 +12,15 @@ import zipfile
 from fastapi import HTTPException
 from pyproj import Geod
 
-from ml.evaluate_iceberg_tracks import read_observed_tracks, source_archive_sha256
+from ml.evaluate_iceberg_tracks import (
+    PUBLISHED_COVERAGE_END,
+    PUBLISHED_COVERAGE_START,
+    read_published_tracks,
+)
 
 
 DATASET_ID = "BYU/NIC Antarctic Iceberg Tracking Database"
 DATASET_VERSION = "8.0"
-# The v8.0 landing page declares coverage through this date. The local archive
-# contains later records, but BYU has not confirmed the discrepancy.
-PUBLISHED_COVERAGE_END = date(2025, 4, 22)
 MAX_WINDOW_DAYS = 90
 GEOD = Geod(ellps="WGS84")
 
@@ -43,10 +44,10 @@ def _read_archive(path_string: str, expected_sha256: str,
     if actual != expected_sha256:
         raise HTTPException(status_code=503, detail="The iceberg archive checksum does not match its manifest.")
     try:
-        tracks, _ = read_observed_tracks(path)
+        tracks, counts = read_published_tracks(path)
     except (OSError, ValueError, KeyError, TypeError, UnicodeDecodeError, zipfile.BadZipFile) as exc:
         raise HTTPException(status_code=503, detail="The checksummed iceberg track data could not be parsed safely.") from exc
-    return tracks, source_archive_sha256(path)
+    return tracks, counts["source_archive_sha256"]
 
 
 def load_verified_tracks(archive: Path) -> tuple[dict[str, list], str]:
@@ -63,6 +64,14 @@ def load_verified_tracks(archive: Path) -> tuple[dict[str, list], str]:
             or manifest.get("complete") is not True or entry.get("file") != archive.name
             or not isinstance(entry.get("sha256"), str) or len(entry["sha256"]) != 64):
         raise HTTPException(status_code=503, detail="The iceberg track-data manifest is incomplete or identifies another dataset.")
+    if archive.suffix.lower() == ".parquet":
+        coverage = manifest.get("source_coverage", {})
+        if (not isinstance(coverage, dict) or manifest.get("schema_version") != 2
+                or coverage.get("provider_page_start") != PUBLISHED_COVERAGE_START.isoformat()
+                or coverage.get("provider_page_through") != PUBLISHED_COVERAGE_END.isoformat()
+                or coverage.get("service_start") != PUBLISHED_COVERAGE_START.isoformat()
+                or coverage.get("service_cutoff") != PUBLISHED_COVERAGE_END.isoformat()):
+            raise HTTPException(status_code=503, detail="The Parquet manifest does not match the published coverage interval.")
     try:
         tracks, actual_sha = _read_archive(str(archive.resolve()), entry["sha256"],
                                            stat.st_size, stat.st_mtime_ns,
@@ -76,6 +85,10 @@ def observed_tracks_geojson(archive: Path, as_of: date,
                             window_days: int = 30) -> dict[str, Any]:
     if not 1 <= window_days <= MAX_WINDOW_DAYS:
         raise HTTPException(status_code=422, detail=f"window_days must be between 1 and {MAX_WINDOW_DAYS}.")
+    if as_of < PUBLISHED_COVERAGE_START:
+        raise HTTPException(status_code=422, detail=(
+            f"The published BYU/NIC v8.0 coverage starts on {PUBLISHED_COVERAGE_START.isoformat()}."
+        ))
     if as_of > PUBLISHED_COVERAGE_END:
         raise HTTPException(status_code=422, detail=(
             f"The published BYU/NIC v8.0 coverage ends on {PUBLISHED_COVERAGE_END.isoformat()}; "
@@ -114,6 +127,7 @@ def observed_tracks_geojson(archive: Path, as_of: date,
             "source_url": "https://www.scp.byu.edu/iceberg/default.html",
             "paper_doi": "10.1109/JSTARS.2017.2784186",
             "archive_sha256": archive_sha,
+            "published_coverage_start": PUBLISHED_COVERAGE_START.isoformat(),
             "published_coverage_end": PUBLISHED_COVERAGE_END.isoformat(),
         },
         "query": {"as_of_date": as_of.isoformat(), "window_days": window_days,
@@ -134,6 +148,10 @@ def historical_short_iceberg_projection(archive: Path, iceberg_id: str,
     """Project a known historical track for 1-2 days from measured locations."""
     if not 1 <= lead_days <= 2:
         raise HTTPException(status_code=422, detail="lead_days must be 1 or 2.")
+    if as_of < PUBLISHED_COVERAGE_START:
+        raise HTTPException(status_code=422, detail=(
+            f"The published BYU/NIC v8.0 coverage starts on {PUBLISHED_COVERAGE_START.isoformat()}."
+        ))
     if as_of > PUBLISHED_COVERAGE_END:
         raise HTTPException(status_code=422, detail=(
             f"The published BYU/NIC v8.0 coverage ends on {PUBLISHED_COVERAGE_END.isoformat()}."

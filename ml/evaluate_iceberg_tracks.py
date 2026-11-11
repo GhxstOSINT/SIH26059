@@ -24,6 +24,8 @@ from pyproj import Geod
 
 TRACK_COLUMNS = re.compile(r"^(?P<sensor>[a-z0-9]+)_(?P<part>[123])$", re.I)
 GEOD = Geod(ellps="WGS84")
+PUBLISHED_COVERAGE_START = date(1978, 1, 1)
+PUBLISHED_COVERAGE_END = date(2025, 4, 22)
 
 
 def parse_doy(value: str) -> date:
@@ -63,8 +65,57 @@ def source_archive_sha256(path: Path) -> str:
     return raw
 
 
+def restrict_tracks_to_published_coverage(tracks):
+    """Keep only positions inside BYU's published v8.0 coverage interval."""
+    selected = {}
+    before_start = after_end = 0
+    for iceberg_id, points in tracks.items():
+        within = []
+        for point in points:
+            if point[0] < PUBLISHED_COVERAGE_START:
+                before_start += 1
+            elif point[0] > PUBLISHED_COVERAGE_END:
+                after_end += 1
+            else:
+                within.append(point)
+        if within:
+            selected[iceberg_id] = within
+    return selected, {
+        "source_track_days": sum(map(len, tracks.values())),
+        "published_track_days": sum(map(len, selected.values())),
+        "excluded_before_start_track_days": before_start,
+        "excluded_after_end_track_days": after_end,
+        "source_icebergs": len(tracks),
+        "published_icebergs": len(selected),
+    }
+
+
+def read_published_tracks(path: Path) -> tuple[dict[str, list[tuple[date, float, float]]], dict]:
+    """Read project tracks restricted to BYU's page-declared coverage dates."""
+    tracks, counts = read_observed_tracks(path)
+    if path.suffix.lower() == ".parquet":
+        filtered, observed = restrict_tracks_to_published_coverage(tracks)
+        if (observed["excluded_before_start_track_days"]
+                or observed["excluded_after_end_track_days"]
+                or observed["published_track_days"] != counts["track_days"]):
+            raise ValueError("BYU/NIC Parquet contains positions outside published coverage")
+    else:
+        filtered, coverage = restrict_tracks_to_published_coverage(tracks)
+        counts.update({
+            "source_track_days": coverage["source_track_days"],
+            "track_days": coverage["published_track_days"],
+            "source_icebergs": coverage["source_icebergs"],
+            "icebergs": coverage["published_icebergs"],
+            "published_coverage_excluded_before_start": coverage["excluded_before_start_track_days"],
+            "published_coverage_excluded_after_end": coverage["excluded_after_end_track_days"],
+        })
+        counts["source_archive_sha256"] = source_archive_sha256(path)
+        return filtered, counts
+    return tracks, counts
+
+
 def read_observed_tracks(archive: Path) -> tuple[dict[str, list[tuple[date, float, float]]], dict]:
-    """Read per-sensor non-interpolated locations, averaging same-day sensors."""
+    """Read source-measured tracks; ZIPs are raw, Parquet is coverage-filtered."""
     if archive.suffix.lower() == ".parquet":
         try:
             parquet = pq.ParquetFile(archive)
@@ -75,6 +126,10 @@ def read_observed_tracks(archive: Path) -> tuple[dict[str, list[tuple[date, floa
                     or dataset_version != "8.0"):
                 raise ValueError("Parquet file does not identify BYU/NIC v8.0")
             source_counts = json.loads(metadata[b"source_counts"].decode("utf-8"))
+            coverage = json.loads(metadata[b"published_coverage"].decode("utf-8"))
+            if (coverage.get("start") != PUBLISHED_COVERAGE_START.isoformat()
+                    or coverage.get("end") != PUBLISHED_COVERAGE_END.isoformat()):
+                raise ValueError("BYU/NIC Parquet coverage differs from the published v8.0 interval")
             source_sha = source_archive_sha256(archive)
             table = parquet.read(columns=["iceberg_id", "observation_date", "latitude", "longitude"])
         except (OSError, KeyError, UnicodeDecodeError, json.JSONDecodeError, pa.ArrowException) as exc:
@@ -97,10 +152,22 @@ def read_observed_tracks(archive: Path) -> tuple[dict[str, list[tuple[date, floa
             "rows": source_counts["rows"],
             "observed_sensor_positions": source_counts["observed_sensor_positions"],
             "track_days": len(table),
+            "source_track_days": source_counts["track_days"],
+            "icebergs": len(tracks),
+            "source_icebergs": source_counts["icebergs"],
+            "published_coverage_excluded_before_start": coverage["excluded_before_start_track_days"],
+            "published_coverage_excluded_after_end": coverage["excluded_after_end_track_days"],
             "source_archive_sha256": source_sha,
         }
-        if (counts["track_days"] != source_counts["track_days"]
-                or sum(map(len, tracks.values())) != counts["track_days"]):
+        if (counts["track_days"] != coverage["published_track_days"]
+                or counts["source_track_days"] != (counts["track_days"]
+                    + counts["published_coverage_excluded_before_start"]
+                    + counts["published_coverage_excluded_after_end"])
+                or counts["source_icebergs"] != coverage["source_icebergs"]
+                or counts["icebergs"] != coverage["published_icebergs"]
+                or sum(map(len, tracks.values())) != counts["track_days"]
+                or any(not PUBLISHED_COVERAGE_START <= day <= PUBLISHED_COVERAGE_END
+                       for points in tracks.values() for day, _, _ in points)):
             raise ValueError("BYU/NIC Parquet track counts do not match embedded source metadata")
         return tracks, counts
 
@@ -156,6 +223,7 @@ def read_observed_tracks(archive: Path) -> tuple[dict[str, list[tuple[date, floa
                 tracks[iceberg_id] = track
                 counts["track_days"] += len(track)
         counts["files"] = len(members)
+        counts["icebergs"] = len(tracks)
     return tracks, counts
 
 
@@ -211,7 +279,7 @@ def summarize(errors_m: list[float]) -> dict:
 
 def evaluate(archive: Path, train_through: date, test_start: date, test_end: date,
              max_lead_days: int = 14, max_history_gap_days: int = 30) -> dict:
-    tracks, data_summary = read_observed_tracks(archive)
+    tracks, data_summary = read_published_tracks(archive)
     all_examples = list(examples(tracks, max_lead_days, max_history_gap_days))
     training = [e for e in all_examples if e["target_date"] <= train_through]
     testing = [e for e in all_examples if test_start <= e["target_date"] <= test_end]
@@ -245,7 +313,7 @@ def evaluate(archive: Path, train_through: date, test_start: date, test_end: dat
                             "Only per-sensor rows with interpolation marker 0 are included; marker 1 rows are excluded.",
                             "The target is the next observed report (1-14 days later), not a complete fixed-horizon census.",
                             "Tracks represent a selected large-iceberg archive and have heterogeneous sensor precision/coverage.",
-                            "The official landing page describes coverage through 2025-04-22, but this archive contains source-measured positions through 2026-04-29; this evaluation is restricted to the page-declared end pending confirmation.",
+                            "BYU's v8.0 page declares coverage from 1978-01-01 through 2025-04-22. The source ZIP has measured positions outside that interval; this evaluation excludes them pending source clarification.",
                             "Forecast cases from the same iceberg are serially dependent and are not independent samples.",
                             "Iceberg identities can occur in both chronological splits; this tests continuation of known tracks, not cold-start generalization to unseen bergs.",
                             "The source paper reports location accuracy no better than about one sensor pixel (roughly 2.2-8.9 km by sensor), comparable to or larger than some reported errors.",
@@ -257,7 +325,7 @@ def main() -> int:
     parser.add_argument("archive", type=Path, help="BYU/NIC consolidated_database_v8.0.zip")
     parser.add_argument("--train-through", type=date.fromisoformat, default=date(2016, 12, 31))
     parser.add_argument("--test-start", type=date.fromisoformat, default=date(2017, 1, 1))
-    parser.add_argument("--test-end", type=date.fromisoformat, default=date(2025, 4, 22))
+    parser.add_argument("--test-end", type=date.fromisoformat, default=PUBLISHED_COVERAGE_END)
     parser.add_argument("--max-lead-days", type=int, default=14)
     parser.add_argument("--max-history-gap-days", type=int, default=30)
     parser.add_argument("--output", type=Path, required=True)
