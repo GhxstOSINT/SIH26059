@@ -4,3 +4,4 @@ xarray>=2024.1
 netCDF4>=1.6
 numpy>=1.26
 pyproj>=3.6,<4
+pyarrow>=17,<26

@@ -14,6 +14,7 @@ COPY index.html app.js review-workflow.js experience.js marine-interactions.js s
 COPY portal/login.html portal/login.css ./portal/
 COPY models ./models
 COPY outputs ./outputs
+COPY data/byu-iceberg-v8-tracks-parquet ./data/byu-iceberg-v8-tracks-parquet
 COPY work/datasets/polarwatch-viirs ./work/datasets/polarwatch-viirs
 COPY work/datasets/polarwatch-viirs-2026-sep01-21 ./work/datasets/polarwatch-viirs-2026-sep01-21
 COPY work/datasets/polarwatch-viirs-noaa21-2026-sep01-21 ./work/datasets/polarwatch-viirs-noaa21-2026-sep01-21

@@ -1,0 +1,43 @@
+{
+  "citation": "Budge, J. S. and Long, D. G. (2018), A Comprehensive Database for Antarctic Iceberg Tracking Using Scatterometer Data, IEEE JSTARS 11(2), DOI: 10.1109/JSTARS.2017.2784186",
+  "complete": true,
+  "dataset": "BYU/NIC Antarctic Iceberg Tracking Database",
+  "exported_at_utc": "2026-11-11T14:30:36.680484+00:00",
+  "kind": "source_measured_daily_track_positions",
+  "parquet": {
+    "bytes": 1209856,
+    "columns": [
+      "iceberg_id",
+      "observation_date",
+      "latitude",
+      "longitude"
+    ],
+    "compression": "Zstandard level 9",
+    "file": "byu_iceberg_observed_track_days_v8.0.parquet",
+    "icebergs": 545,
+    "rows": 211009,
+    "sha256": "1638c4497d31c518951590910842abecaac9eb95acd66f4ca8eaf3ff7c87b881"
+  },
+  "processing": {
+    "daily_track_points": 211009,
+    "interpolated_positions_included": false,
+    "same_day_sensor_positions": "averaged by latitude and circular-mean longitude",
+    "source_csv_files": 647,
+    "source_measured_sensor_positions": 236970,
+    "source_rows": 516691
+  },
+  "schema_version": 1,
+  "source_archive": {
+    "bytes": 4065659,
+    "file": "consolidated_database_v8.0.zip",
+    "sha256": "47d899c8bb1c3266d0b8c94a6f87c435dc68827a53f39dea3d78fe68ccc40cae"
+  },
+  "source_coverage": {
+    "archive_measured_through": "2026-04-29",
+    "provider_page_through": "2025-04-22",
+    "service_cutoff": "2025-04-22"
+  },
+  "source_terms_note": "No explicit data redistribution license was identified on the BYU landing page during acquisition. Retain attribution and obtain clarification from BYU before redistribution or operational use.",
+  "source_url": "https://www.scp.byu.edu/iceberg/consolidated_database_v8.0.zip",
+  "version": "8.0"
+}

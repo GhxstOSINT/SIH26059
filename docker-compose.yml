@@ -27,7 +27,7 @@ services:
       SOUTHERN_PASSAGE_ACTIVE_VIIRS_ROOT: /app/data/active-viirs
       SOUTHERN_PASSAGE_ACTIVE_VIIRS_POLICY: /app/config/viirs-research-policy.example.json
       SOUTHERN_PASSAGE_CORRIDOR_EVALUATION: /app/outputs/viirs-2024-frozen-corridor-evaluation.json
-      SOUTHERN_PASSAGE_ICEBERG_TRACKS: /app/data/icebergs/consolidated_database_v8.0.zip
+      SOUTHERN_PASSAGE_ICEBERG_TRACKS: ${SOUTHERN_PASSAGE_ICEBERG_TRACKS:-/app/data/byu-iceberg-v8-tracks-parquet/byu_iceberg_observed_track_days_v8.0.parquet}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:4173,http://127.0.0.1:4173}
     volumes:
       - ./models:/app/models:ro
@@ -37,7 +37,8 @@ services:
       - ./work/datasets/polarwatch-viirs-noaa20-2026-sep01-21:/app/data/viirs-2026-noaa20:ro
       - ./work/monitoring:/app/data/monitoring:ro
       - ./work/active-viirs:/app/data/active-viirs:ro
-      - ./work/datasets/byu-iceberg-v8:/app/data/icebergs:ro
+      - ./data/byu-iceberg-v8-tracks-parquet:/app/data/byu-iceberg-v8-tracks-parquet:ro
+      - ./work/datasets/byu-iceberg-v8:/app/work/datasets/byu-iceberg-v8:ro
       - review_state:/app/state
     read_only: true
     tmpfs:

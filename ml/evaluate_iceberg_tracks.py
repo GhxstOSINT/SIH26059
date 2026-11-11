@@ -18,6 +18,8 @@ import re
 import statistics
 import zipfile
 
+import pyarrow as pa
+import pyarrow.parquet as pq
 from pyproj import Geod
 
 TRACK_COLUMNS = re.compile(r"^(?P<sensor>[a-z0-9]+)_(?P<part>[123])$", re.I)
@@ -47,8 +49,61 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def source_archive_sha256(path: Path) -> str:
+    """Return the source ZIP checksum for either its ZIP or derived Parquet input."""
+    if path.suffix.lower() != ".parquet":
+        return sha256_file(path)
+    try:
+        metadata = pq.read_metadata(path).metadata or {}
+        raw = json.loads(metadata[b"source_archive_sha256"].decode("ascii"))
+    except (OSError, KeyError, UnicodeDecodeError, json.JSONDecodeError, pa.ArrowException) as exc:
+        raise ValueError("Parquet track data is missing its source archive checksum") from exc
+    if not isinstance(raw, str) or not re.fullmatch(r"[0-9a-f]{64}", raw):
+        raise ValueError("Parquet track data has an invalid source archive checksum")
+    return raw
+
+
 def read_observed_tracks(archive: Path) -> tuple[dict[str, list[tuple[date, float, float]]], dict]:
     """Read per-sensor non-interpolated locations, averaging same-day sensors."""
+    if archive.suffix.lower() == ".parquet":
+        try:
+            parquet = pq.ParquetFile(archive)
+            metadata = parquet.schema_arrow.metadata or {}
+            dataset_id = json.loads(metadata[b"dataset_id"].decode("utf-8"))
+            dataset_version = json.loads(metadata[b"dataset_version"].decode("ascii"))
+            if (dataset_id != "BYU/NIC Antarctic Iceberg Tracking Database"
+                    or dataset_version != "8.0"):
+                raise ValueError("Parquet file does not identify BYU/NIC v8.0")
+            source_counts = json.loads(metadata[b"source_counts"].decode("utf-8"))
+            source_sha = source_archive_sha256(archive)
+            table = parquet.read(columns=["iceberg_id", "observation_date", "latitude", "longitude"])
+        except (OSError, KeyError, UnicodeDecodeError, json.JSONDecodeError, pa.ArrowException) as exc:
+            raise ValueError("BYU/NIC Parquet track data is incomplete or invalid") from exc
+        tracks: dict[str, list[tuple[date, float, float]]] = {}
+        for row in table.to_pylist():
+            iceberg_id = row["iceberg_id"]
+            day = row["observation_date"]
+            lat, lon = row["latitude"], row["longitude"]
+            if (not isinstance(iceberg_id, str) or not isinstance(day, date)
+                    or not isinstance(lat, (int, float)) or not isinstance(lon, (int, float))
+                    or not math.isfinite(lat) or not math.isfinite(lon)
+                    or not -90 <= lat <= -50 or not -180 <= lon <= 180):
+                raise ValueError("BYU/NIC Parquet track data contains an invalid position")
+            tracks.setdefault(iceberg_id, []).append((day, float(lat), float(lon)))
+        for points in tracks.values():
+            points.sort()
+        counts = {
+            "files": source_counts["files"],
+            "rows": source_counts["rows"],
+            "observed_sensor_positions": source_counts["observed_sensor_positions"],
+            "track_days": len(table),
+            "source_archive_sha256": source_sha,
+        }
+        if (counts["track_days"] != source_counts["track_days"]
+                or sum(map(len, tracks.values())) != counts["track_days"]):
+            raise ValueError("BYU/NIC Parquet track counts do not match embedded source metadata")
+        return tracks, counts
+
     tracks: dict[str, list[tuple[date, float, float]]] = {}
     counts = {"files": 0, "rows": 0, "observed_sensor_positions": 0, "track_days": 0}
     with zipfile.ZipFile(archive) as source:
@@ -176,7 +231,7 @@ def evaluate(archive: Path, train_through: date, test_start: date, test_end: dat
                 errors[key].append(error)
         results[bucket_name] = {key: summarize(values) for key, values in errors.items()}
     return {"schema_version": 1, "dataset": "BYU/NIC Antarctic Iceberg Tracking Database v8.0",
-            "archive_sha256": sha256_file(archive),
+            "archive_sha256": source_archive_sha256(archive),
             "task": "Observed-position-only next-report displacement error; not a fixed-time operational forecast",
             "train_target_end": train_through.isoformat(), "test_target_period": {
                 "start": test_start.isoformat(), "end": test_end.isoformat()},

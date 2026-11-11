@@ -69,7 +69,7 @@ MULTIPLATFORM_CORRIDOR_PATH = ROOT / "outputs" / "viirs-2024-multiplatform-froze
 MULTIPLATFORM_CORRIDOR_SHA256 = "19abdcc0c26658efd5cfd8cbf1686a1c5dfc6be18d485143d7e13a23e5ce38b9"
 ICEBERG_TRACKS_PATH = Path(os.environ.get(
     "SOUTHERN_PASSAGE_ICEBERG_TRACKS",
-    ROOT / "work" / "datasets" / "byu-iceberg-v8" / "consolidated_database_v8.0.zip",
+    ROOT / "data" / "byu-iceberg-v8-tracks-parquet" / "byu_iceberg_observed_track_days_v8.0.parquet",
 ))
 ICEBERG_EVIDENCE_PATH = ROOT / "outputs" / "byu-iceberg-v8-drift-holdout.json"
 ICEBERG_EVIDENCE_SHA256 = "4ca3563b346ae0af3c62df4dcdd825595cf43c4bdd8ee1ccb32ba6d8b5825d57"
@@ -886,7 +886,7 @@ def integration_status() -> dict[str, Any]:
     try:
         manifest_path = ICEBERG_TRACKS_PATH.parent / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        item = manifest.get("archive", {})
+        item = manifest.get("parquet" if ICEBERG_TRACKS_PATH.suffix.lower() == ".parquet" else "archive", {})
         iceberg_available = (manifest.get("complete") is True
                              and item.get("file") == ICEBERG_TRACKS_PATH.name
                              and ICEBERG_TRACKS_PATH.is_file()

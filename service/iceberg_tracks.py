@@ -12,7 +12,7 @@ import zipfile
 from fastapi import HTTPException
 from pyproj import Geod
 
-from ml.evaluate_iceberg_tracks import read_observed_tracks
+from ml.evaluate_iceberg_tracks import read_observed_tracks, source_archive_sha256
 
 
 DATASET_ID = "BYU/NIC Antarctic Iceberg Tracking Database"
@@ -45,24 +45,24 @@ def _read_archive(path_string: str, expected_sha256: str,
     try:
         tracks, _ = read_observed_tracks(path)
     except (OSError, ValueError, KeyError, TypeError, UnicodeDecodeError, zipfile.BadZipFile) as exc:
-        raise HTTPException(status_code=503, detail="The checksummed iceberg archive could not be parsed safely.") from exc
-    return tracks, actual
+        raise HTTPException(status_code=503, detail="The checksummed iceberg track data could not be parsed safely.") from exc
+    return tracks, source_archive_sha256(path)
 
 
 def load_verified_tracks(archive: Path) -> tuple[dict[str, list], str]:
     manifest_path = archive.parent / "manifest.json"
     try:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        entry = manifest["archive"]
+        entry = manifest["parquet" if archive.suffix.lower() == ".parquet" else "archive"]
         stat = archive.stat()
         manifest_stat = manifest_path.stat()
     except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
-        raise HTTPException(status_code=503, detail="A valid BYU/NIC archive manifest is required.") from exc
+        raise HTTPException(status_code=503, detail="A valid BYU/NIC track-data manifest is required.") from exc
     if (not isinstance(entry, dict)
             or manifest.get("dataset") != DATASET_ID or manifest.get("version") != DATASET_VERSION
             or manifest.get("complete") is not True or entry.get("file") != archive.name
             or not isinstance(entry.get("sha256"), str) or len(entry["sha256"]) != 64):
-        raise HTTPException(status_code=503, detail="The iceberg archive manifest is incomplete or identifies another dataset.")
+        raise HTTPException(status_code=503, detail="The iceberg track-data manifest is incomplete or identifies another dataset.")
     try:
         tracks, actual_sha = _read_archive(str(archive.resolve()), entry["sha256"],
                                            stat.st_size, stat.st_mtime_ns,
