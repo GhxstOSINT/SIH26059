@@ -34,3 +34,15 @@ pytest-of-*/
 **/__pycache__/
 *.py[cod]
 .git/
+
+# Ship only the current GLO12 bulletin and the compact verification inputs.
+!work/datasets/copernicus-glo12-forecast/
+work/datasets/copernicus-glo12-forecast/*
+!work/datasets/copernicus-glo12-forecast/*R20261111.nc
+!work/datasets/copernicus-glo12-forecast/*R20261111.manifest.json
+!work/datasets/copernicus-glo12-forecast/README.md
+!work/verification/
+!work/verification/**
+!work/monitoring/
+work/monitoring/*
+!work/monitoring/polarwatch-source-status.json

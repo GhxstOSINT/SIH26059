@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "research_forecast_run_archive",
+  "product_id": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+  "dataset_id": "cmems_mod_glo_phy_anfc_0.083deg_P1D-m",
+  "dataset_version": "202406",
+  "product_url": "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description",
+  "source_file": "glo12_rg_1d-m_20261116-20261116_2D_fcst_R20261111.nc",
+  "source_bytes": 140311824,
+  "source_sha256": "f071fb812e5f72ddb605b415cad2d3e82a95ff954b4ea31c9d816657d4fa6ecc",
+  "bulletin_date": "2026-11-11",
+  "forecast_base_time_utc": "2026-11-11T00:00:00+00:00",
+  "valid_date": "2026-11-16",
+  "lead_days": 5,
+  "field_kind": "original_forecast_not_reprocessed_analysis",
+  "captured_at_utc": "2026-11-11T12:31:34.277947+00:00",
+  "provider_last_modified_at_utc": "2026-11-11T02:29:45+00:00",
+  "available_no_later_than_utc": "2026-11-11T12:31:34.277947+00:00",
+  "availability_before_capture_verified": false,
+  "captured_before_valid_date": true,
+  "eligible_for_prospective_verification": true,
+  "grid": {
+    "crs": "EPSG:4326",
+    "shape": [
+      2041,
+      4320
+    ],
+    "latitude_range": [
+      -80.0,
+      90.0
+    ],
+    "longitude_range": [
+      -180.0,
+      179.91668701171875
+    ],
+    "valid_sic_cells": 6135334,
+    "valid_southern_sic_cells": 3260485
+  },
+  "navigation_clearance": false,
+  "uncertainty_calibrated": false,
+  "limitations": [
+    "The original forecast filename identifies a bulletin date; it does not prove an earlier publication timestamp.",
+    "Capture proves possession no later than captured_at_utc, not historical as-of availability.",
+    "One forecast run cannot establish predictive skill, calibrated uncertainty, or route safety.",
+    "The global grid ends at 80 degrees south and cannot resolve individual icebergs."
+  ]
+}

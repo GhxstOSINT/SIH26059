@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scope": "single_run_research_verification_sample",
+  "bulletin_date": "2026-10-03",
+  "valid_date": "2026-10-08",
+  "lead_days": 5,
+  "forecast_source_sha256": "a6790c79252689b11c5576058557019692b64cb28d2b2663a8346f3e40a3087c",
+  "forecast_captured_at_utc": "2026-10-03T17:19:16.726316+00:00",
+  "observation_dataset_id": "osisaf_obs-si_glo_phy-sic-south_nrt_amsr2_l4_P1D-m",
+  "observation_source_sha256": "71ef347a898c9b3eb8b686b14c8f1b95b5a87338f5d63a801c080364c5b26aec",
+  "grid_alignment": "linear interpolation of GLO12 SIC to nominal OSI-SAF geographic cells; no extrapolation",
+  "quality_mask": "finite 0\u20131 SIC and uncertainty; OSI-SAF status_flag == 0 (nominal retrieval)",
+  "matched_cells": 69506,
+  "observation_grid_cells": 106000,
+  "matched_fraction": 0.6557169811320754,
+  "mae_fraction": 0.06262961052145628,
+  "rmse_fraction": 0.087133839027578,
+  "mean_bias_fraction": -0.007056058435298886,
+  "mean_observation_uncertainty_fraction": 0.09254688024520874,
+  "as_issued_persistence_comparison": {
+    "baseline_observation_date": "2026-10-01",
+    "baseline_source_sha256": "f0efbfb7958f1febfcae2db1435a6b5e1961d33578948197b2c41d945212314d",
+    "baseline_captured_at_utc": "2026-10-02T16:53:46.552343+00:00",
+    "persistence_mae_fraction": 0.0411989726126194,
+    "persistence_rmse_fraction": 0.0742148756980896,
+    "common_cells": 69506
+  },
+  "uncertainty_calibrated": false,
+  "navigation_clearance": false,
+  "limitations": [
+    "A single run and spatially correlated cells cannot establish forecast skill or calibrated uncertainty.",
+    "OSI-SAF retrieval uncertainty is not forecast uncertainty.",
+    "Independent vessel outcomes and route-scale safety assessment are not included."
+  ],
+  "research_transect": {
+    "scope": "frozen_research_ice_gradient_transect",
+    "route_id": "weddell-ice-gradient-v1",
+    "route_config_sha256": "33e9df9ff6f7bd12cc4a26703d32ba6e2ea4f9e13caf2e0c897da626271bcc6f",
+    "eligible_bulletins_from": "2026-10-04",
+    "sample_points_at_2km": 400,
+    "unique_observation_cells": 161,
+    "nominal_observation_cells": 155,
+    "nominal_cell_coverage_fraction": 0.9627329192546584,
+    "navigation_clearance": false,
+    "evaluation_status": "not_eligible_pre_freeze"
+  },
+  "observation_region_id": "peninsula-weddell",
+  "observation_region_config_sha256": "8c119c04e571f16d14513d0ebf70da2e6a46e9126ed9c14c44fb2cd90a97b5c7",
+  "samples_file": "glo12-2026-10-03-lead-5-peninsula-weddell.npz",
+  "samples_sha256": "c8c146f9e753bcbc2d87ba761c0e794cda475257c096460eba5db88e0bf26cba"
+}

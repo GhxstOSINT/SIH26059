@@ -38,3 +38,15 @@ deliverables/*
 !deliverables/ppt_screenshots_2026-10-05/
 deliverables/ppt_screenshots_2026-10-05/*
 !deliverables/ppt_screenshots_2026-10-05/0[1-5]_*.png
+
+# Runtime research data needed by the packaged API.
+!work/datasets/copernicus-glo12-forecast/
+work/datasets/copernicus-glo12-forecast/*
+!work/datasets/copernicus-glo12-forecast/*R20261111.nc
+!work/datasets/copernicus-glo12-forecast/*R20261111.manifest.json
+!work/datasets/copernicus-glo12-forecast/README.md
+!work/verification/
+!work/verification/**
+!work/monitoring/
+work/monitoring/*
+!work/monitoring/polarwatch-source-status.json

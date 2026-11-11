@@ -3,7 +3,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PORT=8000
 ENV SOUTHERN_PASSAGE_VIIRS_DATA=/app/work/datasets/polarwatch-viirs \
     SOUTHERN_PASSAGE_VIIRS_SUPPLEMENT_DATA=/app/work/datasets/polarwatch-viirs-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa21-2026-sep01-21:/app/work/datasets/polarwatch-viirs-noaa20-2026-sep01-21 \
     SOUTHERN_PASSAGE_AMSR3_DATA=/app/work/datasets/osisaf-amsr3-operational-latest \
-    SOUTHERN_PASSAGE_SAR_DRIFT_DATA=/app/work/datasets/copernicus-sar-ice-drift-latest
+    SOUTHERN_PASSAGE_SAR_DRIFT_DATA=/app/work/datasets/copernicus-sar-ice-drift-latest \
+    SOUTHERN_PASSAGE_GLO12_FORECAST_ROOT=/app/work/datasets/copernicus-glo12-forecast \
+    SOUTHERN_PASSAGE_GLO12_VERIFICATION_ROOT=/app/work/verification
 WORKDIR /app
 COPY requirements.lock .
 RUN pip install --no-cache-dir --require-hashes -r requirements.lock
@@ -15,12 +17,16 @@ COPY portal/login.html portal/login.css ./portal/
 COPY models ./models
 COPY outputs ./outputs
 COPY data/byu-iceberg-v8-tracks-parquet ./data/byu-iceberg-v8-tracks-parquet
+COPY data/glo12-peninsula-weddell-parquet ./data/glo12-peninsula-weddell-parquet
 COPY work/datasets/polarwatch-viirs ./work/datasets/polarwatch-viirs
 COPY work/datasets/polarwatch-viirs-2026-sep01-21 ./work/datasets/polarwatch-viirs-2026-sep01-21
 COPY work/datasets/polarwatch-viirs-noaa21-2026-sep01-21 ./work/datasets/polarwatch-viirs-noaa21-2026-sep01-21
 COPY work/datasets/polarwatch-viirs-noaa20-2026-sep01-21 ./work/datasets/polarwatch-viirs-noaa20-2026-sep01-21
 COPY work/datasets/osisaf-amsr3-operational-latest ./work/datasets/osisaf-amsr3-operational-latest
 COPY work/datasets/copernicus-sar-ice-drift-latest ./work/datasets/copernicus-sar-ice-drift-latest
+COPY work/datasets/copernicus-glo12-forecast ./work/datasets/copernicus-glo12-forecast
+COPY work/verification ./work/verification
+COPY work/monitoring/polarwatch-source-status.json ./work/monitoring/polarwatch-source-status.json
 RUN mkdir -p /app/state && chown 10001:10001 /app/state
 USER 10001:10001
 EXPOSE 8000
