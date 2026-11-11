@@ -59,7 +59,19 @@ py -3.12 -m venv .venv
 
 Open **http://127.0.0.1:8000/portal/**. The scenario works without a data mount; observed layers require acquired, manifested VIIRS files. The local development API defaults are not suitable for public exposure.
 
-To run the packaged service with the checked-in read-only data mounts, use Docker Engine and `docker compose up --build`, then open the same URL. `docker-compose.yml` binds only to `127.0.0.1`. Run the release smoke check in a second terminal:
+### Data files
+
+A fresh clone does not contain every research archive. The historical iceberg-track endpoint expects the BYU/NIC v8.0 archive at `work/datasets/byu-iceberg-v8/`; fetch it from the upstream source and verify its SHA-256 before running the endpoint:
+
+```powershell
+.\tools\fetch_byu_iceberg_archive.ps1
+```
+
+The upstream BYU page does not state a redistribution license, so the archive is downloaded directly from BYU rather than committed to this repository. The tracked companion manifest records its source URL, checksum, citation, and coverage caveat.
+
+The large `copernicus-glo12-forecast` and `g02202-v6` archives are also local research inputs excluded from Git. They are not iceberg-track observations: GLO12 contains gridded ocean/sea-ice forecast fields, while BYU/NIC contains historical iceberg positions. The packaged service can run its selected model without those training/forecast archives; acquisition and verification commands are documented in [`DATASETS_AND_MODELS.md`](DATASETS_AND_MODELS.md).
+
+To run the packaged service with the versioned read-only observation data and the locally fetched BYU/NIC archive, use Docker Engine and `docker compose up --build`, then open the same URL. `docker-compose.yml` binds only to `127.0.0.1`. Run the release smoke check in a second terminal:
 
 ```powershell
 .venv\Scripts\python.exe -m ml.verify_initial_model
